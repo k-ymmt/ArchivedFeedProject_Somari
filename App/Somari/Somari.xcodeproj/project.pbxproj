@@ -13,7 +13,6 @@
 		020A5B3C234025DC003692A6 /* UIColor+Named.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020A5B3B234025DC003692A6 /* UIColor+Named.swift */; };
 		023ECEF2233BB13D009F6DD6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023ECEF1233BB13D009F6DD6 /* AppDelegate.swift */; };
 		023ECEF4233BB13D009F6DD6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023ECEF3233BB13D009F6DD6 /* SceneDelegate.swift */; };
-		023ECEF6233BB13D009F6DD6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023ECEF5233BB13D009F6DD6 /* ContentView.swift */; };
 		023ECEF8233BB13F009F6DD6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 023ECEF7233BB13F009F6DD6 /* Assets.xcassets */; };
 		023ECEFB233BB13F009F6DD6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 023ECEFA233BB13F009F6DD6 /* Preview Assets.xcassets */; };
 		023ECEFE233BB13F009F6DD6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 023ECEFC233BB13F009F6DD6 /* LaunchScreen.storyboard */; };
@@ -62,7 +61,6 @@
 		023ECEEE233BB13D009F6DD6 /* Somari.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Somari.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		023ECEF1233BB13D009F6DD6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		023ECEF3233BB13D009F6DD6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		023ECEF5233BB13D009F6DD6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		023ECEF7233BB13F009F6DD6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		023ECEFA233BB13F009F6DD6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		023ECEFD233BB13F009F6DD6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -156,11 +154,10 @@
 				020A5B3D23406783003692A6 /* Resources */,
 				023ECEF1233BB13D009F6DD6 /* AppDelegate.swift */,
 				023ECEF3233BB13D009F6DD6 /* SceneDelegate.swift */,
-				023ECEF5233BB13D009F6DD6 /* ContentView.swift */,
 				023ECEFC233BB13F009F6DD6 /* LaunchScreen.storyboard */,
-				023ECEFF233BB13F009F6DD6 /* Info.plist */,
 				023ECF4F233FD69A009F6DD6 /* ReactiveProperty.swift */,
 				020A5B372340149A003692A6 /* CancelBag.swift */,
+				023ECEFF233BB13F009F6DD6 /* Info.plist */,
 				023ECEF9233BB13F009F6DD6 /* Preview Content */,
 			);
 			path = Somari;
@@ -416,7 +413,6 @@
 				023ECF29233F089A009F6DD6 /* FeedsViewController.swift in Sources */,
 				020A5B382340149A003692A6 /* CancelBag.swift in Sources */,
 				023ECF47233F624D009F6DD6 /* FeedService.swift in Sources */,
-				023ECEF6233BB13D009F6DD6 /* ContentView.swift in Sources */,
 				023ECF2E233F0D69009F6DD6 /* SFSymbolString.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
