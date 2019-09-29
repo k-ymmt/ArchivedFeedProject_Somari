@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		020A5B32233FFFDF003692A6 /* NibLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020A5B31233FFFDF003692A6 /* NibLoadable.swift */; };
-		020A5B382340149A003692A6 /* CancelBag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020A5B372340149A003692A6 /* CancelBag.swift */; };
 		020A5B3A234021F1003692A6 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 020A5B39234021F1003692A6 /* Colors.xcassets */; };
 		020A5B3C234025DC003692A6 /* UIColor+Named.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020A5B3B234025DC003692A6 /* UIColor+Named.swift */; };
 		023ECEF2233BB13D009F6DD6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023ECEF1233BB13D009F6DD6 /* AppDelegate.swift */; };
@@ -55,7 +54,6 @@
 
 /* Begin PBXFileReference section */
 		020A5B31233FFFDF003692A6 /* NibLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLoadable.swift; sourceTree = "<group>"; };
-		020A5B372340149A003692A6 /* CancelBag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancelBag.swift; sourceTree = "<group>"; };
 		020A5B39234021F1003692A6 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		020A5B3B234025DC003692A6 /* UIColor+Named.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Named.swift"; sourceTree = "<group>"; };
 		023ECEEE233BB13D009F6DD6 /* Somari.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Somari.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -156,7 +154,6 @@
 				023ECEF3233BB13D009F6DD6 /* SceneDelegate.swift */,
 				023ECEFC233BB13F009F6DD6 /* LaunchScreen.storyboard */,
 				023ECF4F233FD69A009F6DD6 /* ReactiveProperty.swift */,
-				020A5B372340149A003692A6 /* CancelBag.swift */,
 				023ECEFF233BB13F009F6DD6 /* Info.plist */,
 				023ECEF9233BB13F009F6DD6 /* Preview Content */,
 			);
@@ -411,7 +408,6 @@
 				020A5B3C234025DC003692A6 /* UIColor+Named.swift in Sources */,
 				023ECF52233FE901009F6DD6 /* MainTabRouter.swift in Sources */,
 				023ECF29233F089A009F6DD6 /* FeedsViewController.swift in Sources */,
-				020A5B382340149A003692A6 /* CancelBag.swift in Sources */,
 				023ECF47233F624D009F6DD6 /* FeedService.swift in Sources */,
 				023ECF2E233F0D69009F6DD6 /* SFSymbolString.swift in Sources */,
 			);
