@@ -116,6 +116,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		020A5B3D23406783003692A6 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				023ECEF7233BB13F009F6DD6 /* Assets.xcassets */,
+				020A5B39234021F1003692A6 /* Colors.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		023ECEE5233BB13D009F6DD6 = {
 			isa = PBXGroup;
 			children = (
@@ -144,16 +153,15 @@
 				023ECF3B233F58B4009F6DD6 /* Feeds */,
 				023ECF21233BB8D9009F6DD6 /* Views */,
 				023ECF38233F51BB009F6DD6 /* Services */,
+				020A5B3D23406783003692A6 /* Resources */,
 				023ECEF1233BB13D009F6DD6 /* AppDelegate.swift */,
 				023ECEF3233BB13D009F6DD6 /* SceneDelegate.swift */,
 				023ECEF5233BB13D009F6DD6 /* ContentView.swift */,
-				023ECEF7233BB13F009F6DD6 /* Assets.xcassets */,
 				023ECEFC233BB13F009F6DD6 /* LaunchScreen.storyboard */,
 				023ECEFF233BB13F009F6DD6 /* Info.plist */,
-				023ECEF9233BB13F009F6DD6 /* Preview Content */,
 				023ECF4F233FD69A009F6DD6 /* ReactiveProperty.swift */,
 				020A5B372340149A003692A6 /* CancelBag.swift */,
-				020A5B39234021F1003692A6 /* Colors.xcassets */,
+				023ECEF9233BB13F009F6DD6 /* Preview Content */,
 			);
 			path = Somari;
 			sourceTree = "<group>";
