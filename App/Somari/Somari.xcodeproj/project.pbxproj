@@ -91,6 +91,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				026534B923487E1600F753DA /* Logging in Frameworks */,
 				023ECF24233F0780009F6DD6 /* FeedKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -271,6 +272,7 @@
 			name = Somari;
 			packageProductDependencies = (
 				023ECF23233F0780009F6DD6 /* FeedKit */,
+				026534B823487E1600F753DA /* Logging */,
 			);
 			productName = Somari;
 			productReference = 023ECEEE233BB13D009F6DD6 /* Somari.app */;
@@ -346,6 +348,7 @@
 			mainGroup = 023ECEE5233BB13D009F6DD6;
 			packageReferences = (
 				023ECF22233F0780009F6DD6 /* XCRemoteSwiftPackageReference "FeedKit" */,
+				026534B723487E1600F753DA /* XCRemoteSwiftPackageReference "swift-log" */,
 			);
 			productRefGroup = 023ECEEF233BB13D009F6DD6 /* Products */;
 			projectDirPath = "";
@@ -740,6 +743,14 @@
 				minimumVersion = 8.1.1;
 			};
 		};
+		026534B723487E1600F753DA /* XCRemoteSwiftPackageReference "swift-log" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-log";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.1.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -747,6 +758,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 023ECF22233F0780009F6DD6 /* XCRemoteSwiftPackageReference "FeedKit" */;
 			productName = FeedKit;
+		};
+		026534B823487E1600F753DA /* Logging */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 026534B723487E1600F753DA /* XCRemoteSwiftPackageReference "swift-log" */;
+			productName = Logging;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

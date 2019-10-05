@@ -7,6 +7,12 @@
 //
 
 import UIKit
+import Logging
+
+let logger: Logger = {
+    var logger = Logger(label: Bundle.main.bundleIdentifier ?? "net.kymmt")
+    return logger
+}()
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
