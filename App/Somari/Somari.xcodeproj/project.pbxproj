@@ -16,6 +16,11 @@
 		020A5B5F2340CD9D003692A6 /* FeedListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 020A5B5E2340CD9D003692A6 /* FeedListViewController.xib */; };
 		020A5B612340D341003692A6 /* FeedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020A5B602340D341003692A6 /* FeedItem.swift */; };
 		020A5B632340E41A003692A6 /* ViewControllerProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020A5B622340E41A003692A6 /* ViewControllerProtocols.swift */; };
+		020A5B682340F3E9003692A6 /* AdditionalFeedConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020A5B662340F3E9003692A6 /* AdditionalFeedConfirmViewController.swift */; };
+		020A5B692340F3E9003692A6 /* AdditionalFeedConfirmViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 020A5B672340F3E9003692A6 /* AdditionalFeedConfirmViewController.xib */; };
+		020A5B6B234226A4003692A6 /* AdditionalFeedConfirmRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020A5B6A234226A4003692A6 /* AdditionalFeedConfirmRouter.swift */; };
+		020A5B6D234227BD003692A6 /* AdditionalFeedConfirmPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020A5B6C234227BD003692A6 /* AdditionalFeedConfirmPresenter.swift */; };
+		020A5B6F23422958003692A6 /* AdditionalFeedConfirmInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020A5B6E23422958003692A6 /* AdditionalFeedConfirmInteractor.swift */; };
 		023ECEF2233BB13D009F6DD6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023ECEF1233BB13D009F6DD6 /* AppDelegate.swift */; };
 		023ECEF4233BB13D009F6DD6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023ECEF3233BB13D009F6DD6 /* SceneDelegate.swift */; };
 		023ECEF8233BB13F009F6DD6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 023ECEF7233BB13F009F6DD6 /* Assets.xcassets */; };
@@ -70,6 +75,11 @@
 		020A5B5E2340CD9D003692A6 /* FeedListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedListViewController.xib; sourceTree = "<group>"; };
 		020A5B602340D341003692A6 /* FeedItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedItem.swift; sourceTree = "<group>"; };
 		020A5B622340E41A003692A6 /* ViewControllerProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerProtocols.swift; sourceTree = "<group>"; };
+		020A5B662340F3E9003692A6 /* AdditionalFeedConfirmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdditionalFeedConfirmViewController.swift; sourceTree = "<group>"; };
+		020A5B672340F3E9003692A6 /* AdditionalFeedConfirmViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AdditionalFeedConfirmViewController.xib; sourceTree = "<group>"; };
+		020A5B6A234226A4003692A6 /* AdditionalFeedConfirmRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdditionalFeedConfirmRouter.swift; sourceTree = "<group>"; };
+		020A5B6C234227BD003692A6 /* AdditionalFeedConfirmPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdditionalFeedConfirmPresenter.swift; sourceTree = "<group>"; };
+		020A5B6E23422958003692A6 /* AdditionalFeedConfirmInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdditionalFeedConfirmInteractor.swift; sourceTree = "<group>"; };
 		023ECEEE233BB13D009F6DD6 /* Somari.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Somari.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		023ECEF1233BB13D009F6DD6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		023ECEF3233BB13D009F6DD6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -151,6 +161,26 @@
 			path = FeedList;
 			sourceTree = "<group>";
 		};
+		020A5B642340F3B5003692A6 /* AdditionalFeedConfirm */ = {
+			isa = PBXGroup;
+			children = (
+				020A5B652340F3CB003692A6 /* Views */,
+				020A5B6A234226A4003692A6 /* AdditionalFeedConfirmRouter.swift */,
+				020A5B6C234227BD003692A6 /* AdditionalFeedConfirmPresenter.swift */,
+				020A5B6E23422958003692A6 /* AdditionalFeedConfirmInteractor.swift */,
+			);
+			path = AdditionalFeedConfirm;
+			sourceTree = "<group>";
+		};
+		020A5B652340F3CB003692A6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				020A5B662340F3E9003692A6 /* AdditionalFeedConfirmViewController.swift */,
+				020A5B672340F3E9003692A6 /* AdditionalFeedConfirmViewController.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		023ECEE5233BB13D009F6DD6 = {
 			isa = PBXGroup;
 			children = (
@@ -177,6 +207,7 @@
 				023ECF48233FCF2B009F6DD6 /* Models */,
 				023ECF42233F5D01009F6DD6 /* Main */,
 				023ECF3B233F58B4009F6DD6 /* Feeds */,
+				020A5B642340F3B5003692A6 /* AdditionalFeedConfirm */,
 				023ECF21233BB8D9009F6DD6 /* Views */,
 				023ECF38233F51BB009F6DD6 /* Services */,
 				026534B023480ECA00F753DA /* CombineExtensions */,
@@ -413,6 +444,7 @@
 				023ECEFE233BB13F009F6DD6 /* LaunchScreen.storyboard in Resources */,
 				023ECEFB233BB13F009F6DD6 /* Preview Assets.xcassets in Resources */,
 				023ECF27233F087B009F6DD6 /* FeedsViewController.xib in Resources */,
+				020A5B692340F3E9003692A6 /* AdditionalFeedConfirmViewController.xib in Resources */,
 				020A5B5F2340CD9D003692A6 /* FeedListViewController.xib in Resources */,
 				020A5B3A234021F1003692A6 /* Colors.xcassets in Resources */,
 				023ECEF8233BB13F009F6DD6 /* Assets.xcassets in Resources */,
@@ -446,7 +478,10 @@
 				026534B223480F0000F753DA /* Cancellable+Combine.swift in Sources */,
 				020A5B5D2340CD91003692A6 /* FeedListViewController.swift in Sources */,
 				023ECF4C233FCF5E009F6DD6 /* Feed.swift in Sources */,
+				020A5B6F23422958003692A6 /* AdditionalFeedConfirmInteractor.swift in Sources */,
 				023ECF30233F2B01009F6DD6 /* FeedViewCell.swift in Sources */,
+				020A5B6B234226A4003692A6 /* AdditionalFeedConfirmRouter.swift in Sources */,
+				020A5B6D234227BD003692A6 /* AdditionalFeedConfirmPresenter.swift in Sources */,
 				026534B42348295F00F753DA /* UIControl+Combine.swift in Sources */,
 				023ECF50233FD69A009F6DD6 /* ReactiveProperty.swift in Sources */,
 				023ECF3E233F5A39009F6DD6 /* FeedsRouter.swift in Sources */,
@@ -459,6 +494,7 @@
 				023ECF4A233FCF3B009F6DD6 /* AtomFeed.swift in Sources */,
 				023ECEF4233BB13D009F6DD6 /* SceneDelegate.swift in Sources */,
 				020A5B632340E41A003692A6 /* ViewControllerProtocols.swift in Sources */,
+				020A5B682340F3E9003692A6 /* AdditionalFeedConfirmViewController.swift in Sources */,
 				020A5B3C234025DC003692A6 /* Colors.swift in Sources */,
 				023ECF52233FE901009F6DD6 /* MainTabRouter.swift in Sources */,
 				023ECF29233F089A009F6DD6 /* FeedsViewController.swift in Sources */,
