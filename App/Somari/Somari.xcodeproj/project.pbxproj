@@ -10,6 +10,9 @@
 		020A5B32233FFFDF003692A6 /* NibLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020A5B31233FFFDF003692A6 /* NibLoadable.swift */; };
 		020A5B3A234021F1003692A6 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 020A5B39234021F1003692A6 /* Colors.xcassets */; };
 		020A5B3C234025DC003692A6 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020A5B3B234025DC003692A6 /* Colors.swift */; };
+		020A5B5D2340CD91003692A6 /* FeedListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020A5B5C2340CD91003692A6 /* FeedListViewController.swift */; };
+		020A5B5F2340CD9D003692A6 /* FeedListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 020A5B5E2340CD9D003692A6 /* FeedListViewController.xib */; };
+		020A5B612340D341003692A6 /* FeedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020A5B602340D341003692A6 /* FeedItem.swift */; };
 		020A5B632340E41A003692A6 /* ViewControllerProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020A5B622340E41A003692A6 /* ViewControllerProtocols.swift */; };
 		023ECEF2233BB13D009F6DD6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023ECEF1233BB13D009F6DD6 /* AppDelegate.swift */; };
 		023ECEF4233BB13D009F6DD6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023ECEF3233BB13D009F6DD6 /* SceneDelegate.swift */; };
@@ -57,6 +60,9 @@
 		020A5B31233FFFDF003692A6 /* NibLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLoadable.swift; sourceTree = "<group>"; };
 		020A5B39234021F1003692A6 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		020A5B3B234025DC003692A6 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		020A5B5C2340CD91003692A6 /* FeedListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedListViewController.swift; sourceTree = "<group>"; };
+		020A5B5E2340CD9D003692A6 /* FeedListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedListViewController.xib; sourceTree = "<group>"; };
+		020A5B602340D341003692A6 /* FeedItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedItem.swift; sourceTree = "<group>"; };
 		020A5B622340E41A003692A6 /* ViewControllerProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerProtocols.swift; sourceTree = "<group>"; };
 		023ECEEE233BB13D009F6DD6 /* Somari.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Somari.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		023ECEF1233BB13D009F6DD6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -123,6 +129,18 @@
 				020A5B3B234025DC003692A6 /* Colors.swift */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		020A5B5B2340CD57003692A6 /* FeedList */ = {
+			isa = PBXGroup;
+			children = (
+				020A5B5C2340CD91003692A6 /* FeedListViewController.swift */,
+				020A5B5E2340CD9D003692A6 /* FeedListViewController.xib */,
+				023ECF2F233F2B01009F6DD6 /* FeedViewCell.swift */,
+				023ECF31233F2B11009F6DD6 /* FeedViewCell.xib */,
+				020A5B602340D341003692A6 /* FeedItem.swift */,
+			);
+			path = FeedList;
 			sourceTree = "<group>";
 		};
 		023ECEE5233BB13D009F6DD6 = {
@@ -193,6 +211,7 @@
 		023ECF21233BB8D9009F6DD6 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				020A5B5B2340CD57003692A6 /* FeedList */,
 				023ECF2D233F0D69009F6DD6 /* SFSymbolString.swift */,
 				020A5B31233FFFDF003692A6 /* NibLoadable.swift */,
 				020A5B622340E41A003692A6 /* ViewControllerProtocols.swift */,
@@ -224,8 +243,6 @@
 			children = (
 				023ECF26233F087B009F6DD6 /* FeedsViewController.xib */,
 				023ECF28233F089A009F6DD6 /* FeedsViewController.swift */,
-				023ECF2F233F2B01009F6DD6 /* FeedViewCell.swift */,
-				023ECF31233F2B11009F6DD6 /* FeedViewCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -372,6 +389,7 @@
 				023ECEFE233BB13F009F6DD6 /* LaunchScreen.storyboard in Resources */,
 				023ECEFB233BB13F009F6DD6 /* Preview Assets.xcassets in Resources */,
 				023ECF27233F087B009F6DD6 /* FeedsViewController.xib in Resources */,
+				020A5B5F2340CD9D003692A6 /* FeedListViewController.xib in Resources */,
 				020A5B3A234021F1003692A6 /* Colors.xcassets in Resources */,
 				023ECEF8233BB13F009F6DD6 /* Assets.xcassets in Resources */,
 				023ECF32233F2B11009F6DD6 /* FeedViewCell.xib in Resources */,
@@ -401,6 +419,7 @@
 			files = (
 				023ECF45233F5D7F009F6DD6 /* FeedsPresenter.swift in Sources */,
 				020A5B32233FFFDF003692A6 /* NibLoadable.swift in Sources */,
+				020A5B5D2340CD91003692A6 /* FeedListViewController.swift in Sources */,
 				023ECF4C233FCF5E009F6DD6 /* Feed.swift in Sources */,
 				023ECF30233F2B01009F6DD6 /* FeedViewCell.swift in Sources */,
 				023ECF50233FD69A009F6DD6 /* ReactiveProperty.swift in Sources */,
