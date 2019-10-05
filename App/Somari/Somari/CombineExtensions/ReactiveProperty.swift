@@ -10,12 +10,25 @@ import Foundation
 import Combine
 
 @propertyWrapper
-class Reactive<Value> {
+class EventPublished<Value> {
+    private let subject: PassthroughSubject<Value, Never> = PassthroughSubject()
+    
+    var wrappedValue: EventPublisher<Value>
+    
+    init() {
+        wrappedValue = EventPublisher(subject: subject)
+    }
+    
+    func send(_ input: Value) {
+        subject.send(input)
+    }
+}
+
+@propertyWrapper
+class PropertyPublished<Value> {
     private let reactiveProperty: ReactiveProperty<Value>
 
-    var wrappedValue: PropertyPublisher<Value> {
-        reactiveProperty.eraseToPropertyPublisher()
-    }
+    var wrappedValue: PropertyPublisher<Value>
     
     var value: Value {
         get { reactiveProperty.value }
@@ -24,6 +37,7 @@ class Reactive<Value> {
     
     init(defaultValue: Value) {
         reactiveProperty = ReactiveProperty(defaultValue: defaultValue)
+        wrappedValue = reactiveProperty.eraseToPropertyPublisher()
     }
     
     func forceNotify() {
@@ -47,6 +61,22 @@ struct PropertyPublisher<Value>: Publisher {
     
     func receive<S>(subscriber: S) where S : Subscriber, Failure == S.Failure, Output == S.Input {
         property.receive(subscriber: subscriber)
+    }
+}
+
+struct EventPublisher<Value>: Publisher {
+    typealias Output = Value
+    
+    typealias Failure = Never
+
+    private let subject: PassthroughSubject<Value, Never>
+    
+    init(subject: PassthroughSubject<Value, Never>) {
+        self.subject = subject
+    }
+    
+    func receive<S>(subscriber: S) where S : Subscriber, Failure == S.Failure, Output == S.Input {
+        subject.receive(subscriber: subscriber)
     }
 }
 
