@@ -34,7 +34,6 @@
 		023ECF09233BB13F009F6DD6 /* SomariTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023ECF08233BB13F009F6DD6 /* SomariTests.swift */; };
 		023ECF14233BB13F009F6DD6 /* SomariUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023ECF13233BB13F009F6DD6 /* SomariUITests.swift */; };
 		023ECF24233F0780009F6DD6 /* FeedKit in Frameworks */ = {isa = PBXBuildFile; productRef = 023ECF23233F0780009F6DD6 /* FeedKit */; };
-		023ECF27233F087B009F6DD6 /* FeedsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 023ECF26233F087B009F6DD6 /* FeedsViewController.xib */; };
 		023ECF29233F089A009F6DD6 /* FeedsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023ECF28233F089A009F6DD6 /* FeedsViewController.swift */; };
 		023ECF2C233F09C7009F6DD6 /* MainTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023ECF2B233F09C7009F6DD6 /* MainTabViewController.swift */; };
 		023ECF2E233F0D69009F6DD6 /* SFSymbolString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023ECF2D233F0D69009F6DD6 /* SFSymbolString.swift */; };
@@ -51,6 +50,7 @@
 		023ECF52233FE901009F6DD6 /* MainTabRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023ECF51233FE901009F6DD6 /* MainTabRouter.swift */; };
 		026534B223480F0000F753DA /* Cancellable+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026534B123480F0000F753DA /* Cancellable+Combine.swift */; };
 		026534B42348295F00F753DA /* UIControl+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026534B32348295F00F753DA /* UIControl+Combine.swift */; };
+		02F286012348B2F1004E308A /* FeedsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02F286002348B2F1004E308A /* FeedsViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,7 +103,6 @@
 		023ECF0F233BB13F009F6DD6 /* SomariUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SomariUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		023ECF13233BB13F009F6DD6 /* SomariUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SomariUITests.swift; sourceTree = "<group>"; };
 		023ECF15233BB13F009F6DD6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		023ECF26233F087B009F6DD6 /* FeedsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = FeedsViewController.xib; path = ../../Views/Feeds/FeedsViewController.xib; sourceTree = "<group>"; };
 		023ECF28233F089A009F6DD6 /* FeedsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedsViewController.swift; sourceTree = "<group>"; };
 		023ECF2B233F09C7009F6DD6 /* MainTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainTabViewController.swift; path = ../../Views/Main/MainTabViewController.swift; sourceTree = "<group>"; };
 		023ECF2D233F0D69009F6DD6 /* SFSymbolString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSymbolString.swift; sourceTree = "<group>"; };
@@ -120,6 +119,7 @@
 		023ECF51233FE901009F6DD6 /* MainTabRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabRouter.swift; sourceTree = "<group>"; };
 		026534B123480F0000F753DA /* Cancellable+Combine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Cancellable+Combine.swift"; sourceTree = "<group>"; };
 		026534B32348295F00F753DA /* UIControl+Combine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIControl+Combine.swift"; sourceTree = "<group>"; };
+		02F286002348B2F1004E308A /* FeedsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FeedsViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -311,7 +311,7 @@
 		023ECF3C233F599E009F6DD6 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				023ECF26233F087B009F6DD6 /* FeedsViewController.xib */,
+				02F286002348B2F1004E308A /* FeedsViewController.xib */,
 				023ECF28233F089A009F6DD6 /* FeedsViewController.swift */,
 			);
 			path = Views;
@@ -473,6 +473,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				023ECEFE233BB13F009F6DD6 /* LaunchScreen.storyboard in Resources */,
+				02F286012348B2F1004E308A /* FeedsViewController.xib in Resources */,
 				023ECEFB233BB13F009F6DD6 /* Preview Assets.xcassets in Resources */,
 				020A5B4323407327003692A6 /* AdditionalFeedViewController.xib in Resources */,
 				020A5B692340F3E9003692A6 /* AdditionalFeedConfirmViewController.xib in Resources */,

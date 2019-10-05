@@ -8,21 +8,18 @@
 
 import UIKit
 import Combine
-import SafariServices
 
-protocol FeedsView: class {
-}
-
-class FeedsViewController: UIViewController, FeedsView {
+class FeedsViewController: UIViewController, ParentViewController {
+    
     private let presenter: FeedsPresentable
     
-    @IBOutlet private weak var feedsTableView: UITableView!
+    private weak var feedListViewController: FeedListViewController!
     
     private var cancels: Set<AnyCancellable> = Set()
     
     init(presenter: FeedsPresentable) {
         self.presenter = presenter
-
+        
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -32,51 +29,41 @@ class FeedsViewController: UIViewController, FeedsView {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        navigationItem.setRightBarButtonItems([UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addButtonTapped))], animated: false)
+        
+        let feedListViewController = FeedListViewController(output: receivedFeedListOutput(value:))
+        addViewController(feedListViewController)
+        NSLayoutConstraint.activate([
+            feedListViewController.view.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            feedListViewController.view.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            feedListViewController.view.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+            feedListViewController.view.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
+        ])
 
-        feedsTableView.register(cellType: FeedViewCell.self)
-        feedsTableView.estimatedRowHeight = 80
-        feedsTableView.dataSource = self
-        feedsTableView.delegate = self
+        self.feedListViewController = feedListViewController
+        
+        
         
         presenter.feeds
             .receive(on: DispatchQueue.main)
-            .sink { [weak self] _ in
-                self?.feedsTableView.reloadData()
+            .sink { [weak self] items in
+                self?.feedListViewController.input(.newFeeds(items))
         }.store(in: &cancels)
         presenter.getFeeds()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-        if let index = feedsTableView.indexPathForSelectedRow {
-            feedsTableView.deselectRow(at: index, animated: true)
-        }
-    }
-}
-
-extension FeedsViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let feed = presenter.feeds.value[indexPath.row]
-        guard let link = feed.link, let url = URL(string: link) else {
-            return
-        }
-        
-        let sfvc = SFSafariViewController(url: url)
-        present(sfvc, animated: true)
-    }
-}
-
-extension FeedsViewController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return presenter.feeds.value.count
+    @objc func addButtonTapped() {
+        presenter.navigateToAdditionalFeed()
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(for: indexPath, cellType: FeedViewCell.self)
-        let feed = presenter.feeds.value[indexPath.row]
-        cell.setup(feed: feed)
-        
-        return cell
+    private func receivedFeedListOutput(value: FeedListViewController.Output) {
+        switch value {
+        case .selectedItem(let item):
+            guard let linkString = item.link else {
+                return
+            }
+            presenter.showWebPage(linkString: linkString)
+        }
     }
 }

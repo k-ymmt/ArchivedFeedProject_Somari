@@ -9,23 +9,19 @@
 import Foundation
 import Combine
 
-struct FeedItem {
-    let title: String?
-    let source: String?
-    let link: String?
-}
-
 protocol FeedsPresentable {
     var feeds: PropertyPublisher<[FeedItem]> { get }
     
     func getFeeds()
+    func navigateToAdditionalFeed()
+    func showWebPage(linkString: String)
 }
 
 class FeedsPresenter: FeedsPresentable {
     private let router: FeedsRoutable
     private let interactor: FeedsInteractable
 
-    @Reactive(defaultValue: []) var feeds: PropertyPublisher<[FeedItem]>
+    @PropertyPublished(defaultValue: []) var feeds: PropertyPublisher<[FeedItem]>
     
     init(router: FeedsRoutable, interactor: FeedsInteractable) {
         self.router = router
@@ -52,5 +48,17 @@ class FeedsPresenter: FeedsPresentable {
                 break
             }
         }
+    }
+
+    func navigateToAdditionalFeed() {
+        router.navigateAdditionalFeedView()
+    }
+    
+    func showWebPage(linkString: String) {
+        guard let url = URL(string: linkString) else {
+            return
+        }
+        
+        router.showSafariViewController(url: url)
     }
 }
