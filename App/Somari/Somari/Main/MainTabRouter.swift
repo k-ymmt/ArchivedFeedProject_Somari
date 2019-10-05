@@ -30,8 +30,14 @@ struct MainTabRouter: MainTabRoutable {
             image: UIImage(symbol: .list, withConfiguration: .init(font: font)),
             selectedImage: nil
         )
+        let additionalFeedViewController = AdditionalFeedRouter.assembleModules()
+        additionalFeedViewController.tabBarItem = UITabBarItem(
+            title: nil,
+            image: UIImage(symbol: .search, withConfiguration: .init(font: font)),
+            selectedImage: UIImage(symbol: .search, withConfiguration: .init(font: font))
+        )
         
-        self.tabController?.setViewControllers([feedsViewController], animated: false)
+        self.tabController?.setViewControllers([feedsViewController, additionalFeedViewController], animated: false)
     }
     
     func navigateFeeds() {
