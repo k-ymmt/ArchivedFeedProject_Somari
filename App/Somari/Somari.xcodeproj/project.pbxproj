@@ -14,6 +14,8 @@
 		020A5B4323407327003692A6 /* AdditionalFeedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 020A5B4123407327003692A6 /* AdditionalFeedViewController.xib */; };
 		020A5B4523407D33003692A6 /* AdditionalFeedRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020A5B4423407D33003692A6 /* AdditionalFeedRouter.swift */; };
 		020A5B47234081F5003692A6 /* AdditionalFeedPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020A5B46234081F5003692A6 /* AdditionalFeedPresenter.swift */; };
+		020A5B4E2340891F003692A6 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020A5B4D2340891F003692A6 /* Strings.swift */; };
+		020A5B5023408C96003692A6 /* Strings.strings in Resources */ = {isa = PBXBuildFile; fileRef = 020A5B4F23408C96003692A6 /* Strings.strings */; };
 		020A5B5223409837003692A6 /* Set+AnyCancellable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020A5B5123409837003692A6 /* Set+AnyCancellable.swift */; };
 		020A5B542340A2DD003692A6 /* UIView+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020A5B532340A2DD003692A6 /* UIView+Combine.swift */; };
 		020A5B562340B82E003692A6 /* AdditionalFeedInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020A5B552340B82E003692A6 /* AdditionalFeedInteractor.swift */; };
@@ -49,6 +51,7 @@
 		023ECF52233FE901009F6DD6 /* MainTabRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023ECF51233FE901009F6DD6 /* MainTabRouter.swift */; };
 		026534B223480F0000F753DA /* Cancellable+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026534B123480F0000F753DA /* Cancellable+Combine.swift */; };
 		026534B42348295F00F753DA /* UIControl+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026534B32348295F00F753DA /* UIControl+Combine.swift */; };
+		026534B923487E1600F753DA /* Logging in Frameworks */ = {isa = PBXBuildFile; productRef = 026534B823487E1600F753DA /* Logging */; };
 		02F286012348B2F1004E308A /* FeedsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02F286002348B2F1004E308A /* FeedsViewController.xib */; };
 		02F286042348B352004E308A /* MainTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F286032348B352004E308A /* MainTabViewController.swift */; };
 /* End PBXBuildFile section */
@@ -78,6 +81,8 @@
 		020A5B4123407327003692A6 /* AdditionalFeedViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AdditionalFeedViewController.xib; sourceTree = "<group>"; };
 		020A5B4423407D33003692A6 /* AdditionalFeedRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdditionalFeedRouter.swift; sourceTree = "<group>"; };
 		020A5B46234081F5003692A6 /* AdditionalFeedPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdditionalFeedPresenter.swift; sourceTree = "<group>"; };
+		020A5B4D2340891F003692A6 /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
+		020A5B4F23408C96003692A6 /* Strings.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Strings.strings; sourceTree = "<group>"; };
 		020A5B5123409837003692A6 /* Set+AnyCancellable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Set+AnyCancellable.swift"; sourceTree = "<group>"; };
 		020A5B532340A2DD003692A6 /* UIView+Combine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Combine.swift"; sourceTree = "<group>"; };
 		020A5B552340B82E003692A6 /* AdditionalFeedInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdditionalFeedInteractor.swift; sourceTree = "<group>"; };
@@ -155,6 +160,8 @@
 				023ECEF7233BB13F009F6DD6 /* Assets.xcassets */,
 				020A5B39234021F1003692A6 /* Colors.xcassets */,
 				020A5B3B234025DC003692A6 /* Colors.swift */,
+				020A5B4D2340891F003692A6 /* Strings.swift */,
+				020A5B4F23408C96003692A6 /* Strings.strings */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -478,6 +485,7 @@
 			files = (
 				023ECEFE233BB13F009F6DD6 /* LaunchScreen.storyboard in Resources */,
 				02F286012348B2F1004E308A /* FeedsViewController.xib in Resources */,
+				020A5B5023408C96003692A6 /* Strings.strings in Resources */,
 				023ECEFB233BB13F009F6DD6 /* Preview Assets.xcassets in Resources */,
 				020A5B4323407327003692A6 /* AdditionalFeedViewController.xib in Resources */,
 				020A5B692340F3E9003692A6 /* AdditionalFeedConfirmViewController.xib in Resources */,
@@ -519,6 +527,7 @@
 				020A5B6B234226A4003692A6 /* AdditionalFeedConfirmRouter.swift in Sources */,
 				020A5B6D234227BD003692A6 /* AdditionalFeedConfirmPresenter.swift in Sources */,
 				020A5B4523407D33003692A6 /* AdditionalFeedRouter.swift in Sources */,
+				020A5B612340D341003692A6 /* FeedItem.swift in Sources */,
 				026534B42348295F00F753DA /* UIControl+Combine.swift in Sources */,
 				023ECF50233FD69A009F6DD6 /* ReactiveProperty.swift in Sources */,
 				023ECF3E233F5A39009F6DD6 /* FeedsRouter.swift in Sources */,
@@ -532,6 +541,7 @@
 				023ECEF4233BB13D009F6DD6 /* SceneDelegate.swift in Sources */,
 				020A5B632340E41A003692A6 /* ViewControllerProtocols.swift in Sources */,
 				020A5B682340F3E9003692A6 /* AdditionalFeedConfirmViewController.swift in Sources */,
+				020A5B4E2340891F003692A6 /* Strings.swift in Sources */,
 				020A5B3C234025DC003692A6 /* Colors.swift in Sources */,
 				020A5B562340B82E003692A6 /* AdditionalFeedInteractor.swift in Sources */,
 				023ECF52233FE901009F6DD6 /* MainTabRouter.swift in Sources */,
