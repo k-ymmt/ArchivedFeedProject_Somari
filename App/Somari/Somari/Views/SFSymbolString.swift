@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 struct SFSymbolName {
-    static let search = SFSymbolName(string: "magnifyingglass")
+    static let search = SFSymbolName(string: "magnifyingglass.circle")
     static let list = SFSymbolName(string: "list.dash")
     
     
