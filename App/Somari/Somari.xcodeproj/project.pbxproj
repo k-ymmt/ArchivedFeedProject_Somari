@@ -421,9 +421,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 023ECF18233BB13F009F6DD6 /* Build configuration list for PBXNativeTarget "Somari" */;
 			buildPhases = (
+				486A6F4DBC2D715FDB7D862F /* [CP] Check Pods Manifest.lock */,
 				023ECEEA233BB13D009F6DD6 /* Sources */,
 				023ECEEB233BB13D009F6DD6 /* Frameworks */,
 				023ECEEC233BB13D009F6DD6 /* Resources */,
+				11493FCAE35957DC21D7DCC3 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
