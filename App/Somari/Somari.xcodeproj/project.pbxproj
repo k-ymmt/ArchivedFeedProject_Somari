@@ -52,6 +52,7 @@
 		026534B223480F0000F753DA /* Cancellable+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026534B123480F0000F753DA /* Cancellable+Combine.swift */; };
 		026534B42348295F00F753DA /* UIControl+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026534B32348295F00F753DA /* UIControl+Combine.swift */; };
 		026534B923487E1600F753DA /* Logging in Frameworks */ = {isa = PBXBuildFile; productRef = 026534B823487E1600F753DA /* Logging */; };
+		02B2B7332348CF4400510E22 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 02B2B7322348CF4300510E22 /* GoogleService-Info.plist */; };
 		02F286012348B2F1004E308A /* FeedsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02F286002348B2F1004E308A /* FeedsViewController.xib */; };
 		02F286042348B352004E308A /* MainTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F286032348B352004E308A /* MainTabViewController.swift */; };
 		0F55231D694DFF3114FA636B /* Pods_SomariTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2915096F7DF1909C9067E793 /* Pods_SomariTests.framework */; };
@@ -271,6 +272,7 @@
 				023ECEF3233BB13D009F6DD6 /* SceneDelegate.swift */,
 				023ECEFC233BB13F009F6DD6 /* LaunchScreen.storyboard */,
 				023ECEFF233BB13F009F6DD6 /* Info.plist */,
+				02B2B7322348CF4300510E22 /* GoogleService-Info.plist */,
 				023ECEF9233BB13F009F6DD6 /* Preview Content */,
 			);
 			path = Somari;
@@ -535,6 +537,7 @@
 				020A5B692340F3E9003692A6 /* AdditionalFeedConfirmViewController.xib in Resources */,
 				020A5B5F2340CD9D003692A6 /* FeedListViewController.xib in Resources */,
 				020A5B3A234021F1003692A6 /* Colors.xcassets in Resources */,
+				02B2B7332348CF4400510E22 /* GoogleService-Info.plist in Resources */,
 				023ECEF8233BB13F009F6DD6 /* Assets.xcassets in Resources */,
 				023ECF32233F2B11009F6DD6 /* FeedViewCell.xib in Resources */,
 			);

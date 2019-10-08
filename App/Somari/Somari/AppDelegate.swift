@@ -8,6 +8,7 @@
 
 import UIKit
 import Logging
+import Firebase
 
 let logger: Logger = {
     var logger = Logger(label: Bundle.main.bundleIdentifier ?? "net.kymmt")
@@ -22,10 +23,8 @@ let logger: Logger = {
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        FirebaseApp.configure()
         return true
     }
 
