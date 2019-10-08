@@ -12,7 +12,7 @@ import Combine
 protocol FeedsPresentable {
     var feeds: PropertyPublisher<[FeedItem]> { get }
     
-    func getFeeds()
+    func getFeeds(url: URL)
     func navigateToAdditionalFeed()
     func showWebPage(linkString: String)
 }
@@ -26,23 +26,15 @@ class FeedsPresenter: FeedsPresentable {
     init(router: FeedsRoutable, interactor: FeedsInteractable) {
         self.router = router
         self.interactor = interactor
+        
+        interactor.getUserSettings(completion: receivedUserSettings(result:))
     }
     
-    func getFeeds() {
-//        self._feeds.value = [FeedItem(title: "hogehoge") ]
-        interactor.getFeed(url: URL(string: "https://qiita.com/tags/swift/feed")!) { [weak self] (result) in
+    func getFeeds(url: URL) {
+        interactor.getFeed(url: url) { [weak self] (result) in
             switch result {
             case .success(let feed):
-                switch feed {
-                case .atom(let atomFeed):
-                    if let entries = atomFeed.entries {
-                        self!._feeds.value += entries.map { FeedItem(title: $0.title, source: atomFeed.title, link: $0.links?.first?.href) }
-                    }
-                case .rss(let rssFedd):
-                    if let items = rssFedd.items {
-                        self?._feeds.value += items.map { FeedItem(title: $0.title, source: rssFedd.channel?.title, link: $0.link) }
-                    }
-                }
+                self?._feeds.value += feed.feedItems()
                 self?._feeds.forceNotify()
             case .failure(let error):
                 break
@@ -61,4 +53,22 @@ class FeedsPresenter: FeedsPresentable {
         
         router.showSafariViewController(url: url)
     }
+    
+    private func receivedUserSettings(result: Result<[FeedInfo], Error>) {
+        switch result {
+        case .success(let feedInfoList):
+            for info in feedInfoList {
+                guard let url = URL(string: info.url) else {
+                    logger.debug("invalid url: \(info.url)")
+                    return
+                }
+                
+                getFeeds(url: url)
+            }
+        case .failure(let error):
+            logger.debug("\(error)")
+        }
+    }
+    
+    
 }

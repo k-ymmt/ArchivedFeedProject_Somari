@@ -50,7 +50,6 @@ class FeedsViewController: UIViewController, ParentViewController {
             .sink { [weak self] items in
                 self?.feedListViewController.input(.newFeeds(items))
         }.store(in: &cancels)
-        presenter.getFeeds()
     }
     
     @objc func addButtonTapped() {

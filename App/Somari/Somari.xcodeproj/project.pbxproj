@@ -52,6 +52,8 @@
 		026534B223480F0000F753DA /* Cancellable+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026534B123480F0000F753DA /* Cancellable+Combine.swift */; };
 		026534B42348295F00F753DA /* UIControl+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026534B32348295F00F753DA /* UIControl+Combine.swift */; };
 		026534B923487E1600F753DA /* Logging in Frameworks */ = {isa = PBXBuildFile; productRef = 026534B823487E1600F753DA /* Logging */; };
+		027AB20B234C6BA60052C204 /* Mappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027AB20A234C6BA60052C204 /* Mappable.swift */; };
+		027AB20D234CEB350052C204 /* CustomDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027AB20C234CEB350052C204 /* CustomDateFormatter.swift */; };
 		02B2B7312348CEC600510E22 /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B2B7302348CEC600510E22 /* LoginService.swift */; };
 		02B2B7332348CF4400510E22 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 02B2B7322348CF4300510E22 /* GoogleService-Info.plist */; };
 		02B2B7382348D10600510E22 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B2B7362348D10600510E22 /* LoginViewController.swift */; };
@@ -142,6 +144,8 @@
 		023ECF51233FE901009F6DD6 /* MainTabRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabRouter.swift; sourceTree = "<group>"; };
 		026534B123480F0000F753DA /* Cancellable+Combine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Cancellable+Combine.swift"; sourceTree = "<group>"; };
 		026534B32348295F00F753DA /* UIControl+Combine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIControl+Combine.swift"; sourceTree = "<group>"; };
+		027AB20A234C6BA60052C204 /* Mappable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mappable.swift; sourceTree = "<group>"; };
+		027AB20C234CEB350052C204 /* CustomDateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDateFormatter.swift; sourceTree = "<group>"; };
 		02AA063F1D35A276B26D5C60 /* Pods-Somari.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Somari.debug.xcconfig"; path = "Target Support Files/Pods-Somari/Pods-Somari.debug.xcconfig"; sourceTree = "<group>"; };
 		02B2B7302348CEC600510E22 /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
 		02B2B7322348CF4300510E22 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -300,6 +304,7 @@
 				023ECF21233BB8D9009F6DD6 /* Views */,
 				023ECF38233F51BB009F6DD6 /* Services */,
 				026534B023480ECA00F753DA /* CombineExtensions */,
+				027AB209234C6B8B0052C204 /* Extensions */,
 				020A5B3D23406783003692A6 /* Resources */,
 				023ECEF1233BB13D009F6DD6 /* AppDelegate.swift */,
 				023ECEF3233BB13D009F6DD6 /* SceneDelegate.swift */,
@@ -344,6 +349,7 @@
 				023ECF2D233F0D69009F6DD6 /* SFSymbolString.swift */,
 				020A5B31233FFFDF003692A6 /* NibLoadable.swift */,
 				020A5B622340E41A003692A6 /* ViewControllerProtocols.swift */,
+				027AB20C234CEB350052C204 /* CustomDateFormatter.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -353,6 +359,7 @@
 			children = (
 				023ECF46233F624D009F6DD6 /* FeedService.swift */,
 				02B2B7302348CEC600510E22 /* LoginService.swift */,
+				02BB0AE0234B7BAF0035FA96 /* StorageService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -362,8 +369,8 @@
 			children = (
 				023ECF3C233F599E009F6DD6 /* Views */,
 				023ECF3D233F5A39009F6DD6 /* FeedsRouter.swift */,
-				023ECF40233F5B6C009F6DD6 /* FeedsInteractor.swift */,
 				023ECF44233F5D7F009F6DD6 /* FeedsPresenter.swift */,
+				023ECF40233F5B6C009F6DD6 /* FeedsInteractor.swift */,
 			);
 			path = Feeds;
 			sourceTree = "<group>";
@@ -408,6 +415,14 @@
 				026534B123480F0000F753DA /* Cancellable+Combine.swift */,
 			);
 			path = CombineExtensions;
+			sourceTree = "<group>";
+		};
+		027AB209234C6B8B0052C204 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				027AB20A234C6BA60052C204 /* Mappable.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		02B2B7342348D0D600510E22 /* Login */ = {
@@ -772,11 +787,13 @@
 				02BB0AD3234A08FD0035FA96 /* LaunchViewController.swift in Sources */,
 				023ECF41233F5B6C009F6DD6 /* FeedsInteractor.swift in Sources */,
 				020A5B5223409837003692A6 /* Set+AnyCancellable.swift in Sources */,
+				027AB20D234CEB350052C204 /* CustomDateFormatter.swift in Sources */,
 				02B2B7312348CEC600510E22 /* LoginService.swift in Sources */,
 				02F286042348B352004E308A /* MainTabViewController.swift in Sources */,
 				023ECEF2233BB13D009F6DD6 /* AppDelegate.swift in Sources */,
 				02BB0ADB234A09AD0035FA96 /* LaunchRouter.swift in Sources */,
 				020A5B542340A2DD003692A6 /* UIView+Combine.swift in Sources */,
+				027AB20B234C6BA60052C204 /* Mappable.swift in Sources */,
 				023ECF4A233FCF3B009F6DD6 /* AtomFeed.swift in Sources */,
 				023ECEF4233BB13D009F6DD6 /* SceneDelegate.swift in Sources */,
 				020A5B632340E41A003692A6 /* ViewControllerProtocols.swift in Sources */,
@@ -789,6 +806,7 @@
 				023ECF52233FE901009F6DD6 /* MainTabRouter.swift in Sources */,
 				023ECF29233F089A009F6DD6 /* FeedsViewController.swift in Sources */,
 				023ECF47233F624D009F6DD6 /* FeedService.swift in Sources */,
+				02BB0AE1234B7BAF0035FA96 /* StorageService.swift in Sources */,
 				020A5B47234081F5003692A6 /* AdditionalFeedPresenter.swift in Sources */,
 				02BB0ADF234B776E0035FA96 /* FeedInfo.swift in Sources */,
 				023ECF2E233F0D69009F6DD6 /* SFSymbolString.swift in Sources */,

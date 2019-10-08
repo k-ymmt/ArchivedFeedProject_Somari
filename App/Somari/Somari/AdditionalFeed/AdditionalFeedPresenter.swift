@@ -44,7 +44,7 @@ class AdditionalFeedPresenter: AdditionalFeedPresentable {
         interactor.getFeed(url: url) { [weak self] (result) in
             switch result {
             case .success(let feed):
-                self?.router.navigateToAdditionalFeedConfirm(items: feed.feedItems())
+                self?.router.navigateToAdditionalFeedConfirm(url: url, items: feed.feedItems())
             case .failure(let error):
                 logger.error("\(error.localizedDescription)")
                 break

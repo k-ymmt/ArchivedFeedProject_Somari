@@ -7,17 +7,20 @@
 //
 
 import UIKit
+import Combine
 
 class AdditionalFeedConfirmViewController: UIViewController, ParentViewController {
     @IBOutlet private weak var containerView: UIView!
     @IBOutlet private weak var addButton: UIButton!
     
-    private let feedItems: [FeedItem]
+    private var feedListView: FeedListViewController!
+
     private let presenter: AdditionalFeedConfirmPresentable
     
+    private var cancellables: Set<AnyCancellable> = Set()
     
-    init(feedItems: [FeedItem], presenter: AdditionalFeedConfirmPresentable) {
-        self.feedItems = feedItems
+    
+    init(presenter: AdditionalFeedConfirmPresentable) {
         self.presenter = presenter
         
         super.init(nibName: nil, bundle: Bundle(for: type(of: self)))
@@ -32,6 +35,16 @@ class AdditionalFeedConfirmViewController: UIViewController, ParentViewControlle
         
         navigationController?.navigationBar.barTintColor = Colors.background.uiColor
         setupFeedListView()
+        
+        addButton.event(event: .touchUpInside)
+            .sink { [weak self] (_) in
+                self?.presenter.saveFeedInfo()
+        }.store(in: &cancellables)
+        
+        presenter.feedItems
+            .sink { [weak self] (items) in
+                self?.feedListView.input(.newFeeds(items))
+        }.store(in: &cancellables)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -41,7 +54,7 @@ class AdditionalFeedConfirmViewController: UIViewController, ParentViewControlle
     }
 
     private func setupFeedListView() {
-        let feedListView = FeedListViewController(output: receivedFeedListOutput(output:))
+        feedListView = FeedListViewController(output: receivedFeedListOutput(output:))
         addViewController(feedListView, to: containerView)
         NSLayoutConstraint.activate([
             feedListView.view.topAnchor.constraint(equalTo: containerView.topAnchor),
@@ -49,8 +62,6 @@ class AdditionalFeedConfirmViewController: UIViewController, ParentViewControlle
             feedListView.view.leadingAnchor.constraint(equalTo: containerView.leadingAnchor),
             feedListView.view.trailingAnchor.constraint(equalTo: containerView.trailingAnchor),
         ])
-        
-        feedListView.input(.newFeeds(feedItems))
     }
 
     private func receivedFeedListOutput(output: FeedListViewController.Output) {

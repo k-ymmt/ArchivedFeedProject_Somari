@@ -52,10 +52,23 @@ class FeedListViewController: UIViewController {
     func input(_ value: Input) {
         switch value {
         case .newFeeds(let feeds):
-            self.feeds = feeds
+            self.feeds = feeds.sorted(by: { compareDate($0.date, r: $1.date) })
             feedListTableView.reloadData()
         }
     }
+}
+
+private func compareDate(_ l: Date?, r: Date?) -> Bool {
+    guard l != r else {
+        return true
+    }
+    guard let l = l else {
+        return false
+    }
+    guard let r = r else {
+        return true
+    }
+    return r < l
 }
 
 extension FeedListViewController: UITableViewDelegate {

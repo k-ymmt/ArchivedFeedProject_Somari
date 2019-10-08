@@ -9,13 +9,26 @@
 import Foundation
 
 protocol AdditionalFeedConfirmInteractable {
-    
+    func saveFeedInfo(info: FeedInfo, completion: @escaping (Result<Void, Error>) -> Void)
 }
 
-class AdditionalFeedConfirmInteractor: AdditionalFeedConfirmInteractable {
-    private let feedService: FeedService
+private let feedInfoKey = "feedInfo"
 
-    init(feedService: FeedService) {
-        self.feedService = feedService
+class AdditionalFeedConfirmInteractor: AdditionalFeedConfirmInteractable {
+    private let storageService: StorageService
+
+    init(storageService: StorageService) {
+        self.storageService = storageService
+    }
+    
+    func saveFeedInfo(info: FeedInfo, completion: @escaping (Result<Void, Error>) -> Void) {
+        storageService.add(key: feedInfoKey, info) { (result) in
+            switch result {
+            case .success:
+                completion(.success(()))
+            case .failure(let error):
+                completion(.failure(error))
+            }
+        }
     }
 }

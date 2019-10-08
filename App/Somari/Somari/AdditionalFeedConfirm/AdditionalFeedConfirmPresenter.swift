@@ -9,19 +9,41 @@
 import Foundation
 
 protocol AdditionalFeedConfirmPresentable {
+    var feedItems: PropertyPublisher<[FeedItem]> { get }
+
+    func saveFeedInfo()
     func showWebPage(linkString: String)
 }
 
 class AdditionalFeedConfirmPresenter: AdditionalFeedConfirmPresentable {
-    let router: AdditionalFeedConfirmRoutable
-    let interactor: AdditionalFeedConfirmInteractable
+    private let router: AdditionalFeedConfirmRoutable
+    private let interactor: AdditionalFeedConfirmInteractable
+    
+    private let url: URL
+    
+    @PropertyPublished var feedItems: PropertyPublisher<[FeedItem]>
 
     init(
+        url: URL,
+        feedItems: [FeedItem],
         router: AdditionalFeedConfirmRoutable,
         interactor: AdditionalFeedConfirmInteractable
     ) {
+        self.url = url
+        self._feedItems = PropertyPublished(defaultValue: feedItems)
         self.router = router
         self.interactor = interactor
+    }
+    
+    func saveFeedInfo() {
+        interactor.saveFeedInfo(info: FeedInfo(url: url.absoluteString, title: "")) { [weak self] (result) in
+            switch result {
+            case .success:
+                self?.router.popToRoot()
+            case .failure(let error):
+                logger.debug("\(error)")
+            }
+        }
     }
     
     func showWebPage(linkString: String) {

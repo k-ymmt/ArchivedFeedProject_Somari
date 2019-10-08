@@ -11,17 +11,18 @@ import UIKit
 import SafariServices
 
 protocol AdditionalFeedConfirmRoutable {
+    func popToRoot()
     func showSafariViewController(url: URL)
 }
 
 class AdditionalFeedConfirmRouter: AdditionalFeedConfirmRoutable {
     private weak var viewController: AdditionalFeedConfirmViewController!
 
-    static func assembleModules(feedItems: [FeedItem]) -> AdditionalFeedConfirmViewController {
+    static func assembleModules(url: URL, feedItems: [FeedItem]) -> AdditionalFeedConfirmViewController {
         let router = AdditionalFeedConfirmRouter()
-        let interactor = AdditionalFeedConfirmInteractor(feedService: FeedKitService())
-        let presenter = AdditionalFeedConfirmPresenter(router: router, interactor: interactor)
-        let viewController = AdditionalFeedConfirmViewController(feedItems: feedItems, presenter: presenter)
+        let interactor = AdditionalFeedConfirmInteractor(storageService: FirebaseStorageService())
+        let presenter = AdditionalFeedConfirmPresenter(url: url, feedItems: feedItems, router: router, interactor: interactor)
+        let viewController = AdditionalFeedConfirmViewController(presenter: presenter)
         router.viewController = viewController
         
         return viewController
@@ -30,5 +31,9 @@ class AdditionalFeedConfirmRouter: AdditionalFeedConfirmRoutable {
     func showSafariViewController(url: URL) {
         let sfvc = SFSafariViewController(url: url)
         viewController.present(sfvc, animated: true)
+    }
+    
+    func popToRoot() {
+        viewController.navigationController?.popViewController(animated: true)
     }
 }
