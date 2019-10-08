@@ -115,3 +115,4 @@ Pods/
 
 .DS_Store
 /vendor/bundle
+GoogleService-Info.plist
