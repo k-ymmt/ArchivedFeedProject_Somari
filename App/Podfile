@@ -1,0 +1,25 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+workspace 'Somari.xcworkspace'
+project 'Somari/Somari.xcodeproj'
+
+target 'Somari' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for Somari
+  pod 'Firebase/Analytics'
+  pod 'Firebase/Auth'
+  pod 'Firebase/Firestore'
+
+  target 'SomariTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'SomariUITests' do
+    # Pods for testing
+  end
+
+end
