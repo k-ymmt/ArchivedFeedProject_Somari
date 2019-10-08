@@ -43,4 +43,8 @@ struct MainTabRouter: MainTabRoutable {
     func navigateFeeds() {
         self.tabController?.selectedIndex = 0
     }
+    
+    func showLoginPage() {
+        
+    }
 }
