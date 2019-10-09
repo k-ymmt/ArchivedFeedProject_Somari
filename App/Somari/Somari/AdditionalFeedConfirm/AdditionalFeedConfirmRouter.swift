@@ -37,6 +37,6 @@ class AdditionalFeedConfirmRouter: AdditionalFeedConfirmRoutable {
     }
     
     func popToRoot() {
-        viewController.navigationController?.popViewController(animated: true)
+        viewController.navigationController?.popToRootViewController(animated: true)
     }
 }
