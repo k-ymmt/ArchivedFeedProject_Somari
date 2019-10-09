@@ -14,6 +14,13 @@ protocol StorageService {
     func get<Value: Decodable>(key: String, completion: @escaping (Result<[Value], Error>) -> Void)
 }
 
+extension UserSettingsFeedData {
+    static func key(uid: String) -> String {
+        String(format: "users/%@/feeds", uid)
+        
+    }
+}
+
 class FirebaseStorageService: StorageService {
     private let db: Firestore = Firestore.firestore()
     func add<Value: Encodable>(key: String, _ value: Value, completion: @escaping (Result<Value, Error>) -> Void) {
@@ -21,7 +28,7 @@ class FirebaseStorageService: StorageService {
             fatalError("FirebaseStorageService.get required protocol Mappable to value.")
         }
         
-        db.collection(key).addDocument(data: mappable.toMap()) { error in
+        db.collection(key).addDocument(data: mappable.toMap() as [String : Any]) { error in
             if let error = error {
                 completion(.failure(error))
             }
@@ -106,11 +113,18 @@ class FirebaseDocumentDataDecoder {
         }
         
         func decode<T>(_ type: T.Type, forKey key: Key) throws -> T where T : Decodable {
-            guard let value = decoder.data[key.stringValue] as? T else {
-                throw DecodingError.typeMismatch(type, DecodingError.Context(codingPath: codingPath, debugDescription: "type mismatch"))
+            guard let value = decoder.data[key.stringValue] else {
+                throw DecodingError.keyNotFound(key, DecodingError.Context(codingPath: codingPath, debugDescription: "key not found"))
             }
             
-            return value
+            if let value = value as? [String: Any], let type = type as? Mappable.Type, let map = type.from(value) as? T {
+                return map
+            }
+            if let value = value as? T {
+                return value
+            }
+            
+            throw DecodingError.typeMismatch(type, DecodingError.Context(codingPath: codingPath, debugDescription: "type mismatch"))
         }
 
         func nestedContainer<NestedKey>(keyedBy type: NestedKey.Type, forKey key: Key) throws -> KeyedDecodingContainer<NestedKey> {

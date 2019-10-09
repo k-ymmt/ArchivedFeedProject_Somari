@@ -68,7 +68,7 @@
 		02BB0AD7234A095B0035FA96 /* LauchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BB0AD6234A095B0035FA96 /* LauchPresenter.swift */; };
 		02BB0AD9234A09860035FA96 /* LaunchInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BB0AD8234A09860035FA96 /* LaunchInteractor.swift */; };
 		02BB0ADB234A09AD0035FA96 /* LaunchRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BB0ADA234A09AD0035FA96 /* LaunchRouter.swift */; };
-		02BB0ADF234B776E0035FA96 /* FeedInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BB0ADE234B776E0035FA96 /* FeedInfo.swift */; };
+		02BB0ADF234B776E0035FA96 /* UserSettingsFeedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BB0ADE234B776E0035FA96 /* UserSettingsFeedData.swift */; };
 		02BB0AE1234B7BAF0035FA96 /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BB0AE0234B7BAF0035FA96 /* StorageService.swift */; };
 		02F286012348B2F1004E308A /* FeedsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02F286002348B2F1004E308A /* FeedsViewController.xib */; };
 		02F286042348B352004E308A /* MainTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F286032348B352004E308A /* MainTabViewController.swift */; };
@@ -161,7 +161,7 @@
 		02BB0AD6234A095B0035FA96 /* LauchPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LauchPresenter.swift; sourceTree = "<group>"; };
 		02BB0AD8234A09860035FA96 /* LaunchInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchInteractor.swift; sourceTree = "<group>"; };
 		02BB0ADA234A09AD0035FA96 /* LaunchRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchRouter.swift; sourceTree = "<group>"; };
-		02BB0ADE234B776E0035FA96 /* FeedInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedInfo.swift; sourceTree = "<group>"; };
+		02BB0ADE234B776E0035FA96 /* UserSettingsFeedData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingsFeedData.swift; sourceTree = "<group>"; };
 		02BB0AE0234B7BAF0035FA96 /* StorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
 		02F286002348B2F1004E308A /* FeedsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FeedsViewController.xib; sourceTree = "<group>"; };
 		02F286032348B352004E308A /* MainTabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabViewController.swift; sourceTree = "<group>"; };
@@ -401,7 +401,7 @@
 				023ECF49233FCF3B009F6DD6 /* AtomFeed.swift */,
 				023ECF4B233FCF5E009F6DD6 /* Feed.swift */,
 				023ECF4D233FD171009F6DD6 /* RSSFeed.swift */,
-				02BB0ADE234B776E0035FA96 /* FeedInfo.swift */,
+				02BB0ADE234B776E0035FA96 /* UserSettingsFeedData.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -808,7 +808,7 @@
 				023ECF47233F624D009F6DD6 /* FeedService.swift in Sources */,
 				02BB0AE1234B7BAF0035FA96 /* StorageService.swift in Sources */,
 				020A5B47234081F5003692A6 /* AdditionalFeedPresenter.swift in Sources */,
-				02BB0ADF234B776E0035FA96 /* FeedInfo.swift in Sources */,
+				02BB0ADF234B776E0035FA96 /* UserSettingsFeedData.swift in Sources */,
 				023ECF2E233F0D69009F6DD6 /* SFSymbolString.swift in Sources */,
 				020A5B4223407327003692A6 /* AdditionalFeedViewController.swift in Sources */,
 			);

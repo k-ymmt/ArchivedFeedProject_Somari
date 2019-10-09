@@ -9,6 +9,6 @@
 import Foundation
 
 protocol Mappable: Codable {
-    static func from(_ map: [String: Any]) -> Self
+    static func from(_ map: [String: Any]) -> Self?
     func toMap() -> [String: Any]
 }
