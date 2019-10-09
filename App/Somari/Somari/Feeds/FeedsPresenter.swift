@@ -54,7 +54,7 @@ class FeedsPresenter: FeedsPresentable {
         router.showSafariViewController(url: url)
     }
     
-    private func receivedUserSettings(result: Result<[FeedInfo], Error>) {
+    private func receivedUserSettings(result: Result<[UserSettingsFeedData], Error>) {
         switch result {
         case .success(let feedInfoList):
             for info in feedInfoList {
@@ -62,7 +62,6 @@ class FeedsPresenter: FeedsPresentable {
                     logger.debug("invalid url: \(info.url)")
                     return
                 }
-                
                 getFeeds(url: url)
             }
         case .failure(let error):

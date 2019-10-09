@@ -15,8 +15,7 @@ protocol LoginRoutable {
 class LoginRouter: LoginRoutable {
     static func assembleModules() -> LoginViewController {
         let router = LoginRouter()
-        let keychainService = KeychainAccessService()
-        let interactor = LoginInteractor(loginService: FirebaseLoginService(keychainService: keychainService))
+        let interactor = LoginInteractor(loginService: FirebaseLoginService())
         let presenter = LoginPresenter(interactor: interactor, router: router)
         let viewController = LoginViewController(presenter: presenter)
         router.viewController = viewController

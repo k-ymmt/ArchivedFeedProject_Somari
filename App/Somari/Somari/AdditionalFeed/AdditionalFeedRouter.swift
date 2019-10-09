@@ -11,7 +11,7 @@ import UIKit
 
 protocol AdditionalFeedRoutable {
     func dismiss()
-    func navigateToAdditionalFeedConfirm(url: URL, items: [FeedItem])
+    func navigateToAdditionalFeedConfirm(url: URL, title: String?, items: [FeedItem])
 }
 
 class AdditionalFeedRouter: AdditionalFeedRoutable {
@@ -30,9 +30,9 @@ class AdditionalFeedRouter: AdditionalFeedRoutable {
         viewController.presentingViewController?.dismiss(animated: true)
     }
     
-    func navigateToAdditionalFeedConfirm(url: URL, items: [FeedItem]) {
+    func navigateToAdditionalFeedConfirm(url: URL, title: String?, items: [FeedItem]) {
         DispatchQueue.main.async {
-            let viewController = AdditionalFeedConfirmRouter.assembleModules(url: url, feedItems: items)
+            let viewController = AdditionalFeedConfirmRouter.assembleModules(url: url, title: title, items: items)
             self.viewController.navigationController?.pushViewController(viewController, animated: true)
         }
     }

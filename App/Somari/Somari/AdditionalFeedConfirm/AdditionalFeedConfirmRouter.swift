@@ -18,10 +18,13 @@ protocol AdditionalFeedConfirmRoutable {
 class AdditionalFeedConfirmRouter: AdditionalFeedConfirmRoutable {
     private weak var viewController: AdditionalFeedConfirmViewController!
 
-    static func assembleModules(url: URL, feedItems: [FeedItem]) -> AdditionalFeedConfirmViewController {
+    static func assembleModules(url: URL, title: String?, items: [FeedItem]) -> AdditionalFeedConfirmViewController {
         let router = AdditionalFeedConfirmRouter()
-        let interactor = AdditionalFeedConfirmInteractor(storageService: FirebaseStorageService())
-        let presenter = AdditionalFeedConfirmPresenter(url: url, feedItems: feedItems, router: router, interactor: interactor)
+        let storageService = FirebaseStorageService()
+        let loginService = FirebaseLoginService()
+        let interactor = AdditionalFeedConfirmInteractor(storageService: storageService, loginService: loginService)
+        let info = AdditionalFeedConfirmPresenter.FeedInfo(url: url, title: title, items: items)
+        let presenter = AdditionalFeedConfirmPresenter(info: info, router: router, interactor: interactor)
         let viewController = AdditionalFeedConfirmViewController(presenter: presenter)
         router.viewController = viewController
         

@@ -17,8 +17,7 @@ protocol LaunchRoutable {
 class LaunchRouter: LaunchRoutable {
     static func assembleModules() -> UINavigationController {
         let router = LaunchRouter()
-        let keychainService = KeychainAccessService()
-        let interactor = LaunchInteractor(loginService: FirebaseLoginService(keychainService: keychainService))
+        let interactor = LaunchInteractor(loginService: FirebaseLoginService())
         let presenter = LaunchPresenter(interactor: interactor, router: router)
         let viewController = LaunchViewController(presenter: presenter)
         

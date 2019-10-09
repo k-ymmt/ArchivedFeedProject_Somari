@@ -9,20 +9,24 @@
 import Foundation
 
 protocol AdditionalFeedConfirmInteractable {
-    func saveFeedInfo(info: FeedInfo, completion: @escaping (Result<Void, Error>) -> Void)
+    func saveFeedInfo(info: UserSettingsFeedData, completion: @escaping (Result<Void, Error>) -> Void)
 }
-
-private let feedInfoKey = "feedInfo"
 
 class AdditionalFeedConfirmInteractor: AdditionalFeedConfirmInteractable {
     private let storageService: StorageService
+    private let loginService: LoginService
 
-    init(storageService: StorageService) {
+    init(storageService: StorageService, loginService: LoginService) {
         self.storageService = storageService
+        self.loginService = loginService
     }
     
-    func saveFeedInfo(info: FeedInfo, completion: @escaping (Result<Void, Error>) -> Void) {
-        storageService.add(key: feedInfoKey, info) { (result) in
+    func saveFeedInfo(info: UserSettingsFeedData, completion: @escaping (Result<Void, Error>) -> Void) {
+        guard let uid = loginService.uid() else {
+            completion(.failure(LoginError.notLogin))
+            return
+        }
+        storageService.add(key: UserSettingsFeedData.key(uid: uid), info) { (result) in
             switch result {
             case .success:
                 completion(.success(()))

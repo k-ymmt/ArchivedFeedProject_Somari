@@ -16,27 +16,31 @@ protocol AdditionalFeedConfirmPresentable {
 }
 
 class AdditionalFeedConfirmPresenter: AdditionalFeedConfirmPresentable {
+    struct FeedInfo {
+        let url: URL
+        let title: String?
+        let items: [FeedItem]
+    }
     private let router: AdditionalFeedConfirmRoutable
     private let interactor: AdditionalFeedConfirmInteractable
     
-    private let url: URL
+    private let info: FeedInfo
     
     @PropertyPublished var feedItems: PropertyPublisher<[FeedItem]>
 
     init(
-        url: URL,
-        feedItems: [FeedItem],
+        info: FeedInfo,
         router: AdditionalFeedConfirmRoutable,
         interactor: AdditionalFeedConfirmInteractable
     ) {
-        self.url = url
-        self._feedItems = PropertyPublished(defaultValue: feedItems)
+        self.info = info
+        self._feedItems = PropertyPublished(defaultValue: info.items)
         self.router = router
         self.interactor = interactor
     }
     
     func saveFeedInfo() {
-        interactor.saveFeedInfo(info: FeedInfo(url: url.absoluteString, title: "")) { [weak self] (result) in
+        interactor.saveFeedInfo(info: UserSettingsFeedData(group: "/", url: info.url.absoluteString, title: info.title)) { [weak self] (result) in
             switch result {
             case .success:
                 self?.router.popToRoot()

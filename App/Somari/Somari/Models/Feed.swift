@@ -11,4 +11,13 @@ import Foundation
 enum Feed {
     case atom(AtomFeed)
     case rss(RSSFeed)
+    
+    var title: String? {
+        switch self {
+        case .atom(let feed):
+            return feed.title
+        case .rss(let feed):
+            return feed.channel?.title
+        }
+    }
 }

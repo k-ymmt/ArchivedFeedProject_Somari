@@ -22,7 +22,8 @@ class FeedsRouter: FeedsRoutable {
         let router = FeedsRouter()
         let feedsService = FeedKitService()
         let storageService = FirebaseStorageService()
-        let interactor = FeedsInteractor(feedService: feedsService, storageService: storageService)
+        let loginService = FirebaseLoginService()
+        let interactor = FeedsInteractor(feedService: feedsService, storageService: storageService, loginService: loginService)
         let presenter = FeedsPresenter(router: router, interactor: interactor)
         let viewController = FeedsViewController(presenter: presenter)
         router.viewController = viewController

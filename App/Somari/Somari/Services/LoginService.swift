@@ -14,11 +14,13 @@ protocol User {
 }
 
 enum LoginError: Error {
+    case notLogin
     case loginFailed(Error)
     case unknown
 }
 
 protocol LoginService {
+    func uid() -> String?
     func loginAnonymously(completion: @escaping (Result<User, LoginError>) -> Void)
     func listenLoginState() -> AnyPublisher<User?, LoginError>
 }
@@ -44,11 +46,12 @@ extension LoginError {
     }
 }
 
-class FirebaseLoginService: LoginService {
-    private let keychainService: KeychainService
+class FirebaseLoginService: LoginService {    
+    init() {
+    }
     
-    init(keychainService: KeychainService) {
-        self.keychainService = keychainService
+    func uid() -> String? {
+        Auth.auth().currentUser?.uid
     }
     
     func loginAnonymously(completion: @escaping (Result<User, LoginError>) -> Void) {
