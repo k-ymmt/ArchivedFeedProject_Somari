@@ -46,6 +46,14 @@ class AdditionalFeedViewController: UIViewController {
             .sink { [weak self] _ in
                 self?.getFeed()
         }.store(in: &cancellables)
+        
+        presenter.getFeedSuccess
+            .filter { $0 }
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] _ in
+                self?.urlTextField.text = ""
+        }.store(in: &cancellables)
+        
         urlTextField.delegate = self
     }
     

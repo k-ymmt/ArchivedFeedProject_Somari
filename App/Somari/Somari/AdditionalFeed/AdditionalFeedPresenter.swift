@@ -15,6 +15,8 @@ enum AdditionalFeedError {
 }
 
 protocol AdditionalFeedPresentable {
+    var getFeedSuccess: EventPublisher<Bool> { get }
+
     func getFeed(urlString: String)
     func dismiss()
 }
@@ -27,6 +29,9 @@ class AdditionalFeedPresenter: AdditionalFeedPresentable {
     
     @EventPublished
     var errorPublisher: EventPublisher<AdditionalFeedError>
+    
+    @EventPublished
+    var getFeedSuccess: EventPublisher<Bool>
     
     init(
         router: AdditionalFeedRoutable,
@@ -45,6 +50,7 @@ class AdditionalFeedPresenter: AdditionalFeedPresentable {
             switch result {
             case .success(let feed):
                 self?.router.navigateToAdditionalFeedConfirm(url: url, title: feed.title, items: feed.feedItems())
+                self?._getFeedSuccess.send(true)
             case .failure(let error):
                 logger.error("\(error.localizedDescription)")
                 break
