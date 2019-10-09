@@ -30,8 +30,6 @@ class FeedsViewController: UIViewController, ParentViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationItem.setRightBarButtonItems([UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addButtonTapped))], animated: false)
-        
         let feedListViewController = FeedListViewController(output: receivedFeedListOutput(value:))
         addViewController(feedListViewController)
         NSLayoutConstraint.activate([
@@ -42,18 +40,12 @@ class FeedsViewController: UIViewController, ParentViewController {
         ])
 
         self.feedListViewController = feedListViewController
-        
-        
-        
+
         presenter.feeds
             .receive(on: DispatchQueue.main)
             .sink { [weak self] items in
                 self?.feedListViewController.input(.newFeeds(items))
         }.store(in: &cancels)
-    }
-    
-    @objc func addButtonTapped() {
-        presenter.navigateToAdditionalFeed()
     }
     
     private func receivedFeedListOutput(value: FeedListViewController.Output) {
