@@ -27,7 +27,7 @@ class FeedsRouter: FeedsRoutable {
         let viewController = FeedsViewController(presenter: presenter)
         router.viewController = viewController
         
-        return UINavigationController(rootViewController: router.viewController)
+        return router.viewController
     }
     
     func navigateAdditionalFeedView() {

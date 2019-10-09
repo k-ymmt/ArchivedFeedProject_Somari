@@ -37,7 +37,10 @@ struct MainTabRouter: MainTabRoutable {
             selectedImage: UIImage(symbol: .plusSquare, withConfiguration: .init(font: font))
         )
         
-        self.tabController?.setViewControllers([feedsViewController, additionalFeedViewController], animated: false)
+        self.tabController?.setViewControllers([
+            UINavigationController(rootViewController: feedsViewController),
+            UINavigationController(rootViewController: additionalFeedViewController)
+        ], animated: false)
     }
     
     func navigateFeeds() {

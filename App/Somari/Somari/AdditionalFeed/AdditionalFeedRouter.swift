@@ -23,7 +23,7 @@ class AdditionalFeedRouter: AdditionalFeedRoutable {
         let viewController = AdditionalFeedViewController(presenter: presenter)
         router.viewController = viewController
         
-        return UINavigationController(rootViewController: router.viewController)
+        return router.viewController
     }
     
     func dismiss() {
