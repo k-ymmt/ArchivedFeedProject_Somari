@@ -12,6 +12,7 @@ import UIKit
 struct SFSymbolName {
     static let search = SFSymbolName(string: "magnifyingglass.circle")
     static let list = SFSymbolName(string: "list.dash")
+    static let plusSquare = SFSymbolName(string: "plus.square.on.square")
     
     
     let string: String

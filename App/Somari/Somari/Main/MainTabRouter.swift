@@ -33,8 +33,8 @@ struct MainTabRouter: MainTabRoutable {
         let additionalFeedViewController = AdditionalFeedRouter.assembleModules()
         additionalFeedViewController.tabBarItem = UITabBarItem(
             title: nil,
-            image: UIImage(symbol: .search, withConfiguration: .init(font: font)),
-            selectedImage: UIImage(symbol: .search, withConfiguration: .init(font: font))
+            image: UIImage(symbol: .plusSquare, withConfiguration: .init(font: font)),
+            selectedImage: UIImage(symbol: .plusSquare, withConfiguration: .init(font: font))
         )
         
         self.tabController?.setViewControllers([feedsViewController, additionalFeedViewController], animated: false)
