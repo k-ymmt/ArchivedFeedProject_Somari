@@ -9,23 +9,9 @@
 import Foundation
 import FirebaseAuth
 import Combine
+import SomariKit
 
-protocol User {
-}
-
-enum LoginError: Error {
-    case notLogin
-    case loginFailed(Error)
-    case unknown
-}
-
-protocol LoginService {
-    func uid() -> String?
-    func loginAnonymously(completion: @escaping (Result<User, LoginError>) -> Void)
-    func listenLoginState() -> AnyPublisher<User?, LoginError>
-}
-
-private struct FirebaseUser: User {
+private struct FirebaseUser: SomariKit.User {
     private let user: FirebaseAuth.User
     
     init(user: FirebaseAuth.User) {
@@ -54,7 +40,7 @@ class FirebaseLoginService: LoginService {
         Auth.auth().currentUser?.uid
     }
     
-    func loginAnonymously(completion: @escaping (Result<User, LoginError>) -> Void) {
+    func loginAnonymously(completion: @escaping (Result<SomariKit.User, LoginError>) -> Void) {
         Auth.auth().signInAnonymously { (user, error) in
             if let error = error {
                 guard let loginError = LoginError(with: error as NSError) else {
@@ -74,8 +60,8 @@ class FirebaseLoginService: LoginService {
         }
     }
     
-    func listenLoginState() -> AnyPublisher<User?, LoginError> {
-        let subject = PassthroughSubject<User?, LoginError>()
+    func listenLoginState() -> AnyPublisher<SomariKit.User?, LoginError> {
+        let subject = PassthroughSubject<SomariKit.User?, LoginError>()
         
         let handle = Auth.auth().addStateDidChangeListener { (auth, user) in
             guard let user = user else {

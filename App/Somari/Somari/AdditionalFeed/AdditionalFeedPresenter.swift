@@ -8,6 +8,7 @@
 
 import Foundation
 import Combine
+import SomariKit
 
 enum AdditionalFeedError {
     case invalidURL

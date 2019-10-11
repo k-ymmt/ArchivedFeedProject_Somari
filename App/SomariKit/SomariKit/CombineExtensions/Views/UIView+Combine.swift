@@ -1,8 +1,8 @@
 //
 //  UIView+Combine.swift
-//  Somari
+//  SomariKit
 //
-//  Created by Kazuki Yamamoto on 2019/09/29.
+//  Created by Kazuki Yamamoto on 2019/10/11.
 //  Copyright © 2019 Kazuki Yamamoto. All rights reserved.
 //
 
@@ -11,24 +11,28 @@ import UIKit
 import Combine
 
 extension UIView {
-    enum GestureEvent {
+    public enum GestureEvent {
         case tap
     }
     
-    struct GestureOptions: OptionSet {
-        let rawValue: Int
+    public struct GestureOptions: OptionSet {
+        public let rawValue: Int
         
-        static let cancelsTouchesInView = GestureOptions(rawValue: 1 << 0)
+        public static let cancelsTouchesInView = GestureOptions(rawValue: 1 << 0)
+        
+        public init(rawValue: Int) {
+            self.rawValue = rawValue
+        }
     }
     
-    func gesture(event: GestureEvent, options: UIView.GestureOptions? = nil) -> AnyPublisher<UIView, Never> {
+    public func gesture(event: GestureEvent, options: UIView.GestureOptions? = nil) -> AnyPublisher<UIView, Never> {
         let publisher = GesturePublisher(view: self, event: event, options: options)
         
         return publisher.eraseToAnyPublisher()
     }
 }
 
-class GestureSubscription<View: UIView>: Subscription {
+private class GestureSubscription<View: UIView>: Subscription {
     private let action: (View) -> Void
     private let view: View
     private var gesture: UIGestureRecognizer!
@@ -63,7 +67,7 @@ class GestureSubscription<View: UIView>: Subscription {
     }
 }
 
-class GesturePublisher<View: UIView>: Publisher {
+private class GesturePublisher<View: UIView>: Publisher {
     typealias Output = View
     typealias Failure = Never
     

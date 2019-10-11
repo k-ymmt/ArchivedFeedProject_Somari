@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		020A5B32233FFFDF003692A6 /* NibLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020A5B31233FFFDF003692A6 /* NibLoadable.swift */; };
 		020A5B3A234021F1003692A6 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 020A5B39234021F1003692A6 /* Colors.xcassets */; };
 		020A5B3C234025DC003692A6 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020A5B3B234025DC003692A6 /* Colors.swift */; };
 		020A5B4223407327003692A6 /* AdditionalFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020A5B4023407327003692A6 /* AdditionalFeedViewController.swift */; };
@@ -16,13 +15,9 @@
 		020A5B47234081F5003692A6 /* AdditionalFeedPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020A5B46234081F5003692A6 /* AdditionalFeedPresenter.swift */; };
 		020A5B4E2340891F003692A6 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020A5B4D2340891F003692A6 /* Strings.swift */; };
 		020A5B5023408C96003692A6 /* Strings.strings in Resources */ = {isa = PBXBuildFile; fileRef = 020A5B4F23408C96003692A6 /* Strings.strings */; };
-		020A5B5223409837003692A6 /* Set+AnyCancellable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020A5B5123409837003692A6 /* Set+AnyCancellable.swift */; };
-		020A5B542340A2DD003692A6 /* UIView+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020A5B532340A2DD003692A6 /* UIView+Combine.swift */; };
 		020A5B562340B82E003692A6 /* AdditionalFeedInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020A5B552340B82E003692A6 /* AdditionalFeedInteractor.swift */; };
 		020A5B5D2340CD91003692A6 /* FeedListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020A5B5C2340CD91003692A6 /* FeedListViewController.swift */; };
 		020A5B5F2340CD9D003692A6 /* FeedListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 020A5B5E2340CD9D003692A6 /* FeedListViewController.xib */; };
-		020A5B612340D341003692A6 /* FeedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020A5B602340D341003692A6 /* FeedItem.swift */; };
-		020A5B632340E41A003692A6 /* ViewControllerProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020A5B622340E41A003692A6 /* ViewControllerProtocols.swift */; };
 		020A5B682340F3E9003692A6 /* AdditionalFeedConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020A5B662340F3E9003692A6 /* AdditionalFeedConfirmViewController.swift */; };
 		020A5B692340F3E9003692A6 /* AdditionalFeedConfirmViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 020A5B672340F3E9003692A6 /* AdditionalFeedConfirmViewController.xib */; };
 		020A5B6B234226A4003692A6 /* AdditionalFeedConfirmRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020A5B6A234226A4003692A6 /* AdditionalFeedConfirmRouter.swift */; };
@@ -44,13 +39,7 @@
 		023ECF41233F5B6C009F6DD6 /* FeedsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023ECF40233F5B6C009F6DD6 /* FeedsInteractor.swift */; };
 		023ECF45233F5D7F009F6DD6 /* FeedsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023ECF44233F5D7F009F6DD6 /* FeedsPresenter.swift */; };
 		023ECF47233F624D009F6DD6 /* FeedService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023ECF46233F624D009F6DD6 /* FeedService.swift */; };
-		023ECF4A233FCF3B009F6DD6 /* AtomFeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023ECF49233FCF3B009F6DD6 /* AtomFeed.swift */; };
-		023ECF4C233FCF5E009F6DD6 /* Feed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023ECF4B233FCF5E009F6DD6 /* Feed.swift */; };
-		023ECF4E233FD171009F6DD6 /* RSSFeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023ECF4D233FD171009F6DD6 /* RSSFeed.swift */; };
-		023ECF50233FD69A009F6DD6 /* ReactiveProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023ECF4F233FD69A009F6DD6 /* ReactiveProperty.swift */; };
 		023ECF52233FE901009F6DD6 /* MainTabRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023ECF51233FE901009F6DD6 /* MainTabRouter.swift */; };
-		026534B223480F0000F753DA /* Cancellable+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026534B123480F0000F753DA /* Cancellable+Combine.swift */; };
-		026534B42348295F00F753DA /* UIControl+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026534B32348295F00F753DA /* UIControl+Combine.swift */; };
 		026534B923487E1600F753DA /* Logging in Frameworks */ = {isa = PBXBuildFile; productRef = 026534B823487E1600F753DA /* Logging */; };
 		027AB20B234C6BA60052C204 /* Mappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027AB20A234C6BA60052C204 /* Mappable.swift */; };
 		027AB20D234CEB350052C204 /* CustomDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027AB20C234CEB350052C204 /* CustomDateFormatter.swift */; };
@@ -68,8 +57,9 @@
 		02BB0AD7234A095B0035FA96 /* LauchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BB0AD6234A095B0035FA96 /* LauchPresenter.swift */; };
 		02BB0AD9234A09860035FA96 /* LaunchInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BB0AD8234A09860035FA96 /* LaunchInteractor.swift */; };
 		02BB0ADB234A09AD0035FA96 /* LaunchRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BB0ADA234A09AD0035FA96 /* LaunchRouter.swift */; };
-		02BB0ADF234B776E0035FA96 /* UserSettingsFeedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BB0ADE234B776E0035FA96 /* UserSettingsFeedData.swift */; };
 		02BB0AE1234B7BAF0035FA96 /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BB0AE0234B7BAF0035FA96 /* StorageService.swift */; };
+		02EAB8A52350DEC300130DB2 /* SomariKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02EAB8A42350DEC300130DB2 /* SomariKit.framework */; };
+		02EAB8A62350DEC300130DB2 /* SomariKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 02EAB8A42350DEC300130DB2 /* SomariKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		02F286012348B2F1004E308A /* FeedsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02F286002348B2F1004E308A /* FeedsViewController.xib */; };
 		02F286042348B352004E308A /* MainTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F286032348B352004E308A /* MainTabViewController.swift */; };
 		0F55231D694DFF3114FA636B /* Pods_SomariTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2915096F7DF1909C9067E793 /* Pods_SomariTests.framework */; };
@@ -94,8 +84,21 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		02EAB8A72350DEC300130DB2 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				02EAB8A62350DEC300130DB2 /* SomariKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		020A5B31233FFFDF003692A6 /* NibLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLoadable.swift; sourceTree = "<group>"; };
 		020A5B39234021F1003692A6 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		020A5B3B234025DC003692A6 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		020A5B4023407327003692A6 /* AdditionalFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdditionalFeedViewController.swift; sourceTree = "<group>"; };
@@ -104,13 +107,9 @@
 		020A5B46234081F5003692A6 /* AdditionalFeedPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdditionalFeedPresenter.swift; sourceTree = "<group>"; };
 		020A5B4D2340891F003692A6 /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		020A5B4F23408C96003692A6 /* Strings.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Strings.strings; sourceTree = "<group>"; };
-		020A5B5123409837003692A6 /* Set+AnyCancellable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Set+AnyCancellable.swift"; sourceTree = "<group>"; };
-		020A5B532340A2DD003692A6 /* UIView+Combine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Combine.swift"; sourceTree = "<group>"; };
 		020A5B552340B82E003692A6 /* AdditionalFeedInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdditionalFeedInteractor.swift; sourceTree = "<group>"; };
 		020A5B5C2340CD91003692A6 /* FeedListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedListViewController.swift; sourceTree = "<group>"; };
 		020A5B5E2340CD9D003692A6 /* FeedListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedListViewController.xib; sourceTree = "<group>"; };
-		020A5B602340D341003692A6 /* FeedItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedItem.swift; sourceTree = "<group>"; };
-		020A5B622340E41A003692A6 /* ViewControllerProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerProtocols.swift; sourceTree = "<group>"; };
 		020A5B662340F3E9003692A6 /* AdditionalFeedConfirmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdditionalFeedConfirmViewController.swift; sourceTree = "<group>"; };
 		020A5B672340F3E9003692A6 /* AdditionalFeedConfirmViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AdditionalFeedConfirmViewController.xib; sourceTree = "<group>"; };
 		020A5B6A234226A4003692A6 /* AdditionalFeedConfirmRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdditionalFeedConfirmRouter.swift; sourceTree = "<group>"; };
@@ -137,13 +136,7 @@
 		023ECF40233F5B6C009F6DD6 /* FeedsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedsInteractor.swift; sourceTree = "<group>"; };
 		023ECF44233F5D7F009F6DD6 /* FeedsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedsPresenter.swift; sourceTree = "<group>"; };
 		023ECF46233F624D009F6DD6 /* FeedService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedService.swift; sourceTree = "<group>"; };
-		023ECF49233FCF3B009F6DD6 /* AtomFeed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AtomFeed.swift; sourceTree = "<group>"; };
-		023ECF4B233FCF5E009F6DD6 /* Feed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feed.swift; sourceTree = "<group>"; };
-		023ECF4D233FD171009F6DD6 /* RSSFeed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSSFeed.swift; sourceTree = "<group>"; };
-		023ECF4F233FD69A009F6DD6 /* ReactiveProperty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactiveProperty.swift; sourceTree = "<group>"; };
 		023ECF51233FE901009F6DD6 /* MainTabRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabRouter.swift; sourceTree = "<group>"; };
-		026534B123480F0000F753DA /* Cancellable+Combine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Cancellable+Combine.swift"; sourceTree = "<group>"; };
-		026534B32348295F00F753DA /* UIControl+Combine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIControl+Combine.swift"; sourceTree = "<group>"; };
 		027AB20A234C6BA60052C204 /* Mappable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mappable.swift; sourceTree = "<group>"; };
 		027AB20C234CEB350052C204 /* CustomDateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDateFormatter.swift; sourceTree = "<group>"; };
 		02AA063F1D35A276B26D5C60 /* Pods-Somari.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Somari.debug.xcconfig"; path = "Target Support Files/Pods-Somari/Pods-Somari.debug.xcconfig"; sourceTree = "<group>"; };
@@ -161,8 +154,8 @@
 		02BB0AD6234A095B0035FA96 /* LauchPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LauchPresenter.swift; sourceTree = "<group>"; };
 		02BB0AD8234A09860035FA96 /* LaunchInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchInteractor.swift; sourceTree = "<group>"; };
 		02BB0ADA234A09AD0035FA96 /* LaunchRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchRouter.swift; sourceTree = "<group>"; };
-		02BB0ADE234B776E0035FA96 /* UserSettingsFeedData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingsFeedData.swift; sourceTree = "<group>"; };
 		02BB0AE0234B7BAF0035FA96 /* StorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
+		02EAB8A42350DEC300130DB2 /* SomariKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SomariKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		02F286002348B2F1004E308A /* FeedsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FeedsViewController.xib; sourceTree = "<group>"; };
 		02F286032348B352004E308A /* MainTabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabViewController.swift; sourceTree = "<group>"; };
 		2915096F7DF1909C9067E793 /* Pods_SomariTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SomariTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -182,6 +175,7 @@
 			files = (
 				026534B923487E1600F753DA /* Logging in Frameworks */,
 				023ECF24233F0780009F6DD6 /* FeedKit in Frameworks */,
+				02EAB8A52350DEC300130DB2 /* SomariKit.framework in Frameworks */,
 				6C62AE9169F8D5B9697F1A4D /* Pods_Somari.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -293,7 +287,6 @@
 		023ECEF0233BB13D009F6DD6 /* Somari */ = {
 			isa = PBXGroup;
 			children = (
-				023ECF48233FCF2B009F6DD6 /* Models */,
 				02BB0ACF234A08A70035FA96 /* Launch */,
 				02B2B7342348D0D600510E22 /* Login */,
 				023ECF42233F5D01009F6DD6 /* Main */,
@@ -302,7 +295,6 @@
 				020A5B642340F3B5003692A6 /* AdditionalFeedConfirm */,
 				023ECF21233BB8D9009F6DD6 /* Views */,
 				023ECF38233F51BB009F6DD6 /* Services */,
-				026534B023480ECA00F753DA /* CombineExtensions */,
 				027AB209234C6B8B0052C204 /* Extensions */,
 				020A5B3D23406783003692A6 /* Resources */,
 				023ECEF1233BB13D009F6DD6 /* AppDelegate.swift */,
@@ -346,8 +338,6 @@
 			children = (
 				020A5B5B2340CD57003692A6 /* FeedList */,
 				023ECF2D233F0D69009F6DD6 /* SFSymbolString.swift */,
-				020A5B31233FFFDF003692A6 /* NibLoadable.swift */,
-				020A5B622340E41A003692A6 /* ViewControllerProtocols.swift */,
 				027AB20C234CEB350052C204 /* CustomDateFormatter.swift */,
 			);
 			path = Views;
@@ -392,29 +382,6 @@
 				02BB0ACD2349E6690035FA96 /* MainTabInteractor.swift */,
 			);
 			path = Main;
-			sourceTree = "<group>";
-		};
-		023ECF48233FCF2B009F6DD6 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				023ECF49233FCF3B009F6DD6 /* AtomFeed.swift */,
-				023ECF4B233FCF5E009F6DD6 /* Feed.swift */,
-				020A5B602340D341003692A6 /* FeedItem.swift */,
-				023ECF4D233FD171009F6DD6 /* RSSFeed.swift */,
-				02BB0ADE234B776E0035FA96 /* UserSettingsFeedData.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		026534B023480ECA00F753DA /* CombineExtensions */ = {
-			isa = PBXGroup;
-			children = (
-				02F285FE2348B194004E308A /* Views */,
-				023ECF4F233FD69A009F6DD6 /* ReactiveProperty.swift */,
-				020A5B5123409837003692A6 /* Set+AnyCancellable.swift */,
-				026534B123480F0000F753DA /* Cancellable+Combine.swift */,
-			);
-			path = CombineExtensions;
 			sourceTree = "<group>";
 		};
 		027AB209234C6B8B0052C204 /* Extensions */ = {
@@ -465,15 +432,6 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		02F285FE2348B194004E308A /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				020A5B532340A2DD003692A6 /* UIView+Combine.swift */,
-				026534B32348295F00F753DA /* UIControl+Combine.swift */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
 		02F286022348B33D004E308A /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -499,6 +457,7 @@
 		261100F58BFEC59D28774E27 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				02EAB8A42350DEC300130DB2 /* SomariKit.framework */,
 				C6CB363F2F286BF29040BBD6 /* Pods_Somari.framework */,
 				E00AA8A687DC5B73BBE2F879 /* Pods_Somari_SomariUITests.framework */,
 				2915096F7DF1909C9067E793 /* Pods_SomariTests.framework */,
@@ -518,6 +477,7 @@
 				023ECEEB233BB13D009F6DD6 /* Frameworks */,
 				023ECEEC233BB13D009F6DD6 /* Resources */,
 				11493FCAE35957DC21D7DCC3 /* [CP] Embed Pods Frameworks */,
+				02EAB8A72350DEC300130DB2 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -764,39 +724,28 @@
 			buildActionMask = 2147483647;
 			files = (
 				023ECF45233F5D7F009F6DD6 /* FeedsPresenter.swift in Sources */,
-				020A5B32233FFFDF003692A6 /* NibLoadable.swift in Sources */,
 				02BB0AD7234A095B0035FA96 /* LauchPresenter.swift in Sources */,
 				02BB0ACE2349E6690035FA96 /* MainTabInteractor.swift in Sources */,
-				026534B223480F0000F753DA /* Cancellable+Combine.swift in Sources */,
 				020A5B5D2340CD91003692A6 /* FeedListViewController.swift in Sources */,
-				023ECF4C233FCF5E009F6DD6 /* Feed.swift in Sources */,
 				020A5B6F23422958003692A6 /* AdditionalFeedConfirmInteractor.swift in Sources */,
 				023ECF30233F2B01009F6DD6 /* FeedViewCell.swift in Sources */,
 				020A5B6B234226A4003692A6 /* AdditionalFeedConfirmRouter.swift in Sources */,
 				020A5B6D234227BD003692A6 /* AdditionalFeedConfirmPresenter.swift in Sources */,
 				020A5B4523407D33003692A6 /* AdditionalFeedRouter.swift in Sources */,
-				020A5B612340D341003692A6 /* FeedItem.swift in Sources */,
-				026534B42348295F00F753DA /* UIControl+Combine.swift in Sources */,
 				02B2B73B2348D11500510E22 /* LoginPresenter.swift in Sources */,
 				02BB0AD9234A09860035FA96 /* LaunchInteractor.swift in Sources */,
-				023ECF50233FD69A009F6DD6 /* ReactiveProperty.swift in Sources */,
 				02BB0AC72348DFD70035FA96 /* MainTabPresenter.swift in Sources */,
 				02B2B73F2348D12B00510E22 /* LoginRouter.swift in Sources */,
 				023ECF3E233F5A39009F6DD6 /* FeedsRouter.swift in Sources */,
-				023ECF4E233FD171009F6DD6 /* RSSFeed.swift in Sources */,
 				02BB0AD3234A08FD0035FA96 /* LaunchViewController.swift in Sources */,
 				023ECF41233F5B6C009F6DD6 /* FeedsInteractor.swift in Sources */,
-				020A5B5223409837003692A6 /* Set+AnyCancellable.swift in Sources */,
 				027AB20D234CEB350052C204 /* CustomDateFormatter.swift in Sources */,
 				02B2B7312348CEC600510E22 /* LoginService.swift in Sources */,
 				02F286042348B352004E308A /* MainTabViewController.swift in Sources */,
 				023ECEF2233BB13D009F6DD6 /* AppDelegate.swift in Sources */,
 				02BB0ADB234A09AD0035FA96 /* LaunchRouter.swift in Sources */,
-				020A5B542340A2DD003692A6 /* UIView+Combine.swift in Sources */,
 				027AB20B234C6BA60052C204 /* Mappable.swift in Sources */,
-				023ECF4A233FCF3B009F6DD6 /* AtomFeed.swift in Sources */,
 				023ECEF4233BB13D009F6DD6 /* SceneDelegate.swift in Sources */,
-				020A5B632340E41A003692A6 /* ViewControllerProtocols.swift in Sources */,
 				020A5B682340F3E9003692A6 /* AdditionalFeedConfirmViewController.swift in Sources */,
 				020A5B4E2340891F003692A6 /* Strings.swift in Sources */,
 				020A5B3C234025DC003692A6 /* Colors.swift in Sources */,
@@ -808,7 +757,6 @@
 				023ECF47233F624D009F6DD6 /* FeedService.swift in Sources */,
 				02BB0AE1234B7BAF0035FA96 /* StorageService.swift in Sources */,
 				020A5B47234081F5003692A6 /* AdditionalFeedPresenter.swift in Sources */,
-				02BB0ADF234B776E0035FA96 /* UserSettingsFeedData.swift in Sources */,
 				023ECF2E233F0D69009F6DD6 /* SFSymbolString.swift in Sources */,
 				020A5B4223407327003692A6 /* AdditionalFeedViewController.swift in Sources */,
 			);

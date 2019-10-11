@@ -8,6 +8,7 @@
 
 import Foundation
 import Combine
+import SomariKit
 
 protocol LaunchPresentable {
     func tryLogin()

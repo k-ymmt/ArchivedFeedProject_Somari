@@ -8,18 +8,32 @@
 
 import Foundation
 import FirebaseFirestore
-
-protocol StorageService {
-    func add<Value: Encodable>(key: String, _ value: Value, completion: @escaping (Result<Value, Error>) -> Void)
-    func get<Value: Decodable>(key: String, completion: @escaping (Result<[Value], Error>) -> Void)
-}
+import SomariKit
 
 extension UserSettingsFeedData {
     static func key(uid: String) -> String {
         String(format: "users/%@/feeds", uid)
-        
     }
 }
+
+extension UserSettingsFeedData: Mappable {
+    static func from(_ map: [String : Any]) -> UserSettingsFeedData? {
+        return .init(
+            group: map["group"] as! String,
+            url: map["url"] as! String,
+            title: map["title"] as! String?
+        )
+    }
+    
+    func toMap() -> [String : Any] {
+        return [
+            "group": group,
+            "url": url,
+            "title": title as Any
+        ]
+    }
+}
+
 
 class FirebaseStorageService: StorageService {
     private let db: Firestore = Firestore.firestore()

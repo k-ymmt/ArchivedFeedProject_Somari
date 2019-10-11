@@ -1,14 +1,15 @@
 //
 //  ViewControllerProtocols.swift
-//  Somari
+//  SomariKit
 //
-//  Created by Kazuki Yamamoto on 2019/09/29.
+//  Created by Kazuki Yamamoto on 2019/10/11.
 //  Copyright © 2019 Kazuki Yamamoto. All rights reserved.
 //
 
+import Foundation
 import UIKit
 
-protocol ChildViewController: UIViewController {
+public protocol ChildViewController: UIViewController {
     associatedtype Input
     associatedtype Output
     
@@ -16,12 +17,12 @@ protocol ChildViewController: UIViewController {
     func input(_ value: Input)
 }
 
-protocol ParentViewController: UIViewController {
+public protocol ParentViewController: UIViewController {
     func addViewController(_ viewController: UIViewController, to parentView: UIView?)
 }
 
 extension ParentViewController {
-    func addViewController(_ viewController: UIViewController, to parentView: UIView? = nil) {
+    public func addViewController(_ viewController: UIViewController, to parentView: UIView? = nil) {
         guard let parentView: UIView = parentView ?? self.view else {
             return
         }

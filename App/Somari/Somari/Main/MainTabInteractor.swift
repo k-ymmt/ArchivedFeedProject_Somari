@@ -8,6 +8,7 @@
 
 import Foundation
 import Combine
+import SomariKit
 
 protocol MainTabInteractable {
     func startLoginStateListener() -> AnyPublisher<User?, LoginError>

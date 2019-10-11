@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import SomariKit
 
 protocol AdditionalFeedConfirmInteractable {
     func saveFeedInfo(info: UserSettingsFeedData, completion: @escaping (Result<Void, Error>) -> Void)

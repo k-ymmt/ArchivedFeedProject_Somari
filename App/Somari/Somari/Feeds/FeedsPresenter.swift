@@ -8,6 +8,7 @@
 
 import Foundation
 import Combine
+import SomariKit
 
 protocol FeedsPresentable {
     var feeds: PropertyPublisher<[FeedItem]> { get }

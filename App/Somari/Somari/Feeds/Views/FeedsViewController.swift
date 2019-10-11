@@ -8,6 +8,7 @@
 
 import UIKit
 import Combine
+import SomariKit
 
 class FeedsViewController: UIViewController, ParentViewController {
     

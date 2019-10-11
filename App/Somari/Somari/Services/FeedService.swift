@@ -8,68 +8,7 @@
 
 import Foundation
 import FeedKit
-
-protocol Cancellable {
-    func cancel()
-}
-
-struct Canceler: Cancellable {
-    private let action: () -> Void
-    init(action: @escaping () -> Void) {
-        self.action = action
-    }
-    func cancel() {
-        action()
-    }
-}
-
-enum FeedError: Error {
-    case unknown(Error)
-}
-
-protocol FeedService: class {
-    func getFeed(url: URL, completion: @escaping (Swift.Result<Feed, FeedError>) -> Void) -> Cancellable
-}
-
-extension FeedService {
-    func getFeeds(urls: [URL], completion: @escaping (Swift.Result<[Feed], FeedError>) -> Void) -> Cancellable {
-        let dispatchGroup = DispatchGroup()
-        let dispatchQueue = DispatchQueue.global(qos: .default)
-        var feeds: [Feed] = []
-        var cancellables: [Cancellable] = []
-        var error: FeedError?
-        for url in urls {
-            dispatchGroup.enter()
-            dispatchQueue.async(group: dispatchGroup) { [weak self] in
-                guard let self = self else {
-                    return
-                }
-                cancellables.append(self.getFeed(url: url) { (result) in
-                    switch result {
-                    case .success(let feed):
-                        feeds.append(feed)
-                    case .failure(let err):
-                        error = err
-                    }
-                    dispatchGroup.leave()
-                })
-            }
-        }
-        
-        dispatchGroup.notify(queue: .global(qos: .default)) {
-            if let error = error {
-                completion(.failure(error))
-            }
-            completion(.success(feeds))
-        }
-        
-        return Canceler {
-            for cancellable in cancellables {
-                cancellable.cancel()
-            }
-        }
-    }
-}
+import SomariKit
 
 class FeedKitService: FeedService {
     func getFeed(url: URL, completion: @escaping (Swift.Result<Feed, FeedError>) -> Void) -> Cancellable {
@@ -94,50 +33,57 @@ class FeedKitService: FeedService {
     }
 }
 
-extension AtomFeed {
+extension SomariKit.AtomFeed {
     init(feed: FeedKit.AtomFeed) {
-        self.id = feed.id
-        self.authors = feed.authors?.map { Author(author: $0) }
-        self.title = feed.title
-        self.description = feed.subtitle?.value
-        self.updated = feed.updated
-        self.entries = feed.entries?.map { Entry(entry: $0) }
+        self = .init(
+            id: feed.id,
+            title: feed.title,
+            description: feed.subtitle?.value,
+            updated: feed.updated,
+            authors: feed.authors?.map { SomariKit.AtomFeed.Author(author: $0) },
+            entries: feed.entries?.map { SomariKit.AtomFeed.Entry(entry: $0) }
+        )
     }
 }
 
-extension AtomFeed.Author {
+extension SomariKit.AtomFeed.Author {
     init(author: FeedKit.AtomFeedAuthor) {
-        name = author.name
+        self = .init(name: author.name)
     }
     
     init(author: FeedKit.AtomFeedEntryAuthor) {
-        name = author.name
+        self = .init(name: author.name)
     }
 }
 
-extension AtomFeed.Entry {
+extension SomariKit.AtomFeed.Entry {
     init(entry: FeedKit.AtomFeedEntry) {
-        self.authors = entry.authors?.map { AtomFeed.Author(author: $0) }
-        self.content = Content(content: entry.content)
-        self.id = entry.id
-        self.published = entry.published
-        self.title = entry.title
-        self.updated = entry.updated
-        self.links = entry.links?.compactMap { Link(attributes: $0.attributes) }
+        self = .init(
+            id: entry.id,
+            authors: entry.authors?.map { SomariKit.AtomFeed.Author(author: $0) },
+            published: entry.published,
+            updated: entry.updated,
+            links: entry.links?.compactMap { SomariKit.AtomFeed.Entry.Link(attributes: $0.attributes) },
+            title: entry.title,
+            content: SomariKit.AtomFeed.Entry.Content(content: entry.content)
+        )
     }
 }
 
-extension AtomFeed.Entry.Content {
+extension SomariKit.AtomFeed.Entry.Content {
     init?(content: FeedKit.AtomFeedEntryContent?) {
         guard let content = content else {
             return nil
         }
-        self.type = ContentType(attribute: content.attributes)
-        self.value = content.value
+        
+        self = .init(
+            type: SomariKit.AtomFeed.Entry.Content.ContentType(attribute: content.attributes),
+            value: content.value
+        )
     }
 }
 
-extension AtomFeed.Entry.Content.ContentType {
+extension SomariKit.AtomFeed.Entry.Content.ContentType {
     init?(attribute: FeedKit.AtomFeedEntryContent.Attributes?) {
         switch attribute?.type {
         case "html":
@@ -148,17 +94,19 @@ extension AtomFeed.Entry.Content.ContentType {
     }
 }
 
-extension AtomFeed.Entry.Link {
+extension SomariKit.AtomFeed.Entry.Link {
     init?(attributes: FeedKit.AtomFeedEntryLink.Attributes?) {
         guard let attributes = attributes else {
             return nil
         }
-        self.href = attributes.href
-        self.type = LinkType(type: attributes.type)
+        self = .init(
+            type: SomariKit.AtomFeed.Entry.Link.LinkType(type: attributes.type),
+            href: attributes.href
+        )
     }
 }
 
-extension AtomFeed.Entry.Link.LinkType {
+extension SomariKit.AtomFeed.Entry.Link.LinkType {
     init?(type: String?) {
         guard let type = type else {
             return nil
@@ -172,27 +120,33 @@ extension AtomFeed.Entry.Link.LinkType {
     }
 }
 
-extension RSSFeed {
+extension SomariKit.RSSFeed {
     init(feed: FeedKit.RSSFeed) {
-        self.channel = Channel(feed: feed)
-        self.items = feed.items?.map { Item(feed: $0) }
+        self = .init(
+            channel: SomariKit.RSSFeed.Channel(feed: feed),
+            items: feed.items?.map { SomariKit.RSSFeed.Item(feed: $0) }
+        )
     }
 }
 
-extension RSSFeed.Channel {
+extension SomariKit.RSSFeed.Channel {
     init(feed: FeedKit.RSSFeed) {
-        self.description = feed.description
-        self.title = feed.title
-        self.pubDate = feed.pubDate
+        self = .init(
+            title: feed.title,
+            description: feed.description,
+            pubDate: feed.pubDate
+        )
     }
 }
 
-extension RSSFeed.Item {
+extension SomariKit.RSSFeed.Item {
     init(feed: FeedKit.RSSFeedItem) {
-        self.description = feed.description
-        self.guid = feed.guid?.value
-        self.link = feed.link
-        self.pubDate = feed.pubDate
-        self.title = feed.title
+        self = .init(
+            title: feed.title,
+            guid: feed.guid?.value,
+            link: feed.link,
+            description: feed.description,
+            pubDate: feed.pubDate
+        )
     }
 }

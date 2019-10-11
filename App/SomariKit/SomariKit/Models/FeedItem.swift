@@ -1,23 +1,23 @@
 //
 //  FeedItem.swift
-//  Somari
+//  SomariKit
 //
-//  Created by Kazuki Yamamoto on 2019/09/29.
+//  Created by Kazuki Yamamoto on 2019/10/11.
 //  Copyright © 2019 Kazuki Yamamoto. All rights reserved.
 //
 
 import Foundation
 
-struct FeedItem {
-    let title: String?
-    let id: String?
-    let source: String?
-    let link: String?
-    let date: Date?
+public struct FeedItem {
+    public let title: String?
+    public let id: String?
+    public let source: String?
+    public let link: String?
+    public let date: Date?
 }
 
 extension Feed {
-    func feedItems() -> [FeedItem] {
+    public func feedItems() -> [FeedItem] {
         switch self {
         case .atom(let feed):
             return feed.entries?.map { FeedItem(

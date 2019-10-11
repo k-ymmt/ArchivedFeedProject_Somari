@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import SomariKit
 
 protocol AdditionalFeedInteractable {
     func getFeed(url: URL, completion: @escaping (Result<Feed, FeedError>) -> Void) -> Cancellable

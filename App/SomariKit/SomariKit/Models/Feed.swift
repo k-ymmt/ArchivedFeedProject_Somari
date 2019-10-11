@@ -1,18 +1,18 @@
 //
 //  Feed.swift
-//  Somari
+//  SomariKit
 //
-//  Created by Kazuki Yamamoto on 2019/09/29.
+//  Created by Kazuki Yamamoto on 2019/10/11.
 //  Copyright © 2019 Kazuki Yamamoto. All rights reserved.
 //
 
 import Foundation
 
-enum Feed {
+public enum Feed {
     case atom(AtomFeed)
     case rss(RSSFeed)
     
-    var title: String? {
+    public var title: String? {
         switch self {
         case .atom(let feed):
             return feed.title

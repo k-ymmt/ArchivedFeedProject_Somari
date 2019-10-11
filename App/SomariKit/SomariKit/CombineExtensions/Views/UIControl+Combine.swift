@@ -1,8 +1,8 @@
 //
-//  UIButton+Combine.swift
-//  Somari
+//  UIControl+Combine.swift
+//  SomariKit
 //
-//  Created by Kazuki Yamamoto on 2019/10/05.
+//  Created by Kazuki Yamamoto on 2019/10/11.
 //  Copyright © 2019 Kazuki Yamamoto. All rights reserved.
 //
 
@@ -10,14 +10,24 @@ import Foundation
 import UIKit
 import Combine
 
-extension UIControl {
-    func event(event: UIControl.Event) -> AnyPublisher<UIControl, Never> {
+public protocol UIControlEvent: UIControl {
+}
+
+extension UIControlEvent {
+    public func event(event: Self.Event) -> AnyPublisher<Self, Never> {
         let publisher = ControlPublisher(control: self, event: event)
         return publisher.eraseToAnyPublisher()
     }
 }
 
-class ControlSubscription<Control: UIControl>: Subscription {
+extension UIButton: UIControlEvent {
+}
+extension UITextField: UIControlEvent {
+}
+extension UIRefreshControl: UIControlEvent {
+}
+
+private class ControlSubscription<Control: UIControl>: Subscription {
     private let action: (Control) -> Void
     private let control: Control
     private let event: UIControl.Event
@@ -26,7 +36,7 @@ class ControlSubscription<Control: UIControl>: Subscription {
         self.control = control
         self.event = event
         self.action = action
-        
+
         control.addTarget(self, action: #selector(receiveEvent), for: event)
     }
     

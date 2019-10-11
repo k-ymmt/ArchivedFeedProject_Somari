@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import SomariKit
 
 protocol LoginInteractable {
     func loginAnonymosly(completion: @escaping (Result<User, LoginError>) -> Void)
