@@ -244,7 +244,6 @@
 				020A5B5E2340CD9D003692A6 /* FeedListViewController.xib */,
 				023ECF2F233F2B01009F6DD6 /* FeedViewCell.swift */,
 				023ECF31233F2B11009F6DD6 /* FeedViewCell.xib */,
-				020A5B602340D341003692A6 /* FeedItem.swift */,
 			);
 			path = FeedList;
 			sourceTree = "<group>";
@@ -400,6 +399,7 @@
 			children = (
 				023ECF49233FCF3B009F6DD6 /* AtomFeed.swift */,
 				023ECF4B233FCF5E009F6DD6 /* Feed.swift */,
+				020A5B602340D341003692A6 /* FeedItem.swift */,
 				023ECF4D233FD171009F6DD6 /* RSSFeed.swift */,
 				02BB0ADE234B776E0035FA96 /* UserSettingsFeedData.swift */,
 			);

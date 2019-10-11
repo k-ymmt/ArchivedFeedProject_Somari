@@ -13,6 +13,7 @@ protocol FeedsPresentable {
     var feeds: PropertyPublisher<[FeedItem]> { get }
     
     func getFeeds(url: URL)
+    func getFeedAll()
     func navigateToAdditionalFeed()
     func showWebPage(linkString: String)
 }
@@ -20,6 +21,9 @@ protocol FeedsPresentable {
 class FeedsPresenter: FeedsPresentable {
     private let router: FeedsRoutable
     private let interactor: FeedsInteractable
+    
+    private var cancellables: Set<AnyCancellable> = Set()
+    private var feedDataList: [UserSettingsFeedData] = []
 
     @PropertyPublished(defaultValue: []) var feeds: PropertyPublisher<[FeedItem]>
     
@@ -39,7 +43,21 @@ class FeedsPresenter: FeedsPresentable {
             case .failure(let error):
                 break
             }
-        }
+        }.toCombine.store(in: &cancellables)
+    }
+    
+    func getFeedAll() {
+        let urls = feedDataList.compactMap { URL(string: $0.url) }
+        logger.debug("get feed all\n\(urls.map { "  - \($0.absoluteString)" }.joined(separator: "\n"))")
+        interactor.getFeeds(urls: urls) { [weak self] (result) in
+            switch result {
+            case .success(let feeds):
+                self?._feeds.value += feeds
+                self?._feeds.forceNotify()
+            case .failure(let error):
+                logger.debug("\(error)")
+            }
+        }.toCombine.store(in: &cancellables)
     }
 
     func navigateToAdditionalFeed() {
@@ -57,13 +75,8 @@ class FeedsPresenter: FeedsPresentable {
     private func receivedUserSettings(result: Result<[UserSettingsFeedData], Error>) {
         switch result {
         case .success(let feedInfoList):
-            for info in feedInfoList {
-                guard let url = URL(string: info.url) else {
-                    logger.debug("invalid url: \(info.url)")
-                    return
-                }
-                getFeeds(url: url)
-            }
+            self.feedDataList = feedInfoList
+            self.getFeedAll()
         case .failure(let error):
             logger.debug("\(error)")
         }
@@ -71,3 +84,4 @@ class FeedsPresenter: FeedsPresentable {
     
     
 }
+

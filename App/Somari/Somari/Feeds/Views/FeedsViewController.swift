@@ -55,6 +55,8 @@ class FeedsViewController: UIViewController, ParentViewController {
                 return
             }
             presenter.showWebPage(linkString: linkString)
+        case .refreshing:
+            presenter.getFeedAll()
         }
     }
 }

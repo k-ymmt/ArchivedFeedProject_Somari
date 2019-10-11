@@ -7,20 +7,25 @@
 //
 
 import UIKit
+import Combine
 
 class FeedListViewController: UIViewController {
     enum Output {
         case selectedItem(FeedItem)
+        case refreshing
     }
     
     enum Input {
         case newFeeds([FeedItem])
     }
 
-    @IBOutlet weak var feedListTableView: UITableView!
+    @IBOutlet private weak var feedListTableView: UITableView!
+    
+    private let refreshControl: UIRefreshControl = UIRefreshControl()
     
     private let outputCallback: (Output) -> Void
     private var feeds: [FeedItem] = []
+    private var cancellables: Set<AnyCancellable> = Set()
     
     init(output: @escaping (Output) -> Void) {
         self.outputCallback = output
@@ -39,6 +44,11 @@ class FeedListViewController: UIViewController {
         self.feedListTableView.delegate = self
         self.feedListTableView.register(cellType: FeedViewCell.self)
         self.feedListTableView.estimatedRowHeight = 80
+        self.feedListTableView.refreshControl = refreshControl
+        refreshControl.event(event: .valueChanged)
+            .sink { [weak self] (_) in
+                self?.outputCallback(.refreshing)
+        }.store(in: &cancellables)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -52,23 +62,11 @@ class FeedListViewController: UIViewController {
     func input(_ value: Input) {
         switch value {
         case .newFeeds(let feeds):
-            self.feeds = feeds.sorted(by: { compareDate($0.date, r: $1.date) })
+            self.feeds = feeds.reversed()
             feedListTableView.reloadData()
+            refreshControl.endRefreshing()
         }
     }
-}
-
-private func compareDate(_ l: Date?, r: Date?) -> Bool {
-    guard l != r else {
-        return true
-    }
-    guard let l = l else {
-        return false
-    }
-    guard let r = r else {
-        return true
-    }
-    return r < l
 }
 
 extension FeedListViewController: UITableViewDelegate {

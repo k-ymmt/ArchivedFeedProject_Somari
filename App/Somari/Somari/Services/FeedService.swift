@@ -27,8 +27,48 @@ enum FeedError: Error {
     case unknown(Error)
 }
 
-protocol FeedService {
+protocol FeedService: class {
     func getFeed(url: URL, completion: @escaping (Swift.Result<Feed, FeedError>) -> Void) -> Cancellable
+}
+
+extension FeedService {
+    func getFeeds(urls: [URL], completion: @escaping (Swift.Result<[Feed], FeedError>) -> Void) -> Cancellable {
+        let dispatchGroup = DispatchGroup()
+        let dispatchQueue = DispatchQueue.global(qos: .default)
+        var feeds: [Feed] = []
+        var cancellables: [Cancellable] = []
+        var error: FeedError?
+        for url in urls {
+            dispatchGroup.enter()
+            dispatchQueue.async(group: dispatchGroup) { [weak self] in
+                guard let self = self else {
+                    return
+                }
+                cancellables.append(self.getFeed(url: url) { (result) in
+                    switch result {
+                    case .success(let feed):
+                        feeds.append(feed)
+                    case .failure(let err):
+                        error = err
+                    }
+                    dispatchGroup.leave()
+                })
+            }
+        }
+        
+        dispatchGroup.notify(queue: .global(qos: .default)) {
+            if let error = error {
+                completion(.failure(error))
+            }
+            completion(.success(feeds))
+        }
+        
+        return Canceler {
+            for cancellable in cancellables {
+                cancellable.cancel()
+            }
+        }
+    }
 }
 
 class FeedKitService: FeedService {
@@ -150,6 +190,7 @@ extension RSSFeed.Channel {
 extension RSSFeed.Item {
     init(feed: FeedKit.RSSFeedItem) {
         self.description = feed.description
+        self.guid = feed.guid?.value
         self.link = feed.link
         self.pubDate = feed.pubDate
         self.title = feed.title

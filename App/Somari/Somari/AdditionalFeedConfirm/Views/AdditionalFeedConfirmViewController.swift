@@ -71,6 +71,8 @@ class AdditionalFeedConfirmViewController: UIViewController, ParentViewControlle
                 return
             }
             presenter.showWebPage(linkString: link)
+        case .refreshing:
+            break
         }
     }
 

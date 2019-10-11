@@ -16,6 +16,7 @@ struct RSSFeed {
     }
     struct Item {
         let title: String?
+        let guid: String?
         let link: String?
         let description: String?
         let pubDate: Date?
