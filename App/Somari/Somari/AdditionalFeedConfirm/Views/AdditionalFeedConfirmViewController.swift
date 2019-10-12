@@ -9,6 +9,7 @@
 import UIKit
 import Combine
 import SomariFoundation
+import SomariKit
 
 class AdditionalFeedConfirmViewController: UIViewController, ParentViewController {
     @IBOutlet private weak var containerView: UIView!

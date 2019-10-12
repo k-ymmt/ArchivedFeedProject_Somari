@@ -9,6 +9,7 @@
 import UIKit
 import Combine
 import SomariFoundation
+import SomariKit
 
 class FeedsViewController: UIViewController, ParentViewController {
     
