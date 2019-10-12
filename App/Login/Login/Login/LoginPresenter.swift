@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import SomariFoundation
 
 protocol LoginPresentable {
     func loginAnonymously()
@@ -25,9 +26,9 @@ class LoginPresenter: LoginPresentable {
         interactor.loginAnonymosly { [weak self] (result) in
             switch result {
             case .success:
-                self?.router.navigateToMainTab()
+                self?.router.navigateToLoginSuccessPage()
             case .failure(let error):
-                logger.error("Login error \(error)")
+                Logger.error(error)
             }
         }
     }

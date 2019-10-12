@@ -46,7 +46,7 @@ class AdditionalFeedConfirmPresenter: AdditionalFeedConfirmPresentable {
             case .success:
                 self?.router.popToRoot()
             case .failure(let error):
-                logger.debug("\(error)")
+                Logger.debug("\(error)")
             }
         }
     }

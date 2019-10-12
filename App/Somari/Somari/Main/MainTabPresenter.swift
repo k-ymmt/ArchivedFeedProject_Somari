@@ -22,11 +22,4 @@ class MainTabPresenter: MainTabPresentable {
         self.interactor = interactor
         self.router = router
     }
-    
-    func startLoginStateListener() {
-        interactor.startLoginStateListener()
-            .sink(receiveCompletion: {_ in }) { (user) in
-                
-        }.store(in: &cancellables)
-    }
 }

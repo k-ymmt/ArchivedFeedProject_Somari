@@ -7,23 +7,11 @@
 //
 
 import Foundation
-import Combine
-import SomariFoundation
 
 protocol LaunchInteractable {
-    func tryLogin() -> AnyPublisher<Bool, LoginError>
 }
 
 class LaunchInteractor: LaunchInteractable {
-    let loginService: LoginService
-    
-    init(loginService: LoginService) {
-        self.loginService = loginService
-    }
-    
-    func tryLogin() -> AnyPublisher<Bool, LoginError> {
-        loginService.listenLoginState()
-            .map { $0 != nil }
-            .eraseToAnyPublisher()
+    init() {
     }
 }

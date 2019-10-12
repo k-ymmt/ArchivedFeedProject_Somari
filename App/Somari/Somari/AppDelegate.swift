@@ -10,16 +10,6 @@ import UIKit
 import Logging
 import Firebase
 
-let logger: Logger = {
-    var logger = Logger(label: Bundle.main.bundleIdentifier ?? "net.kymmt")
-    #if DEBUG
-    logger.logLevel = .debug
-    #else
-    logger.logLevel = .info
-    #endif
-    return logger
-}()
-
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 

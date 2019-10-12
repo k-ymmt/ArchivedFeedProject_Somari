@@ -21,5 +21,5 @@ public enum LoginError: Error {
 public protocol LoginService {
     func uid() -> String?
     func loginAnonymously(completion: @escaping (Result<User, LoginError>) -> Void)
-    func listenLoginState() -> AnyPublisher<User?, LoginError>
+    func listenLoginState() -> AnyPublisher<Result<User, LoginError>, Never>
 }

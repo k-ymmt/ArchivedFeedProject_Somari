@@ -60,15 +60,15 @@ public class FirebaseLoginService: LoginService {
         }
     }
     
-    public func listenLoginState() -> AnyPublisher<SomariFoundation.User?, LoginError> {
-        let subject = PassthroughSubject<SomariFoundation.User?, LoginError>()
+    public func listenLoginState() -> AnyPublisher<Result<SomariFoundation.User, LoginError>, Never> {
+        let subject = PassthroughSubject<Result<SomariFoundation.User, LoginError>, Never>()
         
         let handle = Auth.auth().addStateDidChangeListener { (auth, user) in
             guard let user = user else {
-                subject.send(nil)
+                subject.send(.failure(.notLogin))
                 return
             }
-            subject.send(FirebaseUser(user: user))
+            subject.send(.success(FirebaseUser(user: user)))
         }
         
         _ = subject.handleEvents(receiveCancel: { Auth.auth().removeStateDidChangeListener(handle) })

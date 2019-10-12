@@ -27,6 +27,10 @@
 		021B97392351DE4000E59F3F /* SomariKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 021B97372351DE4000E59F3F /* SomariKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		021B976B2351E1EF00E59F3F /* SomariCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 021B976A2351E1EF00E59F3F /* SomariCore.framework */; };
 		021B976C2351E1EF00E59F3F /* SomariCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 021B976A2351E1EF00E59F3F /* SomariCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		021B97A22351EE3F00E59F3F /* Login.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 021B97A12351EE3F00E59F3F /* Login.framework */; };
+		021B97A32351EE3F00E59F3F /* Login.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 021B97A12351EE3F00E59F3F /* Login.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		021B97C0235228CF00E59F3F /* GatewayProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021B97BF235228CF00E59F3F /* GatewayProvider.swift */; };
+		021B97C223524D3600E59F3F /* DependencyResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021B97C123524D3600E59F3F /* DependencyResolver.swift */; };
 		023ECEF2233BB13D009F6DD6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023ECEF1233BB13D009F6DD6 /* AppDelegate.swift */; };
 		023ECEF4233BB13D009F6DD6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023ECEF3233BB13D009F6DD6 /* SceneDelegate.swift */; };
 		023ECEF8233BB13F009F6DD6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 023ECEF7233BB13F009F6DD6 /* Assets.xcassets */; };
@@ -41,11 +45,6 @@
 		023ECF52233FE901009F6DD6 /* MainTabRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023ECF51233FE901009F6DD6 /* MainTabRouter.swift */; };
 		026534B923487E1600F753DA /* Logging in Frameworks */ = {isa = PBXBuildFile; productRef = 026534B823487E1600F753DA /* Logging */; };
 		02B2B7332348CF4400510E22 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 02B2B7322348CF4300510E22 /* GoogleService-Info.plist */; };
-		02B2B7382348D10600510E22 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B2B7362348D10600510E22 /* LoginViewController.swift */; };
-		02B2B7392348D10600510E22 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02B2B7372348D10600510E22 /* LoginViewController.xib */; };
-		02B2B73B2348D11500510E22 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B2B73A2348D11500510E22 /* LoginPresenter.swift */; };
-		02B2B73D2348D12000510E22 /* LoginInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B2B73C2348D12000510E22 /* LoginInteractor.swift */; };
-		02B2B73F2348D12B00510E22 /* LoginRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B2B73E2348D12B00510E22 /* LoginRouter.swift */; };
 		02BB0AC72348DFD70035FA96 /* MainTabPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BB0AC62348DFD70035FA96 /* MainTabPresenter.swift */; };
 		02BB0ACE2349E6690035FA96 /* MainTabInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BB0ACD2349E6690035FA96 /* MainTabInteractor.swift */; };
 		02BB0AD3234A08FD0035FA96 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BB0AD1234A08FD0035FA96 /* LaunchViewController.swift */; };
@@ -84,6 +83,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				021B97A32351EE3F00E59F3F /* Login.framework in Embed Frameworks */,
 				021B97392351DE4000E59F3F /* SomariKit.framework in Embed Frameworks */,
 				021B976C2351E1EF00E59F3F /* SomariCore.framework in Embed Frameworks */,
 				021B97002351D89E00E59F3F /* SomariFoundation.framework in Embed Frameworks */,
@@ -111,6 +111,9 @@
 		021B96FE2351D89E00E59F3F /* SomariFoundation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SomariFoundation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		021B97372351DE4000E59F3F /* SomariKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SomariKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		021B976A2351E1EF00E59F3F /* SomariCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SomariCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		021B97A12351EE3F00E59F3F /* Login.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Login.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		021B97BF235228CF00E59F3F /* GatewayProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GatewayProvider.swift; sourceTree = "<group>"; };
+		021B97C123524D3600E59F3F /* DependencyResolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyResolver.swift; sourceTree = "<group>"; };
 		023ECEEE233BB13D009F6DD6 /* Somari.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Somari.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		023ECEF1233BB13D009F6DD6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		023ECEF3233BB13D009F6DD6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -131,11 +134,6 @@
 		023ECF51233FE901009F6DD6 /* MainTabRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabRouter.swift; sourceTree = "<group>"; };
 		02AA063F1D35A276B26D5C60 /* Pods-Somari.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Somari.debug.xcconfig"; path = "Target Support Files/Pods-Somari/Pods-Somari.debug.xcconfig"; sourceTree = "<group>"; };
 		02B2B7322348CF4300510E22 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		02B2B7362348D10600510E22 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		02B2B7372348D10600510E22 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
-		02B2B73A2348D11500510E22 /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
-		02B2B73C2348D12000510E22 /* LoginInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInteractor.swift; sourceTree = "<group>"; };
-		02B2B73E2348D12B00510E22 /* LoginRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRouter.swift; sourceTree = "<group>"; };
 		02BB0AC62348DFD70035FA96 /* MainTabPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabPresenter.swift; sourceTree = "<group>"; };
 		02BB0ACD2349E6690035FA96 /* MainTabInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabInteractor.swift; sourceTree = "<group>"; };
 		02BB0AD1234A08FD0035FA96 /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
@@ -165,6 +163,7 @@
 				026534B923487E1600F753DA /* Logging in Frameworks */,
 				021B97382351DE4000E59F3F /* SomariKit.framework in Frameworks */,
 				6C62AE9169F8D5B9697F1A4D /* Pods_Somari.framework in Frameworks */,
+				021B97A22351EE3F00E59F3F /* Login.framework in Frameworks */,
 				021B976B2351E1EF00E59F3F /* SomariCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -266,12 +265,13 @@
 			isa = PBXGroup;
 			children = (
 				02BB0ACF234A08A70035FA96 /* Launch */,
-				02B2B7342348D0D600510E22 /* Login */,
 				023ECF42233F5D01009F6DD6 /* Main */,
 				023ECF3B233F58B4009F6DD6 /* Feeds */,
 				020A5B3E2340729F003692A6 /* AdditionalFeed */,
 				020A5B642340F3B5003692A6 /* AdditionalFeedConfirm */,
 				020A5B3D23406783003692A6 /* Resources */,
+				021B97BF235228CF00E59F3F /* GatewayProvider.swift */,
+				021B97C123524D3600E59F3F /* DependencyResolver.swift */,
 				023ECEF1233BB13D009F6DD6 /* AppDelegate.swift */,
 				023ECEF3233BB13D009F6DD6 /* SceneDelegate.swift */,
 				023ECEFC233BB13F009F6DD6 /* LaunchScreen.storyboard */,
@@ -339,26 +339,6 @@
 			path = Main;
 			sourceTree = "<group>";
 		};
-		02B2B7342348D0D600510E22 /* Login */ = {
-			isa = PBXGroup;
-			children = (
-				02B2B7352348D0E500510E22 /* Views */,
-				02B2B73E2348D12B00510E22 /* LoginRouter.swift */,
-				02B2B73A2348D11500510E22 /* LoginPresenter.swift */,
-				02B2B73C2348D12000510E22 /* LoginInteractor.swift */,
-			);
-			path = Login;
-			sourceTree = "<group>";
-		};
-		02B2B7352348D0E500510E22 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				02B2B7362348D10600510E22 /* LoginViewController.swift */,
-				02B2B7372348D10600510E22 /* LoginViewController.xib */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
 		02BB0ACF234A08A70035FA96 /* Launch */ = {
 			isa = PBXGroup;
 			children = (
@@ -404,6 +384,7 @@
 		261100F58BFEC59D28774E27 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				021B97A12351EE3F00E59F3F /* Login.framework */,
 				021B976A2351E1EF00E59F3F /* SomariCore.framework */,
 				021B97372351DE4000E59F3F /* SomariKit.framework */,
 				021B96FE2351D89E00E59F3F /* SomariFoundation.framework */,
@@ -539,7 +520,6 @@
 				020A5B4323407327003692A6 /* AdditionalFeedViewController.xib in Resources */,
 				020A5B692340F3E9003692A6 /* AdditionalFeedConfirmViewController.xib in Resources */,
 				020A5B3A234021F1003692A6 /* Colors.xcassets in Resources */,
-				02B2B7392348D10600510E22 /* LoginViewController.xib in Resources */,
 				02B2B7332348CF4400510E22 /* GoogleService-Info.plist in Resources */,
 				023ECEF8233BB13F009F6DD6 /* Assets.xcassets in Resources */,
 			);
@@ -673,13 +653,13 @@
 				02BB0AD7234A095B0035FA96 /* LauchPresenter.swift in Sources */,
 				02BB0ACE2349E6690035FA96 /* MainTabInteractor.swift in Sources */,
 				020A5B6F23422958003692A6 /* AdditionalFeedConfirmInteractor.swift in Sources */,
+				021B97C223524D3600E59F3F /* DependencyResolver.swift in Sources */,
 				020A5B6B234226A4003692A6 /* AdditionalFeedConfirmRouter.swift in Sources */,
 				020A5B6D234227BD003692A6 /* AdditionalFeedConfirmPresenter.swift in Sources */,
 				020A5B4523407D33003692A6 /* AdditionalFeedRouter.swift in Sources */,
-				02B2B73B2348D11500510E22 /* LoginPresenter.swift in Sources */,
 				02BB0AD9234A09860035FA96 /* LaunchInteractor.swift in Sources */,
+				021B97C0235228CF00E59F3F /* GatewayProvider.swift in Sources */,
 				02BB0AC72348DFD70035FA96 /* MainTabPresenter.swift in Sources */,
-				02B2B73F2348D12B00510E22 /* LoginRouter.swift in Sources */,
 				023ECF3E233F5A39009F6DD6 /* FeedsRouter.swift in Sources */,
 				02BB0AD3234A08FD0035FA96 /* LaunchViewController.swift in Sources */,
 				023ECF41233F5B6C009F6DD6 /* FeedsInteractor.swift in Sources */,
@@ -691,8 +671,6 @@
 				020A5B4E2340891F003692A6 /* Strings.swift in Sources */,
 				020A5B3C234025DC003692A6 /* Colors.swift in Sources */,
 				020A5B562340B82E003692A6 /* AdditionalFeedInteractor.swift in Sources */,
-				02B2B73D2348D12000510E22 /* LoginInteractor.swift in Sources */,
-				02B2B7382348D10600510E22 /* LoginViewController.swift in Sources */,
 				023ECF52233FE901009F6DD6 /* MainTabRouter.swift in Sources */,
 				023ECF29233F089A009F6DD6 /* FeedsViewController.swift in Sources */,
 				020A5B47234081F5003692A6 /* AdditionalFeedPresenter.swift in Sources */,

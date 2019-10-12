@@ -53,7 +53,7 @@ class AdditionalFeedPresenter: AdditionalFeedPresentable {
                 self?.router.navigateToAdditionalFeedConfirm(url: url, title: feed.title, items: feed.feedItems())
                 self?._getFeedSuccess.send(true)
             case .failure(let error):
-                logger.error("\(error.localizedDescription)")
+                Logger.error("\(error.localizedDescription)")
                 break
             }
         }.toCombine.store(in: &cancellables)

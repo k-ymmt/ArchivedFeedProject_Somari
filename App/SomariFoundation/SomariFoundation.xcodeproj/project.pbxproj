@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		021B97A62351EEAF00E59F3F /* Gateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021B97A52351EEAF00E59F3F /* Gateway.swift */; };
+		021B97AF2352013700E59F3F /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021B97AE2352013700E59F3F /* Router.swift */; };
+		021B97B12352033400E59F3F /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021B97B02352033400E59F3F /* Logger.swift */; };
 		02EAB86D2350B5A800130DB2 /* SomariFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02EAB8632350B5A800130DB2 /* SomariFoundation.framework */; };
 		02EAB8722350B5A800130DB2 /* SomariFoundationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EAB8712350B5A800130DB2 /* SomariFoundationTests.swift */; };
 		02EAB8742350B5A800130DB2 /* SomariFoundation.h in Headers */ = {isa = PBXBuildFile; fileRef = 02EAB8662350B5A800130DB2 /* SomariFoundation.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -39,6 +42,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		021B97A52351EEAF00E59F3F /* Gateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gateway.swift; sourceTree = "<group>"; };
+		021B97AE2352013700E59F3F /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		021B97B02352033400E59F3F /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		02EAB8632350B5A800130DB2 /* SomariFoundation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SomariFoundation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		02EAB8662350B5A800130DB2 /* SomariFoundation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SomariFoundation.h; sourceTree = "<group>"; };
 		02EAB8672350B5A800130DB2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -82,6 +88,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		021B97A42351EE5C00E59F3F /* Gateway */ = {
+			isa = PBXGroup;
+			children = (
+				021B97A52351EEAF00E59F3F /* Gateway.swift */,
+				021B97AE2352013700E59F3F /* Router.swift */,
+			);
+			path = Gateway;
+			sourceTree = "<group>";
+		};
 		02EAB8592350B5A800130DB2 = {
 			isa = PBXGroup;
 			children = (
@@ -103,10 +118,12 @@
 		02EAB8652350B5A800130DB2 /* SomariFoundation */ = {
 			isa = PBXGroup;
 			children = (
+				021B97A42351EE5C00E59F3F /* Gateway */,
 				02EAB88F2350B93900130DB2 /* Views */,
 				02EAB8842350B7A400130DB2 /* Models */,
 				02EAB87D2350B64E00130DB2 /* Services */,
 				02EAB8962350BA7F00130DB2 /* CombineExtensions */,
+				021B97B02352033400E59F3F /* Logger.swift */,
 				02EAB8662350B5A800130DB2 /* SomariFoundation.h */,
 				02EAB8672350B5A800130DB2 /* Info.plist */,
 			);
@@ -284,6 +301,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				021B97B12352033400E59F3F /* Logger.swift in Sources */,
 				02EAB89D2350DD0100130DB2 /* ReactiveProperty.swift in Sources */,
 				02EAB89F2350DDBC00130DB2 /* PropertyPublisher.swift in Sources */,
 				02EAB8932350B9C900130DB2 /* ViewControllerProtocols.swift in Sources */,
@@ -296,9 +314,11 @@
 				02EAB88C2350B81600130DB2 /* Feed.swift in Sources */,
 				02EAB88E2350B83600130DB2 /* FeedItem.swift in Sources */,
 				02EAB8992350BAA800130DB2 /* UIView+Combine.swift in Sources */,
+				021B97AF2352013700E59F3F /* Router.swift in Sources */,
 				02EAB8A12350DDE100130DB2 /* EventPublisher.swift in Sources */,
 				02EAB88A2350B7FF00130DB2 /* UserSettingsData.swift in Sources */,
 				02EAB8882350B7E000130DB2 /* RSSFeed.swift in Sources */,
+				021B97A62351EEAF00E59F3F /* Gateway.swift in Sources */,
 				02EAB8812350B6D900130DB2 /* LoginService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

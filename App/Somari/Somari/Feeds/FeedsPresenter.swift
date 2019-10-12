@@ -49,14 +49,14 @@ class FeedsPresenter: FeedsPresentable {
     
     func getFeedAll() {
         let urls = feedDataList.compactMap { URL(string: $0.url) }
-        logger.debug("get feed all\n\(urls.map { "  - \($0.absoluteString)" }.joined(separator: "\n"))")
+        Logger.debug("get feed all\n\(urls.map { "  - \($0.absoluteString)" }.joined(separator: "\n"))")
         interactor.getFeeds(urls: urls) { [weak self] (result) in
             switch result {
             case .success(let feeds):
                 self?._feeds.value += feeds
                 self?._feeds.forceNotify()
             case .failure(let error):
-                logger.debug("\(error)")
+                Logger.debug("\(error)")
             }
         }.toCombine.store(in: &cancellables)
     }
@@ -79,7 +79,7 @@ class FeedsPresenter: FeedsPresentable {
             self.feedDataList = feedInfoList
             self.getFeedAll()
         case .failure(let error):
-            logger.debug("\(error)")
+            Logger.debug("\(error)")
         }
     }
     
