@@ -10,18 +10,24 @@ import Foundation
 import FeedKit
 import SomariFoundation
 
-class FeedKitService: FeedService {
-    func getFeed(url: URL, completion: @escaping (Swift.Result<Feed, FeedError>) -> Void) -> Cancellable {
+public class FeedKitService: FeedService {
+    public init() {
+    }
+
+    public func getFeed(url: URL, completion: @escaping (Swift.Result<SomariFoundation.Feed, FeedError>) -> Void) -> Cancellable {
         let parser = FeedParser(URL: url)
         parser.parseAsync(queue: .global(qos: .userInitiated)) { (result) in
             switch result {
-            case .atom(let feed):
-                completion(.success(.atom(AtomFeed(feed: feed))))
-            case .rss(let feed):
-                completion(.success(.rss(RSSFeed(feed: feed))))
-            case .json(let feed):
-                print(feed)
-                print("not supported")
+            case .success(let feed):
+                switch feed {
+                case .atom(let feed):
+                    completion(.success(.atom(AtomFeed(feed: feed))))
+                case .rss(let feed):
+                    completion(.success(.rss(RSSFeed(feed: feed))))
+                case .json(let feed):
+                    print(feed)
+                    print("not supported")
+                }
             case .failure(let error):
                 completion(.failure(.unknown(error)))
             }
@@ -33,7 +39,7 @@ class FeedKitService: FeedService {
     }
 }
 
-extension SomariFoundation.AtomFeed {
+private extension SomariFoundation.AtomFeed {
     init(feed: FeedKit.AtomFeed) {
         self = .init(
             id: feed.id,
@@ -46,7 +52,7 @@ extension SomariFoundation.AtomFeed {
     }
 }
 
-extension SomariFoundation.AtomFeed.Author {
+private extension SomariFoundation.AtomFeed.Author {
     init(author: FeedKit.AtomFeedAuthor) {
         self = .init(name: author.name)
     }
@@ -56,7 +62,7 @@ extension SomariFoundation.AtomFeed.Author {
     }
 }
 
-extension SomariFoundation.AtomFeed.Entry {
+private extension SomariFoundation.AtomFeed.Entry {
     init(entry: FeedKit.AtomFeedEntry) {
         self = .init(
             id: entry.id,
@@ -70,7 +76,7 @@ extension SomariFoundation.AtomFeed.Entry {
     }
 }
 
-extension SomariFoundation.AtomFeed.Entry.Content {
+private extension SomariFoundation.AtomFeed.Entry.Content {
     init?(content: FeedKit.AtomFeedEntryContent?) {
         guard let content = content else {
             return nil
@@ -83,7 +89,7 @@ extension SomariFoundation.AtomFeed.Entry.Content {
     }
 }
 
-extension SomariFoundation.AtomFeed.Entry.Content.ContentType {
+private extension SomariFoundation.AtomFeed.Entry.Content.ContentType {
     init?(attribute: FeedKit.AtomFeedEntryContent.Attributes?) {
         switch attribute?.type {
         case "html":
@@ -94,7 +100,7 @@ extension SomariFoundation.AtomFeed.Entry.Content.ContentType {
     }
 }
 
-extension SomariFoundation.AtomFeed.Entry.Link {
+private extension SomariFoundation.AtomFeed.Entry.Link {
     init?(attributes: FeedKit.AtomFeedEntryLink.Attributes?) {
         guard let attributes = attributes else {
             return nil
@@ -106,7 +112,7 @@ extension SomariFoundation.AtomFeed.Entry.Link {
     }
 }
 
-extension SomariFoundation.AtomFeed.Entry.Link.LinkType {
+private extension SomariFoundation.AtomFeed.Entry.Link.LinkType {
     init?(type: String?) {
         guard let type = type else {
             return nil
@@ -120,7 +126,7 @@ extension SomariFoundation.AtomFeed.Entry.Link.LinkType {
     }
 }
 
-extension SomariFoundation.RSSFeed {
+private extension SomariFoundation.RSSFeed {
     init(feed: FeedKit.RSSFeed) {
         self = .init(
             channel: SomariFoundation.RSSFeed.Channel(feed: feed),
@@ -129,7 +135,7 @@ extension SomariFoundation.RSSFeed {
     }
 }
 
-extension SomariFoundation.RSSFeed.Channel {
+private extension SomariFoundation.RSSFeed.Channel {
     init(feed: FeedKit.RSSFeed) {
         self = .init(
             title: feed.title,
@@ -139,7 +145,7 @@ extension SomariFoundation.RSSFeed.Channel {
     }
 }
 
-extension SomariFoundation.RSSFeed.Item {
+private extension SomariFoundation.RSSFeed.Item {
     init(feed: FeedKit.RSSFeedItem) {
         self = .init(
             title: feed.title,

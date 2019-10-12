@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 import SafariServices
 import SomariFoundation
+import SomariCore
 
 protocol AdditionalFeedConfirmRoutable {
     func popToRoot()

@@ -19,7 +19,7 @@ private struct FirebaseUser: SomariFoundation.User {
     }
 }
 
-extension LoginError {
+private extension LoginError {
     init?(with firebaseError: NSError) {
         guard let code = AuthErrorCode(rawValue: firebaseError.code) else {
             return nil
@@ -32,15 +32,15 @@ extension LoginError {
     }
 }
 
-class FirebaseLoginService: LoginService {    
-    init() {
+public class FirebaseLoginService: LoginService {
+    public init() {
     }
     
-    func uid() -> String? {
+    public func uid() -> String? {
         Auth.auth().currentUser?.uid
     }
     
-    func loginAnonymously(completion: @escaping (Result<SomariFoundation.User, LoginError>) -> Void) {
+    public func loginAnonymously(completion: @escaping (Result<SomariFoundation.User, LoginError>) -> Void) {
         Auth.auth().signInAnonymously { (user, error) in
             if let error = error {
                 guard let loginError = LoginError(with: error as NSError) else {
@@ -60,16 +60,14 @@ class FirebaseLoginService: LoginService {
         }
     }
     
-    func listenLoginState() -> AnyPublisher<SomariFoundation.User?, LoginError> {
+    public func listenLoginState() -> AnyPublisher<SomariFoundation.User?, LoginError> {
         let subject = PassthroughSubject<SomariFoundation.User?, LoginError>()
         
         let handle = Auth.auth().addStateDidChangeListener { (auth, user) in
             guard let user = user else {
-                logger.debug("User not login")
                 subject.send(nil)
                 return
             }
-            logger.debug("User login")
             subject.send(FirebaseUser(user: user))
         }
         

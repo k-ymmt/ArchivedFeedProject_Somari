@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import SomariCore
 
 protocol LaunchRoutable {
     func showLoginPage()

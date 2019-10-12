@@ -8,6 +8,12 @@
 
 import Foundation
 
+extension UserSettingsFeedData {
+    public static func key(uid: String) -> String {
+        String(format: "users/%@/feeds", uid)
+    }
+}
+
 public protocol StorageService {
     func add<Value: Encodable>(key: String, _ value: Value, completion: @escaping (Result<Value, Error>) -> Void)
     func get<Value: Decodable>(key: String, completion: @escaping (Result<[Value], Error>) -> Void)

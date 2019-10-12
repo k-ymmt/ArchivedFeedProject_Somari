@@ -25,6 +25,8 @@
 		021B97002351D89E00E59F3F /* SomariFoundation.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 021B96FE2351D89E00E59F3F /* SomariFoundation.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		021B97382351DE4000E59F3F /* SomariKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 021B97372351DE4000E59F3F /* SomariKit.framework */; };
 		021B97392351DE4000E59F3F /* SomariKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 021B97372351DE4000E59F3F /* SomariKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		021B976B2351E1EF00E59F3F /* SomariCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 021B976A2351E1EF00E59F3F /* SomariCore.framework */; };
+		021B976C2351E1EF00E59F3F /* SomariCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 021B976A2351E1EF00E59F3F /* SomariCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		023ECEF2233BB13D009F6DD6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023ECEF1233BB13D009F6DD6 /* AppDelegate.swift */; };
 		023ECEF4233BB13D009F6DD6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023ECEF3233BB13D009F6DD6 /* SceneDelegate.swift */; };
 		023ECEF8233BB13F009F6DD6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 023ECEF7233BB13F009F6DD6 /* Assets.xcassets */; };
@@ -32,16 +34,12 @@
 		023ECEFE233BB13F009F6DD6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 023ECEFC233BB13F009F6DD6 /* LaunchScreen.storyboard */; };
 		023ECF09233BB13F009F6DD6 /* SomariTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023ECF08233BB13F009F6DD6 /* SomariTests.swift */; };
 		023ECF14233BB13F009F6DD6 /* SomariUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023ECF13233BB13F009F6DD6 /* SomariUITests.swift */; };
-		023ECF24233F0780009F6DD6 /* FeedKit in Frameworks */ = {isa = PBXBuildFile; productRef = 023ECF23233F0780009F6DD6 /* FeedKit */; };
 		023ECF29233F089A009F6DD6 /* FeedsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023ECF28233F089A009F6DD6 /* FeedsViewController.swift */; };
 		023ECF3E233F5A39009F6DD6 /* FeedsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023ECF3D233F5A39009F6DD6 /* FeedsRouter.swift */; };
 		023ECF41233F5B6C009F6DD6 /* FeedsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023ECF40233F5B6C009F6DD6 /* FeedsInteractor.swift */; };
 		023ECF45233F5D7F009F6DD6 /* FeedsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023ECF44233F5D7F009F6DD6 /* FeedsPresenter.swift */; };
-		023ECF47233F624D009F6DD6 /* FeedService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023ECF46233F624D009F6DD6 /* FeedService.swift */; };
 		023ECF52233FE901009F6DD6 /* MainTabRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023ECF51233FE901009F6DD6 /* MainTabRouter.swift */; };
 		026534B923487E1600F753DA /* Logging in Frameworks */ = {isa = PBXBuildFile; productRef = 026534B823487E1600F753DA /* Logging */; };
-		027AB20B234C6BA60052C204 /* Mappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027AB20A234C6BA60052C204 /* Mappable.swift */; };
-		02B2B7312348CEC600510E22 /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B2B7302348CEC600510E22 /* LoginService.swift */; };
 		02B2B7332348CF4400510E22 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 02B2B7322348CF4300510E22 /* GoogleService-Info.plist */; };
 		02B2B7382348D10600510E22 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B2B7362348D10600510E22 /* LoginViewController.swift */; };
 		02B2B7392348D10600510E22 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02B2B7372348D10600510E22 /* LoginViewController.xib */; };
@@ -55,7 +53,6 @@
 		02BB0AD7234A095B0035FA96 /* LauchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BB0AD6234A095B0035FA96 /* LauchPresenter.swift */; };
 		02BB0AD9234A09860035FA96 /* LaunchInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BB0AD8234A09860035FA96 /* LaunchInteractor.swift */; };
 		02BB0ADB234A09AD0035FA96 /* LaunchRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BB0ADA234A09AD0035FA96 /* LaunchRouter.swift */; };
-		02BB0AE1234B7BAF0035FA96 /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BB0AE0234B7BAF0035FA96 /* StorageService.swift */; };
 		02F286012348B2F1004E308A /* FeedsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02F286002348B2F1004E308A /* FeedsViewController.xib */; };
 		02F286042348B352004E308A /* MainTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F286032348B352004E308A /* MainTabViewController.swift */; };
 		0F55231D694DFF3114FA636B /* Pods_SomariTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2915096F7DF1909C9067E793 /* Pods_SomariTests.framework */; };
@@ -88,6 +85,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				021B97392351DE4000E59F3F /* SomariKit.framework in Embed Frameworks */,
+				021B976C2351E1EF00E59F3F /* SomariCore.framework in Embed Frameworks */,
 				021B97002351D89E00E59F3F /* SomariFoundation.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -112,6 +110,7 @@
 		020A5B6E23422958003692A6 /* AdditionalFeedConfirmInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdditionalFeedConfirmInteractor.swift; sourceTree = "<group>"; };
 		021B96FE2351D89E00E59F3F /* SomariFoundation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SomariFoundation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		021B97372351DE4000E59F3F /* SomariKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SomariKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		021B976A2351E1EF00E59F3F /* SomariCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SomariCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		023ECEEE233BB13D009F6DD6 /* Somari.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Somari.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		023ECEF1233BB13D009F6DD6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		023ECEF3233BB13D009F6DD6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -129,11 +128,8 @@
 		023ECF3D233F5A39009F6DD6 /* FeedsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedsRouter.swift; sourceTree = "<group>"; };
 		023ECF40233F5B6C009F6DD6 /* FeedsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedsInteractor.swift; sourceTree = "<group>"; };
 		023ECF44233F5D7F009F6DD6 /* FeedsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedsPresenter.swift; sourceTree = "<group>"; };
-		023ECF46233F624D009F6DD6 /* FeedService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedService.swift; sourceTree = "<group>"; };
 		023ECF51233FE901009F6DD6 /* MainTabRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabRouter.swift; sourceTree = "<group>"; };
-		027AB20A234C6BA60052C204 /* Mappable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mappable.swift; sourceTree = "<group>"; };
 		02AA063F1D35A276B26D5C60 /* Pods-Somari.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Somari.debug.xcconfig"; path = "Target Support Files/Pods-Somari/Pods-Somari.debug.xcconfig"; sourceTree = "<group>"; };
-		02B2B7302348CEC600510E22 /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
 		02B2B7322348CF4300510E22 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		02B2B7362348D10600510E22 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		02B2B7372348D10600510E22 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
@@ -147,7 +143,6 @@
 		02BB0AD6234A095B0035FA96 /* LauchPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LauchPresenter.swift; sourceTree = "<group>"; };
 		02BB0AD8234A09860035FA96 /* LaunchInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchInteractor.swift; sourceTree = "<group>"; };
 		02BB0ADA234A09AD0035FA96 /* LaunchRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchRouter.swift; sourceTree = "<group>"; };
-		02BB0AE0234B7BAF0035FA96 /* StorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
 		02EAB8A42350DEC300130DB2 /* SomariKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SomariKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		02F286002348B2F1004E308A /* FeedsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FeedsViewController.xib; sourceTree = "<group>"; };
 		02F286032348B352004E308A /* MainTabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabViewController.swift; sourceTree = "<group>"; };
@@ -168,9 +163,9 @@
 			files = (
 				021B96FF2351D89E00E59F3F /* SomariFoundation.framework in Frameworks */,
 				026534B923487E1600F753DA /* Logging in Frameworks */,
-				023ECF24233F0780009F6DD6 /* FeedKit in Frameworks */,
 				021B97382351DE4000E59F3F /* SomariKit.framework in Frameworks */,
 				6C62AE9169F8D5B9697F1A4D /* Pods_Somari.framework in Frameworks */,
+				021B976B2351E1EF00E59F3F /* SomariCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,8 +271,6 @@
 				023ECF3B233F58B4009F6DD6 /* Feeds */,
 				020A5B3E2340729F003692A6 /* AdditionalFeed */,
 				020A5B642340F3B5003692A6 /* AdditionalFeedConfirm */,
-				023ECF38233F51BB009F6DD6 /* Services */,
-				027AB209234C6B8B0052C204 /* Extensions */,
 				020A5B3D23406783003692A6 /* Resources */,
 				023ECEF1233BB13D009F6DD6 /* AppDelegate.swift */,
 				023ECEF3233BB13D009F6DD6 /* SceneDelegate.swift */,
@@ -315,16 +308,6 @@
 			path = SomariUITests;
 			sourceTree = "<group>";
 		};
-		023ECF38233F51BB009F6DD6 /* Services */ = {
-			isa = PBXGroup;
-			children = (
-				023ECF46233F624D009F6DD6 /* FeedService.swift */,
-				02B2B7302348CEC600510E22 /* LoginService.swift */,
-				02BB0AE0234B7BAF0035FA96 /* StorageService.swift */,
-			);
-			path = Services;
-			sourceTree = "<group>";
-		};
 		023ECF3B233F58B4009F6DD6 /* Feeds */ = {
 			isa = PBXGroup;
 			children = (
@@ -354,14 +337,6 @@
 				02BB0ACD2349E6690035FA96 /* MainTabInteractor.swift */,
 			);
 			path = Main;
-			sourceTree = "<group>";
-		};
-		027AB209234C6B8B0052C204 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				027AB20A234C6BA60052C204 /* Mappable.swift */,
-			);
-			path = Extensions;
 			sourceTree = "<group>";
 		};
 		02B2B7342348D0D600510E22 /* Login */ = {
@@ -429,6 +404,7 @@
 		261100F58BFEC59D28774E27 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				021B976A2351E1EF00E59F3F /* SomariCore.framework */,
 				021B97372351DE4000E59F3F /* SomariKit.framework */,
 				021B96FE2351D89E00E59F3F /* SomariFoundation.framework */,
 				02EAB8A42350DEC300130DB2 /* SomariKit.framework */,
@@ -459,7 +435,6 @@
 			);
 			name = Somari;
 			packageProductDependencies = (
-				023ECF23233F0780009F6DD6 /* FeedKit */,
 				026534B823487E1600F753DA /* Logging */,
 			);
 			productName = Somari;
@@ -538,7 +513,6 @@
 			);
 			mainGroup = 023ECEE5233BB13D009F6DD6;
 			packageReferences = (
-				023ECF22233F0780009F6DD6 /* XCRemoteSwiftPackageReference "FeedKit" */,
 				026534B723487E1600F753DA /* XCRemoteSwiftPackageReference "swift-log" */,
 			);
 			productRefGroup = 023ECEEF233BB13D009F6DD6 /* Products */;
@@ -709,11 +683,9 @@
 				023ECF3E233F5A39009F6DD6 /* FeedsRouter.swift in Sources */,
 				02BB0AD3234A08FD0035FA96 /* LaunchViewController.swift in Sources */,
 				023ECF41233F5B6C009F6DD6 /* FeedsInteractor.swift in Sources */,
-				02B2B7312348CEC600510E22 /* LoginService.swift in Sources */,
 				02F286042348B352004E308A /* MainTabViewController.swift in Sources */,
 				023ECEF2233BB13D009F6DD6 /* AppDelegate.swift in Sources */,
 				02BB0ADB234A09AD0035FA96 /* LaunchRouter.swift in Sources */,
-				027AB20B234C6BA60052C204 /* Mappable.swift in Sources */,
 				023ECEF4233BB13D009F6DD6 /* SceneDelegate.swift in Sources */,
 				020A5B682340F3E9003692A6 /* AdditionalFeedConfirmViewController.swift in Sources */,
 				020A5B4E2340891F003692A6 /* Strings.swift in Sources */,
@@ -723,8 +695,6 @@
 				02B2B7382348D10600510E22 /* LoginViewController.swift in Sources */,
 				023ECF52233FE901009F6DD6 /* MainTabRouter.swift in Sources */,
 				023ECF29233F089A009F6DD6 /* FeedsViewController.swift in Sources */,
-				023ECF47233F624D009F6DD6 /* FeedService.swift in Sources */,
-				02BB0AE1234B7BAF0035FA96 /* StorageService.swift in Sources */,
 				020A5B47234081F5003692A6 /* AdditionalFeedPresenter.swift in Sources */,
 				020A5B4223407327003692A6 /* AdditionalFeedViewController.swift in Sources */,
 			);
@@ -1055,14 +1025,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		023ECF22233F0780009F6DD6 /* XCRemoteSwiftPackageReference "FeedKit" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/nmdias/FeedKit";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 8.1.1;
-			};
-		};
 		026534B723487E1600F753DA /* XCRemoteSwiftPackageReference "swift-log" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/apple/swift-log";
@@ -1074,11 +1036,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		023ECF23233F0780009F6DD6 /* FeedKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 023ECF22233F0780009F6DD6 /* XCRemoteSwiftPackageReference "FeedKit" */;
-			productName = FeedKit;
-		};
 		026534B823487E1600F753DA /* Logging */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 026534B723487E1600F753DA /* XCRemoteSwiftPackageReference "swift-log" */;

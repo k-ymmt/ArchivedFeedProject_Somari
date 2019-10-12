@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import SafariServices
+import SomariCore
 
 protocol FeedsRoutable {
     func navigateAdditionalFeedView()
@@ -20,7 +21,7 @@ class FeedsRouter: FeedsRoutable {
 
     static func assembleModules() -> UIViewController {
         let router = FeedsRouter()
-        let feedsService = FeedKitService()
+        let feedsService = SomariCore.FeedKitService()
         let storageService = FirebaseStorageService()
         let loginService = FirebaseLoginService()
         let interactor = FeedsInteractor(feedService: feedsService, storageService: storageService, loginService: loginService)

@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import SomariFoundation
+import SomariCore
 
 protocol AdditionalFeedRoutable {
     func dismiss()

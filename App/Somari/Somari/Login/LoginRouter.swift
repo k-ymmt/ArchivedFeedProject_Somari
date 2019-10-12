@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import SomariCore
 
 protocol LoginRoutable {
     func navigateToMainTab()

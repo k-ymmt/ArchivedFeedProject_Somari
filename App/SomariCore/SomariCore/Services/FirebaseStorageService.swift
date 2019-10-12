@@ -10,12 +10,6 @@ import Foundation
 import FirebaseFirestore
 import SomariFoundation
 
-extension UserSettingsFeedData {
-    static func key(uid: String) -> String {
-        String(format: "users/%@/feeds", uid)
-    }
-}
-
 extension UserSettingsFeedData: Mappable {
     static func from(_ map: [String : Any]) -> UserSettingsFeedData? {
         return .init(
@@ -35,9 +29,13 @@ extension UserSettingsFeedData: Mappable {
 }
 
 
-class FirebaseStorageService: StorageService {
+public class FirebaseStorageService: StorageService {
     private let db: Firestore = Firestore.firestore()
-    func add<Value: Encodable>(key: String, _ value: Value, completion: @escaping (Result<Value, Error>) -> Void) {
+
+    public init() {
+    }
+
+    public func add<Value: Encodable>(key: String, _ value: Value, completion: @escaping (Result<Value, Error>) -> Void) {
         guard let mappable = value as? Mappable else {
             fatalError("FirebaseStorageService.get required protocol Mappable to value.")
         }
@@ -50,7 +48,7 @@ class FirebaseStorageService: StorageService {
         }
     }
     
-    func get<Value: Decodable>(key: String, completion: @escaping (Result<[Value], Error>) -> Void) {
+    public func get<Value: Decodable>(key: String, completion: @escaping (Result<[Value], Error>) -> Void) {
         db.collection(key).getDocuments { (querySnapshot, error) in
             if let error = error {
                 completion(.failure(error))

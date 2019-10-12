@@ -2,9 +2,9 @@
 # platform :ios, '9.0'
 
 workspace 'Somari.xcworkspace'
-project 'Somari/Somari.xcodeproj'
 
 target 'Somari' do
+  project 'Somari/Somari.xcodeproj'
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
 
@@ -22,4 +22,17 @@ target 'Somari' do
     # Pods for testing
   end
 
+end
+
+target 'SomariCore' do
+  project 'SomariCore/SomariCore.xcodeproj'
+  use_frameworks!
+
+  pod 'Firebase/Analytics'
+  pod 'Firebase/Auth'
+  pod 'Firebase/Firestore'
+
+  target 'SomariCoreTests' do
+    inherit! :search_paths
+  end
 end
