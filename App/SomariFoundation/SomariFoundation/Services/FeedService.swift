@@ -13,7 +13,7 @@ public protocol Cancellable {
     func cancel()
 }
 
-extension SomariKit.Cancellable {
+extension SomariFoundation.Cancellable {
     public var toCombine: Combine.Cancellable {
         return Combine.AnyCancellable {
             self.cancel()

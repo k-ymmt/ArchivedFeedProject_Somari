@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import SomariKit
+import SomariFoundation
 
 protocol AdditionalFeedConfirmPresentable {
     var feedItems: PropertyPublisher<[FeedItem]> { get }

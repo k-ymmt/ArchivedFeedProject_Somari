@@ -8,7 +8,7 @@
 
 import Foundation
 import FeedKit
-import SomariKit
+import SomariFoundation
 
 class FeedKitService: FeedService {
     func getFeed(url: URL, completion: @escaping (Swift.Result<Feed, FeedError>) -> Void) -> Cancellable {
@@ -33,20 +33,20 @@ class FeedKitService: FeedService {
     }
 }
 
-extension SomariKit.AtomFeed {
+extension SomariFoundation.AtomFeed {
     init(feed: FeedKit.AtomFeed) {
         self = .init(
             id: feed.id,
             title: feed.title,
             description: feed.subtitle?.value,
             updated: feed.updated,
-            authors: feed.authors?.map { SomariKit.AtomFeed.Author(author: $0) },
-            entries: feed.entries?.map { SomariKit.AtomFeed.Entry(entry: $0) }
+            authors: feed.authors?.map { SomariFoundation.AtomFeed.Author(author: $0) },
+            entries: feed.entries?.map { SomariFoundation.AtomFeed.Entry(entry: $0) }
         )
     }
 }
 
-extension SomariKit.AtomFeed.Author {
+extension SomariFoundation.AtomFeed.Author {
     init(author: FeedKit.AtomFeedAuthor) {
         self = .init(name: author.name)
     }
@@ -56,34 +56,34 @@ extension SomariKit.AtomFeed.Author {
     }
 }
 
-extension SomariKit.AtomFeed.Entry {
+extension SomariFoundation.AtomFeed.Entry {
     init(entry: FeedKit.AtomFeedEntry) {
         self = .init(
             id: entry.id,
-            authors: entry.authors?.map { SomariKit.AtomFeed.Author(author: $0) },
+            authors: entry.authors?.map { SomariFoundation.AtomFeed.Author(author: $0) },
             published: entry.published,
             updated: entry.updated,
-            links: entry.links?.compactMap { SomariKit.AtomFeed.Entry.Link(attributes: $0.attributes) },
+            links: entry.links?.compactMap { SomariFoundation.AtomFeed.Entry.Link(attributes: $0.attributes) },
             title: entry.title,
-            content: SomariKit.AtomFeed.Entry.Content(content: entry.content)
+            content: SomariFoundation.AtomFeed.Entry.Content(content: entry.content)
         )
     }
 }
 
-extension SomariKit.AtomFeed.Entry.Content {
+extension SomariFoundation.AtomFeed.Entry.Content {
     init?(content: FeedKit.AtomFeedEntryContent?) {
         guard let content = content else {
             return nil
         }
         
         self = .init(
-            type: SomariKit.AtomFeed.Entry.Content.ContentType(attribute: content.attributes),
+            type: SomariFoundation.AtomFeed.Entry.Content.ContentType(attribute: content.attributes),
             value: content.value
         )
     }
 }
 
-extension SomariKit.AtomFeed.Entry.Content.ContentType {
+extension SomariFoundation.AtomFeed.Entry.Content.ContentType {
     init?(attribute: FeedKit.AtomFeedEntryContent.Attributes?) {
         switch attribute?.type {
         case "html":
@@ -94,19 +94,19 @@ extension SomariKit.AtomFeed.Entry.Content.ContentType {
     }
 }
 
-extension SomariKit.AtomFeed.Entry.Link {
+extension SomariFoundation.AtomFeed.Entry.Link {
     init?(attributes: FeedKit.AtomFeedEntryLink.Attributes?) {
         guard let attributes = attributes else {
             return nil
         }
         self = .init(
-            type: SomariKit.AtomFeed.Entry.Link.LinkType(type: attributes.type),
+            type: SomariFoundation.AtomFeed.Entry.Link.LinkType(type: attributes.type),
             href: attributes.href
         )
     }
 }
 
-extension SomariKit.AtomFeed.Entry.Link.LinkType {
+extension SomariFoundation.AtomFeed.Entry.Link.LinkType {
     init?(type: String?) {
         guard let type = type else {
             return nil
@@ -120,16 +120,16 @@ extension SomariKit.AtomFeed.Entry.Link.LinkType {
     }
 }
 
-extension SomariKit.RSSFeed {
+extension SomariFoundation.RSSFeed {
     init(feed: FeedKit.RSSFeed) {
         self = .init(
-            channel: SomariKit.RSSFeed.Channel(feed: feed),
-            items: feed.items?.map { SomariKit.RSSFeed.Item(feed: $0) }
+            channel: SomariFoundation.RSSFeed.Channel(feed: feed),
+            items: feed.items?.map { SomariFoundation.RSSFeed.Item(feed: $0) }
         )
     }
 }
 
-extension SomariKit.RSSFeed.Channel {
+extension SomariFoundation.RSSFeed.Channel {
     init(feed: FeedKit.RSSFeed) {
         self = .init(
             title: feed.title,
@@ -139,7 +139,7 @@ extension SomariKit.RSSFeed.Channel {
     }
 }
 
-extension SomariKit.RSSFeed.Item {
+extension SomariFoundation.RSSFeed.Item {
     init(feed: FeedKit.RSSFeedItem) {
         self = .init(
             title: feed.title,

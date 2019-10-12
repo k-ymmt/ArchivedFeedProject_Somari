@@ -5,7 +5,7 @@
       location = "group:Somari/Somari.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:SomariKit/SomariKit.xcodeproj">
+      location = "group:SomariFoundation/SomariFoundation.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">

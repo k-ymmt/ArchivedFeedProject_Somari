@@ -8,7 +8,7 @@
 
 import UIKit
 import Combine
-import SomariKit
+import SomariFoundation
 
 class FeedListViewController: UIViewController {
     enum Output {

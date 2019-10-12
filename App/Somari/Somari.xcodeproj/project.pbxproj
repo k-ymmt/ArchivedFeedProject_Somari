@@ -23,6 +23,8 @@
 		020A5B6B234226A4003692A6 /* AdditionalFeedConfirmRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020A5B6A234226A4003692A6 /* AdditionalFeedConfirmRouter.swift */; };
 		020A5B6D234227BD003692A6 /* AdditionalFeedConfirmPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020A5B6C234227BD003692A6 /* AdditionalFeedConfirmPresenter.swift */; };
 		020A5B6F23422958003692A6 /* AdditionalFeedConfirmInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020A5B6E23422958003692A6 /* AdditionalFeedConfirmInteractor.swift */; };
+		021B96FF2351D89E00E59F3F /* SomariFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 021B96FE2351D89E00E59F3F /* SomariFoundation.framework */; };
+		021B97002351D89E00E59F3F /* SomariFoundation.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 021B96FE2351D89E00E59F3F /* SomariFoundation.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		023ECEF2233BB13D009F6DD6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023ECEF1233BB13D009F6DD6 /* AppDelegate.swift */; };
 		023ECEF4233BB13D009F6DD6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023ECEF3233BB13D009F6DD6 /* SceneDelegate.swift */; };
 		023ECEF8233BB13F009F6DD6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 023ECEF7233BB13F009F6DD6 /* Assets.xcassets */; };
@@ -58,8 +60,6 @@
 		02BB0AD9234A09860035FA96 /* LaunchInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BB0AD8234A09860035FA96 /* LaunchInteractor.swift */; };
 		02BB0ADB234A09AD0035FA96 /* LaunchRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BB0ADA234A09AD0035FA96 /* LaunchRouter.swift */; };
 		02BB0AE1234B7BAF0035FA96 /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BB0AE0234B7BAF0035FA96 /* StorageService.swift */; };
-		02EAB8A52350DEC300130DB2 /* SomariKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02EAB8A42350DEC300130DB2 /* SomariKit.framework */; };
-		02EAB8A62350DEC300130DB2 /* SomariKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 02EAB8A42350DEC300130DB2 /* SomariKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		02F286012348B2F1004E308A /* FeedsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02F286002348B2F1004E308A /* FeedsViewController.xib */; };
 		02F286042348B352004E308A /* MainTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F286032348B352004E308A /* MainTabViewController.swift */; };
 		0F55231D694DFF3114FA636B /* Pods_SomariTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2915096F7DF1909C9067E793 /* Pods_SomariTests.framework */; };
@@ -85,13 +85,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		02EAB8A72350DEC300130DB2 /* Embed Frameworks */ = {
+		021B97012351D89E00E59F3F /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				02EAB8A62350DEC300130DB2 /* SomariKit.framework in Embed Frameworks */,
+				021B97002351D89E00E59F3F /* SomariFoundation.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -115,6 +115,7 @@
 		020A5B6A234226A4003692A6 /* AdditionalFeedConfirmRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdditionalFeedConfirmRouter.swift; sourceTree = "<group>"; };
 		020A5B6C234227BD003692A6 /* AdditionalFeedConfirmPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdditionalFeedConfirmPresenter.swift; sourceTree = "<group>"; };
 		020A5B6E23422958003692A6 /* AdditionalFeedConfirmInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdditionalFeedConfirmInteractor.swift; sourceTree = "<group>"; };
+		021B96FE2351D89E00E59F3F /* SomariFoundation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SomariFoundation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		023ECEEE233BB13D009F6DD6 /* Somari.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Somari.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		023ECEF1233BB13D009F6DD6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		023ECEF3233BB13D009F6DD6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -173,9 +174,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				021B96FF2351D89E00E59F3F /* SomariFoundation.framework in Frameworks */,
 				026534B923487E1600F753DA /* Logging in Frameworks */,
 				023ECF24233F0780009F6DD6 /* FeedKit in Frameworks */,
-				02EAB8A52350DEC300130DB2 /* SomariKit.framework in Frameworks */,
 				6C62AE9169F8D5B9697F1A4D /* Pods_Somari.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -457,6 +458,7 @@
 		261100F58BFEC59D28774E27 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				021B96FE2351D89E00E59F3F /* SomariFoundation.framework */,
 				02EAB8A42350DEC300130DB2 /* SomariKit.framework */,
 				C6CB363F2F286BF29040BBD6 /* Pods_Somari.framework */,
 				E00AA8A687DC5B73BBE2F879 /* Pods_Somari_SomariUITests.framework */,
@@ -477,7 +479,7 @@
 				023ECEEB233BB13D009F6DD6 /* Frameworks */,
 				023ECEEC233BB13D009F6DD6 /* Resources */,
 				11493FCAE35957DC21D7DCC3 /* [CP] Embed Pods Frameworks */,
-				02EAB8A72350DEC300130DB2 /* Embed Frameworks */,
+				021B97012351D89E00E59F3F /* Embed Frameworks */,
 			);
 			buildRules = (
 			);

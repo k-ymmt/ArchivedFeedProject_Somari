@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		02EAB86D2350B5A800130DB2 /* SomariKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02EAB8632350B5A800130DB2 /* SomariKit.framework */; };
-		02EAB8722350B5A800130DB2 /* SomariKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EAB8712350B5A800130DB2 /* SomariKitTests.swift */; };
-		02EAB8742350B5A800130DB2 /* SomariKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 02EAB8662350B5A800130DB2 /* SomariKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		02EAB86D2350B5A800130DB2 /* SomariFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02EAB8632350B5A800130DB2 /* SomariFoundation.framework */; };
+		02EAB8722350B5A800130DB2 /* SomariFoundationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EAB8712350B5A800130DB2 /* SomariFoundationTests.swift */; };
+		02EAB8742350B5A800130DB2 /* SomariFoundation.h in Headers */ = {isa = PBXBuildFile; fileRef = 02EAB8662350B5A800130DB2 /* SomariFoundation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		02EAB87F2350B67300130DB2 /* FeedService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EAB87E2350B67300130DB2 /* FeedService.swift */; };
 		02EAB8812350B6D900130DB2 /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EAB8802350B6D900130DB2 /* LoginService.swift */; };
 		02EAB8832350B73300130DB2 /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EAB8822350B73300130DB2 /* StorageService.swift */; };
@@ -34,16 +34,16 @@
 			containerPortal = 02EAB85A2350B5A800130DB2 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 02EAB8622350B5A800130DB2;
-			remoteInfo = SomariKit;
+			remoteInfo = SomariFoundation;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		02EAB8632350B5A800130DB2 /* SomariKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SomariKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		02EAB8662350B5A800130DB2 /* SomariKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SomariKit.h; sourceTree = "<group>"; };
+		02EAB8632350B5A800130DB2 /* SomariFoundation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SomariFoundation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		02EAB8662350B5A800130DB2 /* SomariFoundation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SomariFoundation.h; sourceTree = "<group>"; };
 		02EAB8672350B5A800130DB2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		02EAB86C2350B5A800130DB2 /* SomariKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SomariKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		02EAB8712350B5A800130DB2 /* SomariKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SomariKitTests.swift; sourceTree = "<group>"; };
+		02EAB86C2350B5A800130DB2 /* SomariFoundationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SomariFoundationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		02EAB8712350B5A800130DB2 /* SomariFoundationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SomariFoundationTests.swift; sourceTree = "<group>"; };
 		02EAB8732350B5A800130DB2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		02EAB87E2350B67300130DB2 /* FeedService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedService.swift; sourceTree = "<group>"; };
 		02EAB8802350B6D900130DB2 /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
@@ -75,7 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				02EAB86D2350B5A800130DB2 /* SomariKit.framework in Frameworks */,
+				02EAB86D2350B5A800130DB2 /* SomariFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,8 +85,8 @@
 		02EAB8592350B5A800130DB2 = {
 			isa = PBXGroup;
 			children = (
-				02EAB8652350B5A800130DB2 /* SomariKit */,
-				02EAB8702350B5A800130DB2 /* SomariKitTests */,
+				02EAB8652350B5A800130DB2 /* SomariFoundation */,
+				02EAB8702350B5A800130DB2 /* SomariFoundationTests */,
 				02EAB8642350B5A800130DB2 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -94,32 +94,32 @@
 		02EAB8642350B5A800130DB2 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				02EAB8632350B5A800130DB2 /* SomariKit.framework */,
-				02EAB86C2350B5A800130DB2 /* SomariKitTests.xctest */,
+				02EAB8632350B5A800130DB2 /* SomariFoundation.framework */,
+				02EAB86C2350B5A800130DB2 /* SomariFoundationTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		02EAB8652350B5A800130DB2 /* SomariKit */ = {
+		02EAB8652350B5A800130DB2 /* SomariFoundation */ = {
 			isa = PBXGroup;
 			children = (
 				02EAB88F2350B93900130DB2 /* Views */,
 				02EAB8842350B7A400130DB2 /* Models */,
 				02EAB87D2350B64E00130DB2 /* Services */,
 				02EAB8962350BA7F00130DB2 /* CombineExtensions */,
-				02EAB8662350B5A800130DB2 /* SomariKit.h */,
+				02EAB8662350B5A800130DB2 /* SomariFoundation.h */,
 				02EAB8672350B5A800130DB2 /* Info.plist */,
 			);
-			path = SomariKit;
+			path = SomariFoundation;
 			sourceTree = "<group>";
 		};
-		02EAB8702350B5A800130DB2 /* SomariKitTests */ = {
+		02EAB8702350B5A800130DB2 /* SomariFoundationTests */ = {
 			isa = PBXGroup;
 			children = (
-				02EAB8712350B5A800130DB2 /* SomariKitTests.swift */,
+				02EAB8712350B5A800130DB2 /* SomariFoundationTests.swift */,
 				02EAB8732350B5A800130DB2 /* Info.plist */,
 			);
-			path = SomariKitTests;
+			path = SomariFoundationTests;
 			sourceTree = "<group>";
 		};
 		02EAB87D2350B64E00130DB2 /* Services */ = {
@@ -181,16 +181,16 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				02EAB8742350B5A800130DB2 /* SomariKit.h in Headers */,
+				02EAB8742350B5A800130DB2 /* SomariFoundation.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		02EAB8622350B5A800130DB2 /* SomariKit */ = {
+		02EAB8622350B5A800130DB2 /* SomariFoundation */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 02EAB8772350B5A800130DB2 /* Build configuration list for PBXNativeTarget "SomariKit" */;
+			buildConfigurationList = 02EAB8772350B5A800130DB2 /* Build configuration list for PBXNativeTarget "SomariFoundation" */;
 			buildPhases = (
 				02EAB85E2350B5A800130DB2 /* Headers */,
 				02EAB85F2350B5A800130DB2 /* Sources */,
@@ -201,14 +201,14 @@
 			);
 			dependencies = (
 			);
-			name = SomariKit;
-			productName = SomariKit;
-			productReference = 02EAB8632350B5A800130DB2 /* SomariKit.framework */;
+			name = SomariFoundation;
+			productName = SomariFoundation;
+			productReference = 02EAB8632350B5A800130DB2 /* SomariFoundation.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		02EAB86B2350B5A800130DB2 /* SomariKitTests */ = {
+		02EAB86B2350B5A800130DB2 /* SomariFoundationTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 02EAB87A2350B5A800130DB2 /* Build configuration list for PBXNativeTarget "SomariKitTests" */;
+			buildConfigurationList = 02EAB87A2350B5A800130DB2 /* Build configuration list for PBXNativeTarget "SomariFoundationTests" */;
 			buildPhases = (
 				02EAB8682350B5A800130DB2 /* Sources */,
 				02EAB8692350B5A800130DB2 /* Frameworks */,
@@ -219,9 +219,9 @@
 			dependencies = (
 				02EAB86F2350B5A800130DB2 /* PBXTargetDependency */,
 			);
-			name = SomariKitTests;
-			productName = SomariKitTests;
-			productReference = 02EAB86C2350B5A800130DB2 /* SomariKitTests.xctest */;
+			name = SomariFoundationTests;
+			productName = SomariFoundationTests;
+			productReference = 02EAB86C2350B5A800130DB2 /* SomariFoundationTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -243,7 +243,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 02EAB85D2350B5A800130DB2 /* Build configuration list for PBXProject "SomariKit" */;
+			buildConfigurationList = 02EAB85D2350B5A800130DB2 /* Build configuration list for PBXProject "SomariFoundation" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -256,8 +256,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				02EAB8622350B5A800130DB2 /* SomariKit */,
-				02EAB86B2350B5A800130DB2 /* SomariKitTests */,
+				02EAB8622350B5A800130DB2 /* SomariFoundation */,
+				02EAB86B2350B5A800130DB2 /* SomariFoundationTests */,
 			);
 		};
 /* End PBXProject section */
@@ -307,7 +307,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				02EAB8722350B5A800130DB2 /* SomariKitTests.swift in Sources */,
+				02EAB8722350B5A800130DB2 /* SomariFoundationTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -316,7 +316,7 @@
 /* Begin PBXTargetDependency section */
 		02EAB86F2350B5A800130DB2 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 02EAB8622350B5A800130DB2 /* SomariKit */;
+			target = 02EAB8622350B5A800130DB2 /* SomariFoundation */;
 			targetProxy = 02EAB86E2350B5A800130DB2 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -451,7 +451,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = SomariKit/Info.plist;
+				INFOPLIST_FILE = SomariFoundation/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -459,8 +459,8 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = app.kymmt.SomariKit;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = app.kymmt.SomariFoundation;
+				PRODUCT_NAME = SomariFoundation;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -477,7 +477,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = SomariKit/Info.plist;
+				INFOPLIST_FILE = SomariFoundation/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -485,8 +485,8 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = app.kymmt.SomariKit;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = app.kymmt.SomariFoundation;
+				PRODUCT_NAME = SomariFoundation;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -498,13 +498,13 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = SomariKitTests/Info.plist;
+				INFOPLIST_FILE = SomariFoundationTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = app.kymmt.SomariKitTests;
+				PRODUCT_BUNDLE_IDENTIFIER = app.kymmt.SomariFoundationTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -516,13 +516,13 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = SomariKitTests/Info.plist;
+				INFOPLIST_FILE = SomariFoundationTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = app.kymmt.SomariKitTests;
+				PRODUCT_BUNDLE_IDENTIFIER = app.kymmt.SomariFoundationTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -532,7 +532,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		02EAB85D2350B5A800130DB2 /* Build configuration list for PBXProject "SomariKit" */ = {
+		02EAB85D2350B5A800130DB2 /* Build configuration list for PBXProject "SomariFoundation" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				02EAB8752350B5A800130DB2 /* Debug */,
@@ -541,7 +541,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		02EAB8772350B5A800130DB2 /* Build configuration list for PBXNativeTarget "SomariKit" */ = {
+		02EAB8772350B5A800130DB2 /* Build configuration list for PBXNativeTarget "SomariFoundation" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				02EAB8782350B5A800130DB2 /* Debug */,
@@ -550,7 +550,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		02EAB87A2350B5A800130DB2 /* Build configuration list for PBXNativeTarget "SomariKitTests" */ = {
+		02EAB87A2350B5A800130DB2 /* Build configuration list for PBXNativeTarget "SomariFoundationTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				02EAB87B2350B5A800130DB2 /* Debug */,

@@ -8,7 +8,7 @@
 
 import Foundation
 import Combine
-import SomariKit
+import SomariFoundation
 
 protocol LaunchInteractable {
     func tryLogin() -> AnyPublisher<Bool, LoginError>

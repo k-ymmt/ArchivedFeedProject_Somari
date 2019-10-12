@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import SomariKit
+import SomariFoundation
 
 class FeedViewCell: UITableViewCell, NibLoadable {
     @IBOutlet private weak var titleLabel: UILabel!

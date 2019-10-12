@@ -8,7 +8,7 @@
 
 import Foundation
 import FirebaseFirestore
-import SomariKit
+import SomariFoundation
 
 extension UserSettingsFeedData {
     static func key(uid: String) -> String {
