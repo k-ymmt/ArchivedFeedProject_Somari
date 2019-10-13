@@ -12,7 +12,12 @@ import SomariFoundation
 
 class DependencyResolver {
     let loginService: LoginService
+    let feedService: FeedService
+    let storageService: StorageService
+    
     init() {
         self.loginService = FirebaseLoginService()
+        self.feedService = FeedKitService()
+        self.storageService = FirebaseStorageService()
     }
 }

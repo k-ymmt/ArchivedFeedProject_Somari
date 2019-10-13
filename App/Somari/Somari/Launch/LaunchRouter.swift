@@ -17,7 +17,7 @@ class LaunchRouter: LaunchRoutable & Router {
     struct Dependency {
     }
     
-    enum Navigation: NavigationAction {
+    enum Navigation: RouterOutput {
     }
     
     static func assembleModules(dependency: LaunchRouter.Dependency, action: @escaping (LaunchRouter.Navigation) -> Void) -> UIViewController {

@@ -10,15 +10,23 @@ import Foundation
 import UIKit
 import SomariCore
 import Login
+import Feeds
 
 class GatewayProvider {
     private let window: UIWindow
     
+    let main: MainGateway
     let login: LoginGateway
+    let feeds: FeedsGateway
     
     init(window: UIWindow, resolver: DependencyResolver) {
+        self.main = MainGateway()
         self.login = LoginGateway(dependency: .init(
             loginService: resolver.loginService
+        ))
+        self.feeds = FeedsGateway(dependency: .init(
+            feedService: resolver.feedService,
+            storageService: resolver.storageService
         ))
         self.window = window
         subscribeOutputs()
@@ -31,7 +39,19 @@ class GatewayProvider {
     }
     
     private func subscribeOutputs() {
+        self.main.output { [weak self] (output) in self?.mainGatewayOutputAction(output: output) }
         self.login.output { [weak self] (output) in self?.loginGatewayOutputAction(output: output) }
+        self.feeds.output { [weak self] (output) in self?.feedsGatewayOutputAction(output: output) }
+    }
+}
+
+// MARK: - MainGateway
+private extension GatewayProvider {
+    private func mainGatewayOutputAction(output: MainGateway.Output) {
+        switch output {
+        case .showMainTab(let viewController):
+            self.window.rootViewController = viewController
+        }
     }
 }
 
@@ -40,7 +60,9 @@ private extension GatewayProvider {
     private func loginGatewayOutputAction(output: LoginGateway.Output) {
         switch output {
         case .loginSuccess:
-            break
+            self.main.input(.showMainTab)
+            self.feeds.input(.showFeeds)
+            self.main.input(.setAdditionalFeed(AdditionalFeedRouter.assembleModules()))
         case .loginFailure(let error):
             switch error {
             case .notLogin:
@@ -51,7 +73,17 @@ private extension GatewayProvider {
                 break
             }
         case .showLoginPage(let viewController):
-            break
+            window.rootViewController = UINavigationController(rootViewController: viewController)
+        }
+    }
+}
+
+// MARK: - FeedsGateway
+private extension GatewayProvider {
+    private func feedsGatewayOutputAction(output: FeedsGateway.Output) {
+        switch output {
+        case .showFeeds(let viewController):
+            main.input(.setFeeds(viewController))
         }
     }
 }

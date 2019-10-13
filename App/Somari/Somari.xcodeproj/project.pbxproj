@@ -31,6 +31,9 @@
 		021B97A32351EE3F00E59F3F /* Login.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 021B97A12351EE3F00E59F3F /* Login.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		021B97C0235228CF00E59F3F /* GatewayProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021B97BF235228CF00E59F3F /* GatewayProvider.swift */; };
 		021B97C223524D3600E59F3F /* DependencyResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021B97C123524D3600E59F3F /* DependencyResolver.swift */; };
+		021B97F32352531700E59F3F /* Feeds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 021B97F22352531700E59F3F /* Feeds.framework */; };
+		021B97F42352531700E59F3F /* Feeds.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 021B97F22352531700E59F3F /* Feeds.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		021B97FD2352D6CF00E59F3F /* MainGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021B97FC2352D6CF00E59F3F /* MainGateway.swift */; };
 		023ECEF2233BB13D009F6DD6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023ECEF1233BB13D009F6DD6 /* AppDelegate.swift */; };
 		023ECEF4233BB13D009F6DD6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023ECEF3233BB13D009F6DD6 /* SceneDelegate.swift */; };
 		023ECEF8233BB13F009F6DD6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 023ECEF7233BB13F009F6DD6 /* Assets.xcassets */; };
@@ -38,10 +41,6 @@
 		023ECEFE233BB13F009F6DD6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 023ECEFC233BB13F009F6DD6 /* LaunchScreen.storyboard */; };
 		023ECF09233BB13F009F6DD6 /* SomariTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023ECF08233BB13F009F6DD6 /* SomariTests.swift */; };
 		023ECF14233BB13F009F6DD6 /* SomariUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023ECF13233BB13F009F6DD6 /* SomariUITests.swift */; };
-		023ECF29233F089A009F6DD6 /* FeedsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023ECF28233F089A009F6DD6 /* FeedsViewController.swift */; };
-		023ECF3E233F5A39009F6DD6 /* FeedsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023ECF3D233F5A39009F6DD6 /* FeedsRouter.swift */; };
-		023ECF41233F5B6C009F6DD6 /* FeedsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023ECF40233F5B6C009F6DD6 /* FeedsInteractor.swift */; };
-		023ECF45233F5D7F009F6DD6 /* FeedsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023ECF44233F5D7F009F6DD6 /* FeedsPresenter.swift */; };
 		023ECF52233FE901009F6DD6 /* MainTabRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023ECF51233FE901009F6DD6 /* MainTabRouter.swift */; };
 		026534B923487E1600F753DA /* Logging in Frameworks */ = {isa = PBXBuildFile; productRef = 026534B823487E1600F753DA /* Logging */; };
 		02B2B7332348CF4400510E22 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 02B2B7322348CF4300510E22 /* GoogleService-Info.plist */; };
@@ -52,7 +51,6 @@
 		02BB0AD7234A095B0035FA96 /* LauchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BB0AD6234A095B0035FA96 /* LauchPresenter.swift */; };
 		02BB0AD9234A09860035FA96 /* LaunchInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BB0AD8234A09860035FA96 /* LaunchInteractor.swift */; };
 		02BB0ADB234A09AD0035FA96 /* LaunchRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BB0ADA234A09AD0035FA96 /* LaunchRouter.swift */; };
-		02F286012348B2F1004E308A /* FeedsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02F286002348B2F1004E308A /* FeedsViewController.xib */; };
 		02F286042348B352004E308A /* MainTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F286032348B352004E308A /* MainTabViewController.swift */; };
 		0F55231D694DFF3114FA636B /* Pods_SomariTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2915096F7DF1909C9067E793 /* Pods_SomariTests.framework */; };
 		6C62AE9169F8D5B9697F1A4D /* Pods_Somari.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6CB363F2F286BF29040BBD6 /* Pods_Somari.framework */; };
@@ -87,6 +85,7 @@
 				021B97392351DE4000E59F3F /* SomariKit.framework in Embed Frameworks */,
 				021B976C2351E1EF00E59F3F /* SomariCore.framework in Embed Frameworks */,
 				021B97002351D89E00E59F3F /* SomariFoundation.framework in Embed Frameworks */,
+				021B97F42352531700E59F3F /* Feeds.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -114,6 +113,8 @@
 		021B97A12351EE3F00E59F3F /* Login.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Login.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		021B97BF235228CF00E59F3F /* GatewayProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GatewayProvider.swift; sourceTree = "<group>"; };
 		021B97C123524D3600E59F3F /* DependencyResolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyResolver.swift; sourceTree = "<group>"; };
+		021B97F22352531700E59F3F /* Feeds.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Feeds.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		021B97FC2352D6CF00E59F3F /* MainGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainGateway.swift; sourceTree = "<group>"; };
 		023ECEEE233BB13D009F6DD6 /* Somari.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Somari.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		023ECEF1233BB13D009F6DD6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		023ECEF3233BB13D009F6DD6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -127,10 +128,6 @@
 		023ECF0F233BB13F009F6DD6 /* SomariUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SomariUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		023ECF13233BB13F009F6DD6 /* SomariUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SomariUITests.swift; sourceTree = "<group>"; };
 		023ECF15233BB13F009F6DD6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		023ECF28233F089A009F6DD6 /* FeedsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedsViewController.swift; sourceTree = "<group>"; };
-		023ECF3D233F5A39009F6DD6 /* FeedsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedsRouter.swift; sourceTree = "<group>"; };
-		023ECF40233F5B6C009F6DD6 /* FeedsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedsInteractor.swift; sourceTree = "<group>"; };
-		023ECF44233F5D7F009F6DD6 /* FeedsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedsPresenter.swift; sourceTree = "<group>"; };
 		023ECF51233FE901009F6DD6 /* MainTabRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabRouter.swift; sourceTree = "<group>"; };
 		02AA063F1D35A276B26D5C60 /* Pods-Somari.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Somari.debug.xcconfig"; path = "Target Support Files/Pods-Somari/Pods-Somari.debug.xcconfig"; sourceTree = "<group>"; };
 		02B2B7322348CF4300510E22 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -142,7 +139,6 @@
 		02BB0AD8234A09860035FA96 /* LaunchInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchInteractor.swift; sourceTree = "<group>"; };
 		02BB0ADA234A09AD0035FA96 /* LaunchRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchRouter.swift; sourceTree = "<group>"; };
 		02EAB8A42350DEC300130DB2 /* SomariKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SomariKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		02F286002348B2F1004E308A /* FeedsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FeedsViewController.xib; sourceTree = "<group>"; };
 		02F286032348B352004E308A /* MainTabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabViewController.swift; sourceTree = "<group>"; };
 		2915096F7DF1909C9067E793 /* Pods_SomariTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SomariTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6290992DA8BF40D9DB7B0DEC /* Pods-Somari-SomariUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Somari-SomariUITests.debug.xcconfig"; path = "Target Support Files/Pods-Somari-SomariUITests/Pods-Somari-SomariUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -161,6 +157,7 @@
 			files = (
 				021B96FF2351D89E00E59F3F /* SomariFoundation.framework in Frameworks */,
 				026534B923487E1600F753DA /* Logging in Frameworks */,
+				021B97F32352531700E59F3F /* Feeds.framework in Frameworks */,
 				021B97382351DE4000E59F3F /* SomariKit.framework in Frameworks */,
 				6C62AE9169F8D5B9697F1A4D /* Pods_Somari.framework in Frameworks */,
 				021B97A22351EE3F00E59F3F /* Login.framework in Frameworks */,
@@ -266,10 +263,10 @@
 			children = (
 				02BB0ACF234A08A70035FA96 /* Launch */,
 				023ECF42233F5D01009F6DD6 /* Main */,
-				023ECF3B233F58B4009F6DD6 /* Feeds */,
 				020A5B3E2340729F003692A6 /* AdditionalFeed */,
 				020A5B642340F3B5003692A6 /* AdditionalFeedConfirm */,
 				020A5B3D23406783003692A6 /* Resources */,
+				021B97FC2352D6CF00E59F3F /* MainGateway.swift */,
 				021B97BF235228CF00E59F3F /* GatewayProvider.swift */,
 				021B97C123524D3600E59F3F /* DependencyResolver.swift */,
 				023ECEF1233BB13D009F6DD6 /* AppDelegate.swift */,
@@ -306,26 +303,6 @@
 				023ECF15233BB13F009F6DD6 /* Info.plist */,
 			);
 			path = SomariUITests;
-			sourceTree = "<group>";
-		};
-		023ECF3B233F58B4009F6DD6 /* Feeds */ = {
-			isa = PBXGroup;
-			children = (
-				023ECF3C233F599E009F6DD6 /* Views */,
-				023ECF3D233F5A39009F6DD6 /* FeedsRouter.swift */,
-				023ECF44233F5D7F009F6DD6 /* FeedsPresenter.swift */,
-				023ECF40233F5B6C009F6DD6 /* FeedsInteractor.swift */,
-			);
-			path = Feeds;
-			sourceTree = "<group>";
-		};
-		023ECF3C233F599E009F6DD6 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				02F286002348B2F1004E308A /* FeedsViewController.xib */,
-				023ECF28233F089A009F6DD6 /* FeedsViewController.swift */,
-			);
-			path = Views;
 			sourceTree = "<group>";
 		};
 		023ECF42233F5D01009F6DD6 /* Main */ = {
@@ -384,6 +361,7 @@
 		261100F58BFEC59D28774E27 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				021B97F22352531700E59F3F /* Feeds.framework */,
 				021B97A12351EE3F00E59F3F /* Login.framework */,
 				021B976A2351E1EF00E59F3F /* SomariCore.framework */,
 				021B97372351DE4000E59F3F /* SomariKit.framework */,
@@ -514,7 +492,6 @@
 			files = (
 				023ECEFE233BB13F009F6DD6 /* LaunchScreen.storyboard in Resources */,
 				02BB0AD4234A08FD0035FA96 /* LaunchViewController.xib in Resources */,
-				02F286012348B2F1004E308A /* FeedsViewController.xib in Resources */,
 				020A5B5023408C96003692A6 /* Strings.strings in Resources */,
 				023ECEFB233BB13F009F6DD6 /* Preview Assets.xcassets in Resources */,
 				020A5B4323407327003692A6 /* AdditionalFeedViewController.xib in Resources */,
@@ -649,7 +626,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				023ECF45233F5D7F009F6DD6 /* FeedsPresenter.swift in Sources */,
 				02BB0AD7234A095B0035FA96 /* LauchPresenter.swift in Sources */,
 				02BB0ACE2349E6690035FA96 /* MainTabInteractor.swift in Sources */,
 				020A5B6F23422958003692A6 /* AdditionalFeedConfirmInteractor.swift in Sources */,
@@ -660,19 +636,17 @@
 				02BB0AD9234A09860035FA96 /* LaunchInteractor.swift in Sources */,
 				021B97C0235228CF00E59F3F /* GatewayProvider.swift in Sources */,
 				02BB0AC72348DFD70035FA96 /* MainTabPresenter.swift in Sources */,
-				023ECF3E233F5A39009F6DD6 /* FeedsRouter.swift in Sources */,
 				02BB0AD3234A08FD0035FA96 /* LaunchViewController.swift in Sources */,
-				023ECF41233F5B6C009F6DD6 /* FeedsInteractor.swift in Sources */,
 				02F286042348B352004E308A /* MainTabViewController.swift in Sources */,
 				023ECEF2233BB13D009F6DD6 /* AppDelegate.swift in Sources */,
 				02BB0ADB234A09AD0035FA96 /* LaunchRouter.swift in Sources */,
 				023ECEF4233BB13D009F6DD6 /* SceneDelegate.swift in Sources */,
 				020A5B682340F3E9003692A6 /* AdditionalFeedConfirmViewController.swift in Sources */,
+				021B97FD2352D6CF00E59F3F /* MainGateway.swift in Sources */,
 				020A5B4E2340891F003692A6 /* Strings.swift in Sources */,
 				020A5B3C234025DC003692A6 /* Colors.swift in Sources */,
 				020A5B562340B82E003692A6 /* AdditionalFeedInteractor.swift in Sources */,
 				023ECF52233FE901009F6DD6 /* MainTabRouter.swift in Sources */,
-				023ECF29233F089A009F6DD6 /* FeedsViewController.swift in Sources */,
 				020A5B47234081F5003692A6 /* AdditionalFeedPresenter.swift in Sources */,
 				020A5B4223407327003692A6 /* AdditionalFeedViewController.swift in Sources */,
 			);

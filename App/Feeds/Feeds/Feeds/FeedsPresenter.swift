@@ -15,7 +15,6 @@ protocol FeedsPresentable {
     
     func getFeeds(url: URL)
     func getFeedAll()
-    func navigateToAdditionalFeed()
     func showWebPage(linkString: String)
 }
 
@@ -32,7 +31,7 @@ class FeedsPresenter: FeedsPresentable {
         self.router = router
         self.interactor = interactor
         
-        interactor.getUserSettings(completion: receivedUserSettings(result:))
+//        interactor.getUserSettings(completion: receivedUserSettings(result:))
     }
     
     func getFeeds(url: URL) {
@@ -59,10 +58,6 @@ class FeedsPresenter: FeedsPresentable {
                 Logger.debug("\(error)")
             }
         }.toCombine.store(in: &cancellables)
-    }
-
-    func navigateToAdditionalFeed() {
-        router.navigateAdditionalFeedView()
     }
     
     func showWebPage(linkString: String) {

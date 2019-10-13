@@ -9,12 +9,18 @@
 import Foundation
 import UIKit
 
-public protocol NavigationAction {
+public protocol RouterOutput {
 }
 
 public protocol Router {
     associatedtype Dependency
-    associatedtype Navigation: NavigationAction
+    associatedtype Output: RouterOutput
     
-    static func assembleModules(dependency: Dependency, action: @escaping (Navigation) -> Void) -> UIViewController
+    static func assembleModules(dependency: Dependency, action: @escaping (Output) -> Void) -> UIViewController
+}
+
+public protocol EmptyOutputRouter {
+    associatedtype Dependency
+    
+    static func assembleModules(dependency: Dependency) -> UIViewController
 }

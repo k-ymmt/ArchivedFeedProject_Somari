@@ -9,34 +9,30 @@
 import Foundation
 import UIKit
 import SafariServices
-import SomariCore
+import SomariFoundation
 
 protocol FeedsRoutable {
-    func navigateAdditionalFeedView()
     func showSafariViewController(url: URL)
 }
 
-class FeedsRouter: FeedsRoutable {
+class FeedsRouter: FeedsRoutable & EmptyOutputRouter {
+    struct Dependency {
+        let feedService: FeedService
+        let storageService: StorageService
+    }
+    
     private weak var viewController: UIViewController!
-
-    static func assembleModules() -> UIViewController {
+    
+    static func assembleModules(dependency: FeedsRouter.Dependency) -> UIViewController {
         let router = FeedsRouter()
-        let feedsService = SomariCore.FeedKitService()
-        let storageService = FirebaseStorageService()
-        let loginService = FirebaseLoginService()
-        let interactor = FeedsInteractor(feedService: feedsService, storageService: storageService, loginService: loginService)
+        let interactor = FeedsInteractor(feedService: dependency.feedService, storageService: dependency.storageService)
         let presenter = FeedsPresenter(router: router, interactor: interactor)
         let viewController = FeedsViewController(presenter: presenter)
         router.viewController = viewController
         
-        return router.viewController
+        return viewController
     }
-    
-    func navigateAdditionalFeedView() {
-        let vc = AdditionalFeedRouter.assembleModules()
-        viewController.present(vc, animated: true)
-    }
-    
+
     func showSafariViewController(url: URL) {
         let sfvc = SFSafariViewController(url: url)
         viewController.present(sfvc, animated: true)

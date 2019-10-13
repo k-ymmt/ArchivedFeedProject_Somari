@@ -11,7 +11,7 @@ import UIKit
 import SomariFoundation
 import Combine
 
-enum LoginNavigationAction: NavigationAction {
+enum LoginNavigationAction: RouterOutput {
     case loginSuccess
 }
 

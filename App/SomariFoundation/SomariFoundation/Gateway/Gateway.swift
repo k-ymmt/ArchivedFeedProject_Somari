@@ -18,3 +18,9 @@ public protocol Gateway {
     func input(_ value: Input)
     func output(_ action: @escaping (Output) -> Void)
 }
+
+extension Gateway where Self.Dependency == Void {
+    public init() {
+        self.init(dependency: ())
+    }
+}

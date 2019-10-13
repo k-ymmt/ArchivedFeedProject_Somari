@@ -10,44 +10,41 @@ import Foundation
 import UIKit
 
 protocol MainTabRoutable {
-    
 }
 
-struct MainTabRouter: MainTabRoutable {
-    static func assembleModules() -> UIViewController {
+class MainTabRouter: MainTabRoutable {
+    static func assembleModules(
+        feedsViewController: UIViewController,
+        additionalFeedViewController: UIViewController
+    ) -> UIViewController {
         let tabViewController = MainTabViewController()
-        let router = MainTabRouter(tabController: tabViewController)
-        return tabViewController
-    }
-    
-    private weak var tabController: MainTabViewController?
-    init(tabController: MainTabViewController) {
-        self.tabController = tabController
+        
         let font = UIFont.systemFont(ofSize: 18, weight: .bold)
-        let feedsViewController = FeedsRouter.assembleModules()
         feedsViewController.tabBarItem = UITabBarItem(
             title: nil,
             image: UIImage(symbol: .list, withConfiguration: .init(font: font)),
             selectedImage: nil
         )
-        let additionalFeedViewController = AdditionalFeedRouter.assembleModules()
+
         additionalFeedViewController.tabBarItem = UITabBarItem(
             title: nil,
             image: UIImage(symbol: .plusSquare, withConfiguration: .init(font: font)),
             selectedImage: UIImage(symbol: .plusSquare, withConfiguration: .init(font: font))
         )
         
-        self.tabController?.setViewControllers([
+        tabViewController.setViewControllers([
             UINavigationController(rootViewController: feedsViewController),
             UINavigationController(rootViewController: additionalFeedViewController)
         ], animated: false)
-    }
-    
-    func navigateFeeds() {
-        self.tabController?.selectedIndex = 0
-    }
-    
-    func showLoginPage() {
         
+        let router = MainTabRouter(tabController: tabViewController)
+        return tabViewController
+    }
+    
+    private weak var tabController: MainTabViewController?
+    
+    
+    init(tabController: MainTabViewController) {
+        self.tabController = tabController
     }
 }
