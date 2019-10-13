@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import SomariCore
 import SomariFoundation
 import UIKit
 

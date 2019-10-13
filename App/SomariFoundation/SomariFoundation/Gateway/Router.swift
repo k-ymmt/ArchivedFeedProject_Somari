@@ -9,12 +9,9 @@
 import Foundation
 import UIKit
 
-public protocol RouterOutput {
-}
-
 public protocol Router {
     associatedtype Dependency
-    associatedtype Output: RouterOutput
+    associatedtype Output
     
     static func assembleModules(dependency: Dependency, action: @escaping (Output) -> Void) -> UIViewController
 }

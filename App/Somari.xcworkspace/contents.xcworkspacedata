@@ -11,6 +11,9 @@
       location = "group:Feeds/Feeds.xcodeproj">
    </FileRef>
    <FileRef
+      location = "group:Addition/Addition.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:SomariCore/SomariCore.xcodeproj">
    </FileRef>
    <FileRef

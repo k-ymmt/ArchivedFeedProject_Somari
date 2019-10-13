@@ -8,6 +8,7 @@
 
 import UIKit
 import Combine
+import SomariKit
 
 class AdditionalFeedViewController: UIViewController {
     @IBOutlet weak var scrollView: UIScrollView!

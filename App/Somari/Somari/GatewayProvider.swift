@@ -11,6 +11,7 @@ import UIKit
 import SomariCore
 import Login
 import Feeds
+import Addition
 
 class GatewayProvider {
     private let window: UIWindow
@@ -18,6 +19,7 @@ class GatewayProvider {
     let main: MainGateway
     let login: LoginGateway
     let feeds: FeedsGateway
+    let addition: AdditionGateway
     
     init(window: UIWindow, resolver: DependencyResolver) {
         self.main = MainGateway()
@@ -26,6 +28,11 @@ class GatewayProvider {
         ))
         self.feeds = FeedsGateway(dependency: .init(
             feedService: resolver.feedService,
+            storageService: resolver.storageService
+        ))
+        self.addition = AdditionGateway(dependency: .init(
+            feedService: resolver.feedService,
+            loginService: resolver.loginService,
             storageService: resolver.storageService
         ))
         self.window = window
@@ -42,6 +49,7 @@ class GatewayProvider {
         self.main.output { [weak self] (output) in self?.mainGatewayOutputAction(output: output) }
         self.login.output { [weak self] (output) in self?.loginGatewayOutputAction(output: output) }
         self.feeds.output { [weak self] (output) in self?.feedsGatewayOutputAction(output: output) }
+        self.addition.output { [weak self] (output) in self?.additionGatewayOutputAction(output: output) }
     }
 }
 
@@ -62,7 +70,7 @@ private extension GatewayProvider {
         case .loginSuccess:
             self.main.input(.showMainTab)
             self.feeds.input(.showFeeds)
-            self.main.input(.setAdditionalFeed(AdditionalFeedRouter.assembleModules()))
+            self.addition.input(.showAdditionalFeed)
         case .loginFailure(let error):
             switch error {
             case .notLogin:
@@ -84,6 +92,16 @@ private extension GatewayProvider {
         switch output {
         case .showFeeds(let viewController):
             main.input(.setFeeds(viewController))
+        }
+    }
+}
+
+// MARK: - AdditionGateway
+private extension GatewayProvider {
+    private func additionGatewayOutputAction(output: AdditionGateway.Output) {
+        switch output {
+        case .showAdditionalFeed(let viewController):
+            main.input(.setAdditionalFeed(viewController))
         }
     }
 }

@@ -44,7 +44,7 @@ class AdditionalFeedConfirmPresenter: AdditionalFeedConfirmPresentable {
         interactor.saveFeedInfo(info: UserSettingsFeedData(group: "/", url: info.url.absoluteString, title: info.title)) { [weak self] (result) in
             switch result {
             case .success:
-                self?.router.popToRoot()
+                self?.router.additionSuccess()
             case .failure(let error):
                 Logger.debug("\(error)")
             }

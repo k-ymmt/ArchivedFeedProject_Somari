@@ -19,7 +19,6 @@ protocol AdditionalFeedPresentable {
     var getFeedSuccess: EventPublisher<Bool> { get }
 
     func getFeed(urlString: String)
-    func dismiss()
 }
 
 class AdditionalFeedPresenter: AdditionalFeedPresentable {
@@ -57,10 +56,6 @@ class AdditionalFeedPresenter: AdditionalFeedPresentable {
                 break
             }
         }.toCombine.store(in: &cancellables)
-    }
-
-    func dismiss() {
-        router.dismiss()
     }
     
     deinit {

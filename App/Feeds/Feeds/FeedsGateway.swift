@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import SomariFoundation
 
-enum FeedsNavigationAction: RouterOutput {
+enum FeedsNavigationAction {
 }
 
 public class FeedsGateway: Gateway {

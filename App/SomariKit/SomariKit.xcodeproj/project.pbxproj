@@ -17,6 +17,10 @@
 		021B97322351DD6800E59F3F /* FeedViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021B97312351DD6800E59F3F /* FeedViewCell.swift */; };
 		021B97342351DDD700E59F3F /* SFSymbolString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021B97332351DDD700E59F3F /* SFSymbolString.swift */; };
 		021B97362351DDF600E59F3F /* CustomDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021B97352351DDF600E59F3F /* CustomDateFormatter.swift */; };
+		021B984323530B3500E59F3F /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 021B984223530B3500E59F3F /* Colors.xcassets */; };
+		021B984723530B7400E59F3F /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021B984423530B7400E59F3F /* Colors.swift */; };
+		021B984823530B7400E59F3F /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021B984623530B7400E59F3F /* Strings.swift */; };
+		021B984A23530BA600E59F3F /* Strings.strings in Resources */ = {isa = PBXBuildFile; fileRef = 021B984923530BA600E59F3F /* Strings.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +61,10 @@
 		021B97312351DD6800E59F3F /* FeedViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewCell.swift; sourceTree = "<group>"; };
 		021B97332351DDD700E59F3F /* SFSymbolString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSymbolString.swift; sourceTree = "<group>"; };
 		021B97352351DDF600E59F3F /* CustomDateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CustomDateFormatter.swift; path = FeedList/CustomDateFormatter.swift; sourceTree = "<group>"; };
+		021B984223530B3500E59F3F /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		021B984423530B7400E59F3F /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		021B984623530B7400E59F3F /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
+		021B984923530BA600E59F3F /* Strings.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Strings.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				021B97262351DC0F00E59F3F /* FeedList */,
+				021B984123530B2100E59F3F /* Resources */,
 				021B97332351DDD700E59F3F /* SFSymbolString.swift */,
 				021B97352351DDF600E59F3F /* CustomDateFormatter.swift */,
 				021B970F2351DBE900E59F3F /* SomariKit.h */,
@@ -136,6 +145,17 @@
 				021B972C2351DCCE00E59F3F /* SomariFoundation.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		021B984123530B2100E59F3F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				021B984223530B3500E59F3F /* Colors.xcassets */,
+				021B984423530B7400E59F3F /* Colors.swift */,
+				021B984623530B7400E59F3F /* Strings.swift */,
+				021B984923530BA600E59F3F /* Strings.strings */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,6 +253,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				021B972A2351DC3600E59F3F /* FeedListViewController.xib in Resources */,
+				021B984323530B3500E59F3F /* Colors.xcassets in Resources */,
+				021B984A23530BA600E59F3F /* Strings.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -251,8 +273,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				021B97322351DD6800E59F3F /* FeedViewCell.swift in Sources */,
+				021B984723530B7400E59F3F /* Colors.swift in Sources */,
 				021B97362351DDF600E59F3F /* CustomDateFormatter.swift in Sources */,
 				021B97292351DC3600E59F3F /* FeedListViewController.swift in Sources */,
+				021B984823530B7400E59F3F /* Strings.swift in Sources */,
 				021B97342351DDD700E59F3F /* SFSymbolString.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
