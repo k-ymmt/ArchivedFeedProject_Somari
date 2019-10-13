@@ -19,6 +19,7 @@
 		021B97712351E52000E59F3F /* FirebaseLoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021B975F2351DF9300E59F3F /* FirebaseLoginService.swift */; };
 		52709F4B16CC23BB90C8F4CE /* Pods_SomariCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A741B154FE7168097B0885B0 /* Pods_SomariCore.framework */; };
 		E7B6F880F63B60C595036987 /* Pods_SomariCoreTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B95BD4D3F4699917653BD29A /* Pods_SomariCoreTests.framework */; };
+		02F2096623532CDE00DB98A6 /* DependencyInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F2096523532CDE00DB98A6 /* DependencyInitializer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		B95BD4D3F4699917653BD29A /* Pods_SomariCoreTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SomariCoreTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C33AD1A3E58ABD0226EB1674 /* Pods-SomariCore.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SomariCore.debug.xcconfig"; path = "Target Support Files/Pods-SomariCore/Pods-SomariCore.debug.xcconfig"; sourceTree = "<group>"; };
 		CA13CF1BAA0E81004944C0EA /* Pods-SomariCoreTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SomariCoreTests.release.xcconfig"; path = "Target Support Files/Pods-SomariCoreTests/Pods-SomariCoreTests.release.xcconfig"; sourceTree = "<group>"; };
+		02F2096523532CDE00DB98A6 /* DependencyInitializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyInitializer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +115,7 @@
 			children = (
 				021B97612351DF9300E59F3F /* Services */,
 				021B976D2351E31500E59F3F /* Mappable.swift */,
+				02F2096523532CDE00DB98A6 /* DependencyInitializer.swift */,
 				021B97472351DF6600E59F3F /* SomariCore.h */,
 				021B97482351DF6600E59F3F /* Info.plist */,
 			);
@@ -328,6 +331,7 @@
 				021B97712351E52000E59F3F /* FirebaseLoginService.swift in Sources */,
 				021B976F2351E51300E59F3F /* FeedKitService.swift in Sources */,
 				021B97702351E51900E59F3F /* FirebaseStorageService.swift in Sources */,
+				02F2096623532CDE00DB98A6 /* DependencyInitializer.swift in Sources */,
 				021B976E2351E31500E59F3F /* Mappable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

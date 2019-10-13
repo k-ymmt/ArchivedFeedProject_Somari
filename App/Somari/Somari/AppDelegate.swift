@@ -7,14 +7,13 @@
 //
 
 import UIKit
-import Logging
-import Firebase
+import SomariCore
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        FirebaseApp.configure()
+        DependencyInitializer.initialize()
         return true
     }
 
