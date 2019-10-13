@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0214B57323538D3400B2EB7E /* FeedViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 021B97302351DD6700E59F3F /* FeedViewCell.xib */; };
 		021B97162351DBE900E59F3F /* SomariKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 021B970C2351DBE900E59F3F /* SomariKit.framework */; };
 		021B971B2351DBE900E59F3F /* SomariKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021B971A2351DBE900E59F3F /* SomariKitTests.swift */; };
 		021B971D2351DBE900E59F3F /* SomariKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 021B970F2351DBE900E59F3F /* SomariKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -252,6 +253,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0214B57323538D3400B2EB7E /* FeedViewCell.xib in Resources */,
 				021B972A2351DC3600E59F3F /* FeedListViewController.xib in Resources */,
 				021B984323530B3500E59F3F /* Colors.xcassets in Resources */,
 				021B984A23530BA600E59F3F /* Strings.strings in Resources */,
