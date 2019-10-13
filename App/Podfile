@@ -8,15 +8,8 @@ install! 'cocoapods', generate_multiple_pod_projects: true, incremental_installa
 inhibit_all_warnings!
 use_modular_headers!
 
-target 'SomariCore' do
-  project 'SomariCore/SomariCore.xcodeproj'
-  use_frameworks!
+use_frameworks!
 
-  pod 'Firebase/Analytics'
-  pod 'Firebase/Auth'
-  pod 'Firebase/Firestore'
-
-  target 'SomariCoreTests' do
-    inherit! :search_paths
-  end
-end
+pod 'Firebase/Analytics'
+pod 'Firebase/Auth'
+pod 'Firebase/Firestore'
