@@ -18,7 +18,7 @@ public enum Logger {
     
     private static let dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
-        formatter.dateStyle = .long
+        formatter.dateFormat = "YYYY-MM-dd HH:mm:ss"
         
         return formatter
     }()
@@ -47,7 +47,8 @@ public enum Logger {
     static func log(level: LogLevel, _ message: () -> String, file: String = #file, function: String = #function, line: Int = #line) {
         #if DEBUG
         let now = Date()
-        print("\(Self.dateFormatter.string(from: now)) \(file)(\(function): \(line))\n  \(message())")
+        let fileName = file.split(separator: "/").last ?? ""
+        print("\(Self.dateFormatter.string(from: now)) \(fileName):\(line) - \(function)\n> \(message())")
         #endif
     }
 }
