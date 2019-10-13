@@ -18,8 +18,6 @@
 		0214B2C223535C0100B2EB7E /* Login.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0214B2C023535C0100B2EB7E /* Login.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0214B2C423535C0700B2EB7E /* SomariCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0214B2C323535C0700B2EB7E /* SomariCore.framework */; };
 		0214B2C523535C0700B2EB7E /* SomariCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0214B2C323535C0700B2EB7E /* SomariCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		0214B2CA23535C2800B2EB7E /* SomariKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0214B2C923535C2800B2EB7E /* SomariKit.framework */; };
-		0214B2CB23535C2800B2EB7E /* SomariKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0214B2C923535C2800B2EB7E /* SomariKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		021B97C0235228CF00E59F3F /* GatewayProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021B97BF235228CF00E59F3F /* GatewayProvider.swift */; };
 		021B97C223524D3600E59F3F /* DependencyResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021B97C123524D3600E59F3F /* DependencyResolver.swift */; };
 		021B97FD2352D6CF00E59F3F /* MainGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021B97FC2352D6CF00E59F3F /* MainGateway.swift */; };
@@ -40,9 +38,6 @@
 		02BB0AD9234A09860035FA96 /* LaunchInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BB0AD8234A09860035FA96 /* LaunchInteractor.swift */; };
 		02BB0ADB234A09AD0035FA96 /* LaunchRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BB0ADA234A09AD0035FA96 /* LaunchRouter.swift */; };
 		02F286042348B352004E308A /* MainTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F286032348B352004E308A /* MainTabViewController.swift */; };
-		0F55231D694DFF3114FA636B /* Pods_SomariTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2915096F7DF1909C9067E793 /* Pods_SomariTests.framework */; };
-		6C62AE9169F8D5B9697F1A4D /* Pods_Somari.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6CB363F2F286BF29040BBD6 /* Pods_Somari.framework */; };
-		96BB5A816DD2392C659C4320 /* Pods_Somari_SomariUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E00AA8A687DC5B73BBE2F879 /* Pods_Somari_SomariUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,14 +84,8 @@
 		0214B2C023535C0100B2EB7E /* Login.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Login.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0214B2C323535C0700B2EB7E /* SomariCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SomariCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0214B2C623535C0E00B2EB7E /* SomariKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SomariKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		0214B2C923535C2800B2EB7E /* SomariKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SomariKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		021B96FE2351D89E00E59F3F /* SomariFoundation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SomariFoundation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		021B97372351DE4000E59F3F /* SomariKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SomariKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		021B976A2351E1EF00E59F3F /* SomariCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SomariCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		021B97A12351EE3F00E59F3F /* Login.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Login.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		021B97BF235228CF00E59F3F /* GatewayProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GatewayProvider.swift; sourceTree = "<group>"; };
 		021B97C123524D3600E59F3F /* DependencyResolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyResolver.swift; sourceTree = "<group>"; };
-		021B97F22352531700E59F3F /* Feeds.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Feeds.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		021B97FC2352D6CF00E59F3F /* MainGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainGateway.swift; sourceTree = "<group>"; };
 		023ECEEE233BB13D009F6DD6 /* Somari.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Somari.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		023ECEF1233BB13D009F6DD6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -112,7 +101,6 @@
 		023ECF13233BB13F009F6DD6 /* SomariUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SomariUITests.swift; sourceTree = "<group>"; };
 		023ECF15233BB13F009F6DD6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		023ECF51233FE901009F6DD6 /* MainTabRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabRouter.swift; sourceTree = "<group>"; };
-		02AA063F1D35A276B26D5C60 /* Pods-Somari.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Somari.debug.xcconfig"; path = "Target Support Files/Pods-Somari/Pods-Somari.debug.xcconfig"; sourceTree = "<group>"; };
 		02B2B7322348CF4300510E22 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		02BB0AC62348DFD70035FA96 /* MainTabPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabPresenter.swift; sourceTree = "<group>"; };
 		02BB0ACD2349E6690035FA96 /* MainTabInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabInteractor.swift; sourceTree = "<group>"; };
@@ -121,18 +109,8 @@
 		02BB0AD6234A095B0035FA96 /* LauchPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LauchPresenter.swift; sourceTree = "<group>"; };
 		02BB0AD8234A09860035FA96 /* LaunchInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchInteractor.swift; sourceTree = "<group>"; };
 		02BB0ADA234A09AD0035FA96 /* LaunchRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchRouter.swift; sourceTree = "<group>"; };
-		02E7F0C12353329700D1F5C6 /* SomariCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SomariCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		02EAB8A42350DEC300130DB2 /* SomariKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SomariKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		02F2096223532B1300DB98A6 /* Addition.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Addition.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		02C73AC72353481E00628870 /* build.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = build.xcconfig; sourceTree = "<group>"; };
 		02F286032348B352004E308A /* MainTabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabViewController.swift; sourceTree = "<group>"; };
-		2915096F7DF1909C9067E793 /* Pods_SomariTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SomariTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		6290992DA8BF40D9DB7B0DEC /* Pods-Somari-SomariUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Somari-SomariUITests.debug.xcconfig"; path = "Target Support Files/Pods-Somari-SomariUITests/Pods-Somari-SomariUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		6E910118ECC1483154530BBE /* Pods-Somari-SomariUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Somari-SomariUITests.release.xcconfig"; path = "Target Support Files/Pods-Somari-SomariUITests/Pods-Somari-SomariUITests.release.xcconfig"; sourceTree = "<group>"; };
-		7CFBC1BBBADF5DFFE9A08F79 /* Pods-SomariTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SomariTests.debug.xcconfig"; path = "Target Support Files/Pods-SomariTests/Pods-SomariTests.debug.xcconfig"; sourceTree = "<group>"; };
-		C6CB363F2F286BF29040BBD6 /* Pods_Somari.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Somari.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		DBA1FC92E2A2AFFD696BF771 /* Pods-SomariTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SomariTests.release.xcconfig"; path = "Target Support Files/Pods-SomariTests/Pods-SomariTests.release.xcconfig"; sourceTree = "<group>"; };
-		E00AA8A687DC5B73BBE2F879 /* Pods_Somari_SomariUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Somari_SomariUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		FE60AFF557755E7C18A44ADB /* Pods-Somari.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Somari.release.xcconfig"; path = "Target Support Files/Pods-Somari/Pods-Somari.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,7 +131,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0F55231D694DFF3114FA636B /* Pods_SomariTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -161,7 +138,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				96BB5A816DD2392C659C4320 /* Pods_Somari_SomariUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -184,7 +160,6 @@
 				023ECF07233BB13F009F6DD6 /* SomariTests */,
 				023ECF12233BB13F009F6DD6 /* SomariUITests */,
 				023ECEEF233BB13D009F6DD6 /* Products */,
-				25F61B0A0D6A0B11C7BD6D04 /* Pods */,
 				261100F58BFEC59D28774E27 /* Frameworks */,
 			);
 			sourceTree = "<group>";
@@ -204,8 +179,6 @@
 			children = (
 				02BB0ACF234A08A70035FA96 /* Launch */,
 				023ECF42233F5D01009F6DD6 /* Main */,
-				020A5B3E2340729F003692A6 /* AdditionalFeed */,
-				020A5B642340F3B5003692A6 /* AdditionalFeedConfirm */,
 				020A5B3D23406783003692A6 /* Resources */,
 				021B97FC2352D6CF00E59F3F /* MainGateway.swift */,
 				021B97BF235228CF00E59F3F /* GatewayProvider.swift */,
@@ -216,6 +189,7 @@
 				023ECEFF233BB13F009F6DD6 /* Info.plist */,
 				02B2B7322348CF4300510E22 /* GoogleService-Info.plist */,
 				023ECEF9233BB13F009F6DD6 /* Preview Content */,
+				02C73AC72353481E00628870 /* build.xcconfig */,
 			);
 			path = Somari;
 			sourceTree = "<group>";
@@ -285,41 +259,15 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		25F61B0A0D6A0B11C7BD6D04 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				02AA063F1D35A276B26D5C60 /* Pods-Somari.debug.xcconfig */,
-				FE60AFF557755E7C18A44ADB /* Pods-Somari.release.xcconfig */,
-				6290992DA8BF40D9DB7B0DEC /* Pods-Somari-SomariUITests.debug.xcconfig */,
-				6E910118ECC1483154530BBE /* Pods-Somari-SomariUITests.release.xcconfig */,
-				7CFBC1BBBADF5DFFE9A08F79 /* Pods-SomariTests.debug.xcconfig */,
-				DBA1FC92E2A2AFFD696BF771 /* Pods-SomariTests.release.xcconfig */,
-			);
-			name = Pods;
-			path = ../Pods;
-			sourceTree = "<group>";
-		};
 		261100F58BFEC59D28774E27 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				0214B2C923535C2800B2EB7E /* SomariKit.framework */,
 				0214B2C623535C0E00B2EB7E /* SomariKit.framework */,
 				0214B2C323535C0700B2EB7E /* SomariCore.framework */,
 				0214B2C023535C0100B2EB7E /* Login.framework */,
 				0214B2BD23535BEB00B2EB7E /* Feeds.framework */,
 				0214B2BA23535BE000B2EB7E /* Addition.framework */,
 				0214B2B723535BCB00B2EB7E /* SomariFoundation.framework */,
-				02E7F0C12353329700D1F5C6 /* SomariCore.framework */,
-				02F2096223532B1300DB98A6 /* Addition.framework */,
-				021B97F22352531700E59F3F /* Feeds.framework */,
-				021B97A12351EE3F00E59F3F /* Login.framework */,
-				021B976A2351E1EF00E59F3F /* SomariCore.framework */,
-				021B97372351DE4000E59F3F /* SomariKit.framework */,
-				021B96FE2351D89E00E59F3F /* SomariFoundation.framework */,
-				02EAB8A42350DEC300130DB2 /* SomariKit.framework */,
-				C6CB363F2F286BF29040BBD6 /* Pods_Somari.framework */,
-				E00AA8A687DC5B73BBE2F879 /* Pods_Somari_SomariUITests.framework */,
-				2915096F7DF1909C9067E793 /* Pods_SomariTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -331,11 +279,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 023ECF18233BB13F009F6DD6 /* Build configuration list for PBXNativeTarget "Somari" */;
 			buildPhases = (
-				486A6F4DBC2D715FDB7D862F /* [CP] Check Pods Manifest.lock */,
 				023ECEEA233BB13D009F6DD6 /* Sources */,
 				023ECEEB233BB13D009F6DD6 /* Frameworks */,
 				023ECEEC233BB13D009F6DD6 /* Resources */,
-				11493FCAE35957DC21D7DCC3 /* [CP] Embed Pods Frameworks */,
 				021B97012351D89E00E59F3F /* Embed Frameworks */,
 			);
 			buildRules = (
@@ -353,7 +299,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 023ECF1B233BB13F009F6DD6 /* Build configuration list for PBXNativeTarget "SomariTests" */;
 			buildPhases = (
-				59CFC8955095546225B0555E /* [CP] Check Pods Manifest.lock */,
 				023ECF00233BB13F009F6DD6 /* Sources */,
 				023ECF01233BB13F009F6DD6 /* Frameworks */,
 				023ECF02233BB13F009F6DD6 /* Resources */,
@@ -372,11 +317,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 023ECF1E233BB13F009F6DD6 /* Build configuration list for PBXNativeTarget "SomariUITests" */;
 			buildPhases = (
-				35A9EE300231BD0C089C94BB /* [CP] Check Pods Manifest.lock */,
 				023ECF0B233BB13F009F6DD6 /* Sources */,
 				023ECF0C233BB13F009F6DD6 /* Frameworks */,
 				023ECF0D233BB13F009F6DD6 /* Resources */,
-				B4F611CBD51F92D8F2DD8F01 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -464,109 +407,6 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		11493FCAE35957DC21D7DCC3 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Somari/Pods-Somari-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Somari/Pods-Somari-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Somari/Pods-Somari-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		35A9EE300231BD0C089C94BB /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Somari-SomariUITests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		486A6F4DBC2D715FDB7D862F /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Somari-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		59CFC8955095546225B0555E /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-SomariTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		B4F611CBD51F92D8F2DD8F01 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Somari-SomariUITests/Pods-Somari-SomariUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Somari-SomariUITests/Pods-Somari-SomariUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Somari-SomariUITests/Pods-Somari-SomariUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		023ECEEA233BB13D009F6DD6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -633,6 +473,7 @@
 /* Begin XCBuildConfiguration section */
 		023ECF16233BB13F009F6DD6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 02C73AC72353481E00628870 /* build.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -693,6 +534,7 @@
 		};
 		023ECF17233BB13F009F6DD6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 02C73AC72353481E00628870 /* build.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -747,7 +589,6 @@
 		};
 		023ECF19233BB13F009F6DD6 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 02AA063F1D35A276B26D5C60 /* Pods-Somari.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -768,7 +609,6 @@
 		};
 		023ECF1A233BB13F009F6DD6 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FE60AFF557755E7C18A44ADB /* Pods-Somari.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -789,7 +629,6 @@
 		};
 		023ECF1C233BB13F009F6DD6 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7CFBC1BBBADF5DFFE9A08F79 /* Pods-SomariTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -811,7 +650,6 @@
 		};
 		023ECF1D233BB13F009F6DD6 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DBA1FC92E2A2AFFD696BF771 /* Pods-SomariTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -833,7 +671,6 @@
 		};
 		023ECF1F233BB13F009F6DD6 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6290992DA8BF40D9DB7B0DEC /* Pods-Somari-SomariUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -853,7 +690,6 @@
 		};
 		023ECF20233BB13F009F6DD6 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6E910118ECC1483154530BBE /* Pods-Somari-SomariUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

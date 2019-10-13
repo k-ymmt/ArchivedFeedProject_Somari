@@ -17,8 +17,6 @@
 		021B976F2351E51300E59F3F /* FeedKitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021B975E2351DF9300E59F3F /* FeedKitService.swift */; };
 		021B97702351E51900E59F3F /* FirebaseStorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021B97602351DF9300E59F3F /* FirebaseStorageService.swift */; };
 		021B97712351E52000E59F3F /* FirebaseLoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021B975F2351DF9300E59F3F /* FirebaseLoginService.swift */; };
-		52709F4B16CC23BB90C8F4CE /* Pods_SomariCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A741B154FE7168097B0885B0 /* Pods_SomariCore.framework */; };
-		E7B6F880F63B60C595036987 /* Pods_SomariCoreTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B95BD4D3F4699917653BD29A /* Pods_SomariCoreTests.framework */; };
 		02F2096623532CDE00DB98A6 /* DependencyInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F2096523532CDE00DB98A6 /* DependencyInitializer.swift */; };
 /* End PBXBuildFile section */
 
@@ -47,7 +45,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		006F7645124F1F69E5BF5A6A /* Pods-SomariCore.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SomariCore.release.xcconfig"; path = "Target Support Files/Pods-SomariCore/Pods-SomariCore.release.xcconfig"; sourceTree = "<group>"; };
+		0214B2D02353623A00B2EB7E /* dynamic_libraries.xcfilelist */ = {isa = PBXFileReference; lastKnownFileType = text.xcfilelist; path = dynamic_libraries.xcfilelist; sourceTree = "<group>"; };
 		021B97442351DF6600E59F3F /* SomariCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SomariCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		021B97472351DF6600E59F3F /* SomariCore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SomariCore.h; sourceTree = "<group>"; };
 		021B97482351DF6600E59F3F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -59,11 +57,7 @@
 		021B97602351DF9300E59F3F /* FirebaseStorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseStorageService.swift; sourceTree = "<group>"; };
 		021B97662351E06300E59F3F /* SomariFoundation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SomariFoundation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		021B976D2351E31500E59F3F /* Mappable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mappable.swift; sourceTree = "<group>"; };
-		07BE30E38C0D8DED272CB934 /* Pods-SomariCoreTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SomariCoreTests.debug.xcconfig"; path = "Target Support Files/Pods-SomariCoreTests/Pods-SomariCoreTests.debug.xcconfig"; sourceTree = "<group>"; };
-		A741B154FE7168097B0885B0 /* Pods_SomariCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SomariCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B95BD4D3F4699917653BD29A /* Pods_SomariCoreTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SomariCoreTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C33AD1A3E58ABD0226EB1674 /* Pods-SomariCore.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SomariCore.debug.xcconfig"; path = "Target Support Files/Pods-SomariCore/Pods-SomariCore.debug.xcconfig"; sourceTree = "<group>"; };
-		CA13CF1BAA0E81004944C0EA /* Pods-SomariCoreTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SomariCoreTests.release.xcconfig"; path = "Target Support Files/Pods-SomariCoreTests/Pods-SomariCoreTests.release.xcconfig"; sourceTree = "<group>"; };
+		02C73AC8235348C600628870 /* build.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = build.xcconfig; sourceTree = "<group>"; };
 		02F2096523532CDE00DB98A6 /* DependencyInitializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyInitializer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -74,7 +68,6 @@
 			files = (
 				021B97672351E06300E59F3F /* SomariFoundation.framework in Frameworks */,
 				021B97642351E05100E59F3F /* FeedKit in Frameworks */,
-				52709F4B16CC23BB90C8F4CE /* Pods_SomariCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,7 +76,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				021B974E2351DF6600E59F3F /* SomariCore.framework in Frameworks */,
-				E7B6F880F63B60C595036987 /* Pods_SomariCoreTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,7 +89,6 @@
 				021B97512351DF6600E59F3F /* SomariCoreTests */,
 				021B97452351DF6600E59F3F /* Products */,
 				021B97652351E06300E59F3F /* Frameworks */,
-				D424E7A1C6EE2C40A49E7C02 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -118,6 +109,8 @@
 				02F2096523532CDE00DB98A6 /* DependencyInitializer.swift */,
 				021B97472351DF6600E59F3F /* SomariCore.h */,
 				021B97482351DF6600E59F3F /* Info.plist */,
+				02C73AC8235348C600628870 /* build.xcconfig */,
+				0214B2D02353623A00B2EB7E /* dynamic_libraries.xcfilelist */,
 			);
 			path = SomariCore;
 			sourceTree = "<group>";
@@ -145,22 +138,8 @@
 			isa = PBXGroup;
 			children = (
 				021B97662351E06300E59F3F /* SomariFoundation.framework */,
-				A741B154FE7168097B0885B0 /* Pods_SomariCore.framework */,
-				B95BD4D3F4699917653BD29A /* Pods_SomariCoreTests.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		D424E7A1C6EE2C40A49E7C02 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				C33AD1A3E58ABD0226EB1674 /* Pods-SomariCore.debug.xcconfig */,
-				006F7645124F1F69E5BF5A6A /* Pods-SomariCore.release.xcconfig */,
-				07BE30E38C0D8DED272CB934 /* Pods-SomariCoreTests.debug.xcconfig */,
-				CA13CF1BAA0E81004944C0EA /* Pods-SomariCoreTests.release.xcconfig */,
-			);
-			name = Pods;
-			path = ../Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -181,12 +160,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 021B97582351DF6600E59F3F /* Build configuration list for PBXNativeTarget "SomariCore" */;
 			buildPhases = (
-				F66E06462ACE12DB2F2FF720 /* [CP] Check Pods Manifest.lock */,
 				021B973F2351DF6600E59F3F /* Headers */,
 				021B97402351DF6600E59F3F /* Sources */,
 				021B97412351DF6600E59F3F /* Frameworks */,
 				021B97422351DF6600E59F3F /* Resources */,
 				021B97692351E06300E59F3F /* Embed Frameworks */,
+				0214B2CC2353617800B2EB7E /* Copy Dynamic Framework */,
+				0214B36023536CFB00B2EB7E /* Copy Bundle Resources */,
 			);
 			buildRules = (
 			);
@@ -204,7 +184,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 021B975B2351DF6600E59F3F /* Build configuration list for PBXNativeTarget "SomariCoreTests" */;
 			buildPhases = (
-				F0C0A77BFE873A4866EFF470 /* [CP] Check Pods Manifest.lock */,
 				021B97492351DF6600E59F3F /* Sources */,
 				021B974A2351DF6600E59F3F /* Frameworks */,
 				021B974B2351DF6600E59F3F /* Resources */,
@@ -277,29 +256,26 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		F0C0A77BFE873A4866EFF470 /* [CP] Check Pods Manifest.lock */ = {
+		0214B2CC2353617800B2EB7E /* Copy Dynamic Framework */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
+				"$(SRCROOT)/SomariCore/dynamic_libraries.xcfilelist",
 			);
 			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
 			);
-			name = "[CP] Check Pods Manifest.lock";
+			name = "Copy Dynamic Framework";
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-SomariCoreTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
+			shellScript = "# reference: https://blog.kishikawakatsumi.com/entry/2019/06/17/090724\ncode_sign() {\n  # Use the current code_sign_identitiy\n  echo \"Code Signing $1 with Identity ${EXPANDED_CODE_SIGN_IDENTITY_NAME}\"\n  echo \"/usr/bin/codesign --force --sign ${EXPANDED_CODE_SIGN_IDENTITY} --preserve-metadata=identifier,entitlements $1\"\n  /usr/bin/codesign --force --sign ${EXPANDED_CODE_SIGN_IDENTITY} --preserve-metadata=identifier,entitlements \"$1\"\n}\n\nif [ \"$ACTION\" = \"install\" ]; then\n  echo \"Copy .bcsymbolmap files to .xcarchive\"\n  find . -name '*.bcsymbolmap' -type f -exec mv {} \"${CONFIGURATION_BUILD_DIR}\" \\;\nfi\n\necho 'Copying frameworks'\n\nif [ $SCRIPT_INPUT_FILE_LIST_COUNT -ne 0 ]; then\n  for i in $(seq 0 $(expr $SCRIPT_INPUT_FILE_LIST_COUNT - 1)); do\n    inputFileListVar=\"SCRIPT_INPUT_FILE_LIST_${i}\"\n    inputFileList=\"${!inputFileListVar}\"\n    cat \"${inputFileList}\" | while read inputFile; do\n      cp -rf \"$inputFile\" \"${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/\"\n\n      for file in $(find ${inputFile} -type f -perm +111); do\n        # Skip non-dynamic libraries\n        if ! [[ \"$(file \"$file\")\" == *\"dynamically linked shared library\"* ]]; then\n          continue\n        fi\n        if [ \"${CODE_SIGNING_REQUIRED}\" == \"YES\" ]; then\n          code_sign \"${file}\"\n        fi\n      done\n    done\n  done\nfi\n";
 		};
-		F66E06462ACE12DB2F2FF720 /* [CP] Check Pods Manifest.lock */ = {
+		0214B36023536CFB00B2EB7E /* Copy Bundle Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -307,19 +283,15 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
 			);
-			name = "[CP] Check Pods Manifest.lock";
+			name = "Copy Bundle Resources";
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-SomariCore-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\nset -ex\n\ncp -rf \"${PODS_CONFIGURATION_BUILD_DIR}/gRPC-C++/gRPCCertificates-Cpp.bundle\" \\\n  \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_FOLDER_PATH}/\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -357,6 +329,7 @@
 /* Begin XCBuildConfiguration section */
 		021B97562351DF6600E59F3F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 02C73AC8235348C600628870 /* build.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -420,6 +393,7 @@
 		};
 		021B97572351DF6600E59F3F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 02C73AC8235348C600628870 /* build.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -477,7 +451,6 @@
 		};
 		021B97592351DF6600E59F3F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C33AD1A3E58ABD0226EB1674 /* Pods-SomariCore.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -502,7 +475,6 @@
 		};
 		021B975A2351DF6600E59F3F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 006F7645124F1F69E5BF5A6A /* Pods-SomariCore.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -527,7 +499,6 @@
 		};
 		021B975C2351DF6600E59F3F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 07BE30E38C0D8DED272CB934 /* Pods-SomariCoreTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -546,7 +517,6 @@
 		};
 		021B975D2351DF6600E59F3F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CA13CF1BAA0E81004944C0EA /* Pods-SomariCoreTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
