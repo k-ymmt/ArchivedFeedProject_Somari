@@ -31,7 +31,7 @@ class FeedsPresenter: FeedsPresentable {
         self.router = router
         self.interactor = interactor
         
-//        interactor.getUserSettings(completion: receivedUserSettings(result:))
+        interactor.getUserSettings(completion: receivedUserSettings(result:))
     }
     
     func getFeeds(url: URL) {

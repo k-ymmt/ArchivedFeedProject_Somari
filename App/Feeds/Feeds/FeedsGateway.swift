@@ -10,17 +10,16 @@ import Foundation
 import UIKit
 import SomariFoundation
 
-enum FeedsNavigationAction {
-}
-
 public class FeedsGateway: Gateway {
     public struct Dependency {
         let feedService: FeedService
         let storageService: StorageService
+        let loginService: LoginService
         
-        public init(feedService: FeedService, storageService: StorageService) {
+        public init(feedService: FeedService, storageService: StorageService, loginService: LoginService) {
             self.feedService = feedService
             self.storageService = storageService
+            self.loginService = loginService
         }
     }
     
@@ -53,7 +52,8 @@ public class FeedsGateway: Gateway {
     private func makeFeedsPage() -> UIViewController {
         let viewController = FeedsRouter.assembleModules(dependency: .init(
             feedService: dependency.feedService,
-            storageService: dependency.storageService
+            storageService: dependency.storageService,
+            loginService: dependency.loginService
         ))
         
         return viewController
