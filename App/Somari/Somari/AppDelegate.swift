@@ -7,24 +7,13 @@
 //
 
 import UIKit
-import Logging
-import Firebase
-
-let logger: Logger = {
-    var logger = Logger(label: Bundle.main.bundleIdentifier ?? "net.kymmt")
-    #if DEBUG
-    logger.logLevel = .debug
-    #else
-    logger.logLevel = .info
-    #endif
-    return logger
-}()
+import SomariCore
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        FirebaseApp.configure()
+        DependencyInitializer.initialize()
         return true
     }
 

@@ -1,0 +1,588 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 52;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		021B974E2351DF6600E59F3F /* SomariCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 021B97442351DF6600E59F3F /* SomariCore.framework */; };
+		021B97532351DF6600E59F3F /* SomariCoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021B97522351DF6600E59F3F /* SomariCoreTests.swift */; };
+		021B97552351DF6600E59F3F /* SomariCore.h in Headers */ = {isa = PBXBuildFile; fileRef = 021B97472351DF6600E59F3F /* SomariCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		021B97642351E05100E59F3F /* FeedKit in Frameworks */ = {isa = PBXBuildFile; productRef = 021B97632351E05100E59F3F /* FeedKit */; };
+		021B97672351E06300E59F3F /* SomariFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 021B97662351E06300E59F3F /* SomariFoundation.framework */; };
+		021B97682351E06300E59F3F /* SomariFoundation.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 021B97662351E06300E59F3F /* SomariFoundation.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		021B976E2351E31500E59F3F /* Mappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021B976D2351E31500E59F3F /* Mappable.swift */; };
+		021B976F2351E51300E59F3F /* FeedKitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021B975E2351DF9300E59F3F /* FeedKitService.swift */; };
+		021B97702351E51900E59F3F /* FirebaseStorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021B97602351DF9300E59F3F /* FirebaseStorageService.swift */; };
+		021B97712351E52000E59F3F /* FirebaseLoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021B975F2351DF9300E59F3F /* FirebaseLoginService.swift */; };
+		02F2096623532CDE00DB98A6 /* DependencyInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F2096523532CDE00DB98A6 /* DependencyInitializer.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		021B974F2351DF6600E59F3F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 021B973B2351DF6600E59F3F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 021B97432351DF6600E59F3F;
+			remoteInfo = SomariCore;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		021B97692351E06300E59F3F /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				021B97682351E06300E59F3F /* SomariFoundation.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		0214B2D02353623A00B2EB7E /* dynamic_libraries.xcfilelist */ = {isa = PBXFileReference; lastKnownFileType = text.xcfilelist; path = dynamic_libraries.xcfilelist; sourceTree = "<group>"; };
+		021B97442351DF6600E59F3F /* SomariCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SomariCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		021B97472351DF6600E59F3F /* SomariCore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SomariCore.h; sourceTree = "<group>"; };
+		021B97482351DF6600E59F3F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		021B974D2351DF6600E59F3F /* SomariCoreTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SomariCoreTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		021B97522351DF6600E59F3F /* SomariCoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SomariCoreTests.swift; sourceTree = "<group>"; };
+		021B97542351DF6600E59F3F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		021B975E2351DF9300E59F3F /* FeedKitService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedKitService.swift; sourceTree = "<group>"; };
+		021B975F2351DF9300E59F3F /* FirebaseLoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseLoginService.swift; sourceTree = "<group>"; };
+		021B97602351DF9300E59F3F /* FirebaseStorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseStorageService.swift; sourceTree = "<group>"; };
+		021B97662351E06300E59F3F /* SomariFoundation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SomariFoundation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		021B976D2351E31500E59F3F /* Mappable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mappable.swift; sourceTree = "<group>"; };
+		02C73AC8235348C600628870 /* build.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = build.xcconfig; sourceTree = "<group>"; };
+		02F2096523532CDE00DB98A6 /* DependencyInitializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyInitializer.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		021B97412351DF6600E59F3F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				021B97672351E06300E59F3F /* SomariFoundation.framework in Frameworks */,
+				021B97642351E05100E59F3F /* FeedKit in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		021B974A2351DF6600E59F3F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				021B974E2351DF6600E59F3F /* SomariCore.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		021B973A2351DF6600E59F3F = {
+			isa = PBXGroup;
+			children = (
+				021B97462351DF6600E59F3F /* SomariCore */,
+				021B97512351DF6600E59F3F /* SomariCoreTests */,
+				021B97452351DF6600E59F3F /* Products */,
+				021B97652351E06300E59F3F /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		021B97452351DF6600E59F3F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				021B97442351DF6600E59F3F /* SomariCore.framework */,
+				021B974D2351DF6600E59F3F /* SomariCoreTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		021B97462351DF6600E59F3F /* SomariCore */ = {
+			isa = PBXGroup;
+			children = (
+				021B97612351DF9300E59F3F /* Services */,
+				021B976D2351E31500E59F3F /* Mappable.swift */,
+				02F2096523532CDE00DB98A6 /* DependencyInitializer.swift */,
+				021B97472351DF6600E59F3F /* SomariCore.h */,
+				021B97482351DF6600E59F3F /* Info.plist */,
+				02C73AC8235348C600628870 /* build.xcconfig */,
+				0214B2D02353623A00B2EB7E /* dynamic_libraries.xcfilelist */,
+			);
+			path = SomariCore;
+			sourceTree = "<group>";
+		};
+		021B97512351DF6600E59F3F /* SomariCoreTests */ = {
+			isa = PBXGroup;
+			children = (
+				021B97522351DF6600E59F3F /* SomariCoreTests.swift */,
+				021B97542351DF6600E59F3F /* Info.plist */,
+			);
+			path = SomariCoreTests;
+			sourceTree = "<group>";
+		};
+		021B97612351DF9300E59F3F /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				021B975E2351DF9300E59F3F /* FeedKitService.swift */,
+				021B975F2351DF9300E59F3F /* FirebaseLoginService.swift */,
+				021B97602351DF9300E59F3F /* FirebaseStorageService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		021B97652351E06300E59F3F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				021B97662351E06300E59F3F /* SomariFoundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		021B973F2351DF6600E59F3F /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				021B97552351DF6600E59F3F /* SomariCore.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		021B97432351DF6600E59F3F /* SomariCore */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 021B97582351DF6600E59F3F /* Build configuration list for PBXNativeTarget "SomariCore" */;
+			buildPhases = (
+				021B973F2351DF6600E59F3F /* Headers */,
+				021B97402351DF6600E59F3F /* Sources */,
+				021B97412351DF6600E59F3F /* Frameworks */,
+				021B97422351DF6600E59F3F /* Resources */,
+				021B97692351E06300E59F3F /* Embed Frameworks */,
+				0214B2CC2353617800B2EB7E /* Copy Dynamic Framework */,
+				0214B36023536CFB00B2EB7E /* Copy Bundle Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SomariCore;
+			packageProductDependencies = (
+				021B97632351E05100E59F3F /* FeedKit */,
+			);
+			productName = SomariCore;
+			productReference = 021B97442351DF6600E59F3F /* SomariCore.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		021B974C2351DF6600E59F3F /* SomariCoreTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 021B975B2351DF6600E59F3F /* Build configuration list for PBXNativeTarget "SomariCoreTests" */;
+			buildPhases = (
+				021B97492351DF6600E59F3F /* Sources */,
+				021B974A2351DF6600E59F3F /* Frameworks */,
+				021B974B2351DF6600E59F3F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				021B97502351DF6600E59F3F /* PBXTargetDependency */,
+			);
+			name = SomariCoreTests;
+			productName = SomariCoreTests;
+			productReference = 021B974D2351DF6600E59F3F /* SomariCoreTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		021B973B2351DF6600E59F3F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1110;
+				LastUpgradeCheck = 1110;
+				ORGANIZATIONNAME = "Kazuki Yamamoto";
+				TargetAttributes = {
+					021B97432351DF6600E59F3F = {
+						CreatedOnToolsVersion = 11.1;
+					};
+					021B974C2351DF6600E59F3F = {
+						CreatedOnToolsVersion = 11.1;
+					};
+				};
+			};
+			buildConfigurationList = 021B973E2351DF6600E59F3F /* Build configuration list for PBXProject "SomariCore" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 021B973A2351DF6600E59F3F;
+			packageReferences = (
+				021B97622351E05100E59F3F /* XCRemoteSwiftPackageReference "FeedKit" */,
+			);
+			productRefGroup = 021B97452351DF6600E59F3F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				021B97432351DF6600E59F3F /* SomariCore */,
+				021B974C2351DF6600E59F3F /* SomariCoreTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		021B97422351DF6600E59F3F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		021B974B2351DF6600E59F3F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0214B2CC2353617800B2EB7E /* Copy Dynamic Framework */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"$(SRCROOT)/SomariCore/dynamic_libraries.xcfilelist",
+			);
+			inputPaths = (
+			);
+			name = "Copy Dynamic Framework";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# reference: https://blog.kishikawakatsumi.com/entry/2019/06/17/090724\ncode_sign() {\n  # Use the current code_sign_identitiy\n  echo \"Code Signing $1 with Identity ${EXPANDED_CODE_SIGN_IDENTITY_NAME}\"\n  echo \"/usr/bin/codesign --force --sign ${EXPANDED_CODE_SIGN_IDENTITY} --preserve-metadata=identifier,entitlements $1\"\n  /usr/bin/codesign --force --sign ${EXPANDED_CODE_SIGN_IDENTITY} --preserve-metadata=identifier,entitlements \"$1\"\n}\n\nif [ \"$ACTION\" = \"install\" ]; then\n  echo \"Copy .bcsymbolmap files to .xcarchive\"\n  find . -name '*.bcsymbolmap' -type f -exec mv {} \"${CONFIGURATION_BUILD_DIR}\" \\;\nfi\n\necho 'Copying frameworks'\n\nif [ $SCRIPT_INPUT_FILE_LIST_COUNT -ne 0 ]; then\n  for i in $(seq 0 $(expr $SCRIPT_INPUT_FILE_LIST_COUNT - 1)); do\n    inputFileListVar=\"SCRIPT_INPUT_FILE_LIST_${i}\"\n    inputFileList=\"${!inputFileListVar}\"\n    cat \"${inputFileList}\" | while read inputFile; do\n      cp -rf \"$inputFile\" \"${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/\"\n\n      for file in $(find ${inputFile} -type f -perm +111); do\n        # Skip non-dynamic libraries\n        if ! [[ \"$(file \"$file\")\" == *\"dynamically linked shared library\"* ]]; then\n          continue\n        fi\n        if [ \"${CODE_SIGNING_REQUIRED}\" == \"YES\" ]; then\n          code_sign \"${file}\"\n        fi\n      done\n    done\n  done\nfi\n";
+		};
+		0214B36023536CFB00B2EB7E /* Copy Bundle Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Bundle Resources";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\nset -ex\n\ncp -rf \"${PODS_CONFIGURATION_BUILD_DIR}/gRPC-C++/gRPCCertificates-Cpp.bundle\" \\\n  \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_FOLDER_PATH}/\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		021B97402351DF6600E59F3F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				021B97712351E52000E59F3F /* FirebaseLoginService.swift in Sources */,
+				021B976F2351E51300E59F3F /* FeedKitService.swift in Sources */,
+				021B97702351E51900E59F3F /* FirebaseStorageService.swift in Sources */,
+				02F2096623532CDE00DB98A6 /* DependencyInitializer.swift in Sources */,
+				021B976E2351E31500E59F3F /* Mappable.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		021B97492351DF6600E59F3F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				021B97532351DF6600E59F3F /* SomariCoreTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		021B97502351DF6600E59F3F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 021B97432351DF6600E59F3F /* SomariCore */;
+			targetProxy = 021B974F2351DF6600E59F3F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		021B97562351DF6600E59F3F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 02C73AC8235348C600628870 /* build.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		021B97572351DF6600E59F3F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 02C73AC8235348C600628870 /* build.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		021B97592351DF6600E59F3F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = SomariCore/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = app.kymmt.SomariCore;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		021B975A2351DF6600E59F3F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = SomariCore/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = app.kymmt.SomariCore;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		021B975C2351DF6600E59F3F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = SomariCoreTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = app.kymmt.SomariCoreTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		021B975D2351DF6600E59F3F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = SomariCoreTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = app.kymmt.SomariCoreTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		021B973E2351DF6600E59F3F /* Build configuration list for PBXProject "SomariCore" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				021B97562351DF6600E59F3F /* Debug */,
+				021B97572351DF6600E59F3F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		021B97582351DF6600E59F3F /* Build configuration list for PBXNativeTarget "SomariCore" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				021B97592351DF6600E59F3F /* Debug */,
+				021B975A2351DF6600E59F3F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		021B975B2351DF6600E59F3F /* Build configuration list for PBXNativeTarget "SomariCoreTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				021B975C2351DF6600E59F3F /* Debug */,
+				021B975D2351DF6600E59F3F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		021B97622351E05100E59F3F /* XCRemoteSwiftPackageReference "FeedKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/nmdias/FeedKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		021B97632351E05100E59F3F /* FeedKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 021B97622351E05100E59F3F /* XCRemoteSwiftPackageReference "FeedKit" */;
+			productName = FeedKit;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 021B973B2351DF6600E59F3F /* Project object */;
+}

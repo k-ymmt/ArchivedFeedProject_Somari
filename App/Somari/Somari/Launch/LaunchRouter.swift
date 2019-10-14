@@ -8,35 +8,24 @@
 
 import Foundation
 import UIKit
+import SomariFoundation
 
 protocol LaunchRoutable {
-    func showLoginPage()
-    func navigateToMain()
 }
 
-class LaunchRouter: LaunchRoutable {
-    static func assembleModules() -> UINavigationController {
+class LaunchRouter: LaunchRoutable & Router {
+    struct Dependency {
+    }
+    
+    enum Navigation {
+    }
+    
+    static func assembleModules(dependency: LaunchRouter.Dependency, action: @escaping (LaunchRouter.Navigation) -> Void) -> UIViewController {
         let router = LaunchRouter()
-        let keychainService = KeychainAccessService()
-        let interactor = LaunchInteractor(loginService: FirebaseLoginService(keychainService: keychainService))
+        let interactor = LaunchInteractor()
         let presenter = LaunchPresenter(interactor: interactor, router: router)
         let viewController = LaunchViewController(presenter: presenter)
-        
-        let navigationController = UINavigationController(rootViewController: viewController)
-        router.navigationController = navigationController
-        navigationController.setNavigationBarHidden(true, animated: false)
-        return router.navigationController
-    }
-    
-    private weak var navigationController: UINavigationController!
-    
-    func showLoginPage() {
-        let viewController = LoginRouter.assembleModules()
-        navigationController.setViewControllers([viewController], animated: false)
-    }
-    
-    func navigateToMain() {
-        let tabController = MainTabRouter.assembleModules()
-        navigationController.setViewControllers([tabController], animated: true)
+
+        return viewController
     }
 }

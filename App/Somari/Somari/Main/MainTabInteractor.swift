@@ -8,9 +8,9 @@
 
 import Foundation
 import Combine
+import SomariFoundation
 
 protocol MainTabInteractable {
-    func startLoginStateListener() -> AnyPublisher<User?, LoginError>
 }
 
 class MainTabInteractor: MainTabInteractable {
@@ -18,9 +18,5 @@ class MainTabInteractor: MainTabInteractable {
 
     init(loginService: LoginService) {
         self.loginService = loginService
-    }
-    
-    func startLoginStateListener() -> AnyPublisher<User?, LoginError> {
-        return loginService.listenLoginState()
     }
 }

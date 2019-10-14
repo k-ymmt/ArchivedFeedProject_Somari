@@ -26,6 +26,6 @@ class LaunchViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        presenter.tryLogin()
+        indicatorView.startAnimating()
     }
 }

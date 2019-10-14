@@ -1,0 +1,9 @@
+/* 
+  Strings.strings
+  SomariKit
+
+  Created by Kazuki Yamamoto on 2019/10/13.
+  Copyright © 2019 Kazuki Yamamoto. All rights reserved.
+*/
+
+"views.additional_feed.title" = "フィードを追加";
