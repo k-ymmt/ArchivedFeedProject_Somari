@@ -7,6 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0214B57B2353A2CB00B2EB7E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0214B57A2353A2CB00B2EB7E /* AppDelegate.swift */; };
+		0214B57D2353A2CB00B2EB7E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0214B57C2353A2CB00B2EB7E /* SceneDelegate.swift */; };
+		0214B5812353A2CE00B2EB7E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0214B5802353A2CE00B2EB7E /* Assets.xcassets */; };
+		0214B5842353A2CE00B2EB7E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0214B5832353A2CE00B2EB7E /* Preview Assets.xcassets */; };
+		0214B5872353A2CE00B2EB7E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0214B5852353A2CE00B2EB7E /* LaunchScreen.storyboard */; };
+		0214B58E2354429100B2EB7E /* Feeds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 021B97CD235252D800E59F3F /* Feeds.framework */; };
+		0214B58F2354429100B2EB7E /* Feeds.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 021B97CD235252D800E59F3F /* Feeds.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		0214B59423544F8700B2EB7E /* DummyFeedService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0214B59323544F8700B2EB7E /* DummyFeedService.swift */; };
+		0214B59623544FAA00B2EB7E /* SomariFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0214B59523544FAA00B2EB7E /* SomariFoundation.framework */; };
+		0214B59723544FAA00B2EB7E /* SomariFoundation.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0214B59523544FAA00B2EB7E /* SomariFoundation.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		0214B599235450B100B2EB7E /* DummyLoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0214B598235450B100B2EB7E /* DummyLoginService.swift */; };
+		0214B59B235451BA00B2EB7E /* DummyStorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0214B59A235451BA00B2EB7E /* DummyStorageService.swift */; };
 		021B97D7235252D800E59F3F /* Feeds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 021B97CD235252D800E59F3F /* Feeds.framework */; };
 		021B97DC235252D800E59F3F /* FeedsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021B97DB235252D800E59F3F /* FeedsTests.swift */; };
 		021B97DE235252D800E59F3F /* Feeds.h in Headers */ = {isa = PBXBuildFile; fileRef = 021B97D0235252D800E59F3F /* Feeds.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -19,9 +31,18 @@
 		021B97FA2352534600E59F3F /* SomariFoundation.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 021B97F82352534600E59F3F /* SomariFoundation.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0225677123533DA10094BE54 /* SomariKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0225677023533DA10094BE54 /* SomariKit.framework */; };
 		0225677223533DA10094BE54 /* SomariKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0225677023533DA10094BE54 /* SomariKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		022F868323549A6C00F49A9B /* SomariSandboxKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 022F868223549A6C00F49A9B /* SomariSandboxKit.framework */; };
+		022F868423549A6C00F49A9B /* SomariSandboxKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 022F868223549A6C00F49A9B /* SomariSandboxKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		0214B5902354429100B2EB7E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 021B97C4235252D800E59F3F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 021B97CC235252D800E59F3F;
+			remoteInfo = Feeds;
+		};
 		021B97D8235252D800E59F3F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 021B97C4235252D800E59F3F /* Project object */;
@@ -32,6 +53,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		0214B5922354429100B2EB7E /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				0214B59723544FAA00B2EB7E /* SomariFoundation.framework in Embed Frameworks */,
+				022F868423549A6C00F49A9B /* SomariSandboxKit.framework in Embed Frameworks */,
+				0214B58F2354429100B2EB7E /* Feeds.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		021B97FB2352534600E59F3F /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -47,6 +81,17 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0214B5782353A2CB00B2EB7E /* FeedsSandbox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FeedsSandbox.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0214B57A2353A2CB00B2EB7E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		0214B57C2353A2CB00B2EB7E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		0214B5802353A2CE00B2EB7E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0214B5832353A2CE00B2EB7E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		0214B5862353A2CE00B2EB7E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		0214B5882353A2CE00B2EB7E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0214B59323544F8700B2EB7E /* DummyFeedService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyFeedService.swift; sourceTree = "<group>"; };
+		0214B59523544FAA00B2EB7E /* SomariFoundation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SomariFoundation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0214B598235450B100B2EB7E /* DummyLoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyLoginService.swift; sourceTree = "<group>"; };
+		0214B59A235451BA00B2EB7E /* DummyStorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyStorageService.swift; sourceTree = "<group>"; };
 		021B97CD235252D800E59F3F /* Feeds.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Feeds.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		021B97D0235252D800E59F3F /* Feeds.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Feeds.h; sourceTree = "<group>"; };
 		021B97D1235252D800E59F3F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -61,9 +106,20 @@
 		021B97F52352533000E59F3F /* FeedsGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedsGateway.swift; sourceTree = "<group>"; };
 		021B97F82352534600E59F3F /* SomariFoundation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SomariFoundation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0225677023533DA10094BE54 /* SomariKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SomariKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		022F868223549A6C00F49A9B /* SomariSandboxKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SomariSandboxKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		0214B5752353A2CB00B2EB7E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0214B59623544FAA00B2EB7E /* SomariFoundation.framework in Frameworks */,
+				022F868323549A6C00F49A9B /* SomariSandboxKit.framework in Frameworks */,
+				0214B58E2354429100B2EB7E /* Feeds.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		021B97CA235252D800E59F3F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -84,11 +140,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0214B5792353A2CB00B2EB7E /* FeedsSandbox */ = {
+			isa = PBXGroup;
+			children = (
+				0214B57A2353A2CB00B2EB7E /* AppDelegate.swift */,
+				0214B57C2353A2CB00B2EB7E /* SceneDelegate.swift */,
+				0214B59323544F8700B2EB7E /* DummyFeedService.swift */,
+				0214B598235450B100B2EB7E /* DummyLoginService.swift */,
+				0214B59A235451BA00B2EB7E /* DummyStorageService.swift */,
+				0214B5802353A2CE00B2EB7E /* Assets.xcassets */,
+				0214B5852353A2CE00B2EB7E /* LaunchScreen.storyboard */,
+				0214B5882353A2CE00B2EB7E /* Info.plist */,
+				0214B5822353A2CE00B2EB7E /* Preview Content */,
+			);
+			path = FeedsSandbox;
+			sourceTree = "<group>";
+		};
+		0214B5822353A2CE00B2EB7E /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				0214B5832353A2CE00B2EB7E /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
 		021B97C3235252D800E59F3F = {
 			isa = PBXGroup;
 			children = (
 				021B97CF235252D800E59F3F /* Feeds */,
 				021B97DA235252D800E59F3F /* FeedsTests */,
+				0214B5792353A2CB00B2EB7E /* FeedsSandbox */,
 				021B97CE235252D800E59F3F /* Products */,
 				021B97F72352534600E59F3F /* Frameworks */,
 			);
@@ -99,6 +180,7 @@
 			children = (
 				021B97CD235252D800E59F3F /* Feeds.framework */,
 				021B97D6235252D800E59F3F /* FeedsTests.xctest */,
+				0214B5782353A2CB00B2EB7E /* FeedsSandbox.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -146,6 +228,8 @@
 		021B97F72352534600E59F3F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				022F868223549A6C00F49A9B /* SomariSandboxKit.framework */,
+				0214B59523544FAA00B2EB7E /* SomariFoundation.framework */,
 				0225677023533DA10094BE54 /* SomariKit.framework */,
 				021B97F82352534600E59F3F /* SomariFoundation.framework */,
 			);
@@ -166,6 +250,25 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		0214B5772353A2CB00B2EB7E /* FeedsSandbox */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0214B58B2353A2CE00B2EB7E /* Build configuration list for PBXNativeTarget "FeedsSandbox" */;
+			buildPhases = (
+				0214B5742353A2CB00B2EB7E /* Sources */,
+				0214B5752353A2CB00B2EB7E /* Frameworks */,
+				0214B5762353A2CB00B2EB7E /* Resources */,
+				0214B5922354429100B2EB7E /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0214B5912354429100B2EB7E /* PBXTargetDependency */,
+			);
+			name = FeedsSandbox;
+			productName = FeedsSandbox;
+			productReference = 0214B5782353A2CB00B2EB7E /* FeedsSandbox.app */;
+			productType = "com.apple.product-type.application";
+		};
 		021B97CC235252D800E59F3F /* Feeds */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 021B97E1235252D800E59F3F /* Build configuration list for PBXNativeTarget "Feeds" */;
@@ -213,6 +316,9 @@
 				LastUpgradeCheck = 1110;
 				ORGANIZATIONNAME = "Kazuki Yamamoto";
 				TargetAttributes = {
+					0214B5772353A2CB00B2EB7E = {
+						CreatedOnToolsVersion = 11.1;
+					};
 					021B97CC235252D800E59F3F = {
 						CreatedOnToolsVersion = 11.1;
 					};
@@ -236,11 +342,22 @@
 			targets = (
 				021B97CC235252D800E59F3F /* Feeds */,
 				021B97D5235252D800E59F3F /* FeedsTests */,
+				0214B5772353A2CB00B2EB7E /* FeedsSandbox */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		0214B5762353A2CB00B2EB7E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0214B5872353A2CE00B2EB7E /* LaunchScreen.storyboard in Resources */,
+				0214B5842353A2CE00B2EB7E /* Preview Assets.xcassets in Resources */,
+				0214B5812353A2CE00B2EB7E /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		021B97CB235252D800E59F3F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -258,6 +375,18 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		0214B5742353A2CB00B2EB7E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0214B59B235451BA00B2EB7E /* DummyStorageService.swift in Sources */,
+				0214B59423544F8700B2EB7E /* DummyFeedService.swift in Sources */,
+				0214B57B2353A2CB00B2EB7E /* AppDelegate.swift in Sources */,
+				0214B57D2353A2CB00B2EB7E /* SceneDelegate.swift in Sources */,
+				0214B599235450B100B2EB7E /* DummyLoginService.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		021B97C9235252D800E59F3F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -281,6 +410,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		0214B5912354429100B2EB7E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 021B97CC235252D800E59F3F /* Feeds */;
+			targetProxy = 0214B5902354429100B2EB7E /* PBXContainerItemProxy */;
+		};
 		021B97D9235252D800E59F3F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 021B97CC235252D800E59F3F /* Feeds */;
@@ -288,7 +422,58 @@
 		};
 /* End PBXTargetDependency section */
 
+/* Begin PBXVariantGroup section */
+		0214B5852353A2CE00B2EB7E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0214B5862353A2CE00B2EB7E /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
+		0214B5892353A2CE00B2EB7E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"FeedsSandbox/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = FeedsSandbox/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = app.kymmt.FeedsSandbox;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		0214B58A2353A2CE00B2EB7E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"FeedsSandbox/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = FeedsSandbox/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = app.kymmt.FeedsSandbox;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		021B97DF235252D800E59F3F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -496,6 +681,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		0214B58B2353A2CE00B2EB7E /* Build configuration list for PBXNativeTarget "FeedsSandbox" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0214B5892353A2CE00B2EB7E /* Debug */,
+				0214B58A2353A2CE00B2EB7E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		021B97C7235252D800E59F3F /* Build configuration list for PBXProject "Feeds" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
