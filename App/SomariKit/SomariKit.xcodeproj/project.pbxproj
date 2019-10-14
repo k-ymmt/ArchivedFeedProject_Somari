@@ -22,6 +22,9 @@
 		021B984723530B7400E59F3F /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021B984423530B7400E59F3F /* Colors.swift */; };
 		021B984823530B7400E59F3F /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021B984623530B7400E59F3F /* Strings.swift */; };
 		021B984A23530BA600E59F3F /* Strings.strings in Resources */ = {isa = PBXBuildFile; fileRef = 021B984923530BA600E59F3F /* Strings.strings */; };
+		022F867C23549A4000F49A9B /* SomariSandboxKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 022F867A23549A4000F49A9B /* SomariSandboxKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		022F868123549A5100F49A9B /* ViewControllerWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022F868023549A5100F49A9B /* ViewControllerWrapper.swift */; };
+		022F868623549AF200F49A9B /* MockListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022F868523549AF200F49A9B /* MockListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +69,11 @@
 		021B984423530B7400E59F3F /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		021B984623530B7400E59F3F /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		021B984923530BA600E59F3F /* Strings.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Strings.strings; sourceTree = "<group>"; };
+		022F867823549A4000F49A9B /* SomariSandboxKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SomariSandboxKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		022F867A23549A4000F49A9B /* SomariSandboxKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SomariSandboxKit.h; sourceTree = "<group>"; };
+		022F867B23549A4000F49A9B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		022F868023549A5100F49A9B /* ViewControllerWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerWrapper.swift; sourceTree = "<group>"; };
+		022F868523549AF200F49A9B /* MockListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +93,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		022F867523549A4000F49A9B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -93,6 +108,7 @@
 			children = (
 				021B970E2351DBE900E59F3F /* SomariKit */,
 				021B97192351DBE900E59F3F /* SomariKitTests */,
+				022F867923549A4000F49A9B /* SomariSandboxKit */,
 				021B970D2351DBE900E59F3F /* Products */,
 				021B972B2351DCCE00E59F3F /* Frameworks */,
 			);
@@ -103,6 +119,7 @@
 			children = (
 				021B970C2351DBE900E59F3F /* SomariKit.framework */,
 				021B97152351DBE900E59F3F /* SomariKitTests.xctest */,
+				022F867823549A4000F49A9B /* SomariSandboxKit.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -159,6 +176,17 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		022F867923549A4000F49A9B /* SomariSandboxKit */ = {
+			isa = PBXGroup;
+			children = (
+				022F868523549AF200F49A9B /* MockListView.swift */,
+				022F868023549A5100F49A9B /* ViewControllerWrapper.swift */,
+				022F867A23549A4000F49A9B /* SomariSandboxKit.h */,
+				022F867B23549A4000F49A9B /* Info.plist */,
+			);
+			path = SomariSandboxKit;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -167,6 +195,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				021B971D2351DBE900E59F3F /* SomariKit.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		022F867323549A4000F49A9B /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				022F867C23549A4000F49A9B /* SomariSandboxKit.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -210,6 +246,24 @@
 			productReference = 021B97152351DBE900E59F3F /* SomariKitTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		022F867723549A4000F49A9B /* SomariSandboxKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 022F867F23549A4000F49A9B /* Build configuration list for PBXNativeTarget "SomariSandboxKit" */;
+			buildPhases = (
+				022F867323549A4000F49A9B /* Headers */,
+				022F867423549A4000F49A9B /* Sources */,
+				022F867523549A4000F49A9B /* Frameworks */,
+				022F867623549A4000F49A9B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SomariSandboxKit;
+			productName = SomariSandboxKit;
+			productReference = 022F867823549A4000F49A9B /* SomariSandboxKit.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -226,6 +280,10 @@
 					};
 					021B97142351DBE900E59F3F = {
 						CreatedOnToolsVersion = 11.1;
+					};
+					022F867723549A4000F49A9B = {
+						CreatedOnToolsVersion = 11.1;
+						LastSwiftMigration = 1110;
 					};
 				};
 			};
@@ -244,6 +302,7 @@
 			targets = (
 				021B970B2351DBE900E59F3F /* SomariKit */,
 				021B97142351DBE900E59F3F /* SomariKitTests */,
+				022F867723549A4000F49A9B /* SomariSandboxKit */,
 			);
 		};
 /* End PBXProject section */
@@ -261,6 +320,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		021B97132351DBE900E59F3F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		022F867623549A4000F49A9B /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -288,6 +354,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				021B971B2351DBE900E59F3F /* SomariKitTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		022F867423549A4000F49A9B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				022F868623549AF200F49A9B /* MockListView.swift in Sources */,
+				022F868123549A5100F49A9B /* ViewControllerWrapper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -509,6 +584,57 @@
 			};
 			name = Release;
 		};
+		022F867D23549A4000F49A9B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = SomariSandboxKit/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = app.kymmt.SomariSandboxKit;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		022F867E23549A4000F49A9B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = SomariSandboxKit/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = app.kymmt.SomariSandboxKit;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -535,6 +661,15 @@
 			buildConfigurations = (
 				021B97242351DBE900E59F3F /* Debug */,
 				021B97252351DBE900E59F3F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		022F867F23549A4000F49A9B /* Build configuration list for PBXNativeTarget "SomariSandboxKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				022F867D23549A4000F49A9B /* Debug */,
+				022F867E23549A4000F49A9B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
