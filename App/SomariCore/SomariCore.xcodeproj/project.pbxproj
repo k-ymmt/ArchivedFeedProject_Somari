@@ -11,8 +11,7 @@
 		021B97532351DF6600E59F3F /* SomariCoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021B97522351DF6600E59F3F /* SomariCoreTests.swift */; };
 		021B97552351DF6600E59F3F /* SomariCore.h in Headers */ = {isa = PBXBuildFile; fileRef = 021B97472351DF6600E59F3F /* SomariCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		021B97642351E05100E59F3F /* FeedKit in Frameworks */ = {isa = PBXBuildFile; productRef = 021B97632351E05100E59F3F /* FeedKit */; };
-		021B97672351E06300E59F3F /* SomariFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 021B97662351E06300E59F3F /* SomariFoundation.framework */; };
-		021B97682351E06300E59F3F /* SomariFoundation.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 021B97662351E06300E59F3F /* SomariFoundation.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		021B97672351E06300E59F3F /* SomariFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 021B97662351E06300E59F3F /* SomariFoundation.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		021B976E2351E31500E59F3F /* Mappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021B976D2351E31500E59F3F /* Mappable.swift */; };
 		021B976F2351E51300E59F3F /* FeedKitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021B975E2351DF9300E59F3F /* FeedKitService.swift */; };
 		021B97702351E51900E59F3F /* FirebaseStorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021B97602351DF9300E59F3F /* FirebaseStorageService.swift */; };
@@ -29,20 +28,6 @@
 			remoteInfo = SomariCore;
 		};
 /* End PBXContainerItemProxy section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		021B97692351E06300E59F3F /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				021B97682351E06300E59F3F /* SomariFoundation.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		0214B2D02353623A00B2EB7E /* dynamic_libraries.xcfilelist */ = {isa = PBXFileReference; lastKnownFileType = text.xcfilelist; path = dynamic_libraries.xcfilelist; sourceTree = "<group>"; };
@@ -164,7 +149,6 @@
 				021B97402351DF6600E59F3F /* Sources */,
 				021B97412351DF6600E59F3F /* Frameworks */,
 				021B97422351DF6600E59F3F /* Resources */,
-				021B97692351E06300E59F3F /* Embed Frameworks */,
 				0214B2CC2353617800B2EB7E /* Copy Dynamic Framework */,
 				0214B36023536CFB00B2EB7E /* Copy Bundle Resources */,
 			);

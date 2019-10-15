@@ -463,6 +463,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				MACH_O_TYPE = staticlib;
 				PRODUCT_BUNDLE_IDENTIFIER = app.kymmt.Addition;
 				PRODUCT_NAME = Addition;
 				SKIP_INSTALL = YES;
@@ -487,6 +488,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				MACH_O_TYPE = staticlib;
 				PRODUCT_BUNDLE_IDENTIFIER = app.kymmt.Addition;
 				PRODUCT_NAME = Addition;
 				SKIP_INSTALL = YES;
