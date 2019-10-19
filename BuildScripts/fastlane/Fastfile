@@ -35,6 +35,7 @@ platform :ios do
       clean: true,
       configuration: 'Release',
       export_method: 'development'
+      archive_path: '../build'
     )
   end
 
@@ -75,7 +76,7 @@ platform :ios do
     sh(
       "xcodebuild", "-project", "../#{pods_path}/Pods.xcodeproj",
       "-sdk", options[:sdk], "-configuration", "Release", "-alltargets",
-      "ONLY_ACTIVE_ARCH=NO", "ENABLE_TESTABILITY=NO", "SYMROOT=#{pods_path}/Build",
+      "ONLY_ACTIVE_ARCH=NO", "ENABLE_TESTABILITY=NO", "SYMROOT=../#{pods_path}/Build",
       "BITCODE_GENERATION_MODE=bitcode"
     )
   end
