@@ -14,13 +14,21 @@
 # update_fastlane
 
 workspace_path = '../App/Somari.xcworkspace'
+pods_path = '../App/Pods'
 app_name = 'Somari'
 
 default_platform(:ios)
 
 platform :ios do
   desc "Description of what the lane does"
+  lane :pod_build_all
+    pod_build(sdk: 'iphoneos')
+    pod_build(sdk: 'iphonesimulator')
+  end
+
   lane :build do
+    pod_install
+    pod_build(sdk: 'iphoneos')
     gym(
       workspace: workspace_path,
       scheme: app_name,
@@ -31,6 +39,7 @@ platform :ios do
   end
 
   lane :test do
+    pod_install
     [
       "SomariFoundation",
       "SomariKit",
@@ -51,6 +60,23 @@ platform :ios do
       scheme: options[:scheme],
       clean: true,
       devices: ['iPhone SE', 'iPhone 11 Pro Max', 'iPad Pro (12.9-inch) (3rd generation)']
+    )
+  end
+
+  private_lane :pod_install do
+    cocoapods(
+      clean: true,
+      repo_update: true,
+      podfile: '../App/Podfile'
+    )
+  end
+
+  private_lane :pod_build do |options|
+    sh(
+      "xcodebuild", "-project", "../#{pods_path}/Pods.xcodeproj",
+      "-sdk", options[:sdk], "-configuration", "Release", "-alltargets",
+      "ONLY_ACTIVE_ARCH=NO", "ENABLE_TESTABILITY=NO", "SYMROOT=#{pods_path}/Build",
+      "BITCODE_GENERATION_MODE=bitcode"
     )
   end
 end
