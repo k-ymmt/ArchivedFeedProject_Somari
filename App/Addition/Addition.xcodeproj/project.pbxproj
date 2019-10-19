@@ -22,9 +22,7 @@
 		021B98392353059400E59F3F /* AdditionalFeedConfirmViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 021B982A2353056200E59F3F /* AdditionalFeedConfirmViewController.xib */; };
 		021B983B235305BD00E59F3F /* AdditionGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021B983A235305BD00E59F3F /* AdditionGateway.swift */; };
 		021B983E2353091E00E59F3F /* SomariFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 021B983D2353091E00E59F3F /* SomariFoundation.framework */; };
-		021B983F2353091E00E59F3F /* SomariFoundation.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 021B983D2353091E00E59F3F /* SomariFoundation.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		021B984C23530C1C00E59F3F /* SomariKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 021B984B23530C1C00E59F3F /* SomariKit.framework */; };
-		021B984D23530C1C00E59F3F /* SomariKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 021B984B23530C1C00E59F3F /* SomariKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,21 +34,6 @@
 			remoteInfo = Addition;
 		};
 /* End PBXContainerItemProxy section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		021B98402353091F00E59F3F /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				021B984D23530C1C00E59F3F /* SomariKit.framework in Embed Frameworks */,
-				021B983F2353091E00E59F3F /* SomariFoundation.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		021B98082353053A00E59F3F /* Addition.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Addition.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -206,7 +189,6 @@
 				021B98042353053A00E59F3F /* Sources */,
 				021B98052353053A00E59F3F /* Frameworks */,
 				021B98062353053A00E59F3F /* Resources */,
-				021B98402353091F00E59F3F /* Embed Frameworks */,
 			);
 			buildRules = (
 			);

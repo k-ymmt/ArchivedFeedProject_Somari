@@ -44,6 +44,7 @@
 		021B976D2351E31500E59F3F /* Mappable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mappable.swift; sourceTree = "<group>"; };
 		02C73AC8235348C600628870 /* build.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = build.xcconfig; sourceTree = "<group>"; };
 		02F2096523532CDE00DB98A6 /* DependencyInitializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyInitializer.swift; sourceTree = "<group>"; };
+		02F4A623235B0540004EB379 /* bundle_resources.xcfilelist */ = {isa = PBXFileReference; lastKnownFileType = text.xcfilelist; path = bundle_resources.xcfilelist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +97,7 @@
 				021B97482351DF6600E59F3F /* Info.plist */,
 				02C73AC8235348C600628870 /* build.xcconfig */,
 				0214B2D02353623A00B2EB7E /* dynamic_libraries.xcfilelist */,
+				02F4A623235B0540004EB379 /* bundle_resources.xcfilelist */,
 			);
 			path = SomariCore;
 			sourceTree = "<group>";
@@ -257,7 +259,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# reference: https://blog.kishikawakatsumi.com/entry/2019/06/17/090724\ncode_sign() {\n  # Use the current code_sign_identitiy\n  echo \"Code Signing $1 with Identity ${EXPANDED_CODE_SIGN_IDENTITY_NAME}\"\n  echo \"/usr/bin/codesign --force --sign ${EXPANDED_CODE_SIGN_IDENTITY} --preserve-metadata=identifier,entitlements $1\"\n  /usr/bin/codesign --force --sign ${EXPANDED_CODE_SIGN_IDENTITY} --preserve-metadata=identifier,entitlements \"$1\"\n}\n\nif [ \"$ACTION\" = \"install\" ]; then\n  echo \"Copy .bcsymbolmap files to .xcarchive\"\n  find . -name '*.bcsymbolmap' -type f -exec mv {} \"${CONFIGURATION_BUILD_DIR}\" \\;\nfi\n\necho 'Copying frameworks'\n\nif [ $SCRIPT_INPUT_FILE_LIST_COUNT -ne 0 ]; then\n  for i in $(seq 0 $(expr $SCRIPT_INPUT_FILE_LIST_COUNT - 1)); do\n    inputFileListVar=\"SCRIPT_INPUT_FILE_LIST_${i}\"\n    inputFileList=\"${!inputFileListVar}\"\n    cat \"${inputFileList}\" | while read inputFile; do\n      cp -rf \"$inputFile\" \"${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/\"\n\n      for file in $(find ${inputFile} -type f -perm +111); do\n        # Skip non-dynamic libraries\n        if ! [[ \"$(file \"$file\")\" == *\"dynamically linked shared library\"* ]]; then\n          continue\n        fi\n        if [ \"${CODE_SIGNING_REQUIRED}\" == \"YES\" ]; then\n          code_sign \"${file}\"\n        fi\n      done\n    done\n  done\nfi\n";
+			shellScript = "# reference: https://blog.kishikawakatsumi.com/entry/2019/06/17/090724\ncode_sign() {\n  # Use the current code_sign_identitiy\n  echo \"Code Signing $1 with Identity ${EXPANDED_CODE_SIGN_IDENTITY_NAME}\"\n  echo \"/usr/bin/codesign --force --sign ${EXPANDED_CODE_SIGN_IDENTITY} --preserve-metadata=identifier,entitlements $1\"\n  /usr/bin/codesign --force --sign ${EXPANDED_CODE_SIGN_IDENTITY} --preserve-metadata=identifier,entitlements \"$1\"\n}\n\nif [ \"$ACTION\" = \"install\" ]; then\n  echo \"Copy .bcsymbolmap files to .xcarchive\"\n  find . -name '*.bcsymbolmap' -type f -exec mv {} \"${CONFIGURATION_BUILD_DIR}\" \\;\nfi\n\necho 'Copying frameworks'\n\nls \"${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/\" || mkdir \"${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/\"\n\nif [ $SCRIPT_INPUT_FILE_LIST_COUNT -ne 0 ]; then\n  for i in $(seq 0 $(expr $SCRIPT_INPUT_FILE_LIST_COUNT - 1)); do\n    inputFileListVar=\"SCRIPT_INPUT_FILE_LIST_${i}\"\n    inputFileList=\"${!inputFileListVar}\"\n    cat \"${inputFileList}\" | while read inputFile; do\n      cp -rf \"$inputFile\" \"${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/\"\n\n      for file in $(find ${inputFile} -type f -perm +111); do\n        # Skip non-dynamic libraries\n        if ! [[ \"$(file \"$file\")\" == *\"dynamically linked shared library\"* ]]; then\n          continue\n        fi\n        if [ \"${CODE_SIGNING_REQUIRED}\" == \"YES\" ]; then\n          code_sign \"${file}\"\n        fi\n      done\n    done\n  done\nfi\n";
 		};
 		0214B36023536CFB00B2EB7E /* Copy Bundle Resources */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -265,6 +267,7 @@
 			files = (
 			);
 			inputFileListPaths = (
+				"$(SRCROOT)/SomariCore/bundle_resources.xcfilelist",
 			);
 			inputPaths = (
 			);
@@ -275,7 +278,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\nset -ex\n\ncp -rf \"${PODS_CONFIGURATION_BUILD_DIR}/gRPC-C++/gRPCCertificates-Cpp.bundle\" \\\n  \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_FOLDER_PATH}/\"\n";
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\nset -ex\n\necho 'Copying Bundle Resources'\n\nif [ $SCRIPT_INPUT_FILE_LIST_COUNT -ne 0 ]; then\n  for i in $(seq 0 $(expr $SCRIPT_INPUT_FILE_LIST_COUNT - 1)); do\n    inputFileListVar=\"SCRIPT_INPUT_FILE_LIST_${i}\"\n    inputFileList=\"${!inputFileListVar}\"\n    cat \"${inputFileList}\" | while read inputFile; do\n      cp -rf \"$inputFile\" \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_FOLDER_PATH}/\"\n    done\n  done\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
