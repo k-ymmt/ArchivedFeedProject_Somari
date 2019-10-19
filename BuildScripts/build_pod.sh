@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+# referenced from: https://blog.kishikawakatsumi.com/entry/2019/06/17/090724
+
 set -exo pipefail
 
 PROJECT_ROOT=$(cd $(dirname $0);cd ../App; pwd)
