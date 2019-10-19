@@ -13,13 +13,13 @@ public struct Strings {
     public struct Views {
         public struct AdditionalFeed {
             public static var title: String { localizedString(name: "views.additional_feed.title") }
-            
+
             private static func localizedString(name: String) -> String {
                 NSLocalizedString(name, tableName: "Strings", bundle: Bundle(for: CustomDateFormatter.self), comment: "")
             }
         }
     }
-    
+
     private init() {
     }
 }

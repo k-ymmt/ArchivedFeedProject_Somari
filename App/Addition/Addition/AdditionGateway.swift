@@ -15,29 +15,29 @@ public class AdditionGateway: Gateway {
         let feedService: FeedService
         let loginService: LoginService
         let storageService: StorageService
-        
+
         public init(feedService: FeedService, loginService: LoginService, storageService: StorageService) {
             self.feedService = feedService
             self.loginService = loginService
             self.storageService = storageService
         }
     }
-    
+
     public enum Input {
         case showAdditionalFeed
     }
-    
+
     public enum Output {
         case showAdditionalFeed(UIViewController)
     }
-    
+
     private let dependency: Dependency
     private var outputAction: ((Output) -> Void)?
-    
+
     public required init(dependency: Dependency) {
         self.dependency = dependency
     }
-    
+
     public func input(_ value: AdditionGateway.Input) {
         switch value {
         case .showAdditionalFeed:
@@ -45,7 +45,7 @@ public class AdditionGateway: Gateway {
             outputAction?(.showAdditionalFeed(viewController))
         }
     }
-    
+
     public func output(_ action: @escaping (AdditionGateway.Output) -> Void) {
         self.outputAction = action
     }
@@ -57,10 +57,10 @@ private extension AdditionGateway {
             feedService: dependency.feedService,
             loginService: dependency.loginService,
             storageService: dependency.storageService
-        )) { [weak self] (output) in
-            
+        )) { (_) in
+
         }
-        
+
         return viewController
     }
 }

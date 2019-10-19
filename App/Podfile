@@ -21,3 +21,5 @@ target 'SomariCore' do
     inherit! :search_paths
   end
 end
+
+pod 'SwiftLint'

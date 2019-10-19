@@ -12,7 +12,7 @@ import UIKit
 public protocol ChildViewController: UIViewController {
     associatedtype Input
     associatedtype Output
-    
+
     init(output: @escaping (Output) -> Void)
     func input(_ value: Input)
 }

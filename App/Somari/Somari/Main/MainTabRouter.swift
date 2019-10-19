@@ -18,7 +18,7 @@ class MainTabRouter: MainTabRoutable {
         additionalFeedViewController: UIViewController
     ) -> UIViewController {
         let tabViewController = MainTabViewController()
-        
+
         let font = UIFont.systemFont(ofSize: 18, weight: .bold)
         feedsViewController.tabBarItem = UITabBarItem(
             title: nil,
@@ -31,19 +31,18 @@ class MainTabRouter: MainTabRoutable {
             image: UIImage(symbol: .plusSquare, withConfiguration: .init(font: font)),
             selectedImage: UIImage(symbol: .plusSquare, withConfiguration: .init(font: font))
         )
-        
+
         tabViewController.setViewControllers([
             UINavigationController(rootViewController: feedsViewController),
             UINavigationController(rootViewController: additionalFeedViewController)
         ], animated: false)
-        
-        let router = MainTabRouter(tabController: tabViewController)
+
+//        let router = MainTabRouter(tabController: tabViewController)
         return tabViewController
     }
-    
+
     private weak var tabController: MainTabViewController?
-    
-    
+
     init(tabController: MainTabViewController) {
         self.tabController = tabController
     }

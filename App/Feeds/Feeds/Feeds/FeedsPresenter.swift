@@ -12,7 +12,7 @@ import SomariFoundation
 
 protocol FeedsPresentable {
     var feeds: PropertyPublisher<[FeedItem]> { get }
-    
+
     func getFeeds(url: URL)
     func getFeedAll()
     func showWebPage(linkString: String)
@@ -21,31 +21,31 @@ protocol FeedsPresentable {
 class FeedsPresenter: FeedsPresentable {
     private let router: FeedsRoutable
     private let interactor: FeedsInteractable
-    
+
     private var cancellables: Set<AnyCancellable> = Set()
     private var feedDataList: [UserSettingsFeedData] = []
 
     @PropertyPublished(defaultValue: []) var feeds: PropertyPublisher<[FeedItem]>
-    
+
     init(router: FeedsRoutable, interactor: FeedsInteractable) {
         self.router = router
         self.interactor = interactor
-        
+
         interactor.getUserSettings(completion: receivedUserSettings(result:))
     }
-    
+
     func getFeeds(url: URL) {
         interactor.getFeed(url: url) { [weak self] (result) in
             switch result {
             case .success(let feed):
                 self?._feeds.value += feed.feedItems()
                 self?._feeds.forceNotify()
-            case .failure(let error):
+            case .failure:
                 break
             }
         }.toCombine.store(in: &cancellables)
     }
-    
+
     func getFeedAll() {
         let urls = feedDataList.compactMap { URL(string: $0.url) }
         Logger.debug("get feed all\n\(urls.map { "  - \($0.absoluteString)" }.joined(separator: "\n"))")
@@ -59,15 +59,15 @@ class FeedsPresenter: FeedsPresentable {
             }
         }.toCombine.store(in: &cancellables)
     }
-    
+
     func showWebPage(linkString: String) {
         guard let url = URL(string: linkString) else {
             return
         }
-        
+
         router.showSafariViewController(url: url)
     }
-    
+
     private func receivedUserSettings(result: Result<[UserSettingsFeedData], Error>) {
         switch result {
         case .success(let feedInfoList):
@@ -77,7 +77,5 @@ class FeedsPresenter: FeedsPresentable {
             Logger.debug("\(error)")
         }
     }
-    
-    
-}
 
+}

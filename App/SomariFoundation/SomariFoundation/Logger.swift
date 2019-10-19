@@ -15,29 +15,29 @@ public enum Logger {
         case warn
         case error
     }
-    
+
     private static let dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.dateFormat = "YYYY-MM-dd HH:mm:ss"
-        
+
         return formatter
     }()
-    
+
     @inlinable
     public static func debug(_ message: @autoclosure () -> String, file: String = #file, function: String = #function, line: Int = #line) {
         log(level: .debug, message, file: file, function: function, line: line)
     }
-    
+
     @inlinable
     public static func info(_ message: @autoclosure () -> String, file: String = #file, function: String = #function, line: Int = #line) {
         log(level: .info, message, file: file, function: function, line: line)
     }
-    
+
     @inlinable
     public static func warn(_ message: @autoclosure () -> String, file: String = #file, function: String = #function, line: Int = #line) {
         log(level: .warn, message, file: file, function: function, line: line)
     }
-    
+
     @inlinable
     public static func error(_ message: @autoclosure () -> String, file: String = #file, function: String = #function, line: Int = #line) {
         log(level: .error, message, file: file, function: function, line: line)

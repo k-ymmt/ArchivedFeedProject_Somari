@@ -16,11 +16,14 @@ protocol LaunchRoutable {
 class LaunchRouter: LaunchRoutable & Router {
     struct Dependency {
     }
-    
+
     enum Navigation {
     }
-    
-    static func assembleModules(dependency: LaunchRouter.Dependency, action: @escaping (LaunchRouter.Navigation) -> Void) -> UIViewController {
+
+    static func assembleModules(
+        dependency: LaunchRouter.Dependency,
+        action: @escaping (LaunchRouter.Navigation) -> Void
+    ) -> UIViewController {
         let router = LaunchRouter()
         let interactor = LaunchInteractor()
         let presenter = LaunchPresenter(interactor: interactor, router: router)

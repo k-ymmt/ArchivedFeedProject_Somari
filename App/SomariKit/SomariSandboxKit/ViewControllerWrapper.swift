@@ -11,16 +11,19 @@ import SwiftUI
 
 final class ViewControllerWrapper<UIViewControllerType: UIViewController>: UIViewControllerRepresentable {
     private let builder: () -> UIViewControllerType
-    
+
     init(_ builder: @escaping () -> UIViewControllerType) {
         self.builder = builder
     }
-    
+
     func makeUIViewController(context: UIViewControllerRepresentableContext<ViewControllerWrapper<UIViewControllerType>>) -> UIViewControllerType {
         return builder()
     }
-    
-    func updateUIViewController(_ uiViewController: UIViewControllerType, context: UIViewControllerRepresentableContext<ViewControllerWrapper<UIViewControllerType>>) {
-        
+
+    func updateUIViewController(
+        _ uiViewController: UIViewControllerType,
+        context: UIViewControllerRepresentableContext<ViewControllerWrapper<UIViewControllerType>>
+    ) {
+
     }
 }

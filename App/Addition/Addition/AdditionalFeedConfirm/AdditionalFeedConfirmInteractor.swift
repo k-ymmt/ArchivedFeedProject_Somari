@@ -21,7 +21,7 @@ class AdditionalFeedConfirmInteractor: AdditionalFeedConfirmInteractable {
         self.storageService = storageService
         self.loginService = loginService
     }
-    
+
     func saveFeedInfo(info: UserSettingsFeedData, completion: @escaping (Result<Void, Error>) -> Void) {
         guard let uid = loginService.uid() else {
             completion(.failure(LoginError.notLogin))

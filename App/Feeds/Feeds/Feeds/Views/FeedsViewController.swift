@@ -12,33 +12,33 @@ import SomariFoundation
 import SomariKit
 
 class FeedsViewController: UIViewController, ParentViewController {
-    
+
     private let presenter: FeedsPresentable
-    
+
     private weak var feedListViewController: FeedListViewController!
-    
+
     private var cancels: Set<AnyCancellable> = Set()
-    
+
     init(presenter: FeedsPresentable) {
         self.presenter = presenter
-        
+
         super.init(nibName: nil, bundle: nil)
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         let feedListViewController = FeedListViewController(output: receivedFeedListOutput(value:))
         addViewController(feedListViewController)
         NSLayoutConstraint.activate([
             feedListViewController.view.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             feedListViewController.view.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             feedListViewController.view.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
-            feedListViewController.view.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
+            feedListViewController.view.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor)
         ])
 
         self.feedListViewController = feedListViewController
@@ -49,7 +49,7 @@ class FeedsViewController: UIViewController, ParentViewController {
                 self?.feedListViewController.input(.newFeeds(items))
         }.store(in: &cancels)
     }
-    
+
     private func receivedFeedListOutput(value: FeedListViewController.Output) {
         switch value {
         case .selectedItem(let item):

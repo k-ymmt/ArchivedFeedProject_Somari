@@ -32,7 +32,7 @@ public class FeedKitService: FeedService {
                 completion(.failure(.unknown(error)))
             }
         }
-        
+
         return Canceler {
             parser.abortParsing()
         }
@@ -56,7 +56,7 @@ private extension SomariFoundation.AtomFeed.Author {
     init(author: FeedKit.AtomFeedAuthor) {
         self = .init(name: author.name)
     }
-    
+
     init(author: FeedKit.AtomFeedEntryAuthor) {
         self = .init(name: author.name)
     }
@@ -81,7 +81,7 @@ private extension SomariFoundation.AtomFeed.Entry.Content {
         guard let content = content else {
             return nil
         }
-        
+
         self = .init(
             type: SomariFoundation.AtomFeed.Entry.Content.ContentType(attribute: content.attributes),
             value: content.value

@@ -14,7 +14,7 @@ extension Set where Set.Element: AnyCancellable {
         for cancellable in self {
             cancellable.cancel()
         }
-        
+
         self.removeAll()
     }
 }

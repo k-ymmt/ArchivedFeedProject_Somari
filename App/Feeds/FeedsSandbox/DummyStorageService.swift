@@ -14,19 +14,24 @@ enum StorageError: Error {
 }
 
 class DummyStorageService: StorageService {
-    private var storage: [String: [Any]] = [UserSettingsFeedData.key(uid: "1"): [UserSettingsFeedData(group: "/", url: "https://qiita.com/tags/swift/feed", title: "sample")]]
-    
-    func add<Value>(key: String, _ value: Value, completion: @escaping (Result<Value, Error>) -> Void) where Value : Encodable {
+    private var storage: [String: [Any]] = [
+        UserSettingsFeedData.key(uid: "1"): [UserSettingsFeedData(
+            group: "/",
+            url: "https://qiita.com/tags/swift/feed",
+            title: "sample"
+        )]]
+
+    func add<Value>(key: String, _ value: Value, completion: @escaping (Result<Value, Error>) -> Void) where Value: Encodable {
         storage[key]?.append(value)
         completion(.success(value))
     }
-    
-    func get<Value>(key: String, completion: @escaping (Result<[Value], Error>) -> Void) where Value : Decodable {
+
+    func get<Value>(key: String, completion: @escaping (Result<[Value], Error>) -> Void) where Value: Decodable {
         guard let values = storage[key] else {
             completion(.failure(StorageError.keyNotFound))
             return
         }
-        
+
         completion(.success(values.compactMap { $0 as? Value }))
     }
 }

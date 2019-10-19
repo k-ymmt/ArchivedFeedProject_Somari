@@ -26,6 +26,15 @@ platform :ios do
     pod_build(sdk: 'iphonesimulator')
   end
 
+  lane :lint do
+    swiftlint(
+      mode: :lint,
+      path: '../App',
+      executable: "#{pods_path}/SwiftLint/swiftlint",
+      config_file: '../App/.swiftlint.yml'
+    )
+  end
+
   lane :build do
     pod_install
     pod_build(sdk: 'iphoneos')

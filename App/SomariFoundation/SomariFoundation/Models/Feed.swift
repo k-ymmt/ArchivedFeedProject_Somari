@@ -11,7 +11,7 @@ import Foundation
 public enum Feed {
     case atom(AtomFeed)
     case rss(RSSFeed)
-    
+
     public var title: String? {
         switch self {
         case .atom(let feed):

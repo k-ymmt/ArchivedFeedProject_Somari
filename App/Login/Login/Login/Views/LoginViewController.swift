@@ -12,19 +12,19 @@ import Combine
 class LoginViewController: UIViewController {
     @IBOutlet weak var loginAnonymouslyView: UIView!
     private let presenter: LoginPresentable
-    
+
     private var cancellables: Set<AnyCancellable> = Set()
-    
+
     init(presenter: LoginPresentable) {
         self.presenter = presenter
-        
+
         super.init(nibName: nil, bundle: Bundle(for: type(of: self)))
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -33,7 +33,6 @@ class LoginViewController: UIViewController {
                 self?.presenter.loginAnonymously()
         }.store(in: &cancellables)
     }
-
 
     /*
     // MARK: - Navigation

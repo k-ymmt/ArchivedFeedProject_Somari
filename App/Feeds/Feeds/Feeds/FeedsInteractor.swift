@@ -19,7 +19,7 @@ class FeedsInteractor: FeedsInteractable {
     private let feedService: FeedService
     private let storageService: StorageService
     private let loginService: LoginService
-    
+
     private var buffer: [FeedItem] = []
 
     init(feedService: FeedService, storageService: StorageService, loginService: LoginService) {
@@ -27,7 +27,7 @@ class FeedsInteractor: FeedsInteractable {
         self.storageService = storageService
         self.loginService = loginService
     }
-    
+
     func getUserSettings(completion: @escaping (Result<[UserSettingsFeedData], Error>) -> Void) {
         guard let uid = loginService.uid() else {
             completion(.failure(LoginError.notLogin))
@@ -35,11 +35,11 @@ class FeedsInteractor: FeedsInteractable {
         }
         return storageService.get(key: UserSettingsFeedData.key(uid: uid), completion: completion)
     }
-    
+
     func getFeed(url: URL, completion: @escaping (Result<Feed, FeedError>) -> Void) -> Cancellable {
         return feedService.getFeed(url: url, completion: completion)
     }
-    
+
     func getFeeds(urls: [URL], completion: @escaping (Result<[FeedItem], FeedError>) -> Void) -> Cancellable {
         return feedService.getFeeds(urls: urls) { [weak self] result in
             guard let self = self else {
@@ -53,7 +53,7 @@ class FeedsInteractor: FeedsInteractable {
                     if let id = item.id, self.buffer.contains(where: { $0.id == id }) {
                         continue
                     }
-                    
+
                     items.append(item)
                 }
                 self.buffer.append(contentsOf: items)
@@ -77,4 +77,3 @@ private func compareDate(_ l: Date?, _ r: Date?) -> Bool {
     }
     return l < r
 }
-

@@ -16,12 +16,12 @@ protocol LoginPresentable {
 class LoginPresenter: LoginPresentable {
     private let interactor: LoginInteractable
     private let router: LoginRoutable
-    
+
     init(interactor: LoginInteractor, router: LoginRoutable) {
         self.interactor = interactor
         self.router = router
     }
-    
+
     func loginAnonymously() {
         interactor.loginAnonymosly { [weak self] (result) in
             switch result {
