@@ -3,7 +3,7 @@
 set -ex
 
 dir=$(cd $(dirname $0);pwd)
-export_dir="${dir}/build"
+export_dir="${dir}/../build"
 app_name="Somari"
 
 if ! type bundle 2>&1 >/dev/null;then
