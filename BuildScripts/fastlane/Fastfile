@@ -35,7 +35,8 @@ platform :ios do
       clean: true,
       configuration: 'Release',
       export_method: 'development',
-      archive_path: '../build'
+      archive_path: '../build/Somari.xcarchive',
+      output_directory: '../build'
     )
   end
 
