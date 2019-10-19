@@ -34,7 +34,7 @@ platform :ios do
       scheme: app_name,
       clean: true,
       configuration: 'Release',
-      export_method: 'development'
+      export_method: 'development',
       archive_path: '../build'
     )
   end
