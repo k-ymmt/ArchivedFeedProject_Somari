@@ -21,7 +21,7 @@ default_platform(:ios)
 
 platform :ios do
   desc "Description of what the lane does"
-  lane :pod_build_all
+  lane :pod_build_all do
     pod_build(sdk: 'iphoneos')
     pod_build(sdk: 'iphonesimulator')
   end
