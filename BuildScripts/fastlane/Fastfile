@@ -51,6 +51,7 @@ platform :ios do
 
   lane :test do
     pod_install
+    lint
     [
       "SomariFoundation",
       "SomariKit",
