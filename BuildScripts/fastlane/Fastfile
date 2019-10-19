@@ -13,17 +13,44 @@
 # Uncomment the line if you want fastlane to automatically update itself
 # update_fastlane
 
+workspace_path = '../App/Somari.xcworkspace'
+app_name = 'Somari'
+
 default_platform(:ios)
 
 platform :ios do
   desc "Description of what the lane does"
   lane :build do
     gym(
-      workspace: '../App/Somari.xcworkspace',
-      scheme: 'Somari',
+      workspace: workspace_path,
+      scheme: app_name,
       clean: true,
       configuration: 'Release',
       export_method: 'development'
+    )
+  end
+
+  lane :test do
+    [
+      "SomariFoundation",
+      "SomariKit",
+      # not support yet
+      #"SomriCore",
+      "Addition",
+      "Feeds",
+      "Login",
+      "Somari",
+    ].each do |scheme|
+      test_project(scheme: scheme)
+    end
+  end
+
+  private_lane :test_project do |options|
+    scan(
+      workspace: workspace_path,
+      scheme: options[:scheme],
+      clean: true,
+      devices: ['iPhone SE', 'iPhone 11 Pro Max', 'iPad Pro (12.9-inch) (3rd generation)']
     )
   end
 end

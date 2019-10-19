@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import Additional
+@testable import Addition
 
 class AdditionalTests: XCTestCase {
 

@@ -14,24 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "021B970B2351DBE900E59F3F"
-               BuildableName = "SomariKit.framework"
-               BlueprintName = "SomariKit"
-               ReferencedContainer = "container:SomariKit.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "NO"
-            buildForProfiling = "NO"
-            buildForArchiving = "NO"
-            buildForAnalyzing = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "021B97142351DBE900E59F3F"
-               BuildableName = "SomariKitTests.xctest"
-               BlueprintName = "SomariKitTests"
-               ReferencedContainer = "container:SomariKit.xcodeproj">
+               BlueprintIdentifier = "021B98072353053A00E59F3F"
+               BuildableName = "Addition.framework"
+               BlueprintName = "Addition"
+               ReferencedContainer = "container:Addition.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -46,10 +32,10 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "021B97142351DBE900E59F3F"
-               BuildableName = "SomariKitTests.xctest"
-               BlueprintName = "SomariKitTests"
-               ReferencedContainer = "container:SomariKit.xcodeproj">
+               BlueprintIdentifier = "021B98102353053A00E59F3F"
+               BuildableName = "AdditionTests.xctest"
+               BlueprintName = "AdditionTests"
+               ReferencedContainer = "container:Addition.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -74,10 +60,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "021B970B2351DBE900E59F3F"
-            BuildableName = "SomariKit.framework"
-            BlueprintName = "SomariKit"
-            ReferencedContainer = "container:SomariKit.xcodeproj">
+            BlueprintIdentifier = "021B98072353053A00E59F3F"
+            BuildableName = "Addition.framework"
+            BlueprintName = "Addition"
+            ReferencedContainer = "container:Addition.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>

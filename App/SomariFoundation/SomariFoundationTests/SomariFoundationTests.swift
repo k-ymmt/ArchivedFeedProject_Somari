@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import SomariKit
+@testable import SomariFoundation
 
 class SomariKitTests: XCTestCase {
 

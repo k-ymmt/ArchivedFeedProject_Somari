@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		021B98122353053A00E59F3F /* Addition.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 021B98082353053A00E59F3F /* Addition.framework */; };
-		021B98172353053A00E59F3F /* AdditionalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021B98162353053A00E59F3F /* AdditionalTests.swift */; };
+		021B98172353053A00E59F3F /* AdditionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021B98162353053A00E59F3F /* AdditionTests.swift */; };
 		021B98192353053A00E59F3F /* Addition.h in Headers */ = {isa = PBXBuildFile; fileRef = 021B980B2353053A00E59F3F /* Addition.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		021B98302353058300E59F3F /* AdditionalFeedRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021B98252353056200E59F3F /* AdditionalFeedRouter.swift */; };
 		021B98312353058300E59F3F /* AdditionalFeedPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021B98262353056200E59F3F /* AdditionalFeedPresenter.swift */; };
@@ -40,7 +40,7 @@
 		021B980B2353053A00E59F3F /* Addition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Addition.h; sourceTree = "<group>"; };
 		021B980C2353053A00E59F3F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		021B98112353053A00E59F3F /* AdditionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AdditionTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		021B98162353053A00E59F3F /* AdditionalTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdditionalTests.swift; sourceTree = "<group>"; };
+		021B98162353053A00E59F3F /* AdditionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdditionTests.swift; sourceTree = "<group>"; };
 		021B98182353053A00E59F3F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		021B98222353056200E59F3F /* AdditionalFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdditionalFeedViewController.swift; sourceTree = "<group>"; };
 		021B98232353056200E59F3F /* AdditionalFeedViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AdditionalFeedViewController.xib; sourceTree = "<group>"; };
@@ -112,7 +112,7 @@
 		021B98152353053A00E59F3F /* AdditionTests */ = {
 			isa = PBXGroup;
 			children = (
-				021B98162353053A00E59F3F /* AdditionalTests.swift */,
+				021B98162353053A00E59F3F /* AdditionTests.swift */,
 				021B98182353053A00E59F3F /* Info.plist */,
 			);
 			path = AdditionTests;
@@ -213,7 +213,7 @@
 				021B98142353053A00E59F3F /* PBXTargetDependency */,
 			);
 			name = AdditionTests;
-			productName = AdditionalTests;
+			productName = AdditionTests;
 			productReference = 021B98112353053A00E59F3F /* AdditionTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
@@ -294,7 +294,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				021B98172353053A00E59F3F /* AdditionalTests.swift in Sources */,
+				021B98172353053A00E59F3F /* AdditionTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -484,13 +484,13 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = AdditionalTests/Info.plist;
+				INFOPLIST_FILE = AdditionTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = app.kymmt.AdditionalTests;
+				PRODUCT_BUNDLE_IDENTIFIER = app.kymmt.AdditionTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -502,13 +502,13 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = AdditionalTests/Info.plist;
+				INFOPLIST_FILE = AdditionTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = app.kymmt.AdditionalTests;
+				PRODUCT_BUNDLE_IDENTIFIER = app.kymmt.AdditionTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

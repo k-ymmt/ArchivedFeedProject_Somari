@@ -74,6 +74,7 @@
 
 /* Begin PBXFileReference section */
 		020A5B39234021F1003692A6 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		0211126C235B5DAB00030A7C /* dynamic_libraries.xcfilelist */ = {isa = PBXFileReference; lastKnownFileType = text.xcfilelist; path = dynamic_libraries.xcfilelist; sourceTree = "<group>"; };
 		0214B2B723535BCB00B2EB7E /* SomariFoundation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SomariFoundation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0214B2BA23535BE000B2EB7E /* Addition.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Addition.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0214B2BD23535BEB00B2EB7E /* Feeds.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Feeds.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -186,6 +187,7 @@
 				02B2B7322348CF4300510E22 /* GoogleService-Info.plist */,
 				023ECEF9233BB13F009F6DD6 /* Preview Content */,
 				02C73AC72353481E00628870 /* build.xcconfig */,
+				0211126C235B5DAB00030A7C /* dynamic_libraries.xcfilelist */,
 			);
 			path = Somari;
 			sourceTree = "<group>";
@@ -279,6 +281,7 @@
 				023ECEEB233BB13D009F6DD6 /* Frameworks */,
 				023ECEEC233BB13D009F6DD6 /* Resources */,
 				021B97012351D89E00E59F3F /* Embed Frameworks */,
+				0211126B235B5D2A00030A7C /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -402,6 +405,27 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0211126B235B5D2A00030A7C /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"$(SRCROOT)/Somari/dynamic_libraries.xcfilelist",
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\ncode_sign() {\n  # Use the current code_sign_identitiy\n  echo \"Code Signing $1 with Identity ${EXPANDED_CODE_SIGN_IDENTITY_NAME}\"\n  echo \"/usr/bin/codesign --force --sign ${EXPANDED_CODE_SIGN_IDENTITY} --preserve-metadata=identifier,entitlements $1\"\n  /usr/bin/codesign --force --sign ${EXPANDED_CODE_SIGN_IDENTITY} --preserve-metadata=identifier,entitlements \"$1\"\n}\n\nif [ \"$CONFIGURATION\" != \"Debug\" ];then\n  exit 0\nfi\n\nif [ \"$ACTION\" = \"install\" ]; then\n  echo \"Copy .bcsymbolmap files to .xcarchive\"\n  find . -name '*.bcsymbolmap' -type f -exec mv {} \"${CONFIGURATION_BUILD_DIR}\" \\;\nfi\n\necho 'Copying frameworks'\n\nls \"${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/\" || mkdir \"${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/\"\n\nif [ $SCRIPT_INPUT_FILE_LIST_COUNT -ne 0 ]; then\n  for i in $(seq 0 $(expr $SCRIPT_INPUT_FILE_LIST_COUNT - 1)); do\n    inputFileListVar=\"SCRIPT_INPUT_FILE_LIST_${i}\"\n    inputFileList=\"${!inputFileListVar}\"\n    cat \"${inputFileList}\" | while read inputFile; do\n      cp -rf \"$inputFile\" \"${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/\"\n\n      for file in $(find ${inputFile} -type f -perm +111); do\n        # Skip non-dynamic libraries\n        if ! [[ \"$(file \"$file\")\" == *\"dynamically linked shared library\"* ]]; then\n          continue\n        fi\n        if [ \"${CODE_SIGNING_REQUIRED}\" == \"YES\" ]; then\n          code_sign \"${file}\"\n        fi\n      done\n    done\n  done\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		023ECEEA233BB13D009F6DD6 /* Sources */ = {

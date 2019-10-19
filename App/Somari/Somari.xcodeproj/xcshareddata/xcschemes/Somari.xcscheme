@@ -20,6 +20,34 @@
                ReferencedContainer = "container:Somari.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "NO"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "023ECF03233BB13F009F6DD6"
+               BuildableName = "SomariTests.xctest"
+               BlueprintName = "SomariTests"
+               ReferencedContainer = "container:Somari.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "NO"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "023ECF0E233BB13F009F6DD6"
+               BuildableName = "SomariUITests.xctest"
+               BlueprintName = "SomariUITests"
+               ReferencedContainer = "container:Somari.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
@@ -28,6 +56,26 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "023ECF03233BB13F009F6DD6"
+               BuildableName = "SomariTests.xctest"
+               BlueprintName = "SomariTests"
+               ReferencedContainer = "container:Somari.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "023ECF0E233BB13F009F6DD6"
+               BuildableName = "SomariUITests.xctest"
+               BlueprintName = "SomariUITests"
+               ReferencedContainer = "container:Somari.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
