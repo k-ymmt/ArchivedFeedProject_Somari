@@ -71,6 +71,7 @@ platform :ios do
       workspace: workspace_path,
       scheme: options[:scheme],
       clean: true,
+      derived_data_path: ".",
       devices: ['iPhone SE', 'iPhone 11 Pro Max', 'iPad Pro (12.9-inch) (3rd generation)']
     )
   end
