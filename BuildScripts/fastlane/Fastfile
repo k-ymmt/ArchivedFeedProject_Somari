@@ -1,0 +1,96 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+# For a list of all available plugins, check out
+#
+#     https://docs.fastlane.tools/plugins/available-plugins
+#
+
+# Uncomment the line if you want fastlane to automatically update itself
+# update_fastlane
+
+workspace_path = '../App/Somari.xcworkspace'
+pods_path = '../App/Pods'
+app_name = 'Somari'
+
+default_platform(:ios)
+
+platform :ios do
+  desc "Description of what the lane does"
+  lane :pod_build_all do
+    pod_build(sdk: 'iphoneos')
+    pod_build(sdk: 'iphonesimulator')
+  end
+
+  lane :lint do
+    swiftlint(
+      mode: :lint,
+      path: '../App',
+      executable: "#{pods_path}/SwiftLint/swiftlint",
+      config_file: '../App/.swiftlint.yml'
+    )
+  end
+
+  lane :build do
+    #pod_install
+    #pod_build(sdk: 'iphoneos')
+    gym(
+      workspace: workspace_path,
+      scheme: app_name,
+      clean: true,
+      configuration: 'Release',
+      export_method: 'development',
+      archive_path: '../build/Somari.xcarchive',
+      output_directory: '../build'
+    )
+  end
+
+  lane :test do
+    pod_install
+    lint
+    [
+      "SomariFoundation",
+      "SomariKit",
+      # not support yet
+      #"SomriCore",
+      "Addition",
+      "Feeds",
+      "Login",
+      # not support yet
+      # "Somari",
+    ].each do |scheme|
+      test_project(scheme: scheme)
+    end
+  end
+
+  private_lane :test_project do |options|
+    scan(
+      workspace: workspace_path,
+      scheme: options[:scheme],
+      clean: true,
+      derived_data_path: ".",
+      devices: ['iPhone 11 Pro Max', 'iPad Pro (12.9-inch) (3rd generation)']
+    )
+  end
+
+  private_lane :pod_install do
+    cocoapods(
+      clean: true,
+      repo_update: true,
+      podfile: '../App/Podfile'
+    )
+  end
+
+  private_lane :pod_build do |options|
+    sh(
+      "xcodebuild", "-project", "../#{pods_path}/Pods.xcodeproj",
+      "-sdk", options[:sdk], "-configuration", "Release", "-alltargets",
+      "ONLY_ACTIVE_ARCH=NO", "ENABLE_TESTABILITY=NO", "SYMROOT=../#{pods_path}/Build",
+      "BITCODE_GENERATION_MODE=bitcode"
+    )
+  end
+end

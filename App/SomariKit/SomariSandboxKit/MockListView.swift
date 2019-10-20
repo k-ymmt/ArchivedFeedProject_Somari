@@ -12,10 +12,10 @@ import UIKit
 
 public struct ViewControllerListItem: Identifiable {
     public var id: String { title }
-    
+
     public let title: String
     public let builder: () -> UIViewController
-    
+
     public init(title: String, builder: @escaping () -> UIViewController) {
         self.title = title
         self.builder = builder
@@ -24,11 +24,11 @@ public struct ViewControllerListItem: Identifiable {
 
 public struct MockListView: View {
     private let viewControllerList: [ViewControllerListItem]
-    
+
     public init(viewControllerList: [ViewControllerListItem]) {
         self.viewControllerList = viewControllerList
     }
-    
+
     public var body: some View {
         NavigationView {
             List(viewControllerList) { (item) in

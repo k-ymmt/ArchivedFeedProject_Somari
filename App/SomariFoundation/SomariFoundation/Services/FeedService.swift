@@ -63,14 +63,14 @@ extension FeedService {
                 })
             }
         }
-        
+
         dispatchGroup.notify(queue: .global(qos: .default)) {
             if let error = error {
                 completion(.failure(error))
             }
             completion(.success(feeds))
         }
-        
+
         return Canceler {
             for cancellable in cancellables {
                 cancellable.cancel()

@@ -18,22 +18,22 @@ class LoginRouter: LoginRoutable & Router {
     struct Dependency {
         let loginService: LoginService
     }
-    
+
     static func assembleModules(dependency: Dependency, action: @escaping (LoginNavigationAction) -> Void) -> UIViewController {
         let router = LoginRouter(navigationAction: action)
         let interactor = LoginInteractor(loginService: dependency.loginService)
         let presenter = LoginPresenter(interactor: interactor, router: router)
         let viewController = LoginViewController(presenter: presenter)
-        
+
         return viewController
     }
-    
+
     private let navigationAction: (LoginNavigationAction) -> Void
-    
+
     private init(navigationAction: @escaping (LoginNavigationAction) -> Void) {
         self.navigationAction = navigationAction
     }
-    
+
     func navigateToLoginSuccessPage() {
         navigationAction(.loginSuccess)
     }

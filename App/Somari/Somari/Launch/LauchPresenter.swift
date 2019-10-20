@@ -14,7 +14,7 @@ protocol LaunchPresentable {
 class LaunchPresenter: LaunchPresentable {
     private let interactor: LaunchInteractable
     private let router: LaunchRoutable
-    
+
     init(interactor: LaunchInteractable, router: LaunchRoutable) {
         self.interactor = interactor
         self.router = router

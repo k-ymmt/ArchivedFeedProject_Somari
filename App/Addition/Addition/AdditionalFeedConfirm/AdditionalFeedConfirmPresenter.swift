@@ -24,9 +24,9 @@ class AdditionalFeedConfirmPresenter: AdditionalFeedConfirmPresentable {
     }
     private let router: AdditionalFeedConfirmRoutable
     private let interactor: AdditionalFeedConfirmInteractable
-    
+
     private let info: FeedInfo
-    
+
     @PropertyPublished var feedItems: PropertyPublisher<[FeedItem]>
 
     init(
@@ -39,7 +39,7 @@ class AdditionalFeedConfirmPresenter: AdditionalFeedConfirmPresentable {
         self.router = router
         self.interactor = interactor
     }
-    
+
     func saveFeedInfo() {
         interactor.saveFeedInfo(info: UserSettingsFeedData(group: "/", url: info.url.absoluteString, title: info.title)) { [weak self] (result) in
             switch result {
@@ -50,12 +50,12 @@ class AdditionalFeedConfirmPresenter: AdditionalFeedConfirmPresentable {
             }
         }
     }
-    
+
     func showWebPage(linkString: String) {
         guard let url = URL(string: linkString) else {
             return
         }
-        
+
         router.showSafariViewController(url: url)
     }
 }

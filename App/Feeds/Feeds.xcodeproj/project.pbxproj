@@ -28,9 +28,7 @@
 		021B97F12352530500E59F3F /* FeedsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021B97EC235252EF00E59F3F /* FeedsInteractor.swift */; };
 		021B97F62352533000E59F3F /* FeedsGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021B97F52352533000E59F3F /* FeedsGateway.swift */; };
 		021B97F92352534600E59F3F /* SomariFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 021B97F82352534600E59F3F /* SomariFoundation.framework */; };
-		021B97FA2352534600E59F3F /* SomariFoundation.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 021B97F82352534600E59F3F /* SomariFoundation.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0225677123533DA10094BE54 /* SomariKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0225677023533DA10094BE54 /* SomariKit.framework */; };
-		0225677223533DA10094BE54 /* SomariKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0225677023533DA10094BE54 /* SomariKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		022F868323549A6C00F49A9B /* SomariSandboxKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 022F868223549A6C00F49A9B /* SomariSandboxKit.framework */; };
 		022F868423549A6C00F49A9B /* SomariSandboxKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 022F868223549A6C00F49A9B /* SomariSandboxKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
@@ -62,18 +60,6 @@
 				0214B59723544FAA00B2EB7E /* SomariFoundation.framework in Embed Frameworks */,
 				022F868423549A6C00F49A9B /* SomariSandboxKit.framework in Embed Frameworks */,
 				0214B58F2354429100B2EB7E /* Feeds.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		021B97FB2352534600E59F3F /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				0225677223533DA10094BE54 /* SomariKit.framework in Embed Frameworks */,
-				021B97FA2352534600E59F3F /* SomariFoundation.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -277,7 +263,6 @@
 				021B97C9235252D800E59F3F /* Sources */,
 				021B97CA235252D800E59F3F /* Frameworks */,
 				021B97CB235252D800E59F3F /* Resources */,
-				021B97FB2352534600E59F3F /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -610,6 +595,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				MACH_O_TYPE = mh_dylib;
 				PRODUCT_BUNDLE_IDENTIFIER = app.kymmt.Feeds;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -634,6 +620,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				MACH_O_TYPE = staticlib;
 				PRODUCT_BUNDLE_IDENTIFIER = app.kymmt.Feeds;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;

@@ -13,7 +13,7 @@ public struct RSSFeed {
         public let title: String?
         public let description: String?
         public let pubDate: Date?
-        
+
         public init(title: String?, description: String?, pubDate: Date?) {
             self.title = title
             self.description = description
@@ -26,7 +26,7 @@ public struct RSSFeed {
         public let link: String?
         public let description: String?
         public let pubDate: Date?
-        
+
         public init(title: String?, guid: String?, link: String?, description: String?, pubDate: Date?) {
             self.title = title
             self.guid = guid
@@ -35,10 +35,10 @@ public struct RSSFeed {
             self.pubDate = pubDate
         }
     }
-    
+
     public let channel: Channel?
     public let items: [Item]?
-    
+
     public init(channel: Channel?, items: [Item]?) {
         self.channel = channel
         self.items = items

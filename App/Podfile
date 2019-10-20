@@ -10,6 +10,16 @@ use_modular_headers!
 
 use_frameworks!
 
-pod 'Firebase/Analytics'
-pod 'Firebase/Auth'
-pod 'Firebase/Firestore'
+target 'SomariCore' do
+  project 'SomariCore/SomariCore.xcodeproj'
+
+  pod 'Firebase/Analytics'
+  pod 'Firebase/Auth'
+  pod 'Firebase/Firestore'
+
+  target 'SomariCoreTest' do
+    inherit! :search_paths
+  end
+end
+
+pod 'SwiftLint'

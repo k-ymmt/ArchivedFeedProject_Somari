@@ -20,30 +20,33 @@ class AdditionalFeedRouter: AdditionalFeedRoutable & Router {
         let loginService: LoginService
         let storageService: StorageService
     }
-    
+
     enum Output {
         case additionFeedSuccess
     }
-    
+
     private weak var viewController: UIViewController!
-    
-    static func assembleModules(dependency: AdditionalFeedRouter.Dependency, action: @escaping (AdditionalFeedRouter.Output) -> Void) -> UIViewController {
+
+    static func assembleModules(
+        dependency: AdditionalFeedRouter.Dependency,
+        action: @escaping (AdditionalFeedRouter.Output) -> Void
+    ) -> UIViewController {
         let router = AdditionalFeedRouter(dependency: dependency, action: action)
         let interactor = AdditionalFeedInteractor(feedService: dependency.feedService)
         let presenter = AdditionalFeedPresenter(router: router, interactor: interactor)
         let viewController = AdditionalFeedViewController(presenter: presenter)
-        
+
         return viewController
     }
 
     private let action: (AdditionalFeedRouter.Output) -> Void
     private let dependency: Dependency
-    
+
     private init(dependency: Dependency, action: @escaping (AdditionalFeedRouter.Output) -> Void) {
         self.dependency = dependency
         self.action = action
     }
-    
+
     func navigateToAdditionalFeedConfirm(url: URL, title: String?, items: [FeedItem]) {
         DispatchQueue.main.async {
             let viewController = AdditionalFeedConfirmRouter.assembleModules(dependency: .init(
@@ -52,7 +55,7 @@ class AdditionalFeedRouter: AdditionalFeedRoutable & Router {
                 items: items,
                 storageService: self.dependency.storageService,
                 loginService: self.dependency.loginService
-            )) { [weak self] (output) in
+            )) { [weak self] (_) in
                 self?.action(.additionFeedSuccess)
             }
             self.viewController.navigationController?.pushViewController(viewController, animated: true)

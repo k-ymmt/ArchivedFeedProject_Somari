@@ -11,7 +11,7 @@ import Foundation
 public struct AtomFeed {
     public struct Author {
         public let name: String?
-        
+
         public init(name: String?) {
             self.name = name
         }
@@ -23,7 +23,7 @@ public struct AtomFeed {
             }
             public let type: ContentType?
             public let value: String?
-            
+
             public init(type: ContentType?, value: String?) {
                 self.type = type
                 self.value = value
@@ -33,10 +33,10 @@ public struct AtomFeed {
             public enum LinkType {
                 case html
             }
-            
+
             public let type: LinkType?
             public let href: String?
-            
+
             public init(type: LinkType?, href: String?) {
                 self.type = type
                 self.href = href
@@ -49,7 +49,7 @@ public struct AtomFeed {
         public let links: [Link]?
         public let title: String?
         public let content: Content?
-        
+
         public init(
             id: String?, authors: [Author]?, published: Date?, updated: Date?,
             links: [Link]?, title: String?, content: Content?
@@ -63,14 +63,14 @@ public struct AtomFeed {
             self.content = content
         }
     }
-    
+
     public let id: String?
     public let title: String?
     public let description: String?
     public let updated: Date?
     public let authors: [Author]?
     public let entries: [Entry]?
-    
+
     public init(id: String?, title: String?, description: String?, updated: Date?, authors: [Author]?, entries: [Entry]?) {
         self.id = id
         self.title = title

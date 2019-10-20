@@ -12,12 +12,12 @@ import UIKit
 public protocol Router {
     associatedtype Dependency
     associatedtype Output
-    
+
     static func assembleModules(dependency: Dependency, action: @escaping (Output) -> Void) -> UIViewController
 }
 
 public protocol EmptyOutputRouter {
     associatedtype Dependency
-    
+
     static func assembleModules(dependency: Dependency) -> UIViewController
 }

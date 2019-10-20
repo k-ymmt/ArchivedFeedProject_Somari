@@ -16,21 +16,21 @@ class MainGateway: Gateway {
         case setFeeds(UIViewController)
         case setAdditionalFeed(UIViewController)
     }
-    
+
     enum Output {
         case showMainTab(UIViewController)
     }
-    
+
     private weak var mainTab: MainTabViewController!
     private var outputAction: ((Output) -> Void)?
-    
+
     private var showMainTab: Bool = false
     private var feedsViewController: UIViewController?
     private var additionalFeedViewController: UIViewController?
-    
+
     required init(dependency: Void) {
     }
-    
+
     func input(_ value: MainGateway.Input) {
         switch value {
         case .showMainTab:
@@ -44,23 +44,23 @@ class MainGateway: Gateway {
             showMainTabIfNeed()
         }
     }
-    
+
     func output(_ action: @escaping (MainGateway.Output) -> Void) {
         self.outputAction = action
     }
-    
+
     func showMainTabIfNeed() {
         guard showMainTab,
             let feedsViewController = self.feedsViewController,
             let additionalFeedViewController = self.additionalFeedViewController else {
                 return
         }
-        
+
         let viewController = MainTabRouter.assembleModules(
             feedsViewController: feedsViewController,
             additionalFeedViewController: additionalFeedViewController
         )
-        
+
         outputAction?(.showMainTab(viewController))
     }
 }

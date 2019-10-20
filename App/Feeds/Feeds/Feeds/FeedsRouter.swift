@@ -21,9 +21,9 @@ class FeedsRouter: FeedsRoutable & EmptyOutputRouter {
         let storageService: StorageService
         let loginService: LoginService
     }
-    
+
     private weak var viewController: UIViewController!
-    
+
     static func assembleModules(dependency: FeedsRouter.Dependency) -> UIViewController {
         let router = FeedsRouter()
         let interactor = FeedsInteractor(
@@ -34,7 +34,7 @@ class FeedsRouter: FeedsRoutable & EmptyOutputRouter {
         let presenter = FeedsPresenter(router: router, interactor: interactor)
         let viewController = FeedsViewController(presenter: presenter)
         router.viewController = viewController
-        
+
         return viewController
     }
 

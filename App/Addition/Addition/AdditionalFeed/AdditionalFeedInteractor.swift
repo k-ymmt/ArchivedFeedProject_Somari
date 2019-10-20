@@ -15,11 +15,11 @@ protocol AdditionalFeedInteractable {
 
 class AdditionalFeedInteractor: AdditionalFeedInteractable {
     private let feedService: FeedService
-    
+
     init(feedService: FeedService) {
         self.feedService = feedService
     }
-    
+
     func getFeed(url: URL, completion: @escaping (Result<Feed, FeedError>) -> Void) -> Cancellable {
         feedService.getFeed(url: url, completion: completion)
     }

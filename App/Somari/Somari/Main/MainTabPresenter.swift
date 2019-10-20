@@ -15,9 +15,9 @@ protocol MainTabPresentable {
 class MainTabPresenter: MainTabPresentable {
     private let interactor: MainTabInteractable
     private let router: MainTabRoutable
-    
+
     private var cancellables: Set<AnyCancellable> = Set()
-    
+
     init(interactor: MainTabInteractable, router: MainTabRoutable) {
         self.interactor = interactor
         self.router = router

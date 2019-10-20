@@ -12,9 +12,9 @@ public protocol Gateway {
     associatedtype Input
     associatedtype Output
     associatedtype Dependency
-    
+
     init(dependency: Dependency)
-    
+
     func input(_ value: Input)
     func output(_ action: @escaping (Output) -> Void)
 }

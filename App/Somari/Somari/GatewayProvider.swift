@@ -15,12 +15,12 @@ import Addition
 
 class GatewayProvider {
     private let window: UIWindow
-    
+
     let main: MainGateway
     let login: LoginGateway
     let feeds: FeedsGateway
     let addition: AdditionGateway
-    
+
     init(window: UIWindow, resolver: DependencyResolver) {
         self.main = MainGateway()
         self.login = LoginGateway(dependency: .init(
@@ -39,13 +39,13 @@ class GatewayProvider {
         self.window = window
         subscribeOutputs()
     }
-    
+
     func launch() {
         let viewController = LaunchRouter.assembleModules(dependency: .init(), action: { _ in })
         window.rootViewController = viewController
         self.login.input(.startLoginStateListening)
     }
-    
+
     private func subscribeOutputs() {
         self.main.output { [weak self] (output) in self?.mainGatewayOutputAction(output: output) }
         self.login.output { [weak self] (output) in self?.loginGatewayOutputAction(output: output) }
@@ -76,7 +76,7 @@ private extension GatewayProvider {
             switch error {
             case .notLogin:
                 login.input(.showLoginPage)
-            case .loginFailed(let error):
+            case .loginFailed:
                 login.input(.showLoginPage)
             case .unknown:
                 break

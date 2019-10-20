@@ -12,7 +12,7 @@ public struct UserSettingsFeedData: Codable {
     public let group: String
     public let url: String
     public let title: String?
-    
+
     public init(group: String, url: String, title: String?) {
         self.group = group
         self.url = url

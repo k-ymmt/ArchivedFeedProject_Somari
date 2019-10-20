@@ -15,11 +15,11 @@ class FeedViewCell: UITableViewCell, NibLoadable {
     @IBOutlet private weak var sourceLabel: UILabel!
     @IBOutlet weak var separatorLabel: UILabel!
     @IBOutlet private weak var dateLabel: UILabel!
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
     }
-    
+
     func setup(feed: FeedItem) {
         titleLabel.text = feed.title
         sourceLabel.text = feed.source
@@ -29,7 +29,7 @@ class FeedViewCell: UITableViewCell, NibLoadable {
             separatorLabel.isHidden = true
             dateLabel.isHidden = true
         }
-        
+
         previewImageView.isHidden = true
     }
 }

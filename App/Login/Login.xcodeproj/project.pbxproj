@@ -16,7 +16,6 @@
 		021B97A02351EC5100E59F3F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021B97962351EC3E00E59F3F /* LoginViewController.swift */; };
 		021B97A82351EF3200E59F3F /* LoginGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021B97A72351EF3200E59F3F /* LoginGateway.swift */; };
 		021B97AB2351EF4300E59F3F /* SomariFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 021B97AA2351EF4300E59F3F /* SomariFoundation.framework */; };
-		021B97AC2351EF4300E59F3F /* SomariFoundation.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 021B97AA2351EF4300E59F3F /* SomariFoundation.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,20 +27,6 @@
 			remoteInfo = Login;
 		};
 /* End PBXContainerItemProxy section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		021B97AD2351EF4300E59F3F /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				021B97AC2351EF4300E59F3F /* SomariFoundation.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		021B977C2351EC2200E59F3F /* Login.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Login.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -176,7 +161,6 @@
 				021B97782351EC2200E59F3F /* Sources */,
 				021B97792351EC2200E59F3F /* Frameworks */,
 				021B977A2351EC2200E59F3F /* Resources */,
-				021B97AD2351EF4300E59F3F /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -427,6 +411,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				MACH_O_TYPE = mh_dylib;
 				PRODUCT_BUNDLE_IDENTIFIER = app.kymmt.Login;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -451,6 +436,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				MACH_O_TYPE = staticlib;
 				PRODUCT_BUNDLE_IDENTIFIER = app.kymmt.Login;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;

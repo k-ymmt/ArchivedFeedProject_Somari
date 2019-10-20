@@ -24,15 +24,15 @@ protocol AdditionalFeedPresentable {
 class AdditionalFeedPresenter: AdditionalFeedPresentable {
     private let router: AdditionalFeedRoutable
     private let interactor: AdditionalFeedInteractable
-    
+
     private var cancellables: Set<AnyCancellable> = Set()
-    
+
     @EventPublished
     var errorPublisher: EventPublisher<AdditionalFeedError>
-    
+
     @EventPublished
     var getFeedSuccess: EventPublisher<Bool>
-    
+
     init(
         router: AdditionalFeedRoutable,
         interactor: AdditionalFeedInteractable
@@ -40,7 +40,7 @@ class AdditionalFeedPresenter: AdditionalFeedPresentable {
         self.router = router
         self.interactor = interactor
     }
-    
+
     func getFeed(urlString: String) {
         guard let url = URL(string: urlString) else {
             _errorPublisher.send(.invalidURL)
@@ -53,11 +53,10 @@ class AdditionalFeedPresenter: AdditionalFeedPresentable {
                 self?._getFeedSuccess.send(true)
             case .failure(let error):
                 Logger.error("\(error.localizedDescription)")
-                break
             }
         }.toCombine.store(in: &cancellables)
     }
-    
+
     deinit {
         cancellables.cancel()
     }

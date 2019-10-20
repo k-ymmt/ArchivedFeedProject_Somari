@@ -21,7 +21,7 @@ extension NibLoadable where Self: UIView {
             .instantiate(withOwner: nil, options: nil).first as? Self else {
             fatalError("cannot instantiate \(self)")
         }
-        
+
         return view
     }
 }
@@ -30,12 +30,12 @@ extension UITableView {
     public func register<Cell: UITableViewCell>(cellType: Cell.Type) where Cell: NibLoadable {
         self.register(cellType.nib, forCellReuseIdentifier: String(describing: cellType))
     }
-    
+
     public func dequeueReusableCell<Cell: UITableViewCell>(for indexPath: IndexPath, cellType: Cell.Type) -> Cell {
         guard let cell = self.dequeueReusableCell(withIdentifier: String(describing: cellType), for: indexPath) as? Cell else {
             fatalError("failed dequeue cell \(cellType)")
         }
-        
+
         return cell
     }
 }

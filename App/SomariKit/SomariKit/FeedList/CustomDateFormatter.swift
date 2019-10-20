@@ -22,7 +22,7 @@ public class CustomDateFormatter {
 
     public static func formatDate(from date: Date) -> String {
         let interval = -date.timeIntervalSinceNow
-        
+
         if interval < minutes {
             return "\(Int(interval))s"
         } else if interval < hours {
@@ -35,7 +35,7 @@ public class CustomDateFormatter {
             return formatter.string(from: date)
         }
     }
-    
+
     private init() {
     }
 }
