@@ -61,6 +61,8 @@ PODS:
     - leveldb-library (~> 1.22)
     - nanopb (~> 0.3.901)
     - Protobuf (>= 3.9.2, ~> 3.9)
+  - FirebaseFirestoreSwift (0.1):
+    - FirebaseFirestore (>= 0.10.0)
   - FirebaseInstanceID (4.2.5):
     - FirebaseCore (~> 6.0)
     - GoogleUtilities/Environment (~> 6.0)
@@ -123,6 +125,7 @@ DEPENDENCIES:
   - Firebase/Analytics
   - Firebase/Auth
   - Firebase/Firestore
+  - FirebaseFirestoreSwift (from `https://github.com/firebase/firebase-ios-sdk.git`, branch `master`)
   - SwiftLint
 
 SPEC REPOS:
@@ -149,6 +152,16 @@ SPEC REPOS:
     - Protobuf
     - SwiftLint
 
+EXTERNAL SOURCES:
+  FirebaseFirestoreSwift:
+    :branch: master
+    :git: https://github.com/firebase/firebase-ios-sdk.git
+
+CHECKOUT OPTIONS:
+  FirebaseFirestoreSwift:
+    :commit: 0f2a0bfeef3263f3b4c51854ec22b267dd2ecd38
+    :git: https://github.com/firebase/firebase-ios-sdk.git
+
 SPEC CHECKSUMS:
   BoringSSL-GRPC: db8764df3204ccea016e1c8dd15d9a9ad63ff318
   Firebase: 5e6b7b12bf9adb90986688edc06b156c37e109cd
@@ -159,6 +172,7 @@ SPEC CHECKSUMS:
   FirebaseCoreDiagnostics: af29e43048607588c050889d19204f4d7b758c9f
   FirebaseCoreDiagnosticsInterop: 6829da2b8d1fc795ff1bd99df751d3788035d2cb
   FirebaseFirestore: 5a9e9a14305336e8d1a4f915a45ecf0f5d6dcaec
+  FirebaseFirestoreSwift: 5d7734b9baa23a6d93d3ed89d81025f321c79ab0
   FirebaseInstanceID: 550df9be1f99f751d8fcde3ac342a1e21a0e6c42
   GoogleAppMeasurement: 434cc7be25e71dc04b8d0e3079125127b330e84a
   GoogleDataTransport: f6fe28f43e3a300736854260961ad485b473edc5
@@ -172,6 +186,6 @@ SPEC CHECKSUMS:
   Protobuf: a4dc852ad69c027ca2166ed287b856697814375b
   SwiftLint: 5553187048b900c91aa03552807681bb6b027846
 
-PODFILE CHECKSUM: 7af531afdcce5a44dec513830b4b9175b69cbaa1
+PODFILE CHECKSUM: 640db91134e03fd32646f85b33b146a219b3f9f5
 
 COCOAPODS: 1.8.4

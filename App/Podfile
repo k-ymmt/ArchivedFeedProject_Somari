@@ -16,6 +16,7 @@ target 'SomariCore' do
   pod 'Firebase/Analytics'
   pod 'Firebase/Auth'
   pod 'Firebase/Firestore'
+  pod 'FirebaseFirestoreSwift', :git => 'https://github.com/firebase/firebase-ios-sdk.git', :branch => 'master'
 
   target 'SomariCoreTest' do
     inherit! :search_paths

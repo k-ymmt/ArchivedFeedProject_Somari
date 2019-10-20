@@ -12,7 +12,6 @@
 		021B97552351DF6600E59F3F /* SomariCore.h in Headers */ = {isa = PBXBuildFile; fileRef = 021B97472351DF6600E59F3F /* SomariCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		021B97642351E05100E59F3F /* FeedKit in Frameworks */ = {isa = PBXBuildFile; productRef = 021B97632351E05100E59F3F /* FeedKit */; };
 		021B97672351E06300E59F3F /* SomariFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 021B97662351E06300E59F3F /* SomariFoundation.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		021B976E2351E31500E59F3F /* Mappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021B976D2351E31500E59F3F /* Mappable.swift */; };
 		021B976F2351E51300E59F3F /* FeedKitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021B975E2351DF9300E59F3F /* FeedKitService.swift */; };
 		021B97702351E51900E59F3F /* FirebaseStorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021B97602351DF9300E59F3F /* FirebaseStorageService.swift */; };
 		021B97712351E52000E59F3F /* FirebaseLoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021B975F2351DF9300E59F3F /* FirebaseLoginService.swift */; };
@@ -41,7 +40,6 @@
 		021B975F2351DF9300E59F3F /* FirebaseLoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseLoginService.swift; sourceTree = "<group>"; };
 		021B97602351DF9300E59F3F /* FirebaseStorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseStorageService.swift; sourceTree = "<group>"; };
 		021B97662351E06300E59F3F /* SomariFoundation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SomariFoundation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		021B976D2351E31500E59F3F /* Mappable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mappable.swift; sourceTree = "<group>"; };
 		02C73AC8235348C600628870 /* build.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = build.xcconfig; sourceTree = "<group>"; };
 		02F2096523532CDE00DB98A6 /* DependencyInitializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyInitializer.swift; sourceTree = "<group>"; };
 		02F4A623235B0540004EB379 /* bundle_resources.xcfilelist */ = {isa = PBXFileReference; lastKnownFileType = text.xcfilelist; path = bundle_resources.xcfilelist; sourceTree = "<group>"; };
@@ -91,7 +89,6 @@
 			isa = PBXGroup;
 			children = (
 				021B97612351DF9300E59F3F /* Services */,
-				021B976D2351E31500E59F3F /* Mappable.swift */,
 				02F2096523532CDE00DB98A6 /* DependencyInitializer.swift */,
 				021B97472351DF6600E59F3F /* SomariCore.h */,
 				021B97482351DF6600E59F3F /* Info.plist */,
@@ -291,7 +288,6 @@
 				021B976F2351E51300E59F3F /* FeedKitService.swift in Sources */,
 				021B97702351E51900E59F3F /* FirebaseStorageService.swift in Sources */,
 				02F2096623532CDE00DB98A6 /* DependencyInitializer.swift in Sources */,
-				021B976E2351E31500E59F3F /* Mappable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
