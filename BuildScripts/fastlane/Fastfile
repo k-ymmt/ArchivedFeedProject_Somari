@@ -36,8 +36,8 @@ platform :ios do
   end
 
   lane :build do
-    pod_install
-    pod_build(sdk: 'iphoneos')
+    #pod_install
+    #pod_build(sdk: 'iphoneos')
     gym(
       workspace: workspace_path,
       scheme: app_name,
@@ -60,7 +60,8 @@ platform :ios do
       "Addition",
       "Feeds",
       "Login",
-      "Somari",
+      # not support yet
+      # "Somari",
     ].each do |scheme|
       test_project(scheme: scheme)
     end
