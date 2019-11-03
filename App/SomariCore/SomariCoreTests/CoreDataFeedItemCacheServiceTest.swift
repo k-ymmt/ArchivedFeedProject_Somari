@@ -33,7 +33,7 @@ class CoreDataFeedItemCacheServiceTest: XCTestCase {
         items = try service.getAllFeedItem(limit: 100, offset: 0)
 
         XCTAssertEqual(items?.count, 5)
-        XCTAssertEqual(items?.map { $0.id! }.sorted(by: { $0 < $1 }), ["1", "2", "3", "4", "5"])
+        XCTAssertEqual(items?.map { $0.id }.sorted(by: { $0 < $1 }), ["1", "2", "3", "4", "5"])
         
         try service.removeAll()
     }
@@ -50,15 +50,31 @@ class CoreDataFeedItemCacheServiceTest: XCTestCase {
         var feeds = try service.getFeedItem(limit: 30, offset: 0, sortedBy: \.date, ascending: true)
 
         XCTAssertEqual(feeds?.count, 30)
-        XCTAssertEqual(feeds!.map { $0.id! }, sorted[0..<30].map {  $0.id! })
+        XCTAssertEqual(feeds!.map { $0.id }, sorted[0..<30].map {  $0.id })
         
         feeds = try service.getFeedItem(limit: 30, offset: 30, sortedBy: \.date, ascending: true)
         
-        XCTAssertEqual(feeds!.map { $0.id! }, sorted[30..<60].map { $0.id! })
+        XCTAssertEqual(feeds!.map { $0.id }, sorted[30..<60].map { $0.id })
         
         feeds = try service.getFeedItem(limit: 60, offset: 60, sortedBy: \.date, ascending: true)
         
-        XCTAssertEqual(feeds!.map { $0.id! }, sorted[60..<120].map { $0.id! })
+        XCTAssertEqual(feeds!.map { $0.id }, sorted[60..<120].map { $0.id })
+        
+        try service.removeAll()
+    }
+    
+    func testContains() throws {
+        let service = CoreDataFeedItemCacheService()
+        
+        let items = [Int](0..<10).map {
+            makeFeedItem(title: "Title - \($0)", id: "\($0)")
+        }
+        
+        try service.addFeedItems(items)
+        
+        XCTAssertTrue(try service.contains(key: \.id, value: "5"))
+        XCTAssertTrue(try service.contains(key: \.title, value: "Title - 1"))
+        XCTAssertFalse(try service.contains(key: \.id, value: "10000"))
         
         try service.removeAll()
     }
@@ -66,11 +82,12 @@ class CoreDataFeedItemCacheServiceTest: XCTestCase {
     private func makeFeedItem(
         title: String? = nil,
         id: String,
+        feedID: String? = nil,
         source: String? = nil,
         link: String? = nil,
         date: Date? = nil
     ) -> FeedItem {
-        return FeedItem(title: title, id: id, source: source, link: link, date: date)
+        return FeedItem(title: title, id: id, feedID: feedID, source: source, link: link, date: date)
     }
 }
 
