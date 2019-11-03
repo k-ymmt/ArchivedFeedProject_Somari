@@ -16,4 +16,5 @@ public protocol FeedItemCacheService {
         limit: Int, offset: Int,
         sortedBy item: KeyPath<FeedItem, T?>, ascending: Bool
     ) throws -> [FeedItem]? where T: Comparable
+    func contains<T: Comparable, V: CVarArg & Comparable>(key: KeyPath<FeedItem, T>, value: V) throws -> Bool
 }

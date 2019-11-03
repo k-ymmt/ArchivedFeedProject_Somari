@@ -38,4 +38,8 @@ class DummyFeedItemCacheService: FeedItemCacheService {
             ascending ? $0[keyPath: item] < $1[keyPath: item] : $0[keyPath: item] > $1[keyPath: item]
         })
     }
+    
+    func contains<T: Comparable, V: CVarArg & Comparable>(key: KeyPath<FeedItem, T>, value: V) throws -> Bool {
+        buffer.map { $0[keyPath: key] }.contains { $0 == (value as! T) }
+    }
 }

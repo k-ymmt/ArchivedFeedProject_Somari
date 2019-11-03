@@ -75,6 +75,8 @@ public class CoreDataFeedItemCacheService: FeedItemCacheService {
             switch item {
             case \FeedItem.id:
                 path = \FeedItemModel.id
+            case \FeedItem.feedID:
+                path = \FeedItemModel.feedId
             case \FeedItem.date:
                 path = \FeedItemModel.date
             case \FeedItem.title:
@@ -87,7 +89,7 @@ public class CoreDataFeedItemCacheService: FeedItemCacheService {
                 Logger.warn("KeyPath not found: \(item)")
                 return request
             }
-            
+
             let descriptor = NSSortDescriptor(keyPath: path as! KeyPath<FeedItemModel, T>, ascending: ascending)
             request.sortDescriptors = [descriptor]
 
@@ -101,6 +103,38 @@ public class CoreDataFeedItemCacheService: FeedItemCacheService {
             let deleteRequest = NSBatchDeleteRequest(fetchRequest: request)
             try context.execute(deleteRequest)
         }
+    }
+    
+    public func contains<T: Comparable, V: CVarArg & Comparable>(key: KeyPath<FeedItem, T>, value: V) throws -> Bool {
+        let name: String
+        switch key {
+        case \FeedItem.id:
+            name = "id"
+        case \FeedItem.feedID:
+            name = "feedId"
+        case \FeedItem.link:
+            name = "link"
+        case \FeedItem.title:
+            name = "title"
+        case \FeedItem.source:
+            name = "source"
+        case \FeedItem.date:
+            name = "date"
+        default:
+            Logger.warn("invalid key: \(key)")
+            return false
+        }
+        let result = try save({ (context) -> [FeedItemModel] in
+            let request: NSFetchRequest<NSFetchRequestResult> = FeedItemModel.fetchRequest()
+            request.predicate = NSPredicate(format: "%K = %@", name, value)
+            return try context.fetch(request) as! [FeedItemModel]
+        })
+
+        guard let items = result else {
+            return false
+        }
+        
+        return !items.isEmpty
     }
     
     private func fetchFeedItem(builder: (NSFetchRequest<FeedItemModel>) -> NSFetchRequest<FeedItemModel>) throws -> [FeedItem]? {
