@@ -10,10 +10,10 @@ import Foundation
 
 public enum Logger {
     public enum LogLevel: String {
-        case debug
-        case info
-        case warn
-        case error
+        case debug = "DEBUG"
+        case info = "INFO"
+        case warn = "WARN"
+        case error = "ERROR"
     }
 
     private static let dateFormatter: DateFormatter = {
@@ -48,7 +48,7 @@ public enum Logger {
         #if DEBUG
         let now = Date()
         let fileName = file.split(separator: "/").last ?? ""
-        print("\(Self.dateFormatter.string(from: now)) \(fileName):\(line) - \(function)\n> \(message())")
+        print("[\(level.rawValue)]\(Self.dateFormatter.string(from: now)) \(fileName):\(line) - \(function)\n> \(message())")
         #endif
     }
 }
