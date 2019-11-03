@@ -17,10 +17,16 @@ public class FeedListViewController: UIViewController {
     }
 
     public enum Input {
-        case newFeeds([FeedItem])
+        case updateFeeds([FeedItem])
+    }
+    
+    private enum Section {
+        case main
     }
 
     @IBOutlet private weak var feedListTableView: UITableView!
+    
+    private var dataSource: UITableViewDiffableDataSource<Section, FeedItem>!
 
     private let refreshControl: UIRefreshControl = UIRefreshControl()
 
@@ -40,10 +46,16 @@ public class FeedListViewController: UIViewController {
 
     public override func viewDidLoad() {
         super.viewDidLoad()
-
-        self.feedListTableView.dataSource = self
+        
         self.feedListTableView.delegate = self
         self.feedListTableView.register(cellType: FeedViewCell.self)
+
+        self.dataSource = UITableViewDiffableDataSource(tableView: feedListTableView) { (tableView, indexPath, item) in
+            let cell = tableView.dequeueReusableCell(for: indexPath, cellType: FeedViewCell.self)
+            cell.setup(feed: item)
+            return cell
+        }
+        
         self.feedListTableView.estimatedRowHeight = 80
         self.feedListTableView.refreshControl = refreshControl
         refreshControl.event(event: .valueChanged)
@@ -62,9 +74,12 @@ public class FeedListViewController: UIViewController {
 
     public func input(_ value: Input) {
         switch value {
-        case .newFeeds(let feeds):
-            self.feeds = feeds.reversed()
-            feedListTableView.reloadData()
+        case .updateFeeds(let feeds):
+            var snapshot = NSDiffableDataSourceSnapshot<Section, FeedItem>()
+            snapshot.appendSections([.main])
+            snapshot.appendItems(feeds)
+            dataSource.apply(snapshot)
+            
             refreshControl.endRefreshing()
         }
     }
@@ -72,23 +87,10 @@ public class FeedListViewController: UIViewController {
 
 extension FeedListViewController: UITableViewDelegate {
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let feed = feeds[indexPath.row]
+        guard let feed = dataSource.itemIdentifier(for: indexPath) else {
+            return
+        }
 
         outputCallback(.selectedItem(feed))
     }
-}
-
-extension FeedListViewController: UITableViewDataSource {
-    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return feeds.count
-    }
-
-    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(for: indexPath, cellType: FeedViewCell.self)
-        let item = feeds[indexPath.row]
-        cell.setup(feed: item)
-
-        return cell
-    }
-
 }

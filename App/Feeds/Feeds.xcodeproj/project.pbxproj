@@ -31,6 +31,7 @@
 		0225677123533DA10094BE54 /* SomariKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0225677023533DA10094BE54 /* SomariKit.framework */; };
 		022F868323549A6C00F49A9B /* SomariSandboxKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 022F868223549A6C00F49A9B /* SomariSandboxKit.framework */; };
 		022F868423549A6C00F49A9B /* SomariSandboxKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 022F868223549A6C00F49A9B /* SomariSandboxKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		02DDF799235F03EE00C82F92 /* DummyFeedItemCacheService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DDF798235F03EE00C82F92 /* DummyFeedItemCacheService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +94,7 @@
 		021B97F82352534600E59F3F /* SomariFoundation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SomariFoundation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0225677023533DA10094BE54 /* SomariKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SomariKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		022F868223549A6C00F49A9B /* SomariSandboxKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SomariSandboxKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		02DDF798235F03EE00C82F92 /* DummyFeedItemCacheService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyFeedItemCacheService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +136,7 @@
 				0214B59323544F8700B2EB7E /* DummyFeedService.swift */,
 				0214B598235450B100B2EB7E /* DummyLoginService.swift */,
 				0214B59A235451BA00B2EB7E /* DummyStorageService.swift */,
+				02DDF798235F03EE00C82F92 /* DummyFeedItemCacheService.swift */,
 				0214B5802353A2CE00B2EB7E /* Assets.xcassets */,
 				0214B5852353A2CE00B2EB7E /* LaunchScreen.storyboard */,
 				0214B5882353A2CE00B2EB7E /* Info.plist */,
@@ -364,6 +367,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				02DDF799235F03EE00C82F92 /* DummyFeedItemCacheService.swift in Sources */,
 				0214B59B235451BA00B2EB7E /* DummyStorageService.swift in Sources */,
 				0214B59423544F8700B2EB7E /* DummyFeedService.swift in Sources */,
 				0214B57B2353A2CB00B2EB7E /* AppDelegate.swift in Sources */,

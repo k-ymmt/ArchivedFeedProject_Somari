@@ -44,7 +44,7 @@ class AdditionalFeedConfirmViewController: UIViewController, ParentViewControlle
 
         presenter.feedItems
             .sink { [weak self] (items) in
-                self?.feedListView.input(.newFeeds(items))
+                self?.feedListView.input(.updateFeeds(items))
         }.store(in: &cancellables)
     }
 

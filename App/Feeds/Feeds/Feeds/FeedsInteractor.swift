@@ -8,72 +8,138 @@
 
 import Foundation
 import SomariFoundation
+import Combine
 
 protocol FeedsInteractable {
-    func getFeed(url: URL, completion: @escaping (Result<Feed, FeedError>) -> Void) -> Cancellable
-    func getFeeds(urls: [URL], completion: @escaping (Result<[FeedItem], FeedError>) -> Void) -> Cancellable
-    func getUserSettings(completion: @escaping (Result<[UserSettingsFeedData], Error>) -> Void)
+    var feeds: PropertyPublisher<[FeedItem]> { get }
+    var userSettings: PropertyPublisher<[UserSettingsFeedData]> { get }
+    var errorPublisher: EventPublisher<Error> { get }
+    func getFeed(url: URL) -> Combine.Cancellable
+    func getFeeds(urls: [URL]) -> Combine.Cancellable
+    func getInitialFeedItemFromCache()
+    func subscribeUserSettings() -> Combine.Cancellable
 }
 
 class FeedsInteractor: FeedsInteractable {
     private let feedService: FeedService
     private let storageService: StorageService
     private let loginService: LoginService
+    private let feedItemCacheService: FeedItemCacheService
+    
+    private let getFeedDispatchQueue: DispatchQueue = DispatchQueue(
+        label: "net.kymmt.Somari.Feeds.getFeedsQueue",
+        qos: .utility,
+        attributes: .concurrent
+    )
+    
+    private let diffAndSortQueue: DispatchQueue = DispatchQueue(
+        label: "net.kymmt.Somari.Feeds.diffAndSortQueue",
+        qos: .userInitiated
+    )
 
-    private var buffer: [FeedItem] = []
+    @PropertyPublished(defaultValue: []) var userSettings: PropertyPublisher<[UserSettingsFeedData]>
+    @PropertyPublished(defaultValue: []) var feeds: PropertyPublisher<[FeedItem]>
+    @EventPublished var errorPublisher: EventPublisher<Error>
 
-    init(feedService: FeedService, storageService: StorageService, loginService: LoginService) {
+    init(
+        feedService: FeedService,
+        storageService: StorageService,
+        loginService: LoginService,
+        feedItemCacheService: FeedItemCacheService
+    ) {
         self.feedService = feedService
         self.storageService = storageService
         self.loginService = loginService
+        self.feedItemCacheService = feedItemCacheService
     }
-
-    func getUserSettings(completion: @escaping (Result<[UserSettingsFeedData], Error>) -> Void) {
+    
+    func subscribeUserSettings() -> Combine.Cancellable {
         guard let uid = loginService.uid() else {
-            completion(.failure(LoginError.notLogin))
-            return
+            Logger.error(LoginError.notLogin)
+            return AnyCancellable({})
         }
-        return storageService.get(key: UserSettingsFeedData.key(uid: uid), completion: completion)
+        return storageService.subscribeValues(key: UserSettingsFeedData.key(uid: uid)) { [weak self] (result: Result<[UserSettingsFeedData], Error>) in
+            switch result {
+            case .success(let dataList):
+                self?._userSettings.value = dataList
+            case .failure(let error):
+                Logger.error(error)
+            }
+        }.toCombine
+    }
+    
+    func getInitialFeedItemFromCache() {
+        getFeedDispatchQueue.async {
+            guard let caches = try? self.feedItemCacheService.getFeedItem(limit: 50, offset: 0, sortedBy: \FeedItem.date, ascending: false) else {
+                return
+            }
+            Logger.debug(caches.map { "title: \($0.title ?? "") id: \($0.id) published: \($0.date?.description ?? "")" }.joined(separator: "\n"))
+            self._feeds.value = caches
+        }
     }
 
-    func getFeed(url: URL, completion: @escaping (Result<Feed, FeedError>) -> Void) -> Cancellable {
-        return feedService.getFeed(url: url, completion: completion)
-    }
-
-    func getFeeds(urls: [URL], completion: @escaping (Result<[FeedItem], FeedError>) -> Void) -> Cancellable {
-        return feedService.getFeeds(urls: urls) { [weak self] result in
+    func getFeed(url: URL) -> Combine.Cancellable {
+        return feedService.getFeed(url: url, queue: getFeedDispatchQueue) { [weak self] result in
             guard let self = self else {
                 return
             }
-            var items: [FeedItem] = []
             switch result {
             case .success(let feeds):
-                let feedItems = feeds.flatMap { $0.feedItems() }
-                for item in feedItems {
-                    if let id = item.id, self.buffer.contains(where: { $0.id == id }) {
-                        continue
-                    }
-
-                    items.append(item)
-                }
-                self.buffer.append(contentsOf: items)
-                completion(.success(items.sorted(by: { compareDate($0.date, $1.date) })))
+                let items = feeds.feedItems()
+                self.updateFeedItems(items: items)
             case .failure(let error):
-                completion(.failure(error))
+                self._errorPublisher.send(error)
             }
+        }.toCombine
+    }
+
+    func getFeeds(urls: [URL]) -> Combine.Cancellable {
+        return feedService.getFeeds(urls: urls, queue: getFeedDispatchQueue) { [weak self] result in
+            guard let self = self else {
+                return
+            }
+            switch result {
+            case .success(let feeds):
+                let items = feeds.flatMap { $0.feedItems() }
+                self.updateFeedItems(items: items)
+            case .failure(let error):
+                self._errorPublisher.send(error)
+            }
+        }.toCombine
+    }
+    
+    // MARK: FeedItems Utilities
+    
+    private func updateFeedItems(items: [FeedItem]) {
+        updateFeedItems(items: items, selector: { $0.id })
+    }
+    
+    private func updateFeedItems<T>(items: [FeedItem], selector: @escaping (FeedItem) -> T) where T: Comparable {
+        diffAndSortQueue.async { [weak self] in
+            guard let self = self else {
+                return
+            }
+            let diff = self.getDiffFeedItems(source: self.feeds.value, items: items, selector: selector)
+            try? self.feedItemCacheService.addFeedItems(diff)
+            self._feeds.value = diff + self.feeds.value
         }
     }
+    
+    private func getDiffFeedItems<T>(source: [FeedItem], items: [FeedItem], selector: (FeedItem) -> T) -> [FeedItem] where T: Comparable {
+        var buffer: [FeedItem] = []
+        for item in items {
+            guard !source.contains(where: { selector($0) == selector(item) }) else {
+                continue
+            }
+            buffer.append(item)
+        }
+        
+        return sortedFeedItems(buffer)
+    }
+    
+    private func sortedFeedItems(_ items: [FeedItem]) -> [FeedItem] {
+        return items.sorted(by: { $0.date > $1.date })
+    }
 }
 
-private func compareDate(_ l: Date?, _ r: Date?) -> Bool {
-    guard l != r else {
-        return true
-    }
-    guard let l = l else {
-        return true
-    }
-    guard let r = r else {
-        return false
-    }
-    return l < r
-}
+

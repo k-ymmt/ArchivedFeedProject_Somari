@@ -32,7 +32,11 @@ class FeedsViewController: UIViewController, ParentViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let feedListViewController = FeedListViewController(output: receivedFeedListOutput(value:))
+        navigationItem.title = "New Feeds"
+        view.backgroundColor = Colors.background.uiColor
+        navigationController?.navigationBar.tintColor = Colors.background.uiColor
+        navigationController?.navigationBar.backgroundColor = Colors.background.uiColor
+        let feedListViewController = FeedListViewController { [weak self]  in self?.receivedFeedListOutput(value: $0) }
         addViewController(feedListViewController)
         NSLayoutConstraint.activate([
             feedListViewController.view.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
@@ -46,7 +50,7 @@ class FeedsViewController: UIViewController, ParentViewController {
         presenter.feeds
             .receive(on: DispatchQueue.main)
             .sink { [weak self] items in
-                self?.feedListViewController.input(.newFeeds(items))
+                self?.feedListViewController.input(.updateFeeds(items))
         }.store(in: &cancels)
     }
 

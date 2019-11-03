@@ -29,7 +29,8 @@ class GatewayProvider {
         self.feeds = FeedsGateway(dependency: .init(
             feedService: resolver.feedService,
             storageService: resolver.storageService,
-            loginService: resolver.loginService
+            loginService: resolver.loginService,
+            feedItemCacheService: resolver.feedItemCacheService
         ))
         self.addition = AdditionGateway(dependency: .init(
             feedService: resolver.feedService,

@@ -47,11 +47,11 @@ public enum FeedError: Error {
 }
 
 public protocol FeedService: class {
-    func getFeed(url: URL, completion: @escaping (Swift.Result<Feed, FeedError>) -> Void) -> Cancellable
+    func getFeed(url: URL, queue: DispatchQueue, completion: @escaping (Swift.Result<Feed, FeedError>) -> Void) -> Cancellable
 }
 
 extension FeedService {
-    public func getFeeds(urls: [URL], completion: @escaping (Swift.Result<[Feed], FeedError>) -> Void) -> Cancellable {
+    public func getFeeds(urls: [URL], queue: DispatchQueue, completion: @escaping (Swift.Result<[Feed], FeedError>) -> Void) -> Cancellable {
         let dispatchGroup = DispatchGroup()
         let dispatchQueue = DispatchQueue.global(qos: .default)
         var feeds: [Feed] = []
@@ -63,7 +63,7 @@ extension FeedService {
                 guard let self = self else {
                     return
                 }
-                cancellables.append(self.getFeed(url: url) { (result) in
+                cancellables.append(self.getFeed(url: url, queue: queue) { (result) in
                     switch result {
                     case .success(let feed):
                         feeds.append(feed)

@@ -15,34 +15,34 @@ class DummyFeedService: FeedService {
         formatter.dateFormat = "YYYY-MM-dd HH:mm:ss"
         return formatter
     }()
-
-    func getFeed(url: URL, completion: @escaping (Result<Feed, FeedError>) -> Void) -> Cancellable {
+    
+    func getFeed(url: URL, queue: DispatchQueue, completion: @escaping (Result<Feed, FeedError>) -> Void) -> Cancellable {
         var feeds: [AtomFeed.Entry] = []
 
-        for i in 0..<Int.random(in: 0..<10) {
-            let id = Int.random(in: 0...500)
-            feeds.append(.init(
-                id: "\(id)",
-                authors: [],
-                published: Date.init(timeIntervalSinceNow: -Double.random(in: 0...1000)),
-                updated: nil,
-                links: [.init(type: .html, href: "https://google.com")],
-                title: "\(i) - \(id)",
-                content: .init(type: .html, value: ""))
-            )
-        }
+        queue.asyncAfter(deadline: .now() + 2) {
+            for i in 0..<Int.random(in: 1..<5) {
+                let id = Int.random(in: 0...500)
+                feeds.append(.init(
+                    id: "\(id)",
+                    authors: [],
+                    published: Date.init(timeIntervalSinceNow: -Double.random(in: 0...1000)),
+                    updated: nil,
+                    links: [.init(type: .html, href: "https://google.com")],
+                    title: "\(i) - \(id)",
+                    content: .init(type: .html, value: ""))
+                )
+            }
 
-        let logString = feeds.map {
-            "title: \($0.title!) "
-            + "id: \($0.id!),
-            + "published: \(dateFormatter.string(from: $0.published!))"
-        }.joined(separator: "\n")
-        Logger.info("\n\()")
-
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+            let logString = feeds.map {
+                "title: \($0.title!) "
+                    + "id: \($0.id!)"
+                    + "published: \(self.dateFormatter.string(from: $0.published!))"
+            }.joined(separator: "\n")
+            Logger.info("\n\(logString)")
+            
             completion(.success(.atom(.init(
                 id: "a",
-                title: "Dummy",
+                title: "\(url.pathComponents.suffix(2).joined(separator: "/"))",
                 description: "Dummy feed",
                 updated: Date(),
                 authors: [],

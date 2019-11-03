@@ -15,11 +15,17 @@ public class FeedsGateway: Gateway {
         let feedService: FeedService
         let storageService: StorageService
         let loginService: LoginService
+        let feedItemCacheService: FeedItemCacheService
 
-        public init(feedService: FeedService, storageService: StorageService, loginService: LoginService) {
+        public init(
+            feedService: FeedService,
+            storageService: StorageService,
+            loginService: LoginService,
+            feedItemCacheService: FeedItemCacheService) {
             self.feedService = feedService
             self.storageService = storageService
             self.loginService = loginService
+            self.feedItemCacheService = feedItemCacheService
         }
     }
 
@@ -53,7 +59,8 @@ public class FeedsGateway: Gateway {
         let viewController = FeedsRouter.assembleModules(dependency: .init(
             feedService: dependency.feedService,
             storageService: dependency.storageService,
-            loginService: dependency.loginService
+            loginService: dependency.loginService,
+            feedItemCacheService: dependency.feedItemCacheService
         ))
 
         return viewController
