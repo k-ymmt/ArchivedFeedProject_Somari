@@ -10,6 +10,7 @@
 		021B97A62351EEAF00E59F3F /* Gateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021B97A52351EEAF00E59F3F /* Gateway.swift */; };
 		021B97AF2352013700E59F3F /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021B97AE2352013700E59F3F /* Router.swift */; };
 		021B97B12352033400E59F3F /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021B97B02352033400E59F3F /* Logger.swift */; };
+		02DDF79B235F365900C82F92 /* Optional+Comparable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DDF79A235F365900C82F92 /* Optional+Comparable.swift */; };
 		02EAB86D2350B5A800130DB2 /* SomariFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02EAB8632350B5A800130DB2 /* SomariFoundation.framework */; };
 		02EAB8722350B5A800130DB2 /* SomariFoundationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EAB8712350B5A800130DB2 /* SomariFoundationTests.swift */; };
 		02EAB8742350B5A800130DB2 /* SomariFoundation.h in Headers */ = {isa = PBXBuildFile; fileRef = 02EAB8662350B5A800130DB2 /* SomariFoundation.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -44,6 +45,7 @@
 		021B97A52351EEAF00E59F3F /* Gateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gateway.swift; sourceTree = "<group>"; };
 		021B97AE2352013700E59F3F /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		021B97B02352033400E59F3F /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		02DDF79A235F365900C82F92 /* Optional+Comparable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Optional+Comparable.swift"; sourceTree = "<group>"; };
 		02EAB8632350B5A800130DB2 /* SomariFoundation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SomariFoundation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		02EAB8662350B5A800130DB2 /* SomariFoundation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SomariFoundation.h; sourceTree = "<group>"; };
 		02EAB8672350B5A800130DB2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -93,6 +95,14 @@
 				021B97AE2352013700E59F3F /* Router.swift */,
 			);
 			path = Gateway;
+			sourceTree = "<group>";
+		};
+		02DDF79E236D6FEC00C82F92 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				02DDF79A235F365900C82F92 /* Optional+Comparable.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		02EAB8592350B5A800130DB2 = {
@@ -310,6 +320,7 @@
 				02EAB88C2350B81600130DB2 /* Feed.swift in Sources */,
 				02EAB88E2350B83600130DB2 /* FeedItem.swift in Sources */,
 				02EAB8992350BAA800130DB2 /* UIView+Combine.swift in Sources */,
+				02DDF79B235F365900C82F92 /* Optional+Comparable.swift in Sources */,
 				021B97AF2352013700E59F3F /* Router.swift in Sources */,
 				02EAB8A12350DDE100130DB2 /* EventPublisher.swift in Sources */,
 				02EAB88A2350B7FF00130DB2 /* UserSettingsData.swift in Sources */,
