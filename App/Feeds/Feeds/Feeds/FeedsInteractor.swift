@@ -127,11 +127,16 @@ class FeedsInteractor: FeedsInteractable {
     
     private func getDiffFeedItems<T>(source: [FeedItem], items: [FeedItem], selector: (FeedItem) -> T) -> [FeedItem] where T: Comparable {
         var buffer: [FeedItem] = []
-        for item in items {
-            guard !source.contains(where: { selector($0) == selector(item) }) else {
-                continue
+        do {
+            for item in items {
+                guard try !feedItemCacheService.contains(key: \.id, value: item.id) else {
+                    continue
+                }
+                buffer.append(item)
             }
-            buffer.append(item)
+        } catch {
+            Logger.error(error)
+            return []
         }
         
         return sortedFeedItems(buffer)
