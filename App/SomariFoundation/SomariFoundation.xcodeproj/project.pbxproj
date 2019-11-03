@@ -25,7 +25,6 @@
 		02EAB8932350B9C900130DB2 /* ViewControllerProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EAB8922350B9C900130DB2 /* ViewControllerProtocols.swift */; };
 		02EAB8992350BAA800130DB2 /* UIView+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EAB8982350BAA800130DB2 /* UIView+Combine.swift */; };
 		02EAB89B2350BB0400130DB2 /* UIControl+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EAB89A2350BB0400130DB2 /* UIControl+Combine.swift */; };
-		02EAB89D2350DD0100130DB2 /* ReactiveProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EAB89C2350DD0100130DB2 /* ReactiveProperty.swift */; };
 		02EAB89F2350DDBC00130DB2 /* PropertyPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EAB89E2350DDBC00130DB2 /* PropertyPublisher.swift */; };
 		02EAB8A12350DDE100130DB2 /* EventPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EAB8A02350DDE100130DB2 /* EventPublisher.swift */; };
 		02EAB8A32350DE3D00130DB2 /* Set+AnyCancellable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EAB8A22350DE3D00130DB2 /* Set+AnyCancellable.swift */; };
@@ -63,7 +62,6 @@
 		02EAB8922350B9C900130DB2 /* ViewControllerProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerProtocols.swift; sourceTree = "<group>"; };
 		02EAB8982350BAA800130DB2 /* UIView+Combine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Combine.swift"; sourceTree = "<group>"; };
 		02EAB89A2350BB0400130DB2 /* UIControl+Combine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIControl+Combine.swift"; sourceTree = "<group>"; };
-		02EAB89C2350DD0100130DB2 /* ReactiveProperty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactiveProperty.swift; sourceTree = "<group>"; };
 		02EAB89E2350DDBC00130DB2 /* PropertyPublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyPublisher.swift; sourceTree = "<group>"; };
 		02EAB8A02350DDE100130DB2 /* EventPublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventPublisher.swift; sourceTree = "<group>"; };
 		02EAB8A22350DE3D00130DB2 /* Set+AnyCancellable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Set+AnyCancellable.swift"; sourceTree = "<group>"; };
@@ -174,7 +172,6 @@
 			isa = PBXGroup;
 			children = (
 				02EAB8972350BA9B00130DB2 /* Views */,
-				02EAB89C2350DD0100130DB2 /* ReactiveProperty.swift */,
 				02EAB89E2350DDBC00130DB2 /* PropertyPublisher.swift */,
 				02EAB8A02350DDE100130DB2 /* EventPublisher.swift */,
 				02EAB8A22350DE3D00130DB2 /* Set+AnyCancellable.swift */,
@@ -302,7 +299,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				021B97B12352033400E59F3F /* Logger.swift in Sources */,
-				02EAB89D2350DD0100130DB2 /* ReactiveProperty.swift in Sources */,
 				02EAB89F2350DDBC00130DB2 /* PropertyPublisher.swift in Sources */,
 				02EAB8932350B9C900130DB2 /* ViewControllerProtocols.swift in Sources */,
 				02EAB89B2350BB0400130DB2 /* UIControl+Combine.swift in Sources */,

@@ -10,13 +10,13 @@ import Foundation
 import Combine
 
 @propertyWrapper
-public class EventPublished<Value> {
+public struct EventPublished<Value> {
     private let subject: PassthroughSubject<Value, Never> = PassthroughSubject()
 
     public var wrappedValue: EventPublisher<Value>
 
     public init() {
-        wrappedValue = EventPublisher(subject: subject)
+        wrappedValue = EventPublisher(subject: PassthroughSubject())
     }
 
     public func send(_ input: Value) {
@@ -36,5 +36,11 @@ public struct EventPublisher<Value>: Publisher {
 
     public func receive<S>(subscriber: S) where S: Subscriber, Failure == S.Failure, Output == S.Input {
         subject.receive(subscriber: subscriber)
+    }
+}
+
+extension EventPublisher {
+    public func bind(to other: EventPublished<Value>) -> Combine.Cancellable {
+        self.sink { (value) in other.send(value) }
     }
 }
