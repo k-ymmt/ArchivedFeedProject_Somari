@@ -11,12 +11,13 @@ import Combine
 
 @propertyWrapper
 public struct EventPublished<Value> {
-    private let subject: PassthroughSubject<Value, Never> = PassthroughSubject()
+    private let subject: PassthroughSubject<Value, Never>
 
     public var wrappedValue: EventPublisher<Value>
 
     public init() {
-        wrappedValue = EventPublisher(subject: PassthroughSubject())
+        subject = PassthroughSubject()
+        wrappedValue = EventPublisher(subject: subject)
     }
 
     public func send(_ input: Value) {
