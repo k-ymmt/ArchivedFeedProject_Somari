@@ -22,12 +22,23 @@ extension SomariFoundation.Cancellable {
 }
 
 public struct Canceler: Cancellable {
-    private let action: () -> Void
+    private let action: (() -> Void)?
     public init(action: @escaping () -> Void) {
         self.action = action
     }
+    
+    fileprivate init() {
+        self.action = nil
+    }
+    
     public func cancel() {
-        action()
+        action?()
+    }
+}
+
+extension Canceler {
+    public static var empty: Cancellable {
+        return Canceler()
     }
 }
 
