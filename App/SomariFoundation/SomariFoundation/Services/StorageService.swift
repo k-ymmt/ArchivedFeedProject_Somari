@@ -17,4 +17,5 @@ extension UserSettingsFeedData {
 public protocol StorageService {
     func add<Value: Encodable>(key: String, _ value: Value, completion: @escaping (Result<Value, Error>) -> Void)
     func get<Value: Decodable>(key: String, completion: @escaping (Result<[Value], Error>) -> Void)
+    func subscribeValues<Value: Decodable>(key: String, subscription: @escaping (Result<[Value], Error>) -> Void) -> Cancellable
 }

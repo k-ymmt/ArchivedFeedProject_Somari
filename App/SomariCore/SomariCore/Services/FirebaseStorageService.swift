@@ -53,4 +53,32 @@ public class FirebaseStorageService: StorageService {
             }
         }
     }
+    
+    public func subscribeValues<Value: Decodable>(key: String, subscription: @escaping (Result<[Value], Error>) -> Void) -> Cancellable {
+        let listener = db.collection(key).addSnapshotListener { [weak self] (snapshot, error) in
+            guard let self = self else {
+                return
+            }
+            if let error = error {
+                subscription(.failure(error))
+                return
+            }
+            guard let documents = snapshot?.documents else {
+                Logger.error("snapshot is empty.")
+                return
+            }
+            
+            do {
+                let values = try documents.compactMap { try self.decoder.decode(Value.self, from: $0.data()) }
+                subscription(.success(values))
+            } catch {
+                Logger.error(error)
+                return
+            }
+        }
+        
+        return Canceler {
+            listener.remove()
+        }
+    }
 }
