@@ -51,7 +51,9 @@ class AdditionalFeedInteractor: AdditionalFeedInteractable {
         guard let uid = loginService.uid() else {
             return AnyCancellable({})
         }
-        return self.storageService.subscribeValues(key: UserSettingsFeedData.key(uid: uid)) { [weak self] (result: Result<[UserSettingsFeedData], Error>) in
+        return self.storageService.subscribeValues(
+            key: UserSettingsFeedData.key(uid: uid)
+        ) { [weak self] (result: Result<[UserSettingsFeedData], Error>) in
             switch result {
             case .success(let userSettings):
                 self?.userSettings = userSettings

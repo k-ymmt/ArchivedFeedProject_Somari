@@ -6,6 +6,8 @@
 //  Copyright © 2019 Kazuki Yamamoto. All rights reserved.
 //
 
+// swiftlint:disable force_cast
+
 import Foundation
 import SomariFoundation
 
@@ -43,3 +45,5 @@ class DummyFeedItemCacheService: FeedItemCacheService {
         buffer.map { $0[keyPath: key] }.contains { $0 == (value as! T) }
     }
 }
+
+// swiftlint:enable force_cast

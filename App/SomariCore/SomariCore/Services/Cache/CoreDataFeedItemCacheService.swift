@@ -90,6 +90,7 @@ public class CoreDataFeedItemCacheService: FeedItemCacheService {
                 return request
             }
 
+            // swiftlint:disable:next force_cast
             let descriptor = NSSortDescriptor(keyPath: path as! KeyPath<FeedItemModel, T>, ascending: ascending)
             request.sortDescriptors = [descriptor]
 
@@ -124,11 +125,11 @@ public class CoreDataFeedItemCacheService: FeedItemCacheService {
             Logger.warn("invalid key: \(key)")
             return false
         }
-        let result = try save({ (context) -> [FeedItemModel] in
-            let request: NSFetchRequest<NSFetchRequestResult> = FeedItemModel.fetchRequest()
+
+        let result = try fetchFeedItem { request in
             request.predicate = NSPredicate(format: "%K = %@", name, value)
-            return try context.fetch(request) as! [FeedItemModel]
-        })
+            return request
+        }
 
         guard let items = result else {
             return false

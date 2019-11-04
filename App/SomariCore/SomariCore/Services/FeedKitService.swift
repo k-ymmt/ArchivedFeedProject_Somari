@@ -14,7 +14,11 @@ public class FeedKitService: FeedService {
     public init() {
     }
 
-    public func getFeed(url: URL, queue: DispatchQueue, completion: @escaping (Swift.Result<SomariFoundation.Feed, FeedError>) -> Void) -> Cancellable {
+    public func getFeed(
+        url: URL,
+        queue: DispatchQueue,
+        completion: @escaping (Swift.Result<SomariFoundation.Feed, FeedError>) -> Void
+    ) -> Cancellable {
         let parser = FeedParser(URL: url)
         parser.parseAsync(queue: queue) { (result) in
             switch result {

@@ -58,7 +58,9 @@ class FeedsInteractor: FeedsInteractable {
             Logger.error(LoginError.notLogin)
             return AnyCancellable({})
         }
-        return storageService.subscribeValues(key: UserSettingsFeedData.key(uid: uid)) { [weak self] (result: Result<[UserSettingsFeedData], Error>) in
+        return storageService.subscribeValues(
+            key: UserSettingsFeedData.key(uid: uid)
+        ) { [weak self] (result: Result<[UserSettingsFeedData], Error>) in
             switch result {
             case .success(let dataList):
                 self?._userSettings.value = dataList

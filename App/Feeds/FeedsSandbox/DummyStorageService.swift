@@ -6,6 +6,8 @@
 //  Copyright © 2019 Kazuki Yamamoto. All rights reserved.
 //
 
+// swiftlint:disable force_cast
+
 import Foundation
 import SomariFoundation
 
@@ -60,3 +62,5 @@ class DummyStorageService: StorageService {
         }
     }
 }
+
+// swiftlint:enable force_cast
