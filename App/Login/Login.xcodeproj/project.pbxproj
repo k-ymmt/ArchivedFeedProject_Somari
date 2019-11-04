@@ -16,6 +16,7 @@
 		021B97A02351EC5100E59F3F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021B97962351EC3E00E59F3F /* LoginViewController.swift */; };
 		021B97A82351EF3200E59F3F /* LoginGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021B97A72351EF3200E59F3F /* LoginGateway.swift */; };
 		021B97AB2351EF4300E59F3F /* SomariFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 021B97AA2351EF4300E59F3F /* SomariFoundation.framework */; };
+		026CB716237057F30086A5CB /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 021B97972351EC3E00E59F3F /* LoginViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -231,6 +232,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				026CB716237057F30086A5CB /* LoginViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
