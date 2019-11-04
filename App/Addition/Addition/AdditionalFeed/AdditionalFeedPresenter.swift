@@ -34,7 +34,7 @@ class AdditionalFeedPresenter: AdditionalFeedPresentable {
     ) {
         self.router = router
         self.interactor = interactor
-        
+
         self.interactor.subscribeUserSettings().store(in: &cancellables)
         self.interactor.getFeedsSuccess
             .sink { [weak self] (url, feeds) in

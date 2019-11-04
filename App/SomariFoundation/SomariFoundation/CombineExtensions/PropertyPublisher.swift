@@ -39,7 +39,7 @@ public struct PropertyPublisher<Value>: Publisher {
     public var value: Value {
         subject.value
     }
-    
+
     init(subject: CurrentValueSubject<Value, Never>) {
         self.subject = subject
     }

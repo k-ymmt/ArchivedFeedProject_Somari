@@ -13,7 +13,7 @@ import CoreData
 private extension FeedItemModel {
     convenience init(context: NSManagedObjectContext, feedItem: FeedItem) {
         self.init(context: context)
-        
+
         self.id = feedItem.id
         self.title = feedItem.title
         self.source = feedItem.source
@@ -33,20 +33,20 @@ public class CoreDataFeedItemCacheService: FeedItemCacheService {
         }
         container = NSPersistentContainer(name: containerName, managedObjectModel: managedObjectModel)
 
-        container?.loadPersistentStores { [weak self] (description, error) in
+        container?.loadPersistentStores { [weak self] (_, error) in
             if let error = error {
                 Logger.error(error)
                 self?.container = nil
             }
         }
     }
-    
+
     public func addFeedItem(item: FeedItem) throws {
         try save { context -> Void in
             makeFeedItemModel(context: context, item: item)
         }
     }
-    
+
     public func addFeedItems(_ items: [FeedItem]) throws {
         try save { context in
             for item in items {
@@ -54,7 +54,7 @@ public class CoreDataFeedItemCacheService: FeedItemCacheService {
             }
         }
     }
-    
+
     public func getAllFeedItem(limit: Int, offset: Int) throws -> [FeedItem]? {
         return try fetchFeedItem { request in
             request.fetchLimit = limit
@@ -62,7 +62,7 @@ public class CoreDataFeedItemCacheService: FeedItemCacheService {
             return request
         }
     }
-    
+
     public func getFeedItem<T>(
         limit: Int, offset: Int,
         sortedBy item: KeyPath<FeedItem, T>, ascending: Bool
@@ -70,7 +70,7 @@ public class CoreDataFeedItemCacheService: FeedItemCacheService {
         return try fetchFeedItem { (request) in
             request.fetchLimit = limit
             request.fetchOffset = offset
-            
+
             let path: AnyKeyPath
             switch item {
             case \FeedItem.id:
@@ -96,7 +96,7 @@ public class CoreDataFeedItemCacheService: FeedItemCacheService {
             return request
         }
     }
-    
+
     public func removeAll() throws {
         try save { context in
             let request = FeedItemModel.fetchRequest() as NSFetchRequest<NSFetchRequestResult>
@@ -104,7 +104,7 @@ public class CoreDataFeedItemCacheService: FeedItemCacheService {
             try context.execute(deleteRequest)
         }
     }
-    
+
     public func contains<T: Comparable, V: CVarArg & Comparable>(key: KeyPath<FeedItem, T>, value: V) throws -> Bool {
         let name: String
         switch key {
@@ -133,17 +133,17 @@ public class CoreDataFeedItemCacheService: FeedItemCacheService {
         guard let items = result else {
             return false
         }
-        
+
         return !items.isEmpty
     }
-    
+
     private func fetchFeedItem(builder: (NSFetchRequest<FeedItemModel>) -> NSFetchRequest<FeedItemModel>) throws -> [FeedItem]? {
         let result = try save { context -> [FeedItemModel] in
             let request: NSFetchRequest<FeedItemModel> = FeedItemModel.fetchRequest()
 
             return try context.fetch(builder(request))
         }
-        
+
         guard let items = result else {
             return nil
         }
@@ -156,7 +156,7 @@ public class CoreDataFeedItemCacheService: FeedItemCacheService {
             date: $0.date
         )}
     }
-    
+
     @discardableResult
     private func makeFeedItemModel(context: NSManagedObjectContext, item: FeedItem) -> FeedItemModel {
         let model = FeedItemModel(context: context)
@@ -165,21 +165,21 @@ public class CoreDataFeedItemCacheService: FeedItemCacheService {
         model.source = item.source
         model.date = item.date
         model.link = item.link
-        
+
         return model
     }
-    
+
     private func save<T>(_ action: (NSManagedObjectContext) throws -> T) throws -> T? {
         guard let context = container?.viewContext else {
             return nil
         }
-        
+
         let result = try action(context)
-        
+
         if context.hasChanges {
             try context.save()
         }
-        
+
         return result
     }
 }

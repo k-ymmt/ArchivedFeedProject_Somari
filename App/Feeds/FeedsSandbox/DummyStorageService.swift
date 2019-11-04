@@ -20,7 +20,7 @@ class DummyStorageService: StorageService {
             url: "https://qiita.com/tags/swift/feed",
             title: "sample"
         )]]
-    
+
     private var valueChangedSubscriptions: [String: (Result<[Any], Error>) -> Void] = [:]
 
     func add<Value>(key: String, _ value: Value, completion: @escaping (Result<Value, Error>) -> Void) where Value: Encodable {
@@ -42,7 +42,7 @@ class DummyStorageService: StorageService {
 
         completion(.success(values.compactMap { $0 as? Value }))
     }
-    
+
     func subscribeValues<Value: Decodable>(key: String, subscription: @escaping (Result<[Value], Error>) -> Void) -> Cancellable {
         let action: (Result<[Any], Error>) -> Void = {
             switch $0 {
@@ -54,7 +54,7 @@ class DummyStorageService: StorageService {
             }
         }
         valueChangedSubscriptions[key] = action
-        
+
         return Canceler { [weak self] in
             self?.valueChangedSubscriptions.removeValue(forKey: key)
         }

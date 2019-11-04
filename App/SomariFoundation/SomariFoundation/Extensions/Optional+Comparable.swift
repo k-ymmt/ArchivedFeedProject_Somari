@@ -9,7 +9,7 @@
 import Foundation
 
 extension Optional: Comparable where Wrapped: Comparable {
-    public static func < (lhs: Optional<Wrapped>, rhs: Optional<Wrapped>) -> Bool {
+    public static func < (lhs: Wrapped?, rhs: Wrapped?) -> Bool {
         guard lhs != rhs else {
             return true
         }

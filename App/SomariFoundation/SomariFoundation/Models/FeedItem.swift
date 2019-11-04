@@ -15,7 +15,7 @@ public struct FeedItem: Hashable {
     public let source: String?
     public let link: String?
     public let date: Date?
-    
+
     public init(title: String?, id: String, feedID: String?, source: String?, link: String?, date: Date?) {
         self.title = title
         self.id = id

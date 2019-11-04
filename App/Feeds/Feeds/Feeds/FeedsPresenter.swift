@@ -20,7 +20,7 @@ protocol FeedsPresentable {
 }
 
 class FeedsPresenter: FeedsPresentable {
-    
+
     private let router: FeedsRoutable
     private let interactor: FeedsInteractable
 
@@ -32,7 +32,7 @@ class FeedsPresenter: FeedsPresentable {
     init(router: FeedsRoutable, interactor: FeedsInteractable) {
         self.router = router
         self.interactor = interactor
-        
+
         self.interactor.feeds
             .sink { [weak self] values in
                 self?._feeds.value = values
@@ -45,7 +45,7 @@ class FeedsPresenter: FeedsPresentable {
                 self?.feedDataList = dataList
                 self?.getFeedAll()
         }.store(in: &cancellables)
-        
+
         interactor.subscribeUserSettings().store(in: &cancellables)
     }
 

@@ -19,13 +19,13 @@ public class FeedListViewController: UIViewController {
     public enum Input {
         case updateFeeds([FeedItem])
     }
-    
+
     private enum Section {
         case main
     }
 
     @IBOutlet private weak var feedListTableView: UITableView!
-    
+
     private var dataSource: UITableViewDiffableDataSource<Section, FeedItem>!
 
     private let refreshControl: UIRefreshControl = UIRefreshControl()
@@ -46,7 +46,7 @@ public class FeedListViewController: UIViewController {
 
     public override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         self.feedListTableView.delegate = self
         self.feedListTableView.register(cellType: FeedViewCell.self)
 
@@ -55,7 +55,7 @@ public class FeedListViewController: UIViewController {
             cell.setup(feed: item)
             return cell
         }
-        
+
         self.feedListTableView.estimatedRowHeight = 80
         self.feedListTableView.refreshControl = refreshControl
         refreshControl.event(event: .valueChanged)
@@ -79,7 +79,7 @@ public class FeedListViewController: UIViewController {
             snapshot.appendSections([.main])
             snapshot.appendItems(feeds)
             dataSource.apply(snapshot)
-            
+
             refreshControl.endRefreshing()
         }
     }

@@ -11,7 +11,7 @@ import SomariFoundation
 
 class DummyFeedItemCacheService: FeedItemCacheService {
     private var buffer: [FeedItem]
-    
+
     init(initialBuffer: [FeedItem] = []) {
         self.buffer = initialBuffer
     }
@@ -19,15 +19,15 @@ class DummyFeedItemCacheService: FeedItemCacheService {
     func addFeedItem(item: FeedItem) throws {
         buffer.append(item)
     }
-    
+
     func addFeedItems(_ items: [FeedItem]) throws {
         buffer.append(contentsOf: items)
     }
-    
+
     func getAllFeedItem(limit: Int, offset: Int) throws -> [FeedItem]? {
         return Array(buffer[offset..<limit])
     }
-    
+
     func getFeedItem<T>(limit: Int, offset: Int, sortedBy item: KeyPath<FeedItem, T?>, ascending: Bool) throws -> [FeedItem]? where T: Comparable {
         var limit = limit
         if limit > buffer.count {
@@ -38,7 +38,7 @@ class DummyFeedItemCacheService: FeedItemCacheService {
             ascending ? $0[keyPath: item] < $1[keyPath: item] : $0[keyPath: item] > $1[keyPath: item]
         })
     }
-    
+
     func contains<T: Comparable, V: CVarArg & Comparable>(key: KeyPath<FeedItem, T>, value: V) throws -> Bool {
         buffer.map { $0[keyPath: key] }.contains { $0 == (value as! T) }
     }

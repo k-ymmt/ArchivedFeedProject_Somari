@@ -25,13 +25,13 @@ class FeedsInteractor: FeedsInteractable {
     private let storageService: StorageService
     private let loginService: LoginService
     private let feedItemCacheService: FeedItemCacheService
-    
+
     private let getFeedDispatchQueue: DispatchQueue = DispatchQueue(
         label: "net.kymmt.Somari.Feeds.getFeedsQueue",
         qos: .utility,
         attributes: .concurrent
     )
-    
+
     private let diffAndSortQueue: DispatchQueue = DispatchQueue(
         label: "net.kymmt.Somari.Feeds.diffAndSortQueue",
         qos: .userInitiated
@@ -52,7 +52,7 @@ class FeedsInteractor: FeedsInteractable {
         self.loginService = loginService
         self.feedItemCacheService = feedItemCacheService
     }
-    
+
     func subscribeUserSettings() -> Combine.Cancellable {
         guard let uid = loginService.uid() else {
             Logger.error(LoginError.notLogin)
@@ -67,7 +67,7 @@ class FeedsInteractor: FeedsInteractable {
             }
         }.toCombine
     }
-    
+
     func getInitialFeedItemFromCache() {
         getFeedDispatchQueue.async {
             guard let caches = try? self.feedItemCacheService.getFeedItem(limit: 50, offset: 0, sortedBy: \FeedItem.date, ascending: false) else {
@@ -107,13 +107,13 @@ class FeedsInteractor: FeedsInteractable {
             }
         }.toCombine
     }
-    
+
     // MARK: FeedItems Utilities
-    
+
     private func updateFeedItems(items: [FeedItem]) {
         updateFeedItems(items: items, selector: { $0.id })
     }
-    
+
     private func updateFeedItems<T>(items: [FeedItem], selector: @escaping (FeedItem) -> T) where T: Comparable {
         diffAndSortQueue.async { [weak self] in
             guard let self = self else {
@@ -124,7 +124,7 @@ class FeedsInteractor: FeedsInteractable {
             self._feeds.value = diff + self.feeds.value
         }
     }
-    
+
     private func getDiffFeedItems<T>(source: [FeedItem], items: [FeedItem], selector: (FeedItem) -> T) -> [FeedItem] where T: Comparable {
         var buffer: [FeedItem] = []
         do {
@@ -138,13 +138,11 @@ class FeedsInteractor: FeedsInteractable {
             Logger.error(error)
             return []
         }
-        
+
         return sortedFeedItems(buffer)
     }
-    
+
     private func sortedFeedItems(_ items: [FeedItem]) -> [FeedItem] {
         return items.sorted(by: { $0.date > $1.date })
     }
 }
-
-

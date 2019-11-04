@@ -34,7 +34,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             feedItemCacheService: feedItemCacheService
             ))
         }
-        
+
         let bufferFeeds = { FeedsRouter.assembleModules(dependency: .init(
             feedService: feedService,
             storageService: storageService,

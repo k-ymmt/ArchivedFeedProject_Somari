@@ -26,11 +26,11 @@ public struct Canceler: Cancellable {
     public init(action: @escaping () -> Void) {
         self.action = action
     }
-    
+
     fileprivate init() {
         self.action = nil
     }
-    
+
     public func cancel() {
         action?()
     }

@@ -15,7 +15,7 @@ class DummyFeedService: FeedService {
         formatter.dateFormat = "YYYY-MM-dd HH:mm:ss"
         return formatter
     }()
-    
+
     func getFeed(url: URL, queue: DispatchQueue, completion: @escaping (Result<Feed, FeedError>) -> Void) -> Cancellable {
         var feeds: [AtomFeed.Entry] = []
 
@@ -39,7 +39,7 @@ class DummyFeedService: FeedService {
                     + "published: \(self.dateFormatter.string(from: $0.published!))"
             }.joined(separator: "\n")
             Logger.info("\n\(logString)")
-            
+
             completion(.success(.atom(.init(
                 id: "a",
                 title: "\(url.pathComponents.suffix(2).joined(separator: "/"))",

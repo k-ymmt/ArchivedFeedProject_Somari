@@ -19,7 +19,7 @@ enum AdditionalFeedError {
 protocol AdditionalFeedInteractable {
     var getFeedsSuccess: EventPublisher<(URL, Feed)> { get }
     var errorPublisher: EventPublisher<AdditionalFeedError> { get }
-    
+
     func subscribeUserSettings() -> Combine.Cancellable
     func checkAlreadyRegistered(_ urlString: String) -> Bool
     func getFeed(urlString: String) -> Combine.Cancellable
@@ -29,15 +29,15 @@ class AdditionalFeedInteractor: AdditionalFeedInteractable {
     private let feedService: FeedService
     private let storageService: StorageService
     private let loginService: LoginService
-    
+
     private let getFeedDispatchQueue: DispatchQueue = DispatchQueue(
         label: "net.kymmt.Somari.Addition.getFeedQueue",
         qos: .userInitiated,
         attributes: .concurrent
     )
-    
+
     private var userSettings: [UserSettingsFeedData] = []
-    
+
     @EventPublished var getFeedsSuccess: EventPublisher<(URL, Feed)>
     @EventPublished var errorPublisher: EventPublisher<AdditionalFeedError>
 
@@ -46,7 +46,7 @@ class AdditionalFeedInteractor: AdditionalFeedInteractable {
         self.loginService = loginService
         self.storageService = storageService
     }
-    
+
     func subscribeUserSettings() -> Combine.Cancellable {
         guard let uid = loginService.uid() else {
             return AnyCancellable({})
@@ -60,7 +60,7 @@ class AdditionalFeedInteractor: AdditionalFeedInteractable {
             }
         }.toCombine
     }
-    
+
     func checkAlreadyRegistered(_ urlString: String) -> Bool {
         return userSettings.map({ $0.url }).contains(urlString)
     }
