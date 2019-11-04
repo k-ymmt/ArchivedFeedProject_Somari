@@ -1,0 +1,13 @@
+#  dynamic_libraries_debug_only.xcfilelist
+#  Somari
+#
+#  Created by Kazuki Yamamoto on 2019/11/03.
+#  Copyright © 2019 Kazuki Yamamoto. All rights reserved.
+
+# This file may be set as an input or output file list for a shell script build phase.
+# List file paths below; one per line. These paths will be considered inputs or outputs for the script phase.
+# Build settings will be expanded, e.g. $(SRCROOT)/fileName
+
+$(BUILT_PRODUCTS_DIR)/Login.framework
+$(BUILT_PRODUCTS_DIR)/Feeds.framework
+$(BUILT_PRODUCTS_DIR)/Addition.framework

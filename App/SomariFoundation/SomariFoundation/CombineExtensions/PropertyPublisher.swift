@@ -10,23 +10,23 @@ import Foundation
 import Combine
 
 @propertyWrapper
-public class PropertyPublished<Value> {
-    private let reactiveProperty: ReactiveProperty<Value>
+public struct PropertyPublished<Value> {
+    private let subject: CurrentValueSubject<Value, Never>
 
     public var wrappedValue: PropertyPublisher<Value>
 
     public var value: Value {
-        get { reactiveProperty.value }
-        set { reactiveProperty.value = newValue }
+        get { subject.value }
+        set { subject.send(newValue) }
     }
 
     public init(defaultValue: Value) {
-        reactiveProperty = ReactiveProperty(defaultValue: defaultValue)
-        wrappedValue = reactiveProperty.eraseToPropertyPublisher()
+        self.subject = CurrentValueSubject(defaultValue)
+        wrappedValue = PropertyPublisher(subject: self.subject)
     }
 
     public func forceNotify() {
-        reactiveProperty.forceNotify()
+        subject.send(subject.value)
     }
 }
 
@@ -34,17 +34,24 @@ public struct PropertyPublisher<Value>: Publisher {
     public typealias Output = Value
     public typealias Failure = Never
 
-    private let property: ReactiveProperty<Value>
+    private let subject: CurrentValueSubject<Value, Never>
 
     public var value: Value {
-        property.value
+        subject.value
     }
 
-    init(publisher: ReactiveProperty<Value>) {
-        self.property = publisher
+    init(subject: CurrentValueSubject<Value, Never>) {
+        self.subject = subject
     }
 
     public func receive<S>(subscriber: S) where S: Subscriber, Failure == S.Failure, Output == S.Input {
-        property.receive(subscriber: subscriber)
+        subject.receive(subscriber: subscriber)
+    }
+}
+
+extension PropertyPublisher {
+    public func bind(to other: PropertyPublished<Value>) -> Combine.Cancellable {
+        var other = other
+        return self.sink { other.value = $0 }
     }
 }

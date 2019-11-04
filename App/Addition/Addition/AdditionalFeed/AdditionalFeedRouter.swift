@@ -32,9 +32,14 @@ class AdditionalFeedRouter: AdditionalFeedRoutable & Router {
         action: @escaping (AdditionalFeedRouter.Output) -> Void
     ) -> UIViewController {
         let router = AdditionalFeedRouter(dependency: dependency, action: action)
-        let interactor = AdditionalFeedInteractor(feedService: dependency.feedService)
+        let interactor = AdditionalFeedInteractor(
+            feedService: dependency.feedService,
+            loginService: dependency.loginService,
+            storageService: dependency.storageService
+        )
         let presenter = AdditionalFeedPresenter(router: router, interactor: interactor)
         let viewController = AdditionalFeedViewController(presenter: presenter)
+        router.viewController = viewController
 
         return viewController
     }

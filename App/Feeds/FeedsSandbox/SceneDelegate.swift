@@ -9,6 +9,7 @@
 import UIKit
 import SwiftUI
 import SomariSandboxKit
+import SomariFoundation
 @testable import Feeds
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
@@ -24,16 +25,35 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let loginService = DummyLoginService()
         let feedService = DummyFeedService()
         let storageService = DummyStorageService()
+        let feedItemCacheService = DummyFeedItemCacheService()
 
         let feeds = { FeedsRouter.assembleModules(dependency: .init(
             feedService: feedService,
             storageService: storageService,
-            loginService: loginService
+            loginService: loginService,
+            feedItemCacheService: feedItemCacheService
             ))
         }
 
+        let bufferFeeds = { FeedsRouter.assembleModules(dependency: .init(
+            feedService: feedService,
+            storageService: storageService,
+            loginService: loginService,
+            feedItemCacheService: DummyFeedItemCacheService(
+                initialBuffer: Array(0..<10).map { FeedItem(
+                    title: "Buffer Feed - \($0)",
+                    id: "\($0)",
+                    feedID: "$0",
+                    source: "",
+                    link: "https://google.com",
+                    date: Date()
+                )}
+            )))
+        }
+
         let listView = MockListView(viewControllerList: [
-            ViewControllerListItem(title: "Simple Feeds", builder: feeds)
+            ViewControllerListItem(title: "Simple Feeds", builder: feeds),
+            ViewControllerListItem(title: "Buffer Feeds", builder: bufferFeeds)
         ])
 
         // Use a UIHostingController as window root view controller.

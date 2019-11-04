@@ -84,6 +84,7 @@
 		021B97BF235228CF00E59F3F /* GatewayProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GatewayProvider.swift; sourceTree = "<group>"; };
 		021B97C123524D3600E59F3F /* DependencyResolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyResolver.swift; sourceTree = "<group>"; };
 		021B97FC2352D6CF00E59F3F /* MainGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainGateway.swift; sourceTree = "<group>"; };
+		0237458C236F21CB00B99832 /* copy_bundle_resources_release_only.xcfilelist */ = {isa = PBXFileReference; lastKnownFileType = text.xcfilelist; path = copy_bundle_resources_release_only.xcfilelist; sourceTree = "<group>"; };
 		023ECEEE233BB13D009F6DD6 /* Somari.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Somari.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		023ECEF1233BB13D009F6DD6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		023ECEF3233BB13D009F6DD6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -98,6 +99,7 @@
 		023ECF13233BB13F009F6DD6 /* SomariUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SomariUITests.swift; sourceTree = "<group>"; };
 		023ECF15233BB13F009F6DD6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		023ECF51233FE901009F6DD6 /* MainTabRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabRouter.swift; sourceTree = "<group>"; };
+		0272C66B236EF728001B6CA4 /* dynamic_libraries_debug_only.xcfilelist */ = {isa = PBXFileReference; lastKnownFileType = text.xcfilelist; path = dynamic_libraries_debug_only.xcfilelist; sourceTree = "<group>"; };
 		02B2B7322348CF4300510E22 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		02BB0AC62348DFD70035FA96 /* MainTabPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabPresenter.swift; sourceTree = "<group>"; };
 		02BB0ACD2349E6690035FA96 /* MainTabInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabInteractor.swift; sourceTree = "<group>"; };
@@ -188,6 +190,8 @@
 				023ECEF9233BB13F009F6DD6 /* Preview Content */,
 				02C73AC72353481E00628870 /* build.xcconfig */,
 				0211126C235B5DAB00030A7C /* dynamic_libraries.xcfilelist */,
+				0272C66B236EF728001B6CA4 /* dynamic_libraries_debug_only.xcfilelist */,
+				0237458C236F21CB00B99832 /* copy_bundle_resources_release_only.xcfilelist */,
 			);
 			path = Somari;
 			sourceTree = "<group>";
@@ -281,8 +285,10 @@
 				023ECEEB233BB13D009F6DD6 /* Frameworks */,
 				023ECEEC233BB13D009F6DD6 /* Resources */,
 				021B97012351D89E00E59F3F /* Embed Frameworks */,
-				0211126B235B5D2A00030A7C /* ShellScript */,
-				021112DD235B787A00030A7C /* Run Script */,
+				0211126B235B5D2A00030A7C /* Copy Frameworks */,
+				0272C66A236EF596001B6CA4 /* Copy Frameworks(Debug only) */,
+				0237458E236F220D00B99832 /* Copy Bundle Resources(Release only) */,
+				026CB715236FDEE00086A5CB /* Fabric run */,
 			);
 			buildRules = (
 			);
@@ -408,7 +414,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0211126B235B5D2A00030A7C /* ShellScript */ = {
+		0211126B235B5D2A00030A7C /* Copy Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -418,15 +424,35 @@
 			);
 			inputPaths = (
 			);
+			name = "Copy Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\ncode_sign() {\n  # Use the current code_sign_identitiy\n  echo \"Code Signing $1 with Identity ${EXPANDED_CODE_SIGN_IDENTITY_NAME}\"\n  echo \"/usr/bin/codesign --force --sign ${EXPANDED_CODE_SIGN_IDENTITY} --preserve-metadata=identifier,entitlements $1\"\n  /usr/bin/codesign --force --sign ${EXPANDED_CODE_SIGN_IDENTITY} --preserve-metadata=identifier,entitlements \"$1\"\n}\n\nif [ \"$CONFIGURATION\" != \"Debug\" ];then\n  exit 0\nfi\n\nif [ \"$ACTION\" = \"install\" ]; then\n  echo \"Copy .bcsymbolmap files to .xcarchive\"\n  find . -name '*.bcsymbolmap' -type f -exec mv {} \"${CONFIGURATION_BUILD_DIR}\" \\;\nfi\n\necho 'Copying frameworks'\n\nls \"${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/\" || mkdir \"${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/\"\n\nif [ $SCRIPT_INPUT_FILE_LIST_COUNT -ne 0 ]; then\n  for i in $(seq 0 $(expr $SCRIPT_INPUT_FILE_LIST_COUNT - 1)); do\n    inputFileListVar=\"SCRIPT_INPUT_FILE_LIST_${i}\"\n    inputFileList=\"${!inputFileListVar}\"\n    cat \"${inputFileList}\" | while read inputFile; do\n      cp -rf \"$inputFile\" \"${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/\"\n\n      for file in $(find ${inputFile} -type f -perm +111); do\n        # Skip non-dynamic libraries\n        if ! [[ \"$(file \"$file\")\" == *\"dynamically linked shared library\"* ]]; then\n          continue\n        fi\n        if [ \"${CODE_SIGNING_REQUIRED}\" == \"YES\" ]; then\n          code_sign \"${file}\"\n        fi\n      done\n    done\n  done\nfi\n";
+			shellScript = "# reference: https://blog.kishikawakatsumi.com/entry/2019/06/17/090724\ncode_sign() {\n  # Use the current code_sign_identitiy\n  echo \"Code Signing $1 with Identity ${EXPANDED_CODE_SIGN_IDENTITY_NAME}\"\n  echo \"/usr/bin/codesign --force --sign ${EXPANDED_CODE_SIGN_IDENTITY} --preserve-metadata=identifier,entitlements $1\"\n  /usr/bin/codesign --force --sign ${EXPANDED_CODE_SIGN_IDENTITY} --preserve-metadata=identifier,entitlements \"$1\"\n}\n\nif [ \"$ACTION\" = \"install\" ]; then\n  echo \"Copy .bcsymbolmap files to .xcarchive\"\n  find . -name '*.bcsymbolmap' -type f -exec mv {} \"${CONFIGURATION_BUILD_DIR}\" \\;\nfi\n\necho 'Copying frameworks'\n\nls \"${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/\" || mkdir \"${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/\"\n\nif [ $SCRIPT_INPUT_FILE_LIST_COUNT -ne 0 ]; then\n  for i in $(seq 0 $(expr $SCRIPT_INPUT_FILE_LIST_COUNT - 1)); do\n    inputFileListVar=\"SCRIPT_INPUT_FILE_LIST_${i}\"\n    inputFileList=\"${!inputFileListVar}\"\n    cat \"${inputFileList}\" | while read inputFile; do\n      cp -rf \"$inputFile\" \"${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/\"\n\n      for file in $(find ${inputFile} -type f -perm +111); do\n        # Skip non-dynamic libraries\n        if ! [[ \"$(file \"$file\")\" == *\"dynamically linked shared library\"* ]]; then\n          continue\n        fi\n        if [ \"${CODE_SIGNING_REQUIRED}\" = \"YES\" ]; then\n          code_sign \"${file}\"\n        fi\n      done\n    done\n  done\nfi\n";
 		};
-		021112DD235B787A00030A7C /* Run Script */ = {
+		0237458E236F220D00B99832 /* Copy Bundle Resources(Release only) */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"$(SRCROOT)/Somari/copy_bundle_resources_release_only.xcfilelist",
+			);
+			inputPaths = (
+			);
+			name = "Copy Bundle Resources(Release only)";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\nset -ex\n\nif [ $CONFIGURATION != \"Release\" ];then\n    echo \"not execute.\"\n    exit 0\nfi\n\necho 'Copying Bundle Resources'\n\nif [ $SCRIPT_INPUT_FILE_LIST_COUNT -ne 0 ]; then\n  for i in $(seq 0 $(expr $SCRIPT_INPUT_FILE_LIST_COUNT - 1)); do\n    inputFileListVar=\"SCRIPT_INPUT_FILE_LIST_${i}\"\n    inputFileList=\"${!inputFileListVar}\"\n    cat \"${inputFileList}\" | while read inputFile; do\n      echo \"copy $inputFile\"\n      cp -rf \"$inputFile\" \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_FOLDER_PATH}/\"\n    done\n  done\nfi\n";
+		};
+		026CB715236FDEE00086A5CB /* Fabric run */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -435,14 +461,33 @@
 			);
 			inputPaths = (
 			);
-			name = "Run Script";
+			name = "Fabric run";
 			outputFileListPaths = (
 			);
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n$SRCROOT/../Pods/SwiftLint/swiftlint\n";
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n${PODS_ROOT}/Fabric/run\n";
+		};
+		0272C66A236EF596001B6CA4 /* Copy Frameworks(Debug only) */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"$(SRCROOT)/Somari/dynamic_libraries_debug_only.xcfilelist",
+			);
+			inputPaths = (
+			);
+			name = "Copy Frameworks(Debug only)";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\nif [ $CONFIGURATION != \"Debug\" ];then\n    exit 0\nfi\n\ncode_sign() {\n  # Use the current code_sign_identitiy\n  echo \"Code Signing $1 with Identity ${EXPANDED_CODE_SIGN_IDENTITY_NAME}\"\n  echo \"/usr/bin/codesign --force --sign ${EXPANDED_CODE_SIGN_IDENTITY} --preserve-metadata=identifier,entitlements $1\"\n  /usr/bin/codesign --force --sign ${EXPANDED_CODE_SIGN_IDENTITY} --preserve-metadata=identifier,entitlements \"$1\"\n}\n\nif [ \"$ACTION\" = \"install\" ]; then\n  echo \"Copy .bcsymbolmap files to .xcarchive\"\n  find . -name '*.bcsymbolmap' -type f -exec mv {} \"${CONFIGURATION_BUILD_DIR}\" \\;\nfi\n\necho 'Copying frameworks'\n\nls \"${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/\" || mkdir \"${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/\"\n\nif [ $SCRIPT_INPUT_FILE_LIST_COUNT -ne 0 ]; then\n  for i in $(seq 0 $(expr $SCRIPT_INPUT_FILE_LIST_COUNT - 1)); do\n    inputFileListVar=\"SCRIPT_INPUT_FILE_LIST_${i}\"\n    inputFileList=\"${!inputFileListVar}\"\n    cat \"${inputFileList}\" | while read inputFile; do\n      cp -rf \"$inputFile\" \"${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/\"\n\n      for file in $(find ${inputFile} -type f -perm +111); do\n        # Skip non-dynamic libraries\n        if ! [[ \"$(file \"$file\")\" == *\"dynamically linked shared library\"* ]]; then\n          continue\n        fi\n        if [ \"${CODE_SIGNING_REQUIRED}\" = \"YES\" ]; then\n          code_sign \"${file}\"\n        fi\n      done\n    done\n  done\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -632,6 +677,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_ASSET_PATHS = "\"Somari/Preview Content\"";
 				DEVELOPMENT_TEAM = 8HUWJ2ZRK2;
 				ENABLE_PREVIEWS = YES;

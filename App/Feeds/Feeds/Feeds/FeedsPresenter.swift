@@ -9,6 +9,7 @@
 import Foundation
 import Combine
 import SomariFoundation
+import SomariKit
 
 protocol FeedsPresentable {
     var feeds: PropertyPublisher<[FeedItem]> { get }
@@ -19,6 +20,7 @@ protocol FeedsPresentable {
 }
 
 class FeedsPresenter: FeedsPresentable {
+
     private let router: FeedsRoutable
     private let interactor: FeedsInteractable
 
@@ -31,33 +33,30 @@ class FeedsPresenter: FeedsPresentable {
         self.router = router
         self.interactor = interactor
 
-        interactor.getUserSettings(completion: receivedUserSettings(result:))
+        self.interactor.feeds
+            .sink { [weak self] values in
+                self?._feeds.value = values
+        }.store(in: &cancellables)
+
+        interactor.getInitialFeedItemFromCache()
+
+        interactor.userSettings
+            .sink(receiveCompletion: { _ in }) { [weak self] (dataList) in
+                self?.feedDataList = dataList
+                self?.getFeedAll()
+        }.store(in: &cancellables)
+
+        interactor.subscribeUserSettings().store(in: &cancellables)
     }
 
     func getFeeds(url: URL) {
-        interactor.getFeed(url: url) { [weak self] (result) in
-            switch result {
-            case .success(let feed):
-                self?._feeds.value += feed.feedItems()
-                self?._feeds.forceNotify()
-            case .failure:
-                break
-            }
-        }.toCombine.store(in: &cancellables)
+        interactor.getFeed(url: url).store(in: &cancellables)
     }
 
     func getFeedAll() {
         let urls = feedDataList.compactMap { URL(string: $0.url) }
         Logger.debug("get feed all\n\(urls.map { "  - \($0.absoluteString)" }.joined(separator: "\n"))")
-        interactor.getFeeds(urls: urls) { [weak self] (result) in
-            switch result {
-            case .success(let feeds):
-                self?._feeds.value += feeds
-                self?._feeds.forceNotify()
-            case .failure(let error):
-                Logger.debug("\(error)")
-            }
-        }.toCombine.store(in: &cancellables)
+        interactor.getFeeds(urls: urls).store(in: &cancellables)
     }
 
     func showWebPage(linkString: String) {
@@ -78,4 +77,7 @@ class FeedsPresenter: FeedsPresentable {
         }
     }
 
+    deinit {
+        Logger.debug("\(String(describing: self)) deinit")
+    }
 }

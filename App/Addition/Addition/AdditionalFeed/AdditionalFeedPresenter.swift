@@ -10,11 +10,6 @@ import Foundation
 import Combine
 import SomariFoundation
 
-enum AdditionalFeedError {
-    case invalidURL
-    case notFeedURL
-}
-
 protocol AdditionalFeedPresentable {
     var getFeedSuccess: EventPublisher<Bool> { get }
 
@@ -39,22 +34,21 @@ class AdditionalFeedPresenter: AdditionalFeedPresentable {
     ) {
         self.router = router
         self.interactor = interactor
+
+        self.interactor.subscribeUserSettings().store(in: &cancellables)
+        self.interactor.getFeedsSuccess
+            .sink { [weak self] (url, feeds) in
+                self?.router.navigateToAdditionalFeedConfirm(url: url, title: feeds.title, items: feeds.feedItems())
+                self?._getFeedSuccess.send(true)
+        }.store(in: &cancellables)
+        self.interactor.errorPublisher
+            .sink { [weak self] (error) in
+                self?._errorPublisher.send(error)
+        }.store(in: &cancellables)
     }
 
     func getFeed(urlString: String) {
-        guard let url = URL(string: urlString) else {
-            _errorPublisher.send(.invalidURL)
-            return
-        }
-        interactor.getFeed(url: url) { [weak self] (result) in
-            switch result {
-            case .success(let feed):
-                self?.router.navigateToAdditionalFeedConfirm(url: url, title: feed.title, items: feed.feedItems())
-                self?._getFeedSuccess.send(true)
-            case .failure(let error):
-                Logger.error("\(error.localizedDescription)")
-            }
-        }.toCombine.store(in: &cancellables)
+        interactor.getFeed(urlString: urlString).store(in: &cancellables)
     }
 
     deinit {

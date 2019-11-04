@@ -22,12 +22,23 @@ extension SomariFoundation.Cancellable {
 }
 
 public struct Canceler: Cancellable {
-    private let action: () -> Void
+    private let action: (() -> Void)?
     public init(action: @escaping () -> Void) {
         self.action = action
     }
+
+    fileprivate init() {
+        self.action = nil
+    }
+
     public func cancel() {
-        action()
+        action?()
+    }
+}
+
+extension Canceler {
+    public static var empty: Cancellable {
+        return Canceler()
     }
 }
 
@@ -36,11 +47,11 @@ public enum FeedError: Error {
 }
 
 public protocol FeedService: class {
-    func getFeed(url: URL, completion: @escaping (Swift.Result<Feed, FeedError>) -> Void) -> Cancellable
+    func getFeed(url: URL, queue: DispatchQueue, completion: @escaping (Swift.Result<Feed, FeedError>) -> Void) -> Cancellable
 }
 
 extension FeedService {
-    public func getFeeds(urls: [URL], completion: @escaping (Swift.Result<[Feed], FeedError>) -> Void) -> Cancellable {
+    public func getFeeds(urls: [URL], queue: DispatchQueue, completion: @escaping (Swift.Result<[Feed], FeedError>) -> Void) -> Cancellable {
         let dispatchGroup = DispatchGroup()
         let dispatchQueue = DispatchQueue.global(qos: .default)
         var feeds: [Feed] = []
@@ -52,7 +63,7 @@ extension FeedService {
                 guard let self = self else {
                     return
                 }
-                cancellables.append(self.getFeed(url: url) { (result) in
+                cancellables.append(self.getFeed(url: url, queue: queue) { (result) in
                     switch result {
                     case .success(let feed):
                         feeds.append(feed)

@@ -14,10 +14,12 @@ class DependencyResolver {
     let loginService: LoginService
     let feedService: FeedService
     let storageService: StorageService
+    let feedItemCacheService: FeedItemCacheService
 
     init() {
         self.loginService = FirebaseLoginService()
         self.feedService = FeedKitService()
         self.storageService = FirebaseStorageService()
+        self.feedItemCacheService = CoreDataFeedItemCacheService()
     }
 }

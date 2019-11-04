@@ -20,6 +20,7 @@ class FeedsRouter: FeedsRoutable & EmptyOutputRouter {
         let feedService: FeedService
         let storageService: StorageService
         let loginService: LoginService
+        let feedItemCacheService: FeedItemCacheService
     }
 
     private weak var viewController: UIViewController!
@@ -29,7 +30,8 @@ class FeedsRouter: FeedsRoutable & EmptyOutputRouter {
         let interactor = FeedsInteractor(
             feedService: dependency.feedService,
             storageService: dependency.storageService,
-            loginService: dependency.loginService
+            loginService: dependency.loginService,
+            feedItemCacheService: dependency.feedItemCacheService
         )
         let presenter = FeedsPresenter(router: router, interactor: interactor)
         let viewController = FeedsViewController(presenter: presenter)

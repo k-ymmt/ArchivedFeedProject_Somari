@@ -13,8 +13,10 @@
 # Uncomment the line if you want fastlane to automatically update itself
 # update_fastlane
 
-workspace_path = '../App/Somari.xcworkspace'
-pods_path = '../App/Pods'
+buildscripts_dir = File.dirname(__FILE__)
+app_path = File.join(buildscripts_dir, '..', 'App')
+workspace_path = File.join(app_path, "Somari.xcworkspace")
+pods_path = File.join(app_path, 'Pods')
 app_name = 'Somari'
 
 default_platform(:ios)
@@ -29,9 +31,9 @@ platform :ios do
   lane :lint do
     swiftlint(
       mode: :lint,
-      path: '../App',
+      path: app_path,
       executable: "#{pods_path}/SwiftLint/swiftlint",
-      config_file: '../App/.swiftlint.yml'
+      config_file: "#{app_path}/.swiftlint.yml"
     )
   end
 
