@@ -16,6 +16,7 @@
 		021B97A02351EC5100E59F3F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021B97962351EC3E00E59F3F /* LoginViewController.swift */; };
 		021B97A82351EF3200E59F3F /* LoginGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021B97A72351EF3200E59F3F /* LoginGateway.swift */; };
 		021B97AB2351EF4300E59F3F /* SomariFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 021B97AA2351EF4300E59F3F /* SomariFoundation.framework */; };
+		022D9878242CFEFE0010C62A /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 022D9877242CFEFE0010C62A /* Colors.xcassets */; };
 		026CB716237057F30086A5CB /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 021B97972351EC3E00E59F3F /* LoginViewController.xib */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +44,7 @@
 		021B979B2351EC3E00E59F3F /* LoginInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInteractor.swift; sourceTree = "<group>"; };
 		021B97A72351EF3200E59F3F /* LoginGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginGateway.swift; sourceTree = "<group>"; };
 		021B97AA2351EF4300E59F3F /* SomariFoundation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SomariFoundation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		022D9877242CFEFE0010C62A /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Colors.xcassets; path = ../../SomariKit/SomariKit/Resources/Colors.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +92,7 @@
 				021B97BE235222AE00E59F3F /* Services */,
 				021B979C2351EC3E00E59F3F /* Login */,
 				021B97A72351EF3200E59F3F /* LoginGateway.swift */,
+				022D9877242CFEFE0010C62A /* Colors.xcassets */,
 				021B977F2351EC2200E59F3F /* Login.h */,
 				021B97802351EC2200E59F3F /* Info.plist */,
 			);
@@ -233,6 +236,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				026CB716237057F30086A5CB /* LoginViewController.xib in Resources */,
+				022D9878242CFEFE0010C62A /* Colors.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

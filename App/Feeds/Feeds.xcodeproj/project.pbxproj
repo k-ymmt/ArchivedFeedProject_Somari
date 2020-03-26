@@ -29,6 +29,7 @@
 		021B97F62352533000E59F3F /* FeedsGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021B97F52352533000E59F3F /* FeedsGateway.swift */; };
 		021B97F92352534600E59F3F /* SomariFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 021B97F82352534600E59F3F /* SomariFoundation.framework */; };
 		0225677123533DA10094BE54 /* SomariKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0225677023533DA10094BE54 /* SomariKit.framework */; };
+		022D987A242CFFAF0010C62A /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 022D9879242CFFAF0010C62A /* Colors.xcassets */; };
 		022F868323549A6C00F49A9B /* SomariSandboxKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 022F868223549A6C00F49A9B /* SomariSandboxKit.framework */; };
 		022F868423549A6C00F49A9B /* SomariSandboxKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 022F868223549A6C00F49A9B /* SomariSandboxKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		026CB717237057FC0086A5CB /* FeedsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 021B97E7235252EF00E59F3F /* FeedsViewController.xib */; };
@@ -94,6 +95,7 @@
 		021B97F52352533000E59F3F /* FeedsGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedsGateway.swift; sourceTree = "<group>"; };
 		021B97F82352534600E59F3F /* SomariFoundation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SomariFoundation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0225677023533DA10094BE54 /* SomariKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SomariKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		022D9879242CFFAF0010C62A /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Colors.xcassets; path = ../../SomariKit/SomariKit/Resources/Colors.xcassets; sourceTree = "<group>"; };
 		022F868223549A6C00F49A9B /* SomariSandboxKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SomariSandboxKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		02DDF798235F03EE00C82F92 /* DummyFeedItemCacheService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyFeedItemCacheService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -180,6 +182,7 @@
 			children = (
 				021B97ED235252EF00E59F3F /* Feeds */,
 				021B97F52352533000E59F3F /* FeedsGateway.swift */,
+				022D9879242CFFAF0010C62A /* Colors.xcassets */,
 				021B97D0235252D800E59F3F /* Feeds.h */,
 				021B97D1235252D800E59F3F /* Info.plist */,
 			);
@@ -352,6 +355,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				026CB717237057FC0086A5CB /* FeedsViewController.xib in Resources */,
+				022D987A242CFFAF0010C62A /* Colors.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

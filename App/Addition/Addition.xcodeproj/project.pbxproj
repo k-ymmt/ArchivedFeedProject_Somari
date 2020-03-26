@@ -23,6 +23,7 @@
 		021B983B235305BD00E59F3F /* AdditionGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021B983A235305BD00E59F3F /* AdditionGateway.swift */; };
 		021B983E2353091E00E59F3F /* SomariFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 021B983D2353091E00E59F3F /* SomariFoundation.framework */; };
 		021B984C23530C1C00E59F3F /* SomariKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 021B984B23530C1C00E59F3F /* SomariKit.framework */; };
+		022D987C242CFFCA0010C62A /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 022D987B242CFFCA0010C62A /* Colors.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		021B983A235305BD00E59F3F /* AdditionGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdditionGateway.swift; sourceTree = "<group>"; };
 		021B983D2353091E00E59F3F /* SomariFoundation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SomariFoundation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		021B984B23530C1C00E59F3F /* SomariKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SomariKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		022D987B242CFFCA0010C62A /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Colors.xcassets; path = ../../SomariKit/SomariKit/Resources/Colors.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 				021B98282353056200E59F3F /* AdditionalFeed */,
 				021B982F2353056200E59F3F /* AdditionalFeedConfirm */,
 				021B983A235305BD00E59F3F /* AdditionGateway.swift */,
+				022D987B242CFFCA0010C62A /* Colors.xcassets */,
 				021B980B2353053A00E59F3F /* Addition.h */,
 				021B980C2353053A00E59F3F /* Info.plist */,
 			);
@@ -259,6 +262,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				022D987C242CFFCA0010C62A /* Colors.xcassets in Resources */,
 				021B98392353059400E59F3F /* AdditionalFeedConfirmViewController.xib in Resources */,
 				021B98342353058800E59F3F /* AdditionalFeedViewController.xib in Resources */,
 			);
