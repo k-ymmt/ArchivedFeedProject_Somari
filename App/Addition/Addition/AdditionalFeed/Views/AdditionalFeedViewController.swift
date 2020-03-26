@@ -53,6 +53,10 @@ class AdditionalFeedViewController: UIViewController {
             .sink { [weak self] _ in
                 self?.urlTextField.text = ""
         }.store(in: &cancellables)
+        presenter.errorPublisher
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] in self?.showErrorDialog($0) }
+            .store(in: &cancellables)
 
         urlTextField.delegate = self
     }
@@ -79,6 +83,22 @@ class AdditionalFeedViewController: UIViewController {
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)
+    }
+    
+    private func showErrorDialog(_ error: AdditionalFeedError) {
+        let message: String
+        switch error {
+        case .invalidURL:
+            message = "URLが正しくありません。"
+        case .notFeedURL:
+            message = "フィードを取得できませんでした。\nURLが正しいか確認してください。"
+        case .getFeedFailed:
+            message = "フィードが取得できませんでした。\n時間を置いてお試しください。"
+        }
+        
+        let alertController = UIAlertController(title: nil, message: message, preferredStyle: .alert)
+        alertController.addAction(.init(title: "OK", style: .default, handler: nil))
+        present(alertController, animated: true, completion: nil)
     }
 
     private func keyboardDidShow(notification: Notification) {

@@ -12,6 +12,7 @@ import SomariFoundation
 
 protocol AdditionalFeedPresentable {
     var getFeedSuccess: EventPublisher<Bool> { get }
+    var errorPublisher: EventPublisher<AdditionalFeedError> { get }
 
     func getFeed(urlString: String)
 }
