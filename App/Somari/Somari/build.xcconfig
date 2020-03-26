@@ -15,6 +15,6 @@ PODS_CONFIGURATION_BUILD_DIR = $(PODS_ROOT)/Build/Release$(EFFECTIVE_PLATFORM_NA
 FRAMEWORK_SEARCH_PATHS = $(inherited) "$(PODS_CONFIGURATION_BUILD_DIR)/FirebaseCore" "$(PODS_ROOT)/FirebaseAnalytics/Frameworks" "$(PODS_CONFIGURATION_BUILD_DIR)/FirebaseAuth" "$(PODS_CONFIGURATION_BUILD_DIR)/FirebaseFirestore" "${PODS_CONFIGURATION_BUILD_DIR}/FirebaseFirestoreSwift" "$(PODS_CONFIGURATION_BUILD_DIR)/FirebaseInstanceID" "$(PODS_ROOT)/Fabric/iOS" "$(PODS_ROOT)/Crashlytics/iOS"
 HEADER_SEARCH_PATHS = $(inherited) "$(PODS_ROOT)/Headers/Public" "$(PODS_ROOT)/Firebase/CoreOnly/Sources"
 //LIBRARY_SEARCH_PATHS = ""
-OTHER_LDFLAGS = -ObjC -l"c++" -framework "Fabric" -framework "Crashlytics"
+OTHER_LDFLAGS = -ObjC -l"c++"
 //OTHER_SWIFT_FLAGS = 
 SWIFT_INCLUDE_PATHS = "$(SRCROOT)/Modules"

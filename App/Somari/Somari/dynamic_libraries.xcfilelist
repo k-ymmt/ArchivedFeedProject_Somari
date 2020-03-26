@@ -16,3 +16,5 @@ $(PODS_CONFIGURATION_BUILD_DIR)/leveldb-library/leveldb.framework
 $(PODS_CONFIGURATION_BUILD_DIR)/nanopb/nanopb.framework
 $(PODS_CONFIGURATION_BUILD_DIR)/BoringSSL-GRPC/openssl_grpc.framework
 $(PODS_CONFIGURATION_BUILD_DIR)/Protobuf/protobuf.framework
+$(PODS_CONFIGURATION_BUILD_DIR)/PromisesObjC/FBLPromises.framework
+$(PODS_CONFIGURATION_BUILD_DIR)/abseil/absl.framework
