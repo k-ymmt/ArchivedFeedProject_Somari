@@ -10,7 +10,7 @@ import UIKit
 import Combine
 
 class LoginViewController: UIViewController {
-    @IBOutlet weak var loginAnonymouslyView: UIView!
+    @IBOutlet weak var loginAnonymouslyButton: UIButton!
     private let presenter: LoginPresentable
 
     private var cancellables: Set<AnyCancellable> = Set()
@@ -28,7 +28,7 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        loginAnonymouslyView.gesture(event: .tap)
+        loginAnonymouslyButton.event(event: .touchUpInside)
             .sink { [weak self] _ in
                 self?.presenter.loginAnonymously()
         }.store(in: &cancellables)
