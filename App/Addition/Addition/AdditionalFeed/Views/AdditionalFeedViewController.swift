@@ -74,6 +74,12 @@ class AdditionalFeedViewController: UIViewController {
             .sink(receiveValue: keyboardWillHide(notification:))
             .store(in: &keyboardNotificationCancellable)
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        
+        view.endEditing(true)
+    }
 
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
@@ -90,10 +96,8 @@ class AdditionalFeedViewController: UIViewController {
         switch error {
         case .invalidURL:
             message = "URLが正しくありません。"
-        case .notFeedURL:
+        case .notFeedURL, .getFeedFailed:
             message = "フィードを取得できませんでした。\nURLが正しいか確認してください。"
-        case .getFeedFailed:
-            message = "フィードが取得できませんでした。\n時間を置いてお試しください。"
         }
         
         let alertController = UIAlertController(title: nil, message: message, preferredStyle: .alert)
