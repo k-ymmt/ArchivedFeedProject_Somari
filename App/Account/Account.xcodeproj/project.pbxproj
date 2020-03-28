@@ -7,14 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		021B97862351EC2200E59F3F /* Login.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 021B977C2351EC2200E59F3F /* Login.framework */; };
-		021B978B2351EC2200E59F3F /* LoginTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021B978A2351EC2200E59F3F /* LoginTests.swift */; };
-		021B978D2351EC2200E59F3F /* Login.h in Headers */ = {isa = PBXBuildFile; fileRef = 021B977F2351EC2200E59F3F /* Login.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		021B97862351EC2200E59F3F /* Account.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 021B977C2351EC2200E59F3F /* Account.framework */; };
+		021B978B2351EC2200E59F3F /* AccountTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021B978A2351EC2200E59F3F /* AccountTests.swift */; };
+		021B978D2351EC2200E59F3F /* Account.h in Headers */ = {isa = PBXBuildFile; fileRef = 021B977F2351EC2200E59F3F /* Account.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		021B979D2351EC4600E59F3F /* LoginRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021B97992351EC3E00E59F3F /* LoginRouter.swift */; };
 		021B979E2351EC4600E59F3F /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021B979A2351EC3E00E59F3F /* LoginPresenter.swift */; };
 		021B979F2351EC4600E59F3F /* LoginInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021B979B2351EC3E00E59F3F /* LoginInteractor.swift */; };
 		021B97A02351EC5100E59F3F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021B97962351EC3E00E59F3F /* LoginViewController.swift */; };
-		021B97A82351EF3200E59F3F /* LoginGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021B97A72351EF3200E59F3F /* LoginGateway.swift */; };
+		021B97A82351EF3200E59F3F /* AccountGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021B97A72351EF3200E59F3F /* AccountGateway.swift */; };
 		021B97AB2351EF4300E59F3F /* SomariFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 021B97AA2351EF4300E59F3F /* SomariFoundation.framework */; };
 		022D9878242CFEFE0010C62A /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 022D9877242CFEFE0010C62A /* Colors.xcassets */; };
 		026CB716237057F30086A5CB /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 021B97972351EC3E00E59F3F /* LoginViewController.xib */; };
@@ -26,23 +26,23 @@
 			containerPortal = 021B97732351EC2200E59F3F /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 021B977B2351EC2200E59F3F;
-			remoteInfo = Login;
+			remoteInfo = Account;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		021B977C2351EC2200E59F3F /* Login.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Login.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		021B977F2351EC2200E59F3F /* Login.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Login.h; sourceTree = "<group>"; };
+		021B977C2351EC2200E59F3F /* Account.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Account.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		021B977F2351EC2200E59F3F /* Account.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Account.h; sourceTree = "<group>"; };
 		021B97802351EC2200E59F3F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		021B97852351EC2200E59F3F /* LoginTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LoginTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		021B978A2351EC2200E59F3F /* LoginTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTests.swift; sourceTree = "<group>"; };
+		021B97852351EC2200E59F3F /* AccountTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AccountTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		021B978A2351EC2200E59F3F /* AccountTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountTests.swift; sourceTree = "<group>"; };
 		021B978C2351EC2200E59F3F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		021B97962351EC3E00E59F3F /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		021B97972351EC3E00E59F3F /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		021B97992351EC3E00E59F3F /* LoginRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRouter.swift; sourceTree = "<group>"; };
 		021B979A2351EC3E00E59F3F /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
 		021B979B2351EC3E00E59F3F /* LoginInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInteractor.swift; sourceTree = "<group>"; };
-		021B97A72351EF3200E59F3F /* LoginGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginGateway.swift; sourceTree = "<group>"; };
+		021B97A72351EF3200E59F3F /* AccountGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountGateway.swift; sourceTree = "<group>"; };
 		021B97AA2351EF4300E59F3F /* SomariFoundation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SomariFoundation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		022D9877242CFEFE0010C62A /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Colors.xcassets; path = ../../SomariKit/SomariKit/Resources/Colors.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -60,7 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				021B97862351EC2200E59F3F /* Login.framework in Frameworks */,
+				021B97862351EC2200E59F3F /* Account.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,8 +70,8 @@
 		021B97722351EC2200E59F3F = {
 			isa = PBXGroup;
 			children = (
-				021B977E2351EC2200E59F3F /* Login */,
-				021B97892351EC2200E59F3F /* LoginTests */,
+				021B977E2351EC2200E59F3F /* Account */,
+				021B97892351EC2200E59F3F /* AccountTests */,
 				021B977D2351EC2200E59F3F /* Products */,
 				021B97A92351EF4300E59F3F /* Frameworks */,
 			);
@@ -80,32 +80,31 @@
 		021B977D2351EC2200E59F3F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				021B977C2351EC2200E59F3F /* Login.framework */,
-				021B97852351EC2200E59F3F /* LoginTests.xctest */,
+				021B977C2351EC2200E59F3F /* Account.framework */,
+				021B97852351EC2200E59F3F /* AccountTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		021B977E2351EC2200E59F3F /* Login */ = {
+		021B977E2351EC2200E59F3F /* Account */ = {
 			isa = PBXGroup;
 			children = (
-				021B97BE235222AE00E59F3F /* Services */,
 				021B979C2351EC3E00E59F3F /* Login */,
-				021B97A72351EF3200E59F3F /* LoginGateway.swift */,
+				021B97A72351EF3200E59F3F /* AccountGateway.swift */,
 				022D9877242CFEFE0010C62A /* Colors.xcassets */,
-				021B977F2351EC2200E59F3F /* Login.h */,
+				021B977F2351EC2200E59F3F /* Account.h */,
 				021B97802351EC2200E59F3F /* Info.plist */,
 			);
-			path = Login;
+			path = Account;
 			sourceTree = "<group>";
 		};
-		021B97892351EC2200E59F3F /* LoginTests */ = {
+		021B97892351EC2200E59F3F /* AccountTests */ = {
 			isa = PBXGroup;
 			children = (
-				021B978A2351EC2200E59F3F /* LoginTests.swift */,
+				021B978A2351EC2200E59F3F /* AccountTests.swift */,
 				021B978C2351EC2200E59F3F /* Info.plist */,
 			);
-			path = LoginTests;
+			path = AccountTests;
 			sourceTree = "<group>";
 		};
 		021B97982351EC3E00E59F3F /* Views */ = {
@@ -136,13 +135,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		021B97BE235222AE00E59F3F /* Services */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Services;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -150,16 +142,16 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				021B978D2351EC2200E59F3F /* Login.h in Headers */,
+				021B978D2351EC2200E59F3F /* Account.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		021B977B2351EC2200E59F3F /* Login */ = {
+		021B977B2351EC2200E59F3F /* Account */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 021B97902351EC2200E59F3F /* Build configuration list for PBXNativeTarget "Login" */;
+			buildConfigurationList = 021B97902351EC2200E59F3F /* Build configuration list for PBXNativeTarget "Account" */;
 			buildPhases = (
 				021B97772351EC2200E59F3F /* Headers */,
 				021B97782351EC2200E59F3F /* Sources */,
@@ -170,14 +162,14 @@
 			);
 			dependencies = (
 			);
-			name = Login;
-			productName = Login;
-			productReference = 021B977C2351EC2200E59F3F /* Login.framework */;
+			name = Account;
+			productName = Account;
+			productReference = 021B977C2351EC2200E59F3F /* Account.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		021B97842351EC2200E59F3F /* LoginTests */ = {
+		021B97842351EC2200E59F3F /* AccountTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 021B97932351EC2200E59F3F /* Build configuration list for PBXNativeTarget "LoginTests" */;
+			buildConfigurationList = 021B97932351EC2200E59F3F /* Build configuration list for PBXNativeTarget "AccountTests" */;
 			buildPhases = (
 				021B97812351EC2200E59F3F /* Sources */,
 				021B97822351EC2200E59F3F /* Frameworks */,
@@ -188,9 +180,9 @@
 			dependencies = (
 				021B97882351EC2200E59F3F /* PBXTargetDependency */,
 			);
-			name = LoginTests;
-			productName = LoginTests;
-			productReference = 021B97852351EC2200E59F3F /* LoginTests.xctest */;
+			name = AccountTests;
+			productName = AccountTests;
+			productReference = 021B97852351EC2200E59F3F /* AccountTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -211,7 +203,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 021B97762351EC2200E59F3F /* Build configuration list for PBXProject "Login" */;
+			buildConfigurationList = 021B97762351EC2200E59F3F /* Build configuration list for PBXProject "Account" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -224,8 +216,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				021B977B2351EC2200E59F3F /* Login */,
-				021B97842351EC2200E59F3F /* LoginTests */,
+				021B977B2351EC2200E59F3F /* Account */,
+				021B97842351EC2200E59F3F /* AccountTests */,
 			);
 		};
 /* End PBXProject section */
@@ -255,7 +247,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				021B97A02351EC5100E59F3F /* LoginViewController.swift in Sources */,
-				021B97A82351EF3200E59F3F /* LoginGateway.swift in Sources */,
+				021B97A82351EF3200E59F3F /* AccountGateway.swift in Sources */,
 				021B979E2351EC4600E59F3F /* LoginPresenter.swift in Sources */,
 				021B979D2351EC4600E59F3F /* LoginRouter.swift in Sources */,
 				021B979F2351EC4600E59F3F /* LoginInteractor.swift in Sources */,
@@ -266,7 +258,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				021B978B2351EC2200E59F3F /* LoginTests.swift in Sources */,
+				021B978B2351EC2200E59F3F /* AccountTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,7 +267,7 @@
 /* Begin PBXTargetDependency section */
 		021B97882351EC2200E59F3F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 021B977B2351EC2200E59F3F /* Login */;
+			target = 021B977B2351EC2200E59F3F /* Account */;
 			targetProxy = 021B97872351EC2200E59F3F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -411,7 +403,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = Login/Info.plist;
+				INFOPLIST_FILE = Account/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -420,7 +412,7 @@
 					"@loader_path/Frameworks",
 				);
 				MACH_O_TYPE = mh_dylib;
-				PRODUCT_BUNDLE_IDENTIFIER = app.kymmt.Login;
+				PRODUCT_BUNDLE_IDENTIFIER = app.kymmt.Account;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
@@ -438,7 +430,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = Login/Info.plist;
+				INFOPLIST_FILE = Account/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -447,7 +439,7 @@
 					"@loader_path/Frameworks",
 				);
 				MACH_O_TYPE = staticlib;
-				PRODUCT_BUNDLE_IDENTIFIER = app.kymmt.Login;
+				PRODUCT_BUNDLE_IDENTIFIER = app.kymmt.Account;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
@@ -460,13 +452,13 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = LoginTests/Info.plist;
+				INFOPLIST_FILE = AccountTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = app.kymmt.LoginTests;
+				PRODUCT_BUNDLE_IDENTIFIER = app.kymmt.AccountTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -478,13 +470,13 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = LoginTests/Info.plist;
+				INFOPLIST_FILE = AccountTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = app.kymmt.LoginTests;
+				PRODUCT_BUNDLE_IDENTIFIER = app.kymmt.AccountTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -494,7 +486,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		021B97762351EC2200E59F3F /* Build configuration list for PBXProject "Login" */ = {
+		021B97762351EC2200E59F3F /* Build configuration list for PBXProject "Account" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				021B978E2351EC2200E59F3F /* Debug */,
@@ -503,7 +495,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		021B97902351EC2200E59F3F /* Build configuration list for PBXNativeTarget "Login" */ = {
+		021B97902351EC2200E59F3F /* Build configuration list for PBXNativeTarget "Account" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				021B97912351EC2200E59F3F /* Debug */,
@@ -512,7 +504,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		021B97932351EC2200E59F3F /* Build configuration list for PBXNativeTarget "LoginTests" */ = {
+		021B97932351EC2200E59F3F /* Build configuration list for PBXNativeTarget "AccountTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				021B97942351EC2200E59F3F /* Debug */,

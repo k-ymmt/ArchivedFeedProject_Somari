@@ -16,21 +16,21 @@ protocol LoginRoutable {
 
 class LoginRouter: LoginRoutable & Router {
     struct Dependency {
-        let loginService: LoginService
+        let accountService: AccountService
     }
 
-    static func assembleModules(dependency: Dependency, action: @escaping (LoginNavigationAction) -> Void) -> UIViewController {
+    static func assembleModules(dependency: Dependency, action: @escaping (AccountNavigationAction) -> Void) -> UIViewController {
         let router = LoginRouter(navigationAction: action)
-        let interactor = LoginInteractor(loginService: dependency.loginService)
+        let interactor = LoginInteractor(accountService: dependency.accountService)
         let presenter = LoginPresenter(interactor: interactor, router: router)
         let viewController = LoginViewController(presenter: presenter)
 
         return viewController
     }
 
-    private let navigationAction: (LoginNavigationAction) -> Void
+    private let navigationAction: (AccountNavigationAction) -> Void
 
-    private init(navigationAction: @escaping (LoginNavigationAction) -> Void) {
+    private init(navigationAction: @escaping (AccountNavigationAction) -> Void) {
         self.navigationAction = navigationAction
     }
 

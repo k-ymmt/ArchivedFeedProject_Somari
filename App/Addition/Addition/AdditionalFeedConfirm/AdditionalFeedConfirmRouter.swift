@@ -22,7 +22,7 @@ class AdditionalFeedConfirmRouter: AdditionalFeedConfirmRoutable & Router {
         let title: String?
         let items: [FeedItem]
         let storageService: StorageService
-        let loginService: LoginService
+        let accountService: AccountService
     }
 
     enum Output {
@@ -34,7 +34,7 @@ class AdditionalFeedConfirmRouter: AdditionalFeedConfirmRoutable & Router {
         action: @escaping (AdditionalFeedConfirmRouter.Output) -> Void
     ) -> UIViewController {
         let router = AdditionalFeedConfirmRouter(action: action)
-        let interactor = AdditionalFeedConfirmInteractor(storageService: dependency.storageService, loginService: dependency.loginService)
+        let interactor = AdditionalFeedConfirmInteractor(storageService: dependency.storageService, accountService: dependency.accountService)
         let info = AdditionalFeedConfirmPresenter.FeedInfo(url: dependency.url, title: dependency.title, items: dependency.items)
         let presenter = AdditionalFeedConfirmPresenter(info: info, router: router, interactor: interactor)
         let viewController = AdditionalFeedConfirmViewController(presenter: presenter)

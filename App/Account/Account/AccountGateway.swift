@@ -1,6 +1,6 @@
 //
-//  LoginGateway.swift
-//  Login
+//  AccountGateway.swift
+//  Account
 //
 //  Created by Kazuki Yamamoto on 2019/10/12.
 //  Copyright © 2019 Kazuki Yamamoto. All rights reserved.
@@ -11,16 +11,16 @@ import UIKit
 import SomariFoundation
 import Combine
 
-enum LoginNavigationAction {
+enum AccountNavigationAction {
     case loginSuccess
 }
 
-public class LoginGateway: Gateway {
+public class AccountGateway: Gateway {
     public struct Dependency {
-        let loginService: LoginService
+        let accountService: AccountService
 
-        public init(loginService: LoginService) {
-            self.loginService = loginService
+        public init(accountService: AccountService) {
+            self.accountService = accountService
         }
     }
 
@@ -40,22 +40,22 @@ public class LoginGateway: Gateway {
 
     private var cancellables: Set<AnyCancellable> = Set()
 
-    public required init(dependency: LoginGateway.Dependency) {
+    public required init(dependency: AccountGateway.Dependency) {
         self.dependency = dependency
     }
 
-    public func input(_ value: LoginGateway.Input) {
+    public func input(_ value: AccountGateway.Input) {
         switch value {
         case .showLoginPage:
             outputAction?(.showLoginPage(makeLoginPage()))
         case .startLoginStateListening:
-            self.dependency.loginService.listenLoginState()
+            self.dependency.accountService.listenLoginState()
             .sink { [weak self] result in self?.receiveLoginResult(result: result) }
             .store(in: &cancellables)
         }
     }
 
-    public func output(_ action: @escaping (LoginGateway.Output) -> Void) {
+    public func output(_ action: @escaping (AccountGateway.Output) -> Void) {
         self.outputAction = action
     }
 
@@ -69,7 +69,7 @@ public class LoginGateway: Gateway {
     }
 
     private func makeLoginPage() -> UIViewController {
-        let viewController = LoginRouter.assembleModules(dependency: .init(loginService: dependency.loginService)) { [weak self] (action) in
+        let viewController = LoginRouter.assembleModules(dependency: .init(accountService: dependency.accountService)) { [weak self] (action) in
             switch action {
             case .loginSuccess:
                 self?.outputAction?(.loginSuccess)

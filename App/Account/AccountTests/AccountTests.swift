@@ -1,13 +1,13 @@
 //
-//  LoginTests.swift
-//  LoginTests
+//  AccountTests.swift
+//  AccountTests
 //
 //  Created by Kazuki Yamamoto on 2019/10/12.
 //  Copyright © 2019 Kazuki Yamamoto. All rights reserved.
 //
 
 import XCTest
-@testable import Login
+@testable import Account
 
 class LoginTests: XCTestCase {
 

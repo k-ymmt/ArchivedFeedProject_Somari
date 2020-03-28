@@ -12,7 +12,7 @@
 		0214B2B923535BCB00B2EB7E /* SomariFoundation.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0214B2B723535BCB00B2EB7E /* SomariFoundation.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0214B2BB23535BE000B2EB7E /* Addition.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0214B2BA23535BE000B2EB7E /* Addition.framework */; };
 		0214B2BE23535BEB00B2EB7E /* Feeds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0214B2BD23535BEB00B2EB7E /* Feeds.framework */; };
-		0214B2C123535C0100B2EB7E /* Login.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0214B2C023535C0100B2EB7E /* Login.framework */; };
+		0214B2C123535C0100B2EB7E /* Account.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0214B2C023535C0100B2EB7E /* Account.framework */; };
 		0214B2C423535C0700B2EB7E /* SomariCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0214B2C323535C0700B2EB7E /* SomariCore.framework */; };
 		0214B2C523535C0700B2EB7E /* SomariCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0214B2C323535C0700B2EB7E /* SomariCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		021B97C0235228CF00E59F3F /* GatewayProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021B97BF235228CF00E59F3F /* GatewayProvider.swift */; };
@@ -78,7 +78,7 @@
 		0214B2B723535BCB00B2EB7E /* SomariFoundation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SomariFoundation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0214B2BA23535BE000B2EB7E /* Addition.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Addition.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0214B2BD23535BEB00B2EB7E /* Feeds.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Feeds.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		0214B2C023535C0100B2EB7E /* Login.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Login.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0214B2C023535C0100B2EB7E /* Account.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Account.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0214B2C323535C0700B2EB7E /* SomariCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SomariCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0214B2C623535C0E00B2EB7E /* SomariKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SomariKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		021B97BF235228CF00E59F3F /* GatewayProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GatewayProvider.swift; sourceTree = "<group>"; };
@@ -118,7 +118,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				02F4A5C6235617C0004EB379 /* SomariKit.framework in Frameworks */,
-				0214B2C123535C0100B2EB7E /* Login.framework in Frameworks */,
+				0214B2C123535C0100B2EB7E /* Account.framework in Frameworks */,
 				0214B2B823535BCB00B2EB7E /* SomariFoundation.framework in Frameworks */,
 				0214B2BE23535BEB00B2EB7E /* Feeds.framework in Frameworks */,
 				0214B2BB23535BE000B2EB7E /* Addition.framework in Frameworks */,
@@ -266,7 +266,7 @@
 			children = (
 				0214B2C623535C0E00B2EB7E /* SomariKit.framework */,
 				0214B2C323535C0700B2EB7E /* SomariCore.framework */,
-				0214B2C023535C0100B2EB7E /* Login.framework */,
+				0214B2C023535C0100B2EB7E /* Account.framework */,
 				0214B2BD23535BEB00B2EB7E /* Feeds.framework */,
 				0214B2BA23535BE000B2EB7E /* Addition.framework */,
 				0214B2B723535BCB00B2EB7E /* SomariFoundation.framework */,

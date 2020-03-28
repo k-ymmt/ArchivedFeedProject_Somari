@@ -17,7 +17,7 @@
 		0214B59423544F8700B2EB7E /* DummyFeedService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0214B59323544F8700B2EB7E /* DummyFeedService.swift */; };
 		0214B59623544FAA00B2EB7E /* SomariFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0214B59523544FAA00B2EB7E /* SomariFoundation.framework */; };
 		0214B59723544FAA00B2EB7E /* SomariFoundation.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0214B59523544FAA00B2EB7E /* SomariFoundation.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		0214B599235450B100B2EB7E /* DummyLoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0214B598235450B100B2EB7E /* DummyLoginService.swift */; };
+		0214B599235450B100B2EB7E /* DummyAccountService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0214B598235450B100B2EB7E /* DummyAccountService.swift */; };
 		0214B59B235451BA00B2EB7E /* DummyStorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0214B59A235451BA00B2EB7E /* DummyStorageService.swift */; };
 		021B97D7235252D800E59F3F /* Feeds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 021B97CD235252D800E59F3F /* Feeds.framework */; };
 		021B97DC235252D800E59F3F /* FeedsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021B97DB235252D800E59F3F /* FeedsTests.swift */; };
@@ -81,7 +81,7 @@
 		0214B5882353A2CE00B2EB7E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0214B59323544F8700B2EB7E /* DummyFeedService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyFeedService.swift; sourceTree = "<group>"; };
 		0214B59523544FAA00B2EB7E /* SomariFoundation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SomariFoundation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		0214B598235450B100B2EB7E /* DummyLoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyLoginService.swift; sourceTree = "<group>"; };
+		0214B598235450B100B2EB7E /* DummyAccountService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyAccountService.swift; sourceTree = "<group>"; };
 		0214B59A235451BA00B2EB7E /* DummyStorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyStorageService.swift; sourceTree = "<group>"; };
 		021B97CD235252D800E59F3F /* Feeds.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Feeds.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		021B97D0235252D800E59F3F /* Feeds.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Feeds.h; sourceTree = "<group>"; };
@@ -141,7 +141,7 @@
 				0214B57A2353A2CB00B2EB7E /* AppDelegate.swift */,
 				0214B57C2353A2CB00B2EB7E /* SceneDelegate.swift */,
 				0214B59323544F8700B2EB7E /* DummyFeedService.swift */,
-				0214B598235450B100B2EB7E /* DummyLoginService.swift */,
+				0214B598235450B100B2EB7E /* DummyAccountService.swift */,
 				0214B59A235451BA00B2EB7E /* DummyStorageService.swift */,
 				02DDF798235F03EE00C82F92 /* DummyFeedItemCacheService.swift */,
 				0214B5802353A2CE00B2EB7E /* Assets.xcassets */,
@@ -385,7 +385,7 @@
 				0214B59423544F8700B2EB7E /* DummyFeedService.swift in Sources */,
 				0214B57B2353A2CB00B2EB7E /* AppDelegate.swift in Sources */,
 				0214B57D2353A2CB00B2EB7E /* SceneDelegate.swift in Sources */,
-				0214B599235450B100B2EB7E /* DummyLoginService.swift in Sources */,
+				0214B599235450B100B2EB7E /* DummyAccountService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

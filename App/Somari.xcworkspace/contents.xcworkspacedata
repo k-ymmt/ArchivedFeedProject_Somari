@@ -5,7 +5,7 @@
       location = "group:Somari/Somari.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:Login/Login.xcodeproj">
+      location = "group:Account/Account.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Feeds/Feeds.xcodeproj">

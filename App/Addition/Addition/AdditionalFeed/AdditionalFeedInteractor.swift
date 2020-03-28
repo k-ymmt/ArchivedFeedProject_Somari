@@ -28,7 +28,7 @@ protocol AdditionalFeedInteractable {
 class AdditionalFeedInteractor: AdditionalFeedInteractable {
     private let feedService: FeedService
     private let storageService: StorageService
-    private let loginService: LoginService
+    private let accountService: AccountService
 
     private let getFeedDispatchQueue: DispatchQueue = DispatchQueue(
         label: "net.kymmt.Somari.Addition.getFeedQueue",
@@ -41,14 +41,14 @@ class AdditionalFeedInteractor: AdditionalFeedInteractable {
     @EventPublished var getFeedsSuccess: EventPublisher<(URL, Feed)>
     @EventPublished var errorPublisher: EventPublisher<AdditionalFeedError>
 
-    init(feedService: FeedService, loginService: LoginService, storageService: StorageService) {
+    init(feedService: FeedService, accountService: AccountService, storageService: StorageService) {
         self.feedService = feedService
-        self.loginService = loginService
+        self.accountService = accountService
         self.storageService = storageService
     }
 
     func subscribeUserSettings() -> Combine.Cancellable {
-        guard let uid = loginService.uid() else {
+        guard let uid = accountService.uid() else {
             return AnyCancellable({})
         }
         return self.storageService.subscribeValues(

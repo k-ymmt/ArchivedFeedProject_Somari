@@ -1,5 +1,5 @@
 //
-//  DummyLoginService.swift
+//  DummyAccountService.swift
 //  FeedsSandbox
 //
 //  Created by Kazuki Yamamoto on 2019/10/14.
@@ -13,7 +13,7 @@ import Combine
 struct DummyUser: User {
 }
 
-class DummyLoginService: LoginService {
+class DummyAccountService: AccountService {
     func uid() -> String? {
         return "1"
     }

@@ -14,9 +14,9 @@ protocol MainTabInteractable {
 }
 
 class MainTabInteractor: MainTabInteractable {
-    private let loginService: LoginService
+    private let accountService: AccountService
 
-    init(loginService: LoginService) {
-        self.loginService = loginService
+    init(accountService: AccountService) {
+        self.accountService = accountService
     }
 }

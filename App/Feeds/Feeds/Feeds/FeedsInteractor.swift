@@ -23,7 +23,7 @@ protocol FeedsInteractable {
 class FeedsInteractor: FeedsInteractable {
     private let feedService: FeedService
     private let storageService: StorageService
-    private let loginService: LoginService
+    private let accountService: AccountService
     private let feedItemCacheService: FeedItemCacheService
 
     private let getFeedDispatchQueue: DispatchQueue = DispatchQueue(
@@ -44,17 +44,17 @@ class FeedsInteractor: FeedsInteractable {
     init(
         feedService: FeedService,
         storageService: StorageService,
-        loginService: LoginService,
+        accountService: AccountService,
         feedItemCacheService: FeedItemCacheService
     ) {
         self.feedService = feedService
         self.storageService = storageService
-        self.loginService = loginService
+        self.accountService = accountService
         self.feedItemCacheService = feedItemCacheService
     }
 
     func subscribeUserSettings() -> Combine.Cancellable {
-        guard let uid = loginService.uid() else {
+        guard let uid = accountService.uid() else {
             Logger.error(LoginError.notLogin)
             return AnyCancellable({})
         }

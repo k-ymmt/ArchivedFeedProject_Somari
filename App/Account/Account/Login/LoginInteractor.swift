@@ -14,13 +14,13 @@ protocol LoginInteractable {
 }
 
 class LoginInteractor: LoginInteractable {
-    private let loginService: LoginService
+    private let accountService: AccountService
 
-    init(loginService: LoginService) {
-        self.loginService = loginService
+    init(accountService: AccountService) {
+        self.accountService = accountService
     }
 
     func loginAnonymosly(completion: @escaping (Result<User, LoginError>) -> Void) {
-        loginService.loginAnonymously(completion: completion)
+        accountService.loginAnonymously(completion: completion)
     }
 }

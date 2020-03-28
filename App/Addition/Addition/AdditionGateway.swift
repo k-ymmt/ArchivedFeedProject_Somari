@@ -13,12 +13,12 @@ import SomariFoundation
 public class AdditionGateway: Gateway {
     public struct Dependency {
         let feedService: FeedService
-        let loginService: LoginService
+        let accountService: AccountService
         let storageService: StorageService
 
-        public init(feedService: FeedService, loginService: LoginService, storageService: StorageService) {
+        public init(feedService: FeedService, accountService: AccountService, storageService: StorageService) {
             self.feedService = feedService
-            self.loginService = loginService
+            self.accountService = accountService
             self.storageService = storageService
         }
     }
@@ -55,7 +55,7 @@ private extension AdditionGateway {
     func makeAdditionalFeedPage() -> UIViewController {
         let viewController = AdditionalFeedRouter.assembleModules(dependency: .init(
             feedService: dependency.feedService,
-            loginService: dependency.loginService,
+            accountService: dependency.accountService,
             storageService: dependency.storageService
         )) { (_) in
 

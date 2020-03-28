@@ -20,7 +20,7 @@ class FeedsRouter: FeedsRoutable & Router {
     struct Dependency {
         let feedService: FeedService
         let storageService: StorageService
-        let loginService: LoginService
+        let accountService: AccountService
         let feedItemCacheService: FeedItemCacheService
     }
 
@@ -29,7 +29,7 @@ class FeedsRouter: FeedsRoutable & Router {
         let interactor = FeedsInteractor(
             feedService: dependency.feedService,
             storageService: dependency.storageService,
-            loginService: dependency.loginService,
+            accountService: dependency.accountService,
             feedItemCacheService: dependency.feedItemCacheService
         )
         let presenter = FeedsPresenter(router: router, interactor: interactor)

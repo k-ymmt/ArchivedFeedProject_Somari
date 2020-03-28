@@ -1,5 +1,5 @@
 //
-//  LoginService.swift
+//  AccountService.swift
 //  SomariKit
 //
 //  Created by Kazuki Yamamoto on 2019/10/11.
@@ -18,7 +18,7 @@ public enum LoginError: Error {
     case unknown
 }
 
-public protocol LoginService {
+public protocol AccountService {
     func uid() -> String?
     func loginAnonymously(completion: @escaping (Result<User, LoginError>) -> Void)
     func listenLoginState() -> AnyPublisher<Result<User, LoginError>, Never>

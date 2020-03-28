@@ -18,17 +18,17 @@ public class FeedsGateway: Gateway {
     public struct Dependency {
         let feedService: FeedService
         let storageService: StorageService
-        let loginService: LoginService
+        let accountService: AccountService
         let feedItemCacheService: FeedItemCacheService
 
         public init(
             feedService: FeedService,
             storageService: StorageService,
-            loginService: LoginService,
+            accountService: AccountService,
             feedItemCacheService: FeedItemCacheService) {
             self.feedService = feedService
             self.storageService = storageService
-            self.loginService = loginService
+            self.accountService = accountService
             self.feedItemCacheService = feedItemCacheService
         }
     }
@@ -64,7 +64,7 @@ public class FeedsGateway: Gateway {
         let viewController = FeedsRouter.assembleModules(dependency: .init(
             feedService: dependency.feedService,
             storageService: dependency.storageService,
-            loginService: dependency.loginService,
+            accountService: dependency.accountService,
             feedItemCacheService: dependency.feedItemCacheService
         ))  { [weak self] action in
             self?.outputAction?(.gotoAdditionView)

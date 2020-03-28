@@ -16,7 +16,7 @@
 		02EAB8722350B5A800130DB2 /* SomariFoundationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EAB8712350B5A800130DB2 /* SomariFoundationTests.swift */; };
 		02EAB8742350B5A800130DB2 /* SomariFoundation.h in Headers */ = {isa = PBXBuildFile; fileRef = 02EAB8662350B5A800130DB2 /* SomariFoundation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		02EAB87F2350B67300130DB2 /* FeedService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EAB87E2350B67300130DB2 /* FeedService.swift */; };
-		02EAB8812350B6D900130DB2 /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EAB8802350B6D900130DB2 /* LoginService.swift */; };
+		02EAB8812350B6D900130DB2 /* AccountService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EAB8802350B6D900130DB2 /* AccountService.swift */; };
 		02EAB8832350B73300130DB2 /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EAB8822350B73300130DB2 /* StorageService.swift */; };
 		02EAB8862350B7C400130DB2 /* AtomFeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EAB8852350B7C400130DB2 /* AtomFeed.swift */; };
 		02EAB8882350B7E000130DB2 /* RSSFeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EAB8872350B7E000130DB2 /* RSSFeed.swift */; };
@@ -55,7 +55,7 @@
 		02EAB8712350B5A800130DB2 /* SomariFoundationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SomariFoundationTests.swift; sourceTree = "<group>"; };
 		02EAB8732350B5A800130DB2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		02EAB87E2350B67300130DB2 /* FeedService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedService.swift; sourceTree = "<group>"; };
-		02EAB8802350B6D900130DB2 /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
+		02EAB8802350B6D900130DB2 /* AccountService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountService.swift; sourceTree = "<group>"; };
 		02EAB8822350B73300130DB2 /* StorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
 		02EAB8852350B7C400130DB2 /* AtomFeed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AtomFeed.swift; sourceTree = "<group>"; };
 		02EAB8872350B7E000130DB2 /* RSSFeed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSSFeed.swift; sourceTree = "<group>"; };
@@ -154,7 +154,7 @@
 			isa = PBXGroup;
 			children = (
 				02EAB87E2350B67300130DB2 /* FeedService.swift */,
-				02EAB8802350B6D900130DB2 /* LoginService.swift */,
+				02EAB8802350B6D900130DB2 /* AccountService.swift */,
 				02EAB8822350B73300130DB2 /* StorageService.swift */,
 				02CF2561235CBF5900485631 /* FeedItemCacheService.swift */,
 			);
@@ -331,7 +331,7 @@
 				02EAB88A2350B7FF00130DB2 /* UserSettingsData.swift in Sources */,
 				02EAB8882350B7E000130DB2 /* RSSFeed.swift in Sources */,
 				021B97A62351EEAF00E59F3F /* Gateway.swift in Sources */,
-				02EAB8812350B6D900130DB2 /* LoginService.swift in Sources */,
+				02EAB8812350B6D900130DB2 /* AccountService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

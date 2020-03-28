@@ -1,5 +1,5 @@
 //
-//  LoginService.swift
+//  FirebaseAccountService.swift
 //  Somari
 //
 //  Created by Kazuki Yamamoto on 2019/10/05.
@@ -32,7 +32,7 @@ private extension LoginError {
     }
 }
 
-public class FirebaseLoginService: LoginService {
+public class FirebaseAccountService: AccountService {
     public init() {
     }
 

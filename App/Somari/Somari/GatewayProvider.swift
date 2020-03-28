@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 import SomariCore
-import Login
+import Account
 import Feeds
 import Addition
 
@@ -17,24 +17,24 @@ class GatewayProvider {
     private let window: UIWindow
 
     let main: MainGateway
-    let login: LoginGateway
+    let login: AccountGateway
     let feeds: FeedsGateway
     let addition: AdditionGateway
 
     init(window: UIWindow, resolver: DependencyResolver) {
         self.main = MainGateway()
-        self.login = LoginGateway(dependency: .init(
-            loginService: resolver.loginService
+        self.login = AccountGateway(dependency: .init(
+            accountService: resolver.accountService
         ))
         self.feeds = FeedsGateway(dependency: .init(
             feedService: resolver.feedService,
             storageService: resolver.storageService,
-            loginService: resolver.loginService,
+            accountService: resolver.accountService,
             feedItemCacheService: resolver.feedItemCacheService
         ))
         self.addition = AdditionGateway(dependency: .init(
             feedService: resolver.feedService,
-            loginService: resolver.loginService,
+            accountService: resolver.accountService,
             storageService: resolver.storageService
         ))
         self.window = window
@@ -67,7 +67,7 @@ private extension GatewayProvider {
 
 // MARK: - LoginGateway
 private extension GatewayProvider {
-    private func loginGatewayOutputAction(output: LoginGateway.Output) {
+    private func loginGatewayOutputAction(output: AccountGateway.Output) {
         switch output {
         case .loginSuccess:
             self.main.input(.showMainTab)

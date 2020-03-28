@@ -15,15 +15,15 @@ protocol AdditionalFeedConfirmInteractable {
 
 class AdditionalFeedConfirmInteractor: AdditionalFeedConfirmInteractable {
     private let storageService: StorageService
-    private let loginService: LoginService
+    private let accountService: AccountService
 
-    init(storageService: StorageService, loginService: LoginService) {
+    init(storageService: StorageService, accountService: AccountService) {
         self.storageService = storageService
-        self.loginService = loginService
+        self.accountService = accountService
     }
 
     func saveFeedInfo(info: UserSettingsFeedData, completion: @escaping (Result<Void, Error>) -> Void) {
-        guard let uid = loginService.uid() else {
+        guard let uid = accountService.uid() else {
             completion(.failure(LoginError.notLogin))
             return
         }

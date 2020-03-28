@@ -11,13 +11,13 @@ import SomariCore
 import SomariFoundation
 
 class DependencyResolver {
-    let loginService: LoginService
+    let accountService: AccountService
     let feedService: FeedService
     let storageService: StorageService
     let feedItemCacheService: FeedItemCacheService
 
     init() {
-        self.loginService = FirebaseLoginService()
+        self.accountService = FirebaseAccountService()
         self.feedService = FeedKitService()
         self.storageService = FirebaseStorageService()
         self.feedItemCacheService = CoreDataFeedItemCacheService()

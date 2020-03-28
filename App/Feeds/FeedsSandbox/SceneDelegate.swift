@@ -22,7 +22,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
 
         // Create the SwiftUI view that provides the window contents.
-        let loginService = DummyLoginService()
+        let accountService = DummyAccountService()
         let feedService = DummyFeedService()
         let storageService = DummyStorageService()
         let feedItemCacheService = DummyFeedItemCacheService()
@@ -30,7 +30,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let feeds = { FeedsRouter.assembleModules(dependency: .init(
             feedService: feedService,
             storageService: storageService,
-            loginService: loginService,
+            accountService: accountService,
             feedItemCacheService: feedItemCacheService
             ))
         }
@@ -38,7 +38,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let bufferFeeds = { FeedsRouter.assembleModules(dependency: .init(
             feedService: feedService,
             storageService: storageService,
-            loginService: loginService,
+            accountService: accountService,
             feedItemCacheService: DummyFeedItemCacheService(
                 initialBuffer: Array(0..<10).map { FeedItem(
                     title: "Buffer Feed - \($0)",

@@ -14,7 +14,7 @@
 		021B97672351E06300E59F3F /* SomariFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 021B97662351E06300E59F3F /* SomariFoundation.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		021B976F2351E51300E59F3F /* FeedKitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021B975E2351DF9300E59F3F /* FeedKitService.swift */; };
 		021B97702351E51900E59F3F /* FirebaseStorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021B97602351DF9300E59F3F /* FirebaseStorageService.swift */; };
-		021B97712351E52000E59F3F /* FirebaseLoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021B975F2351DF9300E59F3F /* FirebaseLoginService.swift */; };
+		021B97712351E52000E59F3F /* FirebaseAccountService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021B975F2351DF9300E59F3F /* FirebaseLoginService.swift */; };
 		02CF253A235C861C00485631 /* CoreDataFeedItemCacheService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02CF2539235C861C00485631 /* CoreDataFeedItemCacheService.swift */; };
 		02CF253D235C863400485631 /* FeedItemModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 02CF253B235C863400485631 /* FeedItemModel.xcdatamodeld */; };
 		02CF2564235CC0DB00485631 /* CoreDataFeedItemCacheServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02CF2563235CC0DB00485631 /* CoreDataFeedItemCacheServiceTest.swift */; };
@@ -40,7 +40,7 @@
 		021B97522351DF6600E59F3F /* SomariCoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SomariCoreTests.swift; sourceTree = "<group>"; };
 		021B97542351DF6600E59F3F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		021B975E2351DF9300E59F3F /* FeedKitService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedKitService.swift; sourceTree = "<group>"; };
-		021B975F2351DF9300E59F3F /* FirebaseLoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseLoginService.swift; sourceTree = "<group>"; };
+		021B975F2351DF9300E59F3F /* FirebaseAccountService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseLoginService.swift; sourceTree = "<group>"; };
 		021B97602351DF9300E59F3F /* FirebaseStorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseStorageService.swift; sourceTree = "<group>"; };
 		021B97662351E06300E59F3F /* SomariFoundation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SomariFoundation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		02C73AC8235348C600628870 /* build.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = build.xcconfig; sourceTree = "<group>"; };
@@ -122,7 +122,7 @@
 			children = (
 				02CF2538235C860600485631 /* Cache */,
 				021B975E2351DF9300E59F3F /* FeedKitService.swift */,
-				021B975F2351DF9300E59F3F /* FirebaseLoginService.swift */,
+				021B975F2351DF9300E59F3F /* FirebaseAccountService.swift */,
 				021B97602351DF9300E59F3F /* FirebaseStorageService.swift */,
 			);
 			path = Services;
@@ -303,7 +303,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				021B97712351E52000E59F3F /* FirebaseLoginService.swift in Sources */,
+				021B97712351E52000E59F3F /* FirebaseAccountService.swift in Sources */,
 				021B976F2351E51300E59F3F /* FeedKitService.swift in Sources */,
 				02CF253D235C863400485631 /* FeedItemModel.xcdatamodeld in Sources */,
 				021B97702351E51900E59F3F /* FirebaseStorageService.swift in Sources */,

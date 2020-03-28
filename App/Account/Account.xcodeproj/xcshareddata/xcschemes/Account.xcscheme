@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "021B977B2351EC2200E59F3F"
-               BuildableName = "Login.framework"
-               BlueprintName = "Login"
-               ReferencedContainer = "container:Login.xcodeproj">
+               BuildableName = "Account.framework"
+               BlueprintName = "Account"
+               ReferencedContainer = "container:Account.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -29,9 +29,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "021B97842351EC2200E59F3F"
-               BuildableName = "LoginTests.xctest"
-               BlueprintName = "LoginTests"
-               ReferencedContainer = "container:Login.xcodeproj">
+               BuildableName = "AccountTests.xctest"
+               BlueprintName = "AccountTests"
+               ReferencedContainer = "container:Account.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -47,9 +47,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "021B97842351EC2200E59F3F"
-               BuildableName = "LoginTests.xctest"
-               BlueprintName = "LoginTests"
-               ReferencedContainer = "container:Login.xcodeproj">
+               BuildableName = "AccountTests.xctest"
+               BlueprintName = "AccountTests"
+               ReferencedContainer = "container:Account.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -75,9 +75,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "021B977B2351EC2200E59F3F"
-            BuildableName = "Login.framework"
-            BlueprintName = "Login"
-            ReferencedContainer = "container:Login.xcodeproj">
+            BuildableName = "Account.framework"
+            BlueprintName = "Account"
+            ReferencedContainer = "container:Account.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>

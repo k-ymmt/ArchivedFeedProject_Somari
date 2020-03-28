@@ -17,7 +17,7 @@ protocol AdditionalFeedRoutable {
 class AdditionalFeedRouter: AdditionalFeedRoutable & Router {
     struct Dependency {
         let feedService: FeedService
-        let loginService: LoginService
+        let accountService: AccountService
         let storageService: StorageService
     }
 
@@ -34,7 +34,7 @@ class AdditionalFeedRouter: AdditionalFeedRoutable & Router {
         let router = AdditionalFeedRouter(dependency: dependency, action: action)
         let interactor = AdditionalFeedInteractor(
             feedService: dependency.feedService,
-            loginService: dependency.loginService,
+            accountService: dependency.accountService,
             storageService: dependency.storageService
         )
         let presenter = AdditionalFeedPresenter(router: router, interactor: interactor)
@@ -59,7 +59,7 @@ class AdditionalFeedRouter: AdditionalFeedRoutable & Router {
                 title: title,
                 items: items,
                 storageService: self.dependency.storageService,
-                loginService: self.dependency.loginService
+                accountService: self.dependency.accountService
             )) { [weak self] (_) in
                 self?.action(.additionFeedSuccess)
             }
