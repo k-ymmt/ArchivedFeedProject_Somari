@@ -13,9 +13,10 @@ import SomariFoundation
 
 protocol FeedsRoutable {
     func showSafariViewController(url: URL)
+    func gotoAdditionView()
 }
 
-class FeedsRouter: FeedsRoutable & EmptyOutputRouter {
+class FeedsRouter: FeedsRoutable & Router {
     struct Dependency {
         let feedService: FeedService
         let storageService: StorageService
@@ -23,10 +24,8 @@ class FeedsRouter: FeedsRoutable & EmptyOutputRouter {
         let feedItemCacheService: FeedItemCacheService
     }
 
-    private weak var viewController: UIViewController!
-
-    static func assembleModules(dependency: FeedsRouter.Dependency) -> UIViewController {
-        let router = FeedsRouter()
+    static func assembleModules(dependency: FeedsRouter.Dependency, action: @escaping (FeedsNavigateAction) -> Void) -> UIViewController {
+        let router = FeedsRouter(action: action)
         let interactor = FeedsInteractor(
             feedService: dependency.feedService,
             storageService: dependency.storageService,
@@ -38,6 +37,17 @@ class FeedsRouter: FeedsRoutable & EmptyOutputRouter {
         router.viewController = viewController
 
         return viewController
+    }
+    
+    private weak var viewController: UIViewController!
+    private let navigateAction: (FeedsNavigateAction) -> Void
+    
+    private init(action: @escaping (FeedsNavigateAction) -> Void) {
+        self.navigateAction = action
+    }
+    
+    func gotoAdditionView() {
+        navigateAction(.gotoAdditionView)
     }
 
     func showSafariViewController(url: URL) {

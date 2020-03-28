@@ -17,6 +17,7 @@ protocol FeedsPresentable {
     func getFeeds(url: URL)
     func getFeedAll()
     func showWebPage(linkString: String)
+    func gotoAdditionView()
 }
 
 class FeedsPresenter: FeedsPresentable {
@@ -65,6 +66,10 @@ class FeedsPresenter: FeedsPresentable {
         }
 
         router.showSafariViewController(url: url)
+    }
+    
+    func gotoAdditionView() {
+        router.gotoAdditionView()
     }
 
     private func receivedUserSettings(result: Result<[UserSettingsFeedData], Error>) {

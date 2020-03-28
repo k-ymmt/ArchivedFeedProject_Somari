@@ -12,16 +12,21 @@ import SomariFoundation
 
 class MainGateway: Gateway {
     enum Input {
+        enum TabCategory: Int {
+            case feeds = 0
+            case addition = 1
+        }
         case showMainTab
         case setFeeds(UIViewController)
         case setAdditionalFeed(UIViewController)
+        case switchTab(TabCategory)
     }
 
     enum Output {
         case showMainTab(UIViewController)
     }
 
-    private weak var mainTab: MainTabViewController!
+    private weak var mainTab: UITabBarController!
     private var outputAction: ((Output) -> Void)?
 
     private var showMainTab: Bool = false
@@ -42,6 +47,8 @@ class MainGateway: Gateway {
         case .setAdditionalFeed(let viewController):
             self.additionalFeedViewController = viewController
             showMainTabIfNeed()
+        case .switchTab(let category):
+            mainTab.selectedIndex = category.rawValue
         }
     }
 
@@ -61,6 +68,7 @@ class MainGateway: Gateway {
             additionalFeedViewController: additionalFeedViewController
         )
 
+        mainTab = viewController
         outputAction?(.showMainTab(viewController))
     }
 }

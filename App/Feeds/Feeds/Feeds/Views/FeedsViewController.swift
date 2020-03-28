@@ -15,7 +15,8 @@ class FeedsViewController: UIViewController, ParentViewController {
 
     private let presenter: FeedsPresentable
 
-    private weak var feedListViewController: FeedListViewController!
+    private weak var feedListViewController: FeedListViewController?
+    private weak var emptyViewController: EmptyViewController?
 
     private var cancels: Set<AnyCancellable> = Set()
 
@@ -32,25 +33,21 @@ class FeedsViewController: UIViewController, ParentViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        navigationItem.title = "New Feeds"
+        navigationItem.title = "Feeds"
         view.backgroundColor = Colors.background.uiColor
         navigationController?.navigationBar.tintColor = Colors.background.uiColor
         navigationController?.navigationBar.backgroundColor = Colors.background.uiColor
-        let feedListViewController = FeedListViewController { [weak self]  in self?.receivedFeedListOutput(value: $0) }
-        addViewController(feedListViewController)
-        NSLayoutConstraint.activate([
-            feedListViewController.view.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            feedListViewController.view.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-            feedListViewController.view.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
-            feedListViewController.view.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor)
-        ])
-
-        self.feedListViewController = feedListViewController
 
         presenter.feeds
             .receive(on: DispatchQueue.main)
             .sink { [weak self] items in
-                self?.feedListViewController.input(.updateFeeds(items))
+                if items.isEmpty {
+                    self?.showEmptyView()
+                } else if let feedListViewController = self?.feedListViewController {
+                    feedListViewController.input(.updateFeeds(items))
+                } else {
+                    self?.showFeedList(items: items)
+                }
         }.store(in: &cancels)
     }
 
@@ -64,5 +61,35 @@ class FeedsViewController: UIViewController, ParentViewController {
         case .refreshing:
             presenter.getFeedAll()
         }
+    }
+
+    private func showFeedList(items: [FeedItem]) {
+        if let emptyViewController = emptyViewController {
+            removeViewController(emptyViewController)
+            self.emptyViewController = nil
+        }
+        
+        let feedListViewController = FeedListViewController { [weak self]  in self?.receivedFeedListOutput(value: $0) }
+        addViewController(feedListViewController)
+        self.feedListViewController = feedListViewController
+        feedListViewController.view.constraint.full(in: view)
+    }
+    
+    private func showEmptyView() {
+        if let feedListViewController = feedListViewController {
+            removeViewController(feedListViewController)
+            self.feedListViewController = nil
+        }
+        
+        let emptyViewController = EmptyViewController { [weak self] output in
+            switch output {
+            case .linkButtonTapped:
+                self?.presenter.gotoAdditionView()
+            }
+        }
+        
+        addViewController(emptyViewController)
+        self.emptyViewController = emptyViewController
+        emptyViewController.view.constraint.full(in: view)
     }
 }

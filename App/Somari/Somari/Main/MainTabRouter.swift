@@ -16,7 +16,7 @@ class MainTabRouter: MainTabRoutable {
     static func assembleModules(
         feedsViewController: UIViewController,
         additionalFeedViewController: UIViewController
-    ) -> UIViewController {
+    ) -> UITabBarController {
         let tabViewController = MainTabViewController()
 
         let font = UIFont.systemFont(ofSize: 18, weight: .bold)

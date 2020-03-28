@@ -19,6 +19,7 @@ public protocol ChildViewController: UIViewController {
 
 public protocol ParentViewController: UIViewController {
     func addViewController(_ viewController: UIViewController, to parentView: UIView?)
+    func removeViewController(_ viewController: UIViewController)
 }
 
 extension ParentViewController {
@@ -30,5 +31,11 @@ extension ParentViewController {
         addChild(viewController)
         parentView.addSubview(viewController.view)
         viewController.didMove(toParent: viewController)
+    }
+    
+    public func removeViewController(_ viewController: UIViewController) {
+        viewController.willMove(toParent: nil)
+        viewController.view.removeFromSuperview()
+        viewController.removeFromParent()
     }
 }

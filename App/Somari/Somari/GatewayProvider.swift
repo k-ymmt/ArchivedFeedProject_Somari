@@ -94,6 +94,8 @@ private extension GatewayProvider {
         switch output {
         case .showFeeds(let viewController):
             main.input(.setFeeds(viewController))
+        case .gotoAdditionView:
+            main.input(.switchTab(.addition))
         }
     }
 }

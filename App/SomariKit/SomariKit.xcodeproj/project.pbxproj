@@ -24,6 +24,7 @@
 		022F867C23549A4000F49A9B /* SomariSandboxKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 022F867A23549A4000F49A9B /* SomariSandboxKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		022F868123549A5100F49A9B /* ViewControllerWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022F868023549A5100F49A9B /* ViewControllerWrapper.swift */; };
 		022F868623549AF200F49A9B /* MockListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022F868523549AF200F49A9B /* MockListView.swift */; };
+		02CF5EB6242E67CA003D2B85 /* View+Constraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02CF5EB5242E67CA003D2B85 /* View+Constraint.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		022F867B23549A4000F49A9B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		022F868023549A5100F49A9B /* ViewControllerWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerWrapper.swift; sourceTree = "<group>"; };
 		022F868523549AF200F49A9B /* MockListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockListView.swift; sourceTree = "<group>"; };
+		02CF5EB5242E67CA003D2B85 /* View+Constraint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Constraint.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				021B97262351DC0F00E59F3F /* FeedList */,
+				02CF5EB4242E67B0003D2B85 /* Extensions */,
 				021B984123530B2100E59F3F /* Resources */,
 				021B97332351DDD700E59F3F /* SFSymbolString.swift */,
 				021B97352351DDF600E59F3F /* CustomDateFormatter.swift */,
@@ -170,6 +173,14 @@
 				022F867B23549A4000F49A9B /* Info.plist */,
 			);
 			path = SomariSandboxKit;
+			sourceTree = "<group>";
+		};
+		02CF5EB4242E67B0003D2B85 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				02CF5EB5242E67CA003D2B85 /* View+Constraint.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -327,6 +338,7 @@
 				021B97322351DD6800E59F3F /* FeedViewCell.swift in Sources */,
 				021B984723530B7400E59F3F /* Colors.swift in Sources */,
 				021B97362351DDF600E59F3F /* CustomDateFormatter.swift in Sources */,
+				02CF5EB6242E67CA003D2B85 /* View+Constraint.swift in Sources */,
 				021B97292351DC3600E59F3F /* FeedListViewController.swift in Sources */,
 				021B984823530B7400E59F3F /* Strings.swift in Sources */,
 				021B97342351DDD700E59F3F /* SFSymbolString.swift in Sources */,

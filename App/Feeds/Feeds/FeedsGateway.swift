@@ -10,6 +10,10 @@ import Foundation
 import UIKit
 import SomariFoundation
 
+public enum FeedsNavigateAction {
+    case gotoAdditionView
+}
+
 public class FeedsGateway: Gateway {
     public struct Dependency {
         let feedService: FeedService
@@ -35,6 +39,7 @@ public class FeedsGateway: Gateway {
 
     public enum Output {
         case showFeeds(UIViewController)
+        case gotoAdditionView
     }
 
     private let dependency: Dependency
@@ -61,7 +66,9 @@ public class FeedsGateway: Gateway {
             storageService: dependency.storageService,
             loginService: dependency.loginService,
             feedItemCacheService: dependency.feedItemCacheService
-        ))
+        ))  { [weak self] action in
+            self?.outputAction?(.gotoAdditionView)
+        }
 
         return viewController
     }

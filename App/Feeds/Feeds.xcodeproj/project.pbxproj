@@ -33,6 +33,8 @@
 		022F868323549A6C00F49A9B /* SomariSandboxKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 022F868223549A6C00F49A9B /* SomariSandboxKit.framework */; };
 		022F868423549A6C00F49A9B /* SomariSandboxKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 022F868223549A6C00F49A9B /* SomariSandboxKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		026CB717237057FC0086A5CB /* FeedsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 021B97E7235252EF00E59F3F /* FeedsViewController.xib */; };
+		02CF5EB1242E5B8B003D2B85 /* EmptyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02CF5EB0242E5B8B003D2B85 /* EmptyViewController.xib */; };
+		02CF5EB3242E5B9F003D2B85 /* EmptyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02CF5EB2242E5B9F003D2B85 /* EmptyViewController.swift */; };
 		02DDF799235F03EE00C82F92 /* DummyFeedItemCacheService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DDF798235F03EE00C82F92 /* DummyFeedItemCacheService.swift */; };
 /* End PBXBuildFile section */
 
@@ -97,6 +99,8 @@
 		0225677023533DA10094BE54 /* SomariKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SomariKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		022D9879242CFFAF0010C62A /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Colors.xcassets; path = ../../SomariKit/SomariKit/Resources/Colors.xcassets; sourceTree = "<group>"; };
 		022F868223549A6C00F49A9B /* SomariSandboxKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SomariSandboxKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		02CF5EB0242E5B8B003D2B85 /* EmptyViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyViewController.xib; sourceTree = "<group>"; };
+		02CF5EB2242E5B9F003D2B85 /* EmptyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyViewController.swift; sourceTree = "<group>"; };
 		02DDF798235F03EE00C82F92 /* DummyFeedItemCacheService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyFeedItemCacheService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -203,6 +207,8 @@
 			children = (
 				021B97E8235252EF00E59F3F /* FeedsViewController.swift */,
 				021B97E7235252EF00E59F3F /* FeedsViewController.xib */,
+				02CF5EB2242E5B9F003D2B85 /* EmptyViewController.swift */,
+				02CF5EB0242E5B8B003D2B85 /* EmptyViewController.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -355,6 +361,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				026CB717237057FC0086A5CB /* FeedsViewController.xib in Resources */,
+				02CF5EB1242E5B8B003D2B85 /* EmptyViewController.xib in Resources */,
 				022D987A242CFFAF0010C62A /* Colors.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -390,6 +397,7 @@
 				021B97EF2352530500E59F3F /* FeedsRouter.swift in Sources */,
 				021B97F12352530500E59F3F /* FeedsInteractor.swift in Sources */,
 				021B97F62352533000E59F3F /* FeedsGateway.swift in Sources */,
+				02CF5EB3242E5B9F003D2B85 /* EmptyViewController.swift in Sources */,
 				021B97EE2352530000E59F3F /* FeedsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
